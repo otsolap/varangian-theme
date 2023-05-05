@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_util_article_embeds",
+  "info": {
+    "displayName": "ArticleEmbed"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "text"
+    }
+  }
+}

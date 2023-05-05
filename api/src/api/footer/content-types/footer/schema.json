@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "util.footer-column",
+        "util.footer-social-media"
+      ],
+      "min": 3,
+      "max": 3
+    },
+    "subFooter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.sub-footer"
+    }
+  }
+}

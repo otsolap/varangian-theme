@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_partials_youtube_embeds",
+  "info": {
+    "displayName": "youtubeEmbed",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    }
+  }
+}

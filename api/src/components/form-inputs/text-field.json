@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_form_inputs_text_fields",
+  "info": {
+    "displayName": "text-field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    }
+  }
+}

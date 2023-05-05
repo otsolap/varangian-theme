@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_util_form_embeds",
+  "info": {
+    "displayName": "FormEmbed",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::form.form"
+    }
+  }
+}

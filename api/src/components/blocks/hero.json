@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_blocks_heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "alignContent": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "left"
+    },
+    "media": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video"
+      ],
+      "default": "image"
+    },
+    "mediaWidth": {
+      "type": "boolean"
+    },
+    "video": {
+      "type": "string"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.button",
+      "max": 2
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

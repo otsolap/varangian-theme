@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_partials_article_text_blocks",
+  "info": {
+    "displayName": "articleText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

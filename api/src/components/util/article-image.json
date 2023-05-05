@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_util_article_images",
+  "info": {
+    "displayName": "articleImage"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

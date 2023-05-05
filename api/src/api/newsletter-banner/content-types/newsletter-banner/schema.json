@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "newsletter_banners",
+  "info": {
+    "singularName": "newsletter-banner",
+    "pluralName": "newsletter-banners",
+    "displayName": "newsletterBanner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.button"
+    },
+    "selectTheme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ]
+    }
+  }
+}

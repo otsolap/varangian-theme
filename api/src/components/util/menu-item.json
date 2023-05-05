@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_util_menu_items",
+  "info": {
+    "displayName": "menuItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "text",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

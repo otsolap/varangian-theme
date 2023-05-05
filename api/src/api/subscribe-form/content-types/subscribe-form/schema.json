@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "subscribe_forms",
+  "info": {
+    "singularName": "subscribe-form",
+    "pluralName": "subscribe-forms",
+    "displayName": "SubscribeForm",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "form": {
+      "type": "dynamiczone",
+      "components": [
+        "form-inputs.text-field"
+      ]
+    }
+  }
+}

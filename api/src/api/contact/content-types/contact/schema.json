@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::form.form",
+      "inversedBy": "contact"
+    },
+    "name": {
+      "type": "string"
+    },
+    "textarea": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": false
+    }
+  }
+}

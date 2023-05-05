@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_partials_footer_columns",
+  "info": {
+    "displayName": "footerColumn",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "open": {
+      "type": "boolean",
+      "default": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.link"
+    }
+  }
+}
