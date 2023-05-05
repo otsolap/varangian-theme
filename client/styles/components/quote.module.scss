@@ -1,0 +1,28 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.quoteWrapper {
+    position: relative;
+}
+
+.quote {
+    font-size: 1.2rem;
+    display: block;
+    margin: 1em 0 0 0;
+    text-align: center;
+}
+
+
+.quotationMark {
+    width: 100%;
+    height: auto;
+    max-width: 40px; 
+    margin-right: auto;
+
+    &:last-of-type {
+        margin-right: initial;
+        margin-left: auto;
+    }
+}

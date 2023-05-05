@@ -1,0 +1,37 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+
+.shareButtons {
+    padding: $single;
+}
+
+.wrapper {
+    @include display-flex();
+    @include flex-direction(row);
+    gap: $single;
+}
+
+
+.icon {
+    width: 100%;
+    height: auto;
+    max-width: $double;
+    max-height: $double;
+    color: $secondary;
+
+    &:hover,
+    &:focus {
+        color: $tertiary;
+    }
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+    .shareButtons {
+        padding-left: $double;
+        padding-right: $double;
+    }
+
+}

@@ -1,0 +1,18 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.form {
+
+}
+
+.inputWrapper {
+    @include display-flex;
+    @include flex-direction(column);
+    gap: $single;
+}
+
+/* DESKTOP STYLES */
+@media (min-width: $container-desktop) {
+}

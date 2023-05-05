@@ -1,0 +1,184 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+/* because of Blog-item we needed to recreate these classes inside the module */
+.bgPrimary  {
+    background-color: $primary;
+}
+
+.bgSecondary  {
+    background-color: $secondary;
+}
+
+.header {
+    color: $white;
+    padding-bottom: $double;
+}
+
+.header,
+.wrapper {
+    @include display-flex();
+    @include flex-direction(column);
+    gap: $single;
+    padding: $single;
+}
+
+.wrapper {
+    flex-wrap: wrap;
+}
+
+.linkWrapper {
+    padding: $single;
+    width: 100%;
+    @include display-flex;
+    justify-content: center;
+}
+
+.archiveLink {
+    color: $white;
+
+    .bgPrimary & {
+       &:hover,
+       &:focus {
+           color: $secondary;
+       }
+    }
+
+    .bgSecondary & {
+       &:hover,
+       &:focus {
+           text-decoration: underline;
+           text-underline-offset: $half;
+       }
+    }
+}
+
+/** item **/
+.blog {
+    @include display-flex();
+    @include flex-direction(column);
+    @include border-radius($half);
+    width: 100%;
+    align-items: flex-start;
+    border: 1px solid;
+    color: $black;
+    border-color: $black;
+    cursor: pointer;
+    
+    .bgPrimary & {
+        background-color: $secondary;
+        color: $white;
+        border-color: $white;
+    }
+
+    .bgSecondary & {
+        background-color: $primary;
+        color: $white;
+        border-color: $white;
+    }
+}
+
+.imageContainer {
+    position: relative;
+    height: 215px;
+    width: 100%;
+    border: 1px solid;
+    border-color: $black;
+
+    .bgPrimary &,
+    .bgSecondary & {
+        border-color: $white;
+    }
+}
+
+.image {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    object-position: 50% 50%;
+    aspect-ratio: 16/9;
+}
+
+.title {
+    margin-bottom: initial;
+}
+ 
+.title,
+.description {
+    width: 100%;
+}
+
+.title,
+.description,
+.footer {
+    padding: $half $single;
+}
+
+.category {
+    transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+    &:hover,
+    &:focus {
+        color: $tertiary;
+        cursor: pointer;
+    }
+}
+
+
+.footer {
+    width: 100%;
+    border-top: $white 2px solid;
+    @include display-flex;
+    @include flex-direction(column);
+    gap: $half;
+    border-top: 1px solid;
+    border-color: $black;
+
+    .bgPrimary &,
+    .bgSecondary & {
+        border-color: $white;
+    }
+}
+
+/* Tablet Styles */
+@media ($container-ipad <= width <= $container-desktop) {
+
+    .imageContainer {
+        height: 460px;
+    }
+      
+    .wrapper {
+      align-items: center;
+    }
+    
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+    .header {
+        max-width: calc($container-desktop / 2);
+        flex: 0 0 50%;
+    }
+
+    .wrapper {
+        @include flex-direction(row);
+        gap: $triple;
+    }
+
+    .linkWrapper {
+        justify-content: flex-end;
+    }
+
+     /** item **/
+    .blog {
+        max-width: calc(100% / 4);
+        flex: 0 0 calc(100% / 4);
+    }
+}

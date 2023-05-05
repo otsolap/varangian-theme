@@ -1,0 +1,40 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.wrapper {
+    @include display-flex();
+    @include flex-direction(column);
+    gap: $single;
+}
+
+.select {
+    width: 100%;
+    text-align: center;
+}
+
+.item {
+    list-style: none;
+}
+
+.button {
+    background-color: $primary;
+    color: $white;
+
+    &:hover,
+    &:focus {
+        background-color: $secondary;
+    }
+
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+    .wrapper {
+        @include flex-direction(row);
+        justify-content: center;
+    }
+
+}

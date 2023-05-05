@@ -1,0 +1,100 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.header {
+    @include display-flex;
+    @include flex-direction(column);
+    flex-wrap: wrap;
+    padding: $single;
+    background-color: $gray;
+}
+
+.category {
+    transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+
+    &:hover,
+    &:focus {
+        color: $tertiary;
+        cursor: pointer;
+    }
+}
+
+
+.lead,
+.author,
+.column {
+    @include display-flex;
+    @include flex-direction(column);
+}
+
+.lead {
+    justify-content: center;
+}
+
+.author {
+    gap: $single;
+}
+
+.title {
+    margin-bottom: initial;
+}
+
+.authorImageContainer,
+.imageContainer {
+    position: relative;
+}
+
+.authorImage {
+    height: $triple;
+    width: $triple;
+    @include border-radius(100%);
+}
+
+.imageContainer {
+    height: 325px;
+    width: 100%;
+}
+
+.image {
+    @include border-radius($half);
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    box-shadow: $single $single 0px 0px $primary;
+    aspect-ratio: 16/9;
+}
+/* Tablet Styles */
+@media ($container-ipad <= width <= $container-desktop) {
+    
+    .imageContainer {
+      height: 400px;
+      width: 400px;
+    }
+    
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+    .header,
+    .author {
+        @include flex-direction(row);
+        flex-wrap: nowrap;
+    }
+  
+    .lead,
+    .imageContainer {
+      height: initial;
+      flex: 0 0 50%;
+    }
+    
+    .image {
+        box-shadow: 24px 24px 0px 0px $primary;
+    }
+}

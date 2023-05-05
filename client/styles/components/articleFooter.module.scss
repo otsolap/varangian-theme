@@ -1,0 +1,68 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.footer {
+    @extend .container;
+    @include display-flex;
+    @include flex-direction(column);
+    flex-wrap: wrap;
+    background-color: $gray;
+}
+
+.wrapper,
+.column {
+    gap: $single;
+    padding: $single;
+    @include display-flex;
+    @include flex-direction(column);
+}
+
+.imageContainer {
+    position: relative;
+    height: 325px;
+    width: 100%;
+}
+
+.image {
+    @include border-radius($half);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: $single $single 0px 0px $primary;
+}
+
+/* Tablet Styles */
+@media ($container-ipad <= width <= $container-desktop) {
+    
+    .imageContainer {
+      height: 400px;
+      width: 400px;
+    }
+    
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+    .footer {
+        @include flex-direction(row);
+        flex-wrap: nowrap;
+    }
+  
+    .column {
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 50%;
+    }
+
+    .imageContainer {
+        height: initial;
+        width: 100%;
+    }
+    
+    .image {
+        box-shadow: 24px 24px 0px 0px $primary;
+    }
+}

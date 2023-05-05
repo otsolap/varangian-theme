@@ -1,0 +1,107 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.mediaMix {
+  position: relative;
+}
+
+.mediaMix,
+.wrapper,
+.mediaMixColumn {
+  @include display-flex();
+  @include flex-direction(column);
+}
+
+.wrapper {
+  gap: $single;
+}
+
+.mediaMixColumn {
+  padding: $single;
+}
+
+.imageContainer,
+.videoContainer {
+  position: relative;
+  height: 325px;
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.image {
+  @include border-radius($half);
+  width: 100%;
+  height: 100%;
+  box-shadow: $single $single 0px 0px $primary;
+  aspect-ratio: 16/9;
+}
+
+.videoContainer {
+  z-index: 30;
+  width: 325px;
+  padding: $single;
+}
+
+.buttonWrapper {
+  padding: 0 $single;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  width: fit-content;
+}
+
+/* Tablet Styles */
+@media ($container-ipad <= width <= $container-desktop) {
+
+  .imageContainer,
+  .videoContainer {
+    height: 400px;
+    width: 400px;
+  }
+  
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+  .mediaMix {
+    padding: $single;
+  }
+  
+  .wrapper {
+    @include flex-direction(row);
+    margin: $single auto;
+    gap: $double;
+  }
+
+  .mediaMixColumn {
+    flex: 0 0 50%;
+    padding: initial;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .videoContainer {
+    height: 500px;
+    width: 720px;
+  }
+
+  .imageContainer {
+    height: 500px;
+  }
+
+  .image {
+    box-shadow: 24px 24px 0px 0px $primary;
+  }
+
+  .buttonWrapper {
+    margin-left: initial;
+    margin-right: initial;
+  }
+}

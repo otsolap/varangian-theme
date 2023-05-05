@@ -1,0 +1,35 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+
+
+.pagination {
+    width: 100%;
+    padding-top: $single;
+    padding-bottom: $single;
+    gap: $single;
+    @include display-flex;
+    @include flex-direction(row);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75;
+    color: $white;
+    background-color: $primaryDark;
+    border: 1px solid;
+    border-color: $primaryDark;
+    @include border-radius(100%);
+}
+
+.active {
+    @extend .item;
+    color: $black;
+    background-color: $tertiary;
+    border-color: $tertiary;
+}

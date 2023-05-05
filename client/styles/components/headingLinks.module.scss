@@ -1,0 +1,49 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.nav,
+.wrapper {
+    @include display-flex;
+    @include flex-direction(column);
+    gap: $single;
+}
+
+.nav {
+    background-color: $white;
+    border-radius: $half;
+}
+
+.wrapper {
+    padding: $single;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.link {
+    color: $secondary;
+
+    &:hover,
+    &:focus {
+        color: $tertiary;
+    }
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+    .nav {
+        max-width: 440px;
+        border-left: 2px solid $gray;
+        height: min-content;
+    }
+
+    .wrapper {
+        padding-left: $double;
+        padding-right: $double;
+    }
+
+}

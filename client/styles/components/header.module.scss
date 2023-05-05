@@ -1,0 +1,108 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  @include display-flex;
+  @include flex-direction(row);
+  min-height: 80px;
+  width: 100vw;
+  padding-left: $half;
+  padding-right: $half;
+  align-items: center;
+  justify-content: center;
+  background-color: $primaryDark;
+  color: $white;
+  border-bottom: 1px solid $white;
+}
+
+.navigation,
+.slogan {
+  display: none;
+}
+
+.title {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+
+.calender {
+  margin-left: auto;
+}
+
+/* DESKTOP STYLES */
+@media (min-width: $container-desktop) {
+
+  .header {
+    position: relative;
+    max-height: 999px;
+    justify-content: space-evenly;
+    @include flex-direction(column);
+    padding: initial;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: $single;
+  }
+
+  .brand {
+    width: 100%;
+    max-width: $container-desktop;
+  }
+
+  .slogan {
+    display: block;
+  }
+
+  .navigation {
+    @include display-flex;
+    @include flex-direction(row);
+    justify-content: flex-start;
+    align-items: center;
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    width: 100vw;
+    padding: $half;
+    background-color: $primaryDark;
+    color: $white;
+    border-bottom: 1px solid $white;
+  }
+
+  .wrapper {
+    @include display-flex;
+    @include flex-direction(row);
+    align-items: center;
+    width: 100%;
+    max-width: $container-desktop;
+    margin: 0 auto;
+  }
+
+  .brand,
+  .menu {
+    @include display-flex;
+    @include flex-direction(row);
+    align-items: center;
+    gap: $double;
+  }
+
+
+  .link {
+    font-size: $double;
+    transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+        filter, backdrop-filter;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+      color: $tertiary;
+    }
+  }
+}
