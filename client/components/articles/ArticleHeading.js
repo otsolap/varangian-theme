@@ -1,7 +1,7 @@
 import NextImage from "partials/util/NextImage"
 import Link from "next/link"
 import styles from '@/styles/components/articleHeading.module.scss'
-import config from '/@utils/config'
+import config from '@/utils/config'
 
 const ArticleHeading = ({ article, categories, author}) => {
   return (

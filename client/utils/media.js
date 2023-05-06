@@ -1,5 +1,3 @@
-import config from '/@utils/config';
-
 export function getStrapiMedia(url) {
   if (url == null) {
     return null

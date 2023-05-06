@@ -1,7 +1,7 @@
 import styles from "@/styles/components/blog.module.scss";
 import NextImage from "@/partials/util/NextImage";
 import Link from "next/link";
-import config from '/@utils/config'
+import config from '@/utils/config'
 
 const BlogItem = ({ image, title, description, slug, categories, publishedAt }) => {
   let formattedDate = null;

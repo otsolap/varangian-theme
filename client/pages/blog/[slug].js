@@ -6,7 +6,7 @@ import ArticleHeading from "@/components/articles/ArticleHeading";
 import ArticleFooter from "@/components/articles/ArticleFooter";
 import HeadingLinks from "@/partials/article/HeadingLinks";
 import BlogSection from "components/blocks/BlogSection";
-import config from '/@utils/config'
+import config from '@/utils/config'
 
 const Article = ({ article, categories, author, banner, relatedItems }) => {
 

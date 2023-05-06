@@ -1,7 +1,7 @@
 import ArchiveSection from "@/components/articles/ArchiveSection"
 import { getStrapiURL } from "@/utils/index"
 import axios from "axios"
-import config from '/@utils/config'
+import config from '@/utils/config'
 
 const Blog = ({ items, categories  }) => {
     return <ArchiveSection items={items} categories={categories} />

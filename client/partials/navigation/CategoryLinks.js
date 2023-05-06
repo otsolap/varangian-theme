@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '@/styles/components/categoryLinks.module.scss';
-import config from '/@utils/config'
+import config from '@/utils/config'
 
 function CategoryLinks({ categories }) {
   const [isDesktop, setIsDesktop] = useState(false);

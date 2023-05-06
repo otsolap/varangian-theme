@@ -4,7 +4,7 @@ import BlogItem from "partials/blocks/BlogItem";
 import CustomLink from "partials/util/CustomLink";
 import axios from "axios";
 import { getStrapiURL } from "@/utils/index";
-import config from '/@utils/config'
+import config from '@/utils/config'
 
 export default function BlogSection({ title, description, selectTheme, blogs, filter, link }) {
   const [items, setItems] = useState([]);
