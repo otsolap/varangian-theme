@@ -1,23 +1,27 @@
 {
-    "API_URL": "http://localhost:1337",
-    "collections": {
-        "REST_API_SERVICE_BANNER_QUERY": "",
-        "REST_API_NAVIGATION_QUERY": "api/navigation?=&populate=blocks,buttons",
-        "REST_API_CONTENT_QUERY": "api/pages?slug=/&populate=blocks,blocks.image, blocks.accordion,blocks.accordions, blocks.button,blocks.buttons,blocks.blogs,blocks.blogs.author,blocks.blogs.image,blocks.blogs.categories, blocks.link, blocks.cards,blocks.cards.image, blocks.form, blocks.form.inputs,  blocks.form.image, blocks.form.button, blocks.mediaMixItems,blocks.mediaMixItems.image",
-        "REST_API_FOOTER_QUERY": "api/footer?=&populate=blocks,blocks.image, blocks.links,blocks.socialMedia,subFooter, subFooter.link"
+    "global": {
+        "API_URL": "http://localhost:1337",
+        "API_NAVIGATION_QUERY": "api/navigation?=&populate=blocks,buttons",
+        "API_CONTENT_QUERY": "api/pages?slug=/&populate=blocks,blocks.image, blocks.accordion,blocks.accordions, blocks.button,blocks.buttons,blocks.blogs,blocks.blogs.author,blocks.blogs.image,blocks.blogs.categories, blocks.link, blocks.cards,blocks.cards.image, blocks.form, blocks.form.inputs,  blocks.form.image, blocks.form.button, blocks.mediaMixItems,blocks.mediaMixItems.image",
+        "API_SERVICE_BANNER_QUERY": "api/services-banner?=&populate=banner, banner.button, banner.image, ",
+        "API_NEWSLETTER_BANNER_QUERY": "api/newsletter-banner?=&populate=button,image,",
+        "API_FOOTER_QUERY": "api/footer?=&populate=blocks,blocks.image, blocks.links,blocks.socialMedia,subFooter, subFooter.link"
     },
-    "CATEGORY_PATH": "/category/",
-    "REST_CONTENT_BLOG_SECTION_LATEST_QUERY": "api/articles?sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=image,categories",
-    "COLLECTIONS_PATH": "",
-    "articles": {
+    "blocks": {
+        "CONTENT_BLOG_SECTION_LATEST_QUERY": "api/articles?sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=image,categories"
+    },
+    "blog": {
+        "BLOG__PATH": "/blog/",
+        "CATEGORY_PATH": "/category/",
+        "API_CATEGORIES_CONTENT_QUERY": "api/categories?&populate=articles, articles.image, articles.author, articles.categories",
+        "API_ARTICLE_QUERY": "api/articles?&populate=author, author.image, author.buttons, image, blocks, blocks.image, categories&filters[slug][$eq]=",
         "RELATED_ARTICLES_TITLE": "Related Articles",
         "RELATED_ARTICLES_THEME": "secondary",
         "RELATED_ARTICLES_LINK": "/blog/",
-        "RELATED_ARTICLES_QUERY": ""
+        "RELATED_ARTICLES_QUERY": "api/categories?filters[id][$eq]=2&sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=articles,"
     },
-    "REST_API_CATEGORIES_CONTENT_QUERY": "api/categories?&populate=articles, articles.image, articles.author, articles.categories",
-    "BLOG_PATH": "/blog/",
-    "REST_API_ARTICLE_QUERY": "api/articles?&populate=author, author.image, author.buttons, image, blocks, blocks.image, categories&filters[slug][$eq]=",
-    "REST_API_NEWSLETTER_BANNER_QUERY": "api/newsletter-banner?=&populate=button,image,"
+    "forms": {
+        "COLLECTIONS_PATH": "api/contacts/"
+    }
 }  
 
