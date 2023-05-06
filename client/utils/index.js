@@ -70,7 +70,7 @@ export async function fetchGlobalData() {
     return globalData
 
   } catch(error) {
-    console.error(error)
+    console.error('fetch Global Data error: ', error)
     return null
   }
 }
@@ -88,7 +88,7 @@ export async function getPageData(slug) {
   }
   
   const apiUrl = `/api/pages?slug=${slugToReturn}${config.global.API_CONTENT_QUERY}`
-
+  
   return {
     data: getStrapiURL(apiUrl),
     slug: slugToReturn,

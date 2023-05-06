@@ -12,15 +12,17 @@ const Footer = ({ footer }) => {
             <Blocks  blocks={global.blocks} />
           </div>
         ): null}
-        <div className={styles.subFooter}>
-          <div className={styles.columnContainer}>
-            <span className={styles.brand}>{global.subFooter.title} &#169; {new Date().getFullYear()} </span> 
-            <span className={"desktop-only"}> &#124;</span> 
-              {global.subFooter.link ?  (
-                <CustomLink className={styles.legal} link={global.subFooter.link} />
-              ): null}
+        {global.subFooter ? (
+          <div className={styles.subFooter}>
+            <div className={styles.columnContainer}>
+              <span className={styles.brand}>{global.subFooter.title} &#169; {new Date().getFullYear()} </span> 
+              <span className={"desktop-only"}> &#124;</span> 
+                {global.subFooter.link ?  (
+                  <CustomLink className={styles.legal} link={global.subFooter.link} />
+                ): null}
+            </div>
           </div>
-        </div>
+        ): null}
       </footer>
     </>
   );
