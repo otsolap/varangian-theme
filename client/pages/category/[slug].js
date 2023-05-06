@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import { getStrapiURL } from "@/utils/index"
 import ArchiveSection from "@/components/articles/ArchiveSection"
+import config from '/@utils/config'
 
 const Category = ({ items, categories }) => {
   return <ArchiveSection items={items} categories={categories} />
@@ -36,7 +37,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const [categoryResponse, allCategories] = await Promise.all([
-    axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_REST_API_CATEGORIES_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
+    axios.get(getStrapiURL(`/${config.blog.API_CATEGORIES_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
     axios.get(getStrapiURL("/api/categories")),
   ])
 

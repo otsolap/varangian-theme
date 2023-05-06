@@ -1,6 +1,7 @@
 import styles from "@/styles/components/blog.module.scss";
 import NextImage from "@/partials/util/NextImage";
 import Link from "next/link";
+import config from '/@utils/config'
 
 const BlogItem = ({ image, title, description, slug, categories, publishedAt }) => {
   let formattedDate = null;
@@ -13,14 +14,14 @@ const BlogItem = ({ image, title, description, slug, categories, publishedAt }) 
   return (
       <article className={styles.blog}>
         {image.data &&
-            <Link  href={`/${process.env.NEXT_PUBLIC_BLOGI_PATH}/${slug}`}>
+            <Link  href={`/${config.blog.BLOG_PATH}/${slug}`}>
               <figure className={styles.imageContainer}>
                 <NextImage image={image} className={styles.image}/>
               </figure>
              </Link>
         }
         {title && 
-          <Link href={`/${process.env.NEXT_PUBLIC_BLOGI_PATH}/${slug}`}>
+          <Link href={`/${config.blog.BLOG_PATH}/${slug}`}>
               <h3 className={styles.title}>{title}</h3>
           </Link>
         }
@@ -28,7 +29,7 @@ const BlogItem = ({ image, title, description, slug, categories, publishedAt }) 
         {categories?.data || formattedDate ? (
           <footer className={styles.footer}>
             {categories &&
-              <Link passHref href={`/${process.env.NEXT_PUBLIC_CATEGORY_PATH}/${categories.slug}`}>
+              <Link passHref href={`/${config.blog.CATEGORY_PATH}/${categories.slug}`}>
                 <h4 className={styles.category}>{categories.title}</h4>
                 </Link>
             }

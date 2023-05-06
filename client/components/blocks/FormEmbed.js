@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import axios from 'axios';
 import Inputs from '@/components/Inputs';
 import styles from '@/styles/components/form.module.scss';
+import config from '/@utils/config';
 
 const FormEmbed = ({ form }) => {
   const formRef = useRef(null);
@@ -18,7 +19,7 @@ const FormEmbed = ({ form }) => {
   
     const data = { data: formData };
   
-    axios.post(`${process.env.NEXT_PUBLIC_COLLECTIONS_PATH || 'http://localhost:1337/api'}/${endpoint}`, data).then((response) => {
+    axios.post(`${config.forms.COLLECTIONS_PATH || 'http://localhost:1337/api'}/${endpoint}`, data).then((response) => {
         console.log(response); // handle the response from the server
     })
     .catch((error) => {

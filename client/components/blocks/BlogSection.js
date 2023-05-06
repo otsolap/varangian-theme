@@ -4,13 +4,14 @@ import BlogItem from "partials/blocks/BlogItem";
 import CustomLink from "partials/util/CustomLink";
 import axios from "axios";
 import { getStrapiURL } from "@/utils/index";
+import config from '/@utils/config'
 
 export default function BlogSection({ title, description, selectTheme, blogs, filter, link }) {
   const [items, setItems] = useState([]);
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_REST_CONTENT_BLOG_SECTION_LATEST_QUERY}`));
+      const res = await axios.get(getStrapiURL(`/${config.blog.CONTENT_BLOG_SECTION_LATEST_QUERY}`));
       setItems(res.data);
     } catch (error) {
       console.error(error);

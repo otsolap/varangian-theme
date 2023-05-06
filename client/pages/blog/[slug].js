@@ -6,6 +6,7 @@ import ArticleHeading from "@/components/articles/ArticleHeading";
 import ArticleFooter from "@/components/articles/ArticleFooter";
 import HeadingLinks from "@/partials/article/HeadingLinks";
 import BlogSection from "components/blocks/BlogSection";
+import config from '/@utils/config'
 
 const Article = ({ article, categories, author, banner, relatedItems }) => {
 
@@ -20,12 +21,12 @@ const Article = ({ article, categories, author, banner, relatedItems }) => {
     </div>
     <ArticleFooter author={author} />
     <BlogSection 
-      title={process.env.NEXT_PUBLIC_RELATED_ARTICLES_TITLE}  
-      selectTheme={process.env.NEXT_PUBLIC_RELATED_ARTICLES_THEME}
+      title={config.blog.RELATED_ARTICLES_TITLE}  
+      selectTheme={config.blog.RELATED_ARTICLES_THEME}
       blogs={relatedItems}  
       link={{
-        href: `${process.env.NEXT_PUBLIC_RELATED_ARTICLES_LINK}`, 
-        title: `${process.env.NEXT_PUBLIC_RELATED_ARTICLES_LINK_TITLE}`
+        href: `${config.blog.RELATED_ARTICLES_LINK}`, 
+        title: `${config.blog.RELATED_ARTICLES_LINK_TITLE}`
       }} 
       />
     </>
@@ -62,14 +63,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const [articleResponse, newsletterResponse] = await Promise.all([
-    axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_REST_API_ARTICLE_QUERY}${params.slug}`)),
-    axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_REST_API_NEWSLETTER_BANNER_QUERY}}`)),
+    axios.get(getStrapiURL(`/${config.blog.API_ARTICLE_QUERY}${params.slug}`)),
+    axios.get(getStrapiURL(`/${config.global.API_NEWSLETTER_BANNER_QUERY}}`)),
   ])
 
   const categorySlug = articleResponse.data.data[0].attributes.categories.data[0]?.attributes.slug
 
   const [relatedArticlesresponse] = await Promise.all([
-      axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_RELATED_ARTICLES_QUERY_FILTER}${categorySlug}${process.env.NEXT_PUBLIC_RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
+      axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY_FILTER}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
     ])
     
 

@@ -1,6 +1,5 @@
 {
     "global": {
-        "API_URL": "http://localhost:1337",
         "API_NAVIGATION_QUERY": "api/navigation?=&populate=blocks,buttons",
         "API_CONTENT_QUERY": "api/pages?slug=/&populate=blocks,blocks.image, blocks.accordion,blocks.accordions, blocks.button,blocks.buttons,blocks.blogs,blocks.blogs.author,blocks.blogs.image,blocks.blogs.categories, blocks.link, blocks.cards,blocks.cards.image, blocks.form, blocks.form.inputs,  blocks.form.image, blocks.form.button, blocks.mediaMixItems,blocks.mediaMixItems.image",
         "API_SERVICE_BANNER_QUERY": "api/services-banner?=&populate=banner, banner.button, banner.image, ",
@@ -18,7 +17,8 @@
         "RELATED_ARTICLES_TITLE": "Related Articles",
         "RELATED_ARTICLES_THEME": "secondary",
         "RELATED_ARTICLES_LINK": "/blog/",
-        "RELATED_ARTICLES_QUERY": "api/categories?filters[id][$eq]=2&sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=articles,"
+        "RELATED_ARTICLES_QUERY": "api/categories?filters[id][$eq]=",
+        "RELATED_ARTICLES_QUERY_ARGUMENTS": "&sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=articles, articles.image, articles.author, articles.categories"
     },
     "forms": {
         "COLLECTIONS_PATH": "api/contacts/"

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '@/styles/components/categoryLinks.module.scss';
+import config from '/@utils/config'
 
 function CategoryLinks({ categories }) {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -24,7 +25,7 @@ function CategoryLinks({ categories }) {
             <li className={styles.item} key={id}>
               <Link
                 className={`button ${styles.button}`}
-                href={`/${process.env.NEXT_PUBLIC_CATEGORY_PATH}/${category.attributes.slug}`}
+                href={`/${config.blog.CATEGORY_PATH}/${category.attributes.slug}`}
               >
                 {category.attributes.title}
               </Link>
@@ -42,7 +43,7 @@ function CategoryLinks({ categories }) {
         >
           {categories.map((category, id) => (
             <option
-              value={`/${process.env.NEXT_PUBLIC_CATEGORY_PATH}/${category.attributes.slug}`}
+              value={`/${config.blog.CATEGORY_PATH}/${category.attributes.slug}`}
               key={id}
             >
               {category.attributes.title}

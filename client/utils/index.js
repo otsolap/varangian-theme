@@ -12,7 +12,7 @@ export const YouTubeGetID = (url) => {
     return items.slice(startIndex, startIndex + pageSize)
   }
   
-  // Get the url of the Strapi API based om the env variable or the default local one.
+  // Get the url of the Strapi API based on the env variable or the default local one.
 export function getStrapiURL(path) {
   return `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337"}${path}`
 }
@@ -30,7 +30,7 @@ export function getStrapiMedia(url) {
 
 export async function fetchServicesBannerData() {
   try {
-    const response = await axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_REST_API_SERVICE_BANNER_QUERY}`))
+    const response = await axios.get(getStrapiURL(`/${config.global.API_SERVICE_BANNER_QUERY}`))
 
     if (!response.data) {
       throw new Error('Failed to fetch service banner data')
@@ -48,8 +48,8 @@ export async function fetchServicesBannerData() {
 export async function fetchGlobalData() {
   try {
     const [navigationResponse, footerResponse] = await Promise.all([
-      axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_REST_API_NAVIGATION_QUERY}`)),
-      axios.get(getStrapiURL(`/${process.env.NEXT_PUBLIC_REST_API_FOOTER_QUERY}`))
+      axios.get(getStrapiURL(`/${config.global.API_NAVIGATION_QUERY}`)),
+      axios.get(getStrapiURL(`/${config.global.API_FOOTER_QUERY}`))
     ])
 
     if(!navigationResponse.data || !footerResponse.data) {
@@ -86,7 +86,7 @@ export async function getPageData(slug) {
     slugToReturn = slug
   }
   
-  const apiUrl = `/api/pages?slug=${slugToReturn}${process.env.NEXT_PUBLIC_REST_API_CONTENT_QUERY}`
+  const apiUrl = `/api/pages?slug=${slugToReturn}${config.global.API_CONTENT_QUERY}`
 
   return {
     data: getStrapiURL(apiUrl),

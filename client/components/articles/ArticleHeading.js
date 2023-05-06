@@ -1,13 +1,14 @@
 import NextImage from "partials/util/NextImage"
 import Link from "next/link"
 import styles from '@/styles/components/articleHeading.module.scss'
+import config from '/@utils/config'
 
 const ArticleHeading = ({ article, categories, author}) => {
   return (
     <header className={styles.header}>
         <div className={styles.lead}>
             {categories && 
-                <Link href={`/${process.env.NEXT_PUBLIC_CATEGORY_PATH}/${categories.slug}`}>
+                <Link href={`/${config.blog.CATEGORY_PATH}/${categories.slug}`}>
                     <h4 className={styles.category}>{categories.title}</h4>
                 </Link>
                 }
