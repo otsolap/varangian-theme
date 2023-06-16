@@ -4,7 +4,7 @@
 @import "../partials/util";
 
 .hero {
-  background-color: $primaryDark;
+  background-color: $primary;
   color: $white;
   @extend .container;
   position: relative;

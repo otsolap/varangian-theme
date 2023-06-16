@@ -6,7 +6,7 @@
     "setup:frontend": "cd client && npm install",
     "setup:backend": "cd api && npm install",
     "setup": "npm install && npm run setup:frontend && npm run setup:backend",
-    "dev": "npm run clear && concurrently \"cd client && npm run build && npm start\" \"cd api && npm start\"",
+    "dev": "npm run clear && concurrently \"cd client && npm run build && npm run dev\" \"cd api && npm rum dev\"",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
   },
   "dependencies": {

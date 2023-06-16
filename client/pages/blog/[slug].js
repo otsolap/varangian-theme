@@ -25,7 +25,7 @@ const Article = ({ article, categories, author, banner, relatedItems }) => {
       selectTheme={config.blog.RELATED_ARTICLES_THEME}
       blogs={relatedItems}  
       link={{
-        href: `${config.blog.RELATED_ARTICLES_LINK}`, 
+        href: `/${config.blog.RELATED_ARTICLES_LINK}`, 
         title: `${config.blog.RELATED_ARTICLES_LINK_TITLE}`
       }} 
       />
@@ -70,17 +70,17 @@ export async function getStaticProps({ params }) {
   const categorySlug = articleResponse.data.data[0].attributes.categories.data[0]?.attributes.slug
 
   const [relatedArticlesresponse] = await Promise.all([
-      axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY_FILTER}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
+      axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
     ])
     
 
   return {
     props: { 
-      article: articleResponse.data.data[0].attributes, 
-      categories: articleResponse.data.data[0].attributes.categories.data[0]?.attributes ?? [],
-      author: articleResponse.data.data[0].attributes.author.data?.attributes ?? [],
+      article: articleResponse.data.data[0]?.attributes, 
+      categories: articleResponse.data.data[0]?.attributes.categories.data[0]?.attributes ?? [],
+      author: articleResponse.data.data[0]?.attributes.author.data?.attributes ?? [],
       banner: newsletterResponse.data.data.attributes ?? [],
-      relatedItems: relatedArticlesresponse.data.data[0].attributes.articles ?? [],
+      relatedItems: relatedArticlesresponse.data.data[0]?.attributes.articles ?? [],
     },
     revalidate: 1,
   }
