@@ -9,34 +9,20 @@ const MobileFooter = ({ navigation }) => {
   const global = navigation.data.attributes
   const PRIMARY_PAGES = 4;
 
-  const icons = {
-    clipboard: faClipboardList,
-    pen: faPen,
-  };
-
-  console.log(global)
-
-  const mobileNavigation = global.slice(0, PRIMARY_PAGES).map((page, i) => {
-    const icon = icons[page.icon];
-
+  const mobileNavigation = global.blocks.slice(0, PRIMARY_PAGES).map((block, i) => {
+    const { href, title } = block;
     return (
       <Link
-        className={router.pathname == page.path ? "active" : ""}
-        href={page.path}
+        className={router.pathname === href ? "active" : ""}
+        href={href}
         key={i}
         passHref
       >
-        {icon ? (
-          <FontAwesomeIcon
-            className={styles.icon}
-            aria-label={page.title}
-            icon={icon}
-          />
-        ) : null}
-        <span className={styles.text}>{page.title}</span>
+        <span className={styles.text}>{title}</span>
       </Link>
     );
   });
+  
 
   return (
     <footer className={`mobile-only ${styles.mobile}`}>
