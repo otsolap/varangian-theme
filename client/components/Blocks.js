@@ -72,7 +72,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
   }
 
   return Block ? (
-    <Block key={`index-${index}`} {...rest} />
+      <Block key={`index-${index}`} {...rest} />
    ) : null;
 };
 

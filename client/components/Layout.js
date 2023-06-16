@@ -1,5 +1,6 @@
-import Footer from "./navigation/Footer";
 import Header from "./navigation/Header";
+import Footer from "./navigation/Footer";
+import MobileFooter from "./navigation/MobileFooter";
 
 export default function Layout({ children, global }) {
   const { navigation, footer } = global
@@ -10,6 +11,7 @@ export default function Layout({ children, global }) {
           {children}
         </main>
       <Footer footer={footer} />
+      <MobileFooter navigation={navigation} />
     </>
   );
 }

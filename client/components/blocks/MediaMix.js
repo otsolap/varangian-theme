@@ -3,7 +3,7 @@ import MediaMixItem from "@/partials/blocks/MediaMixItem";
 
 const MediaMix = ({ mediaMixItems }) => {
   return (
-      <div className={styles.mediaMix}>
+      <section className={styles.mediaMix}>
         <div className={styles.wrapper}>
           {mediaMixItems ? mediaMixItems.map((item, i) => {
             return (
@@ -18,7 +18,7 @@ const MediaMix = ({ mediaMixItems }) => {
             );
           }): null}
         </div>
-      </div>
+      </section>
   );
 };
 

@@ -7,7 +7,7 @@ import YoutubeEmbed from "@/partials/util/YoutubeEmbed";
 
 const Hero = ({ image, alignContent, autoplay,  media, mediaWidth, title, video, description, buttons }) => {
   return (
-      <section className={styles.hero}>
+      <div className={styles.hero}>
         <div
           className={`
           ${styles.mediaContainer} 
@@ -42,7 +42,7 @@ const Hero = ({ image, alignContent, autoplay,  media, mediaWidth, title, video,
           ${alignContent == "left" ? styles.contentFirst : styles.contentLast} 
         `}
         >
-          <div className={styles.content}>
+          <article className={styles.content}>
             {title && <h1>{title}</h1>}
             {description && <h3>{description}</h3>}
             {buttons && (
@@ -52,9 +52,9 @@ const Hero = ({ image, alignContent, autoplay,  media, mediaWidth, title, video,
                 ))}
               </div>
             )}
-          </div>
+          </article>
         </div>
-      </section>
+      </div>
 
   );
 };

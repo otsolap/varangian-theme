@@ -6,34 +6,40 @@
 @import "components/markdown";
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-height: auto;
-width: 100%;
-font-family: "Roboto", sans-serif;
-color: $black;
-scroll-behavior: smooth;
-line-height: 1.5;
+  height: auto;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  color: $black;
+  background-color: $black;
+  scroll-behavior: smooth;
+  line-height: 1.5;
 }
 
 main {
-margin-left: auto;
-margin-right: auto;
-max-width: 100%;
-position: relative;
-background-color: $body;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  position: relative;
+  background-color: $body;
+}
+
+section {
+  padding-top: $double;
+  padding-bottom: $double;
 }
 
 .btn,
 .button {
-  background-color: $tertiary;
-  color: $black;
+  background-color: $secondary;
+  color: $white;
   border-color: transparent;
   font-weight: 700;
   transition-property: color, background-color, border-color,
@@ -49,12 +55,12 @@ background-color: $body;
 
   &:hover,
   &:focus {
-    background-color: $secondary;
+    background-color: $tertiary;
     color: $white;
   }
 
   &--secondary {
-      background-color: $secondary;
+      background-color: $tertiary;
       color: $white;
 
       &:hover,
@@ -81,6 +87,8 @@ display: none;
   
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
+
+  
   .btn,
   .button {
     width: fit-content;
@@ -102,4 +110,11 @@ display: none;
     .desktop-only {
       display: block;
     }
+
+    section {
+      padding-top: $triple;
+      padding-bottom: $triple;
+    }
+
+
 }
