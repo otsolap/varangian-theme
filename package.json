@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "frontend": "npm run build --prefix client",
+    "backend": "npm run build --prefix api",
+    "clear": "cd client && rm -rf build && rm -rf cache",
+    "setup:frontend": "cd client && npm install",
+    "setup:backend": "cd api && npm install",
+    "setup": "npm install && npm run setup:frontend && npm run setup:backend",
+    "dev": "npm run clear && concurrently \"cd client && npm run build && npm start\" \"cd api && npm start\"",
+    "repo:upstream": "git fetch upstream && git merge upstream/main"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
