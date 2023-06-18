@@ -1,7 +1,7 @@
 import styles from "@/styles/components/header.module.scss";
 import CustomLink from "@/partials/util/CustomLink";
 
-const MenuItem = ({ title, href, icon }) => {
+const MenuItem = ({ title, href }) => {
   const link = {
     href,
     title

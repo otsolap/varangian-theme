@@ -33,6 +33,12 @@
   margin-left: auto;
 }
 
+.icon {
+  margin-top: 0.75rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 /* DESKTOP STYLES */
 @media (min-width: $container-desktop) {
 
@@ -105,4 +111,11 @@
       color: $tertiary;
     }
   }
+
+  .icon {
+    display: none;
+  }
+  
+
+
 }

@@ -7,7 +7,7 @@
 
 .mobile {
   border-top: $white 2px solid;
-  background-color: $primary;
+  background-color: $tertiary;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -46,8 +46,8 @@
 
 .icon {
   margin-top: 0.75rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  height: 1.875rem;
+  width: 1.875rem;
 }
 
 .text {

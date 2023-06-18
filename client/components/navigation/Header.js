@@ -26,7 +26,7 @@ const Header= ({ navigation }) => {
         <div className={styles.wrapper}>
           {global.blocks.length ? (
             <div className={styles.menu}>
-              <Blocks  blocks={global.blocks} />
+              <Blocks blocks={global.blocks} />
             </div>
           ): null}
           {global.buttons && (
