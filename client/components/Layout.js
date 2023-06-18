@@ -1,6 +1,6 @@
-import Header from "./navigation/Header";
-import Footer from "./navigation/Footer";
-import MobileFooter from "./navigation/MobileFooter";
+import Header from "@/components/navigation/Header";
+import Footer from "@/components/navigation/Footer";
+import MobileFooter from "@/components/navigation/MobileFooter";
 
 export default function Layout({ children, global }) {
   const { navigation, footer } = global

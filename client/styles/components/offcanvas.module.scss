@@ -1,0 +1,59 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+$mobile-screen-padding-top: 6rem;
+
+#modal {
+    background-color: $primary;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include display-flex;
+    @include flex-direction(column);
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    padding-top: $mobile-screen-padding-top;
+}
+
+.modalContent {
+    position: sticky;
+    width: inherit;
+    z-index: 10;
+}
+
+.linkWrapper {
+    padding-top: $single;
+    padding-bottom: $single;
+    padding-left: $triple;
+    list-style: none;
+    border-bottom: 2px solid $white;
+}
+
+.link {
+    color: $white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sidebarIcon {
+    margin-right: $single;
+}
+
+.active {
+    border-color: $secondary;
+
+    .link {
+        color: $secondary;
+    }
+
+}
+
+/* DESKTOP STYLES */
+@media (min-width: $container-desktop) {
+    #modal {
+        display: none;
+    }
+}

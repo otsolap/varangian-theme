@@ -1,10 +1,13 @@
 import Link from "next/link";
-import { faPen, faClipboardList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import styles from "@/styles/components/mobileFooter.module.scss";
+import useToggle from "@/hooks/useToggleState"
+import Offcanvas from "@/components/navigation/Offcanvas";
 
 const MobileFooter = ({ navigation }) => {
+  const [showModal, setShowModal] = useToggle(false);
   const router = useRouter();
   const global = navigation.data.attributes
   const PRIMARY_PAGES = 4;
@@ -28,7 +31,22 @@ const MobileFooter = ({ navigation }) => {
     <footer className={`mobile-only ${styles.mobile}`}>
       <div className={styles.menuWrapper}>
         {mobileNavigation}
-        </div>
+        <button onClick={() => setShowModal(true)}>
+              <FontAwesomeIcon
+                  className={styles.mobileIcon}
+                  aria-label={showModal == false ? 'Open Menu' : 'Close Menu'}
+                  icon={showModal == false ? faBars : faXmark}
+              />
+              <span className={styles.mobileLinkText}>
+                  { showModal == false ? 'Open Menu' : 'Close Menu'}
+              </span>
+          </button>
+          <Offcanvas
+              navigation={navigation}
+              show={showModal}
+              closeModal={() => setShowModal(false)}
+          />
+          </div>
     </footer>
   );
 };
