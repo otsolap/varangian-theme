@@ -33,7 +33,7 @@ const Offcanvas = ({ navigation, show, closeModal }) => {
                 className={styles.link}
                 href={href}
                 >
-                        <span className={styles.mobileLinkText}>{title}</span>
+                        <span className={styles.text}>{title}</span>
                 </Link>
             </li>
         )
@@ -41,7 +41,7 @@ const Offcanvas = ({ navigation, show, closeModal }) => {
 
     const modalComponent = show ? (
         <div tabIndex="-1" aria-hidden="true" aria-labelledby="Modal" id={styles.modal} className="mobile-only">
-            <div className={styles.modalContent}>
+            <div className={styles.content}>
                 {OffcanvasLinks}
             </div>
         </div>

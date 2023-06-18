@@ -33,11 +33,11 @@ const MobileFooter = ({ navigation }) => {
         {mobileNavigation}
         <button onClick={() => setShowModal(true)}>
               <FontAwesomeIcon
-                  className={styles.mobileIcon}
+                  className={styles.icon}
                   aria-label={showModal == false ? 'Open Menu' : 'Close Menu'}
                   icon={showModal == false ? faBars : faXmark}
               />
-              <span className={styles.mobileLinkText}>
+              <span className={styles.text}>
                   { showModal == false ? 'Open Menu' : 'Close Menu'}
               </span>
           </button>

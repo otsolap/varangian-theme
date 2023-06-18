@@ -6,4 +6,16 @@
 .content {
   @extend .container;
   word-wrap: break-word;
+  padding-left: $single;
+  padding-right: $single;
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+  .content {
+    padding-left: $double;
+    padding-right: $double;
+  }
+
 }

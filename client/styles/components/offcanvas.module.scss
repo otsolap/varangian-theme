@@ -18,7 +18,7 @@ $mobile-screen-padding-top: 6rem;
     padding-top: $mobile-screen-padding-top;
 }
 
-.modalContent {
+.content {
     position: sticky;
     width: inherit;
     z-index: 10;
@@ -36,10 +36,6 @@ $mobile-screen-padding-top: 6rem;
     color: $white;
     font-size: 22px;
     font-weight: 700;
-}
-
-.sidebarIcon {
-    margin-right: $single;
 }
 
 .active {
