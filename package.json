@@ -1,7 +1,7 @@
 {
   "scripts": {
     "frontend": "npm run build --prefix client",
-    "backend": "npm run build --prefix api",
+    "backend": "npm run build --prefix api && node server.js",
     "clear": "cd client && rm -rf build && rm -rf cache",
     "setup:frontend": "cd client && npm install",
     "setup:backend": "cd api && npm install",

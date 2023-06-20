@@ -1,6 +1,6 @@
 import { createContext } from "react"
 import App from "next/app"
-import Error from "next/error"
+import ErrorPage from "next/error"
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})
 import Layout from "@/components/Layout"
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   // extracting necessary data
   const { global } = pageProps
   if (global == null) {
-    return <Error statusCode={404} />
+    return <ErrorPage statusCode={404} />
   }
 
   return (
