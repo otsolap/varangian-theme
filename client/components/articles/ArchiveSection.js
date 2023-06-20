@@ -6,6 +6,7 @@ import { paginate } from "@/utils/index"
 import styles from "@/styles/components/blog.module.scss";
 
 const ArchiveSection = ({ items, categories }) => {
+  console.log(categories)
   const [currentPage, setCurrentPage] = useState(1)
   const pageSize = 12
 
