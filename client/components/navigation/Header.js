@@ -16,11 +16,11 @@ const Header= ({ navigation }) => {
               <p className={styles.slogan}>{global.slogan}</p>
             ): null}
         </div>
-        {global.buttons && (
+        {global.buttons ? (
           global.buttons.map((button, i) => (
                 <CustomLink link={button} key={i} className={`${styles.calender} mobile-only button bg-${button.selectTheme}`} />
             ))
-          )}
+          ): null}
     </header>
       <nav className={styles.navigation}>
         <div className={styles.wrapper}>
@@ -29,11 +29,11 @@ const Header= ({ navigation }) => {
               <Blocks blocks={global.blocks} />
             </div>
           ): null}
-          {global.buttons && (
+          {global.buttons ? (
             global.buttons.map((button, i) => (
                   <CustomLink link={button} key={i} className={`${styles.calender} button bg-${button.selectTheme}`} />
               ))
-            )}
+            ): null}
         </div>
         </nav>
     </>

@@ -16,7 +16,6 @@ const DynamicPages = ({ pageData, showServicesBanner, servicesBannerData }) => {
     return <ErrorPage statusCode={404} />
   }
 
-
   return (
     <>
       <Blocks blocks={blocks} />
