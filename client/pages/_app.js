@@ -1,5 +1,4 @@
 import { createContext } from "react"
-import App from "next/app"
 import ErrorPage from "next/error"
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})
@@ -26,11 +25,9 @@ function MyApp({ Component, pageProps }) {
 }
 
 MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext)
   const globalRes = await fetchGlobalData(appContext)
   
   return {
-    ...appProps,
     pageProps: { global: globalRes},
   }
 }
