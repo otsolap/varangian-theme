@@ -1,12 +1,12 @@
 {
   "scripts": {
     "frontend": "npm run build --prefix client",
-    "backend": "npm run build --prefix api && node server.js",
+    "backend": "npm run build --prefix api",
     "clear": "cd client && rm -rf build && rm -rf cache",
     "setup:frontend": "cd client && npm install",
     "setup:backend": "cd api && npm install",
     "setup": "npm install && npm run setup:frontend && npm run setup:backend",
-    "dev": "npm run clear && concurrently \"cd client && npm run build && npm run dev\" \"cd api && npm rum dev\"",
+    "dev": "npm run clear && concurrently \"cd api && npm run dev\" \"cd client && npm run build && npm run dev\"",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
   },
   "dependencies": {
