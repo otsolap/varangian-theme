@@ -48,32 +48,31 @@ export async function fetchServicesBannerData() {
 
 export async function fetchGlobalData() {
   try {
-    const [navigationResponse, footerResponse] = await Promise.all([
-      axios.get(getStrapiURL(`/${config.global.API_NAVIGATION_QUERY}`)),
-      axios.get(getStrapiURL(`/${config.global.API_FOOTER_QUERY}`))
-    ])
+    const navigationPromise = axios.get(getStrapiURL(`/${config.global.API_NAVIGATION_QUERY}`));
+    const footerPromise = axios.get(getStrapiURL(`/${config.global.API_FOOTER_QUERY}`));
 
-    if(!navigationResponse.data || !footerResponse.data) {
-      throw new Error('Failed to fetch API data')
+    let navigationResponse, footerResponse;
+    try {
+      [navigationResponse, footerResponse] = await Promise.all([navigationPromise, footerPromise]);
+    } catch (error) {
+      console.error('Failed to fetch API data:', error);
     }
 
-    const [navigationData, footerData] = await Promise.all([
-      navigationResponse.data,
-      footerResponse.data
-    ])
-  
+    const navigationData = navigationResponse?.data || null;
+    const footerData = footerResponse?.data || null;
+
     const globalData = {
       navigation: navigationData,
       footer: footerData
-    }
-  
-    return globalData
+    };
 
-  } catch(error) {
-    console.error('fetch Global Data error: ', error)
-    return null
+    return globalData;
+  } catch (error) {
+    console.error('fetch Global Data error:', error);
+    return null;
   }
 }
+
 
 
 export async function getPageData(slug) {

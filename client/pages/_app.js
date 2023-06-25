@@ -1,5 +1,4 @@
 import { createContext } from "react"
-import App from "next/app"
 import ErrorPage from "next/error"
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})

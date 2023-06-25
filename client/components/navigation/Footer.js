@@ -3,11 +3,11 @@ import styles from '@/styles/components/footer.module.scss'
 import CustomLink from '@/partials/util/CustomLink'
 
 const Footer = ({ footer }) => {
-  const global = footer.data.attributes
+  const global = footer && footer.data ? footer.data.attributes : {};
   return (
     <>
       <footer className={styles.footer}>
-        {global.blocks.length ? (
+        {global.blocks ? (
           <div className={styles.columnContainer}>
             <Blocks  blocks={global.blocks} />
           </div>

@@ -54,6 +54,7 @@ export async function getServerSideProps(context) {
     }
   } catch (error) {
     console.error('Error: ' + error)
+    return { props: { pageData: {} } }
    }
 }
 

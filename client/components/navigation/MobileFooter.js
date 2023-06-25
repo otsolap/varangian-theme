@@ -9,8 +9,9 @@ import Offcanvas from "@/components/navigation/Offcanvas";
 const MobileFooter = ({ navigation }) => {
   const [showModal, setShowModal] = useToggle(false);
   const router = useRouter();
-  const global = navigation.data.attributes
+  const global = navigation && navigation.data ? navigation.data.attributes : {};
   const PRIMARY_PAGES = 4;
+  let mobileNavigation = null;
 
   const icons = {
     bullseye: faBullseye,
@@ -19,28 +20,30 @@ const MobileFooter = ({ navigation }) => {
     pen: faPenNib,
   };
 
-
-  const mobileNavigation = global.blocks.slice(0, PRIMARY_PAGES).map((block, i) => {
-    const { href, title } = block;
-    const icon = icons[block.icon];
-
-    return (
-      <Link
-        className={router.pathname === href ? "active" : ""}
-        href={href}
-        key={i}
-        passHref
-      >{icon ? (
-        <FontAwesomeIcon
-          className={styles.icon}
-          aria-label={title}
-          icon={icon}
-        />
-      ) : null}
-        <span className={styles.text}>{title}</span>
-      </Link>
-    );
-  });
+  if (global && Array.isArray(global.blocks)) {
+    mobileNavigation = global.blocks.slice(0, PRIMARY_PAGES).map((block, i) => {
+      const { href, title } = block;
+      const icon = icons[block.icon];
+  
+      return (
+        <Link
+          className={router.pathname === href ? "active" : ""}
+          href={href}
+          key={i}
+          passHref
+        >
+          {icon ? (
+            <FontAwesomeIcon
+              className={styles.icon}
+              aria-label={title}
+              icon={icon}
+            />
+          ) : null}
+          <span className={styles.text}>{title}</span>
+        </Link>
+      );
+    });
+  }
   
 
   return (

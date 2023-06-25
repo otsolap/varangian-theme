@@ -9,7 +9,6 @@ import BlogSection from "components/blocks/BlogSection";
 import config from '@/utils/config'
 
 const Article = ({ article, categories, author, banner, relatedItems }) => {
-
   return (
     <>
     <ArticleHeading article={article} categories={categories} author={author} />

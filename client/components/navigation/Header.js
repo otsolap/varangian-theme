@@ -3,8 +3,9 @@ import Blocks from "@/components/Blocks";
 import CustomLink from "@/partials/util/CustomLink";
 
 const Header= ({ navigation }) => {
-  const global = navigation.data.attributes
-  const brand = { href: '/', title: global.title ?? null}
+  const global = navigation && navigation.data ? navigation.data.attributes : {};
+  const brand = { href: '/', title: global ? global.title : {} };
+
   return (
     <>
     <header className={styles.header}>
@@ -24,7 +25,7 @@ const Header= ({ navigation }) => {
     </header>
       <nav className={styles.navigation}>
         <div className={styles.wrapper}>
-          {global.blocks.length ? (
+          {global.blocks ? (
             <div className={styles.menu}>
               <Blocks blocks={global.blocks} />
             </div>
