@@ -1,15 +1,15 @@
-{  
-"name" : "varangianventure",
-"version" : "1.0.0",
-"description" : "Portfolio",
-"main": "server.js",
+{
+  "name": "varangianventure",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "server.js",
   "scripts": {
     "frontend": "npm run build --prefix client",
     "backend": "npm run build --prefix api",
     "clear": "cd client && rm -rf build && rm -rf cache",
-    "setup:frontend": "cd client && npm install",
-    "setup:backend": "cd api && npm install",
-    "setup": "npm install && npm run setup:frontend && npm run setup:backend",
+    "setup": "npm install && cd client && npm install && cd ../api && npm install",
+    "build": "npm run clear && concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
     "dev": "npm run clear && concurrently \"cd api && npm run dev\" \"cd client && npm run build && npm run dev\""
   },
   "dependencies": {
