@@ -9,48 +9,55 @@ const Category = ({ items, categories }) => {
 }
 
 export async function getStaticPaths() {
-  return axios
-    .get(`${getStrapiURL(`/api/categories`)}`)
-    .then((response) => {
-      if (!response.data) {
-        throw new Error("Failed to fetch API data")
-      }
+  try {
+    const response = await axios.get(`${getStrapiURL(`/api/categories`)}`)
 
-      return {
-        paths: response.data.data.map((category) => ({
-          params: {
-            slug: category.attributes.slug,
-          },
-        })),
-        fallback: false,
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching category:", error)
+    if (!response.data) {
+      throw new Error("Failed to fetch API data")
+    }
 
-      return {
-        paths: [],
-        fallback: false,
-      }
-    })
+    return {
+      paths: response.data.data.map((category) => ({
+        params: {
+          slug: category.attributes.slug,
+        },
+      })),
+      fallback: false,
+    }
+  } catch (error) {
+    console.error("Error fetching category:", error)
+
+    return {
+      paths: [],
+      fallback: false,
+    }
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const [categoryResponse, allCategories] = await Promise.all([
-    axios.get(getStrapiURL(`/${config.blog.API_CATEGORIES_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
-    axios.get(getStrapiURL("/api/categories")),
-  ])
+  try {
+    const [categoryResponse, allCategories] = await Promise.all([
+      axios.get(getStrapiURL(`/${config.blog.API_CATEGORIES_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
+      axios.get(getStrapiURL("/api/categories")),
+    ])
 
-  const matchingCategory = categoryResponse.data.data.find(
-    (category) => category.attributes.slug === params.slug
-  )
+    const matchingCategory = categoryResponse.data.data.find(
+      (category) => category.attributes.slug === params.slug
+    )
 
-  return {
-    props: {
-      items: matchingCategory.attributes.articles.data,
-      categories: allCategories.data.data,
-    },
-    revalidate: 1,
+    return {
+      props: {
+        items: matchingCategory.attributes.articles.data ?? {},
+        categories: allCategories.data.data ?? {},
+      },
+      revalidate: 1,
+    }
+  } catch (error) {
+    console.error("Error fetching category:", error)
+
+    return {
+      notFound: true,
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 import { getDataDependencies } from "@/utils/api"
 import { useRouter } from "next/router"
-import {  getPageData, fetchServicesBannerData } from "@/utils/index"
+import { getPageData, fetchServicesBannerData } from "@/utils/index"
 import Blocks from "@/components/Blocks"
 import Banner from "components/blocks/Banner"
 import axios from 'axios'
@@ -34,28 +34,29 @@ export async function getServerSideProps(context) {
 
     if (!json.data.length) {
       console.error(`No page data found for slug: ${data.slug}`)
+      return { notFound: true }
     }
 
-    const pageDataObj = json.data.find((d) => d.attributes.slug === data.slug);
+    const pageDataObj = json.data.find((d) => d.attributes.slug === data.slug)
 
     // If no data object is found, throw an error
     if (!pageDataObj) {
       console.error(`No page data object found for slug: ${data.slug}`)
-      return { props: { pageData: {} } }
-    } 
+      return { notFound: true }
+    }
 
     const blocks = pageDataObj.attributes.blocks
     const showServicesBanner = pageDataObj.attributes.showServicesBanner
-    const pageData = blocks ? await getDataDependencies(blocks) : {};
+    const pageData = blocks ? await getDataDependencies(blocks) : {}
     const servicesBannerData = await fetchServicesBannerData()
 
     return {
       props: { pageData, servicesBannerData, showServicesBanner },
     }
   } catch (error) {
-    console.error('Error: ' + error)
-    return { props: { pageData: {} } }
-   }
+    console.error('Error:', error)
+    return { notFound: true }
+  }
 }
 
 export default DynamicPages
