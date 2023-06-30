@@ -15,18 +15,21 @@ export const YouTubeGetID = (url) => {
   
   // Get the url of the Strapi API based on the env variable or the default local one.
 export function getStrapiURL(path) {
-  return `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337"}${path}`
+  return `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:1337"}${path}`
 }
 
-// This function will get the url of your medias depending on where they are hosted
 export function getStrapiMedia(url) {
   if (url == null) {
     return null
   }
+
+  // Return the full URL if the media is hosted on an external provider
   if (url.startsWith("http") || url.startsWith("//")) {
     return url
   }
-  return `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337"}${url}`
+
+  // Otherwise prepend the URL path with the Strapi URL
+  return `${process.env.NEXT_PUBLIC_API_URL  || "http://127.0.0.1:1337"}${url}`
 }
 
 export async function fetchServicesBannerData() {
