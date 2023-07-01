@@ -4,13 +4,14 @@
   "description": "Portfolio",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "npm run clear && concurrently \"cd api && npm run dev\" \"cd client && npm run build && npm run dev\"",
     "frontend": "npm run build --prefix client",
     "backend": "npm run build --prefix api",
     "clear": "cd client && rm -rf build && rm -rf cache",
-    "setup": "npm install && cd client && npm install && cd ../api && npm install",
+    "setup": "npm install && cd api && npm install && cd ../client && npm install",
     "build": "npm run clear && concurrently \"npm run backend\" \"npm run frontend\"",
-    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "dev": "npm run clear && concurrently \"cd api && npm run dev\" \"cd client && npm run build && npm run dev\""
+    "production": "concurrently \"cd api && npm run start\" \"cd client && npm run start\""
   },
   "dependencies": {
     "concurrently": "^7.6.0"
