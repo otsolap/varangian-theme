@@ -1,7 +1,7 @@
 import YoutubeEmbed from "@/partials/util/YoutubeEmbed";
-import styles from '@/styles/pages/blog.module.scss'
+import styles from '@/styles/components/videoEmbed.module.scss'
 
-const ArticleEmbed = ({ url }) => {
+const VideoEmbed = ({ url }) => {
   return (url ? (
         <div className={styles.videoContainer}>
           <YoutubeEmbed url={url} />
@@ -10,4 +10,4 @@ const ArticleEmbed = ({ url }) => {
   );
 };
 
-export default ArticleEmbed;
+export default VideoEmbed;

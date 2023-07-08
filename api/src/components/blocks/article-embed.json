@@ -1,7 +1,8 @@
 {
   "collectionName": "components_util_article_embeds",
   "info": {
-    "displayName": "ArticleEmbed"
+    "displayName": "VideoEmbed",
+    "description": ""
   },
   "options": {},
   "attributes": {

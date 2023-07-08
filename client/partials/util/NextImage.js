@@ -2,17 +2,23 @@ import { getStrapiMedia } from "utils/index";
 import Image from "next/image";
 
 const NextImage = ({ image, className }) => {
-  if(
-    image === null || 
-    image?.length === 0 ||
-    image?.data === null || 
-    image?.data?.length === 0 || 
-    image?.data === undefined) {
-    return
+  let imageData = null;
+
+  if (image && image.data) {
+    if (image.data.length > 0) {
+      imageData = Array.isArray(image.data) ? image.data[0].attributes : image.data.attributes;
+    } else {
+      imageData = image.data.attributes;
+    }
+  } else if (image && image.attributes) {
+    imageData = image.attributes;
   }
 
-  const imageData = Array.isArray(image.data) ? image.data[0] : image.data;
-  const { url, width, height, alternativeText} = imageData.attributes;
+  if (!imageData) {
+    return null;
+  }
+
+  const { url, width, height, alternativeText } = imageData;
 
   if(width && height) {
     return (

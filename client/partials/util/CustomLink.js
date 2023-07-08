@@ -6,7 +6,7 @@ const CustomLink = ({ link, className }) => {
     return
   }
 
-  // use anchor fo external links
+  // <a> for external links
   if (link.isExternal) {
     return (
       <a href={link.href} className={`${link.selectTheme ? `color-${link.selectTheme}` : ''} ${className || ''}`} target="_blank" rel="noreferrer">
@@ -15,6 +15,7 @@ const CustomLink = ({ link, className }) => {
     )
   }
 
+  // if target is blank
   if(link.target === '_blank') {
     return (
       <Link href={link.href} passHref className={`${link.selectTheme ? `color-${link.selectTheme}` : ''} ${className || ''}`}>

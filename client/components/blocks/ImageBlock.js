@@ -1,14 +1,14 @@
 import NextImage from "@/partials/util/NextImage";
-import styles from '@/styles/pages/blog.module.scss'
+import styles from '@/styles/components/imageBlock.module.scss'
 
-const ArticleImage = ({  image }) => {
+const ImageBlock = ({  image }) => {
   return (
       image.data ? (
-      <figure className={styles.imageContainer}>
+      <figure className={styles.container}>
         <NextImage image={image} className={styles.image}/>
       </figure>
     ): null
   );
 };
 
-export default ArticleImage;
+export default ImageBlock;

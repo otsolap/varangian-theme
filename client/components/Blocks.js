@@ -1,6 +1,4 @@
 import Accordion from '@/components/blocks/Accordion';
-import ArticleImage from '@/partials/article/ArticleImage';
-import ArticleEmbed from '@/partials/article/ArticleEmbed';
 import Banner from '@/components/blocks/Banner';
 import BlogSection from '@/components/blocks/BlogSection';
 import Cards from '@/components/blocks/Cards';
@@ -8,11 +6,13 @@ import FormEmbed from '@/components/blocks/FormEmbed';
 import FooterColumn from '@/partials/navigation/FooterColumn';
 import FooterSocialMedia from '@/partials/navigation/FooterSocialMedia';
 import Hero from '@/components/blocks/Hero';
+import ImageBlock from '@/components/blocks/ImageBlock';
+import ImageGallery from '@/components/blocks/ImageGallery';
 import Mediamix from '@/components/blocks/Mediamix';
 import MenuItem from '@/partials/navigation/MenuItem';
 import Textarea from '@/components/blocks/Textarea'
-import YoutubeEmbed from '@/partials/util/YoutubeEmbed';
-import Quote from '@/partials/article/Quote';
+import VideoEmbed from '@/components/blocks/VideoEmbed';
+import Quote from '@/components/blocks/Quote';
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
   let Block;
@@ -24,11 +24,8 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'util.article-text-block':
       Block = Textarea;
       break;
-    case 'util.article-image':
-      Block = ArticleImage;
-      break;
-    case 'util.article-embed':
-      Block = ArticleEmbed;
+    case 'blocks.embed':
+      Block = Embed;
       break;
     case 'blocks.banner':
       Block = Banner;
@@ -51,6 +48,12 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'blocks.hero':
       Block = Hero;
       break;
+    case 'blocks.image':
+      Block = ImageBlock;
+      break;
+    case 'blocks.image-gallery':
+      Block = ImageGallery;
+      break;
     case 'blocks.media-mix':
       Block = Mediamix;
       break;
@@ -60,10 +63,10 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'blocks.text-area':
       Block = Textarea;
       break;
-    case 'util.youtube-embed':
-      Block = YoutubeEmbed;
+    case 'blocks.video-embed':
+      Block = VideoEmbed;
       break;
-    case 'util.quote':
+    case 'blocks.quote':
       Block = Quote;
       break;
     default:

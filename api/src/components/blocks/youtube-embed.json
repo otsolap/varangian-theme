@@ -1,12 +1,12 @@
 {
-  "collectionName": "components_partials_quotes",
+  "collectionName": "components_partials_youtube_embeds",
   "info": {
-    "displayName": "quote",
+    "displayName": "video-embed",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "url": {
       "type": "string"
     }
   }
