@@ -43,8 +43,8 @@
       "components": [
         "blocks.quote",
         "blocks.article-text-block",
-        "blocks.article-image",
-        "blocks.article-embed",
+        "blocks.image-block",
+        "blocks.video-embed",
         "blocks.image-gallery"
       ]
     },

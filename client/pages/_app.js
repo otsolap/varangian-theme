@@ -1,5 +1,10 @@
 import { createContext } from "react"
 import ErrorPage from "next/error"
+// Import Swiper styles
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
+import "swiper/scss/effect-coverflow";
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})
 import Layout from "@/components/Layout"

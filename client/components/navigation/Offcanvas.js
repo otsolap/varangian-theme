@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from '@/styles/components/offcanvas.module.scss'
-import useToggle from "@/hooks/useToggleState"
+import useToggle from "@/hooks/useToggle"
 
 const Offcanvas = ({ navigation, show, closeModal }) => {
     const [isBrowser, setIsBrowswer] = useToggle(false);

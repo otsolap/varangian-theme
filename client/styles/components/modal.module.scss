@@ -1,0 +1,33 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.modal {
+    background-color: $black;
+    position: fixed;
+    inset: 0;
+    z-index: 60; 
+}
+
+.header {
+    display: flex; 
+    padding: $quarter; 
+    justify-content: flex-end; 
+    border-top-left-radius: $quarter; 
+    border-top-right-radius: $quarter; 
+    border-bottom-width: 0; 
+    border-color: $white; 
+}
+
+.content {
+	display: flex; 
+    position: relative; 
+    padding: 1rem; 
+    justify-content: center; 
+    align-content: center; 
+    border-width: 1px; 
+    border-color: $white; 
+    width: 100%; 
+    color: $white;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import useToggle from "@/hooks/useToggleState"
+import useToggle from "@/hooks/useToggle"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
 import MarkdownBlock from "@/partials/util/MarkdownBlock"

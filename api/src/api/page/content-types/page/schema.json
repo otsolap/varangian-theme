@@ -33,7 +33,11 @@
         "blocks.banner",
         "blocks.media-mix",
         "blocks.text-area",
-        "blocks.form-embed"
+        "blocks.form-embed",
+        "blocks.video-embed",
+        "blocks.image-block",
+        "blocks.image-gallery",
+        "blocks.quote"
       ]
     },
     "showServicesBanner": {

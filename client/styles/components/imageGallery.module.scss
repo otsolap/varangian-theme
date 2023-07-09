@@ -3,29 +3,37 @@
 @import "../partials/breakpoints";
 @import "../partials/util";
 
-.imageGallery {
+.imageGallery,
+.imageGallerySwiper {
     position: relative;
+}
+
+.imageGallerySwiper {
+    height: 100%;
+    width: 100%;
 }
 
 .wrapper {
     @include display-flex;
     @include flex-direction(row);
     flex-wrap: wrap;
-    justify-content: center;
-    margin: -$single;
+    justify-content: space-evenly;
+    gap: $single;
 }
 
-.imageContainer {
+.imageContainer,
+.imageModalContainer {
     position: relative;
     height: 250px;
     width: 100%;
-    padding: $single;
 }
 
 .image {
     height: 100%;
     width: 100%;
-    aspect-ratio: 16/9;
+    object-fit: contain;
+    object-position: center;
+    aspect-ratio: auto;
 }
 
 .title {
@@ -35,6 +43,11 @@
 
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
+
+    .imageModalContainer{
+        height: 750px
+    }
+
     .imageContainer {
         height: 375px;
         max-width: 50%;
@@ -45,15 +58,16 @@
 
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
-
-    .wrapper {
-        max-width: $width-max-article;
+    
+    .imageModalContainer,
+    .imageContainer {
+        height: initial;
     }
 
     .imageContainer {
-        height: initial;
-        max-width: calc(100% / 3);
-        flex: 0 0 calc(100% / 3);
+        max-width: calc(100% / 4);
+        flex: 0 0 calc(100% / 4);
     }
+
   
 }

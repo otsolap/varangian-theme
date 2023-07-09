@@ -48,7 +48,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'blocks.hero':
       Block = Hero;
       break;
-    case 'blocks.image':
+    case 'blocks.image-block':
       Block = ImageBlock;
       break;
     case 'blocks.image-gallery':

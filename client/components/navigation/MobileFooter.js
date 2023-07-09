@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark, faBullseye, faCircleNodes,faCube, faPenNib } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import styles from "@/styles/components/mobileFooter.module.scss";
-import useToggle from "@/hooks/useToggleState"
+import useToggle from "@/hooks/useToggle"
 import Offcanvas from "@/components/navigation/Offcanvas";
 
 const MobileFooter = ({ navigation }) => {

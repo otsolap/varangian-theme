@@ -41,10 +41,10 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "util.quote",
-        "util.article-text-block",
-        "util.article-image",
-        "util.article-embed"
+        "blocks.quote",
+        "blocks.article-text-block",
+        "blocks.image-block",
+        "blocks.video-embed"
       ]
     },
     "categories": {

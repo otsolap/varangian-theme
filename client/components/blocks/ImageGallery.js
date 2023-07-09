@@ -1,40 +1,39 @@
-import useToggle from "@/hooks/useToggleState"
+import useToggle from "@/hooks/useToggle"
 import { useLocalStorage }from "@/hooks/useStorage"
-import styles from '@/styles/components/imageGallery.module.scss'
 import NextImage from 'partials/util/NextImage';
+import Modal from "partials/blocks/Modal";
+import ImageGallerySlideItem from "partials/blocks/ImageGallerySlideItem";
+import styles from '@/styles/components/imageGallery.module.scss'
 
 const ImageGallery = ({ images, title }) => {
-  const [isOpen, toggleModal] = useToggle(false);
-  const [selectedImage, setSelectedImage] = useLocalStorage('image', undefined);
+  const [show, toggleModal] = useToggle(false);
+  const [selectedImage, setSelectedImage, removeSelectedImage] = useLocalStorage('image', undefined);
 
   const openModal = (image) => {
     setSelectedImage(image);
-    toggleModal();
+    console.log(image )
+    toggleModal(!show);
   };
 
   const closeModal = () => {
-    setSelectedImage(null);
-    toggleModal();
+    removeSelectedImage();
+    toggleModal(false);
   };
 
   return (
     <figure className={styles.imageGallery}>
         <div className={styles.wrapper}>
             {images.data && images.data.map((image, i) => (
-            <figure className={styles.imageContainer} key={i} onClick={() => openModal(image)}>
+            <figure className={styles.imageContainer} id={i} key={i} onClick={() => openModal(image)}>
                 <NextImage className={styles.image} image={image} />
             </figure>
             ))}
         </div>
       <figcaption className={styles.title}>{title}</figcaption>
-
-      {isOpen && selectedImage && (
-        <div className="modal">
-          <div className="modal-content">
-                <NextImage image={selectedImage} />
-            <button onClick={closeModal}>Close</button>
-          </div>
-        </div>
+      {show &&  (
+        <Modal show={show} handleClose={() => closeModal()}>
+            <ImageGallerySlideItem images={images} selectedImage={selectedImage} />
+        </Modal>
       )}
     </figure>
   );

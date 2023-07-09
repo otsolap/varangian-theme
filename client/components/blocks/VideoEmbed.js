@@ -3,9 +3,9 @@ import styles from '@/styles/components/videoEmbed.module.scss'
 
 const VideoEmbed = ({ url }) => {
   return (url ? (
-        <div className={styles.videoContainer}>
+        <section className={styles.videoContainer}>
           <YoutubeEmbed url={url} />
-        </div>
+        </section>
       ): null
   );
 };
