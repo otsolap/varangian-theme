@@ -1,11 +1,11 @@
 import useToggle from "@/hooks/useToggleState"
-import useLocalStorage from "@/hooks/useLocalStorage"
+import { useLocalStorage }from "@/hooks/useStorage"
 import styles from '@/styles/components/imageGallery.module.scss'
 import NextImage from 'partials/util/NextImage';
 
 const ImageGallery = ({ images, title }) => {
   const [isOpen, toggleModal] = useToggle(false);
-  const [selectedImage, setSelectedImage] = useLocalStorage('image',false);
+  const [selectedImage, setSelectedImage] = useLocalStorage('image', undefined);
 
   const openModal = (image) => {
     setSelectedImage(image);
