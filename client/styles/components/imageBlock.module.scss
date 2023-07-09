@@ -4,7 +4,7 @@
 @import "../partials/util";
 
 
-.container {
+.imageBlock{
     position: relative;
     height: 250px;
     width: 100%;
@@ -14,7 +14,7 @@
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
     
-    .container {
+    .image{
       height: 375px;
     }
     
@@ -24,7 +24,7 @@
 @media (width >= $container-desktop) {
 
 
-    .container {
+    .image{
         height: initial;
         max-width: $width-max-article;
     }

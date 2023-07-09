@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import useToggle from "@/hooks/useToggleState"
+import useLocalStorage from "@/hooks/useLocalStorage"
 import styles from '@/styles/components/imageGallery.module.scss'
 import NextImage from 'partials/util/NextImage';
 
 const ImageGallery = ({ images, title }) => {
   const [isOpen, toggleModal] = useToggle(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useLocalStorage('image',false);
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -20,8 +20,8 @@ const ImageGallery = ({ images, title }) => {
   return (
     <figure className={styles.imageGallery}>
         <div className={styles.wrapper}>
-            {images.data && images.data.map((image) => (
-            <figure className={styles.container} key={image.id} onClick={() => openModal(image)}>
+            {images.data && images.data.map((image, i) => (
+            <figure className={styles.imageContainer} key={i} onClick={() => openModal(image)}>
                 <NextImage className={styles.image} image={image} />
             </figure>
             ))}

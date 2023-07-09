@@ -9,12 +9,13 @@
 
 .wrapper {
     @include display-flex;
-    @include flex-direction(column);
+    @include flex-direction(row);
     flex-wrap: wrap;
+    justify-content: center;
     margin: -$single;
 }
 
-.container {
+.imageContainer {
     position: relative;
     height: 250px;
     width: 100%;
@@ -34,12 +35,7 @@
 
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
-    
-    .wrapper {
-        @include flex-direction(row);
-    }
-
-    .container {
+    .imageContainer {
         height: 375px;
         max-width: 50%;
         flex: 0 0 50%;
@@ -51,11 +47,10 @@
 @media (width >= $container-desktop) {
 
     .wrapper {
-        @include flex-direction(row);
         max-width: $width-max-article;
     }
 
-    .container {
+    .imageContainer {
         height: initial;
         max-width: calc(100% / 3);
         flex: 0 0 calc(100% / 3);
