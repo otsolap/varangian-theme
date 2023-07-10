@@ -4,18 +4,25 @@
 @import "../partials/util";
 
 
-.imageBlock{
-    position: relative;
+.imageBlock {
     height: 250px;
+    position: relative;
+    padding: $single;
+}
+
+.image {
     width: 100%;
-    margin: $half 0;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
     
-    .image{
+    .imageBlock  {
       height: 375px;
+      width: 375px;
     }
     
 }
@@ -23,10 +30,13 @@
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
 
+    .imageBlock {
+        height: auto;
+        width: auto;
+    }
 
-    .image{
-        height: initial;
-        max-width: $width-max-article;
+    .image {
+        max-height: 720px;
     }
 
 }

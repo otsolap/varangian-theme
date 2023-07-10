@@ -11,8 +11,7 @@ const ImageGallery = ({ images, title }) => {
 
   const openModal = (image) => {
     setSelectedImage(image);
-    console.log(image )
-    toggleModal(!show);
+    toggleModal(true);
   };
 
   const closeModal = () => {
@@ -21,10 +20,10 @@ const ImageGallery = ({ images, title }) => {
   };
 
   return (
-    <figure className={styles.imageGallery}>
+    <section className={styles.imageGallery}>
         <div className={styles.wrapper}>
             {images.data && images.data.map((image, i) => (
-            <figure className={styles.imageContainer} id={i} key={i} onClick={() => openModal(image)}>
+            <figure className={styles.imageContainer} id={i} key={i} onClick={() => openModal(i)}>
                 <NextImage className={styles.image} image={image} />
             </figure>
             ))}
@@ -35,7 +34,7 @@ const ImageGallery = ({ images, title }) => {
             <ImageGallerySlideItem images={images} selectedImage={selectedImage} />
         </Modal>
       )}
-    </figure>
+    </section>
   );
 };
 

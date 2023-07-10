@@ -8,11 +8,6 @@
     position: relative;
 }
 
-.imageGallerySwiper {
-    height: 100%;
-    width: 100%;
-}
-
 .wrapper {
     @include display-flex;
     @include flex-direction(row);
@@ -26,6 +21,12 @@
     position: relative;
     height: 250px;
     width: 100%;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .image {
@@ -45,13 +46,15 @@
 @media ($container-ipad <= width <= $container-desktop) {
 
     .imageModalContainer{
-        height: 750px
+        height: 75vh;
+        width: 75vw;
+        margin: 0 auto;
     }
 
     .imageContainer {
         height: 375px;
-        max-width: 50%;
-        flex: 0 0 50%;
+        max-width: 45%;
+        flex: 0 0 45%;
     }
 
 }
@@ -59,12 +62,14 @@
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
     
-    .imageModalContainer,
-    .imageContainer {
-        height: initial;
+    .imageModalContainer {
+        height: 75vh;
+        width: 75vw;
+        margin: 0 auto;
     }
 
     .imageContainer {
+        height: initial;
         max-width: calc(100% / 4);
         flex: 0 0 calc(100% / 4);
     }

@@ -19,7 +19,7 @@ const ImageGallerySlideItem = ({ images, selectedImage }) => {
             }}
             modules={[Pagination, Navigation]}
             rewind={true}
-            initialSlide={selectedImage.id}
+            initialSlide={selectedImage}
         >
             {images.data.map((image, i) => {
             return (
