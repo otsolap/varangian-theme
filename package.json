@@ -2,18 +2,16 @@
   "name": "varangianventure",
   "version": "1.0.0",
   "description": "Portfolio",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "npm run clear && concurrently \"cd api && npm run dev\" \"cd client && npm run build && npm run dev\"",
+    "dev": "npm run clear && cd api && npm run build && npm run dev && cd ../client && npm run build && npm run dev",
     "frontend": "npm run build --prefix client",
     "backend": "npm run build --prefix api",
     "clear": "cd client && rm -rf build && rm -rf cache",
     "setup": "npm install && cd api && npm install && cd ../client && npm install",
-    "build": "npm run clear && concurrently \"npm run backend\" \"npm run frontend\"",
-    "production": "concurrently \"cd api && npm run start\" \"cd client && npm run start\""
+    "build": "npm run clear && npm run backend && cd ../client npm run frontend",
+    "start": "npm install pm2 && pm2 start ecosystem.config.js --env production"
   },
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "pm2": "^5.1.0"
   }
 }
