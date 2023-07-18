@@ -17,7 +17,7 @@ module.exports = {
       }
     },
     {
-      name: 'Client',
+      name: 'client',
       script: 'npm',
       args: 'run dev',
       cwd: './client', // Path to the client folder
