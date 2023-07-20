@@ -1,21 +1,19 @@
 {
   "name": "varangianventure",
   "version": "1.0.0",
-  "description": "Portfolio v3",
+  "description": "Portfolio",
   "scripts": {
-    "clear": "cd client && rm -rf build && rm -rf cache",
-    "build:backend": "cd api && npm run build",
-    "build:frontend": "cd client && npm run build",
-    "dev:backend": "cd api && npm run dev",
-    "dev:frontend": "cd client && npm run dev",
-    "dev": "npm run clear && npm run build:backend && npm run dev:backend && npm run build:frontend && npm run dev:frontend",
+    "clear": "cd client; rm -rf build; rm -rf cache",
+    "build:backend": "cd api; npm run build; npm run dev",
+    "build:frontend": "cd client; npm run build; npm run dev",
+    "dev": "npm run clear; npm run build:backend; npm run build:frontend",
     "frontend": "npm run build --prefix client",
     "backend": "npm run build --prefix api",
-    "setup": "npm install && cd api && npm install && cd ../client && npm install",
-    "build": "npm run clear && npm run build:backend && npm run build:frontend",
-    "start": "npm install pm2 && pm2 start ecosystem.config.js --env production"
+    "setup": "npm install; cd api; npm install; cd ../client; npm install",
+    "build": "npm run clear; npm run build:backend; npm run build:frontend",
+    "start": "npm install pm2; pm2 start ecosystem.config.js --env production"
   },
   "dependencies": {
-    "pm2": "^5.3.0"
+    "pm2": "^5.1.0"
   }
 }
