@@ -2,16 +2,9 @@
   "name": "varangianventure",
   "version": "1.0.0",
   "description": "Portfolio",
+  "main": "server.js",
   "scripts": {
-    "clear": "cd client; rm -rf build; rm -rf cache",
-    "build:backend": "cd api; npm run build; npm run dev",
-    "build:frontend": "cd client; npm run build; npm run dev",
-    "dev": "npm run clear; npm run build:backend; npm run build:frontend",
-    "frontend": "npm run build --prefix client",
-    "backend": "npm run build --prefix api",
-    "setup": "npm install; cd api; npm install; cd ../client; npm install",
-    "build": "npm run clear; npm run build:backend; npm run build:frontend",
-    "start": "npm install pm2; pm2 start ecosystem.config.js --env production"
+    "start": "node server.js"
   },
   "dependencies": {
     "pm2": "^5.1.0"
