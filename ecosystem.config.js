@@ -20,7 +20,7 @@ module.exports = {
       name: 'client',
       script: 'npm',
       args: 'run dev',
-      cwd: './client', // Path to the client folder
+      cwd: './client',
       instances: 1,
       autorestart: true,
       watch: false,
