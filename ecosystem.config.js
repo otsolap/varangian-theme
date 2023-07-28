@@ -1,36 +1,45 @@
 module.exports = {
   apps: [
     {
-      name: 'api',
+      name: 'api-dev',
       script: 'npm',
       args: 'run dev',
       cwd: './api',
-      instances: 1,
-      autorestart: true,
-      watch: false,
-      max_memory_restart: '1G',
-      env: {
+      watch: true,
+      env_development: {
         NODE_ENV: 'development'
       },
-      env_production: {
-        NODE_ENV: 'production'
-      }
     },
     {
-      name: 'client',
+      name: 'client-dev',
       script: 'npm',
       args: 'run dev',
       cwd: './client',
-      instances: 1,
-      autorestart: true,
-      watch: false,
-      max_memory_restart: '1G',
-      env: {
+      watch: true,
+      env_development: {
         NODE_ENV: 'development'
       },
+    },
+    {
+      name: 'api-prod',
+      script: 'npm',
+      args: 'run start',
+      cwd: './api',
+      watch: true,
       env_production: {
         NODE_ENV: 'production'
-      }
-    }
-  ]
+      },
+    },
+    {
+      name: 'client-prod',
+      script: 'npm',
+      args: 'run start',
+      cwd: './client',
+      watch: true,
+      post_deploy: 'npm run clear-cache',
+      env_production: {
+        NODE_ENV: 'production'
+      },
+    },
+  ],
 };

@@ -4,6 +4,7 @@
   "description": "Portfolio",
   "main": "server.js",
   "scripts": {
+    "clear": "cd client && rm -rf .next && rm -rf cache",
     "start": "node server.js"
   },
   "dependencies": {

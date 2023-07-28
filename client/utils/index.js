@@ -15,7 +15,7 @@ export const YouTubeGetID = (url) => {
   
   // Get the url of the Strapi API based on the env variable or the default local one.
 export function getStrapiURL(path) {
-  return `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:1337"}${path}`
+  return `${process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_API_URL}${path}`
 }
 
 export function getStrapiMedia(url) {
@@ -29,7 +29,7 @@ export function getStrapiMedia(url) {
   }
 
   // Otherwise prepend the URL path with the Strapi URL
-  return `${process.env.NEXT_PUBLIC_API_URL  || "http://127.0.0.1:1337"}${url}`
+  return `${process.env.NEXT_PUBLIC_API_URL  || process.env.NEXT_PUBLIC_API_URL}${url}`
 }
 
 export async function fetchServicesBannerData() {
