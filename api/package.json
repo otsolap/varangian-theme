@@ -11,11 +11,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.10.2",
-    "@strapi/plugin-users-permissions": "4.10.2",
-    "@strapi/strapi": "v4.11.7",
-    "mysql": "2.18.1",
-    "mysql2": "^3.6.0"
+    "@strapi/plugin-i18n": "^4.12.7",
+    "@strapi/plugin-users-permissions": "^4.12.7",
+    "@strapi/strapi": "^4.12.7",
+    "mysql": "2.18.1"
   },
   "author": {
     "name": "Otso Lappalainen | Varangian Venture"
