@@ -4,7 +4,7 @@ module.exports = {
       name: 'api-dev',
       script: 'npm',
       args: 'run dev',
-      cwd: './app/app/api',
+      cwd: './app/api',
       watch: true,
       env_development: {
         NODE_ENV: 'development'
