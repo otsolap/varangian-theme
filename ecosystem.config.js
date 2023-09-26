@@ -4,7 +4,7 @@ module.exports = {
       name: 'api-dev',
       script: 'npm',
       args: 'run dev',
-      cwd: './app/api',
+      cwd: './api',
       watch: true,
       env_development: {
         NODE_ENV: 'development'
@@ -14,7 +14,7 @@ module.exports = {
       name: 'client-dev',
       script: 'npm',
       args: 'run dev',
-      cwd: './app/client',
+      cwd: './client',
       watch: true,
       env_development: {
         NODE_ENV: 'development'
@@ -24,7 +24,7 @@ module.exports = {
       name: 'api-prod',
       script: 'npm',
       args: 'run start',
-      cwd: './app/api',
+      cwd: './api',
       watch: false,
       env_production: {
         NODE_ENV: 'production'
@@ -34,7 +34,7 @@ module.exports = {
       name: 'client-prod',
       script: 'npm',
       args: 'run start',
-      cwd: './app/client',
+      cwd: './client',
       watch: false,
       post_deploy: 'npm run clear-cache',
       env_production: {
