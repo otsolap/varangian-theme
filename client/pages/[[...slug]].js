@@ -2,7 +2,7 @@ import { getDataDependencies } from "@/utils/api"
 import { useRouter } from "next/router"
 import { getPageData, fetchServicesBannerData } from "@/utils/index"
 import Blocks from "@/components/Blocks"
-import Banner from "components/blocks/Banner"
+import Banner from "@/components/blocks/Banner"
 import axios from 'axios'
 import ErrorPage from "next/error"
 

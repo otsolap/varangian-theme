@@ -8,7 +8,7 @@ import FooterSocialMedia from '@/partials/navigation/FooterSocialMedia';
 import Hero from '@/components/blocks/Hero';
 import ImageBlock from '@/components/blocks/ImageBlock';
 import ImageGallery from '@/components/blocks/ImageGallery';
-import Mediamix from '@/components/blocks/Mediamix';
+import MediaMix from '@/components/blocks/MediaMix';
 import MenuItem from '@/partials/navigation/MenuItem';
 import Textarea from '@/components/blocks/Textarea'
 import VideoEmbed from '@/components/blocks/VideoEmbed';
@@ -55,7 +55,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       Block = ImageGallery;
       break;
     case 'blocks.media-mix':
-      Block = Mediamix;
+      Block = MediaMix;
       break;
     case 'util.menu-item':
       Block = MenuItem;
