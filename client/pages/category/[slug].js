@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
         items: matchingCategory.attributes.articles.data ?? {},
         categories: allCategories.data.data ?? {},
       },
-      revalidate: 1,
+      revalidate: 60,
     }
   } catch (error) {
     console.error("Error fetching category:", error)

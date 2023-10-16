@@ -19,6 +19,7 @@ export async function getStaticProps() {
         items: articlesResponse.data.data ?? {},
         categories: categoriesResponse.data.data ?? {},
       },
+      revalidate: 60,
     }
   } catch (error) {
     console.error("Error fetching blog data:", error)
