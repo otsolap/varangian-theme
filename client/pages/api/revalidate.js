@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-    if (req.query.secret !== process.env.NEXT_REVALIDATION_TOKEN && !req.headers['x-strapi-webhook'] || req.headers['x-strapi-webhook'].toLowerCase() !== 'true') {
+    if (req.query.secret !== process.env.NEXT_REVALIDATION_TOKEN && !req.headers['x-strapi-webhook'] || req.headers['x-strapi-webhook'] !== 'true') {
         return res.status(401).json({ message: 'Invalid request origin' });
     }
     
