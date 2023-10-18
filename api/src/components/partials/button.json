@@ -26,7 +26,8 @@
       "enum": [
         "primary",
         "secondary",
-        "tertiary"
+        "tertiary",
+        "transparent"
       ],
       "default": "primary"
     }

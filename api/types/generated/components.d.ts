@@ -219,7 +219,9 @@ export interface PartialsButton extends Schema.Component {
     title: Attribute.String;
     isExternal: Attribute.Boolean;
     target: Attribute.Enumeration<['_blank']>;
-    selectTheme: Attribute.Enumeration<['primary', 'secondary', 'tertiary']> &
+    selectTheme: Attribute.Enumeration<
+      ['primary', 'secondary', 'tertiary', 'transparent']
+    > &
       Attribute.DefaultTo<'primary'>;
   };
 }
