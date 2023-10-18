@@ -8,7 +8,7 @@
     @include flex-direction(column);
     flex-wrap: wrap;
     padding: $single;
-    background-color: $gray;
+    background-color: $text-700;
 }
 
 .category {
@@ -20,7 +20,7 @@
 
     &:hover,
     &:focus {
-        color: $secondary;
+        color: $background-300;
         cursor: pointer;
     }
 }
@@ -66,7 +66,7 @@
     height: inherit;
     width: inherit;
     object-fit: cover;
-    box-shadow: $single $single 0px 0px $primary;
+    box-shadow: $single $single 0px 0px $brand-500;
     aspect-ratio: 16/9;
 }
 /* Tablet Styles */
@@ -95,6 +95,6 @@
     }
     
     .image {
-        box-shadow: 24px 24px 0px 0px $primary;
+        box-shadow: 24px 24px 0px 0px $brand-500;
     }
 }

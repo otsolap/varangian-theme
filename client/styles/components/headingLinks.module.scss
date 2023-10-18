@@ -11,7 +11,7 @@
 }
 
 .nav {
-    background-color: $white;
+    background-color: $text-900;
     border-radius: $half;
 }
 
@@ -24,11 +24,11 @@
 }
 
 .link {
-    color: $secondary;
+    color: $background-300;
 
     &:hover,
     &:focus {
-        color: $tertiary;
+        color: $brand-900;
     }
 }
 
@@ -37,7 +37,7 @@
 
     .nav {
         max-width: 440px;
-        border-left: 2px solid $gray;
+        border-left: 2px solid $text-700;
         height: min-content;
     }
 

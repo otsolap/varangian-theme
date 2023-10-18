@@ -4,8 +4,8 @@
 @import "../partials/util";
 
 .hero {
-  background-color: $primary;
-  color: $white;
+  background-color: $brand-500;
+  color: $text-900;
   @extend .container;
   position: relative;
   @include display-flex();

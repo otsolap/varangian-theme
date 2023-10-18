@@ -8,8 +8,8 @@
 
 .btn,
 .button {
-  background-color: $secondary;
-  color: $white;
+  background-color: $cta-900;
+  color: $text-900;
   border-color: transparent;
   font-weight: 700;
   transition-property: color, background-color, border-color,
@@ -25,47 +25,38 @@
 
   &:hover,
   &:focus {
-    background-color: $tertiary;
-    color: $white;
+    background-color: $brand-700;
   }
 
   &--secondary {
-      background-color: $tertiary;
-      color: $white;
+    background-color: transparent;
 
       &:hover,
       &:focus {
-        background-color: $primary;
+        background-color: $brand-700;
       }
 
   }
 }
 
 .bg-primary {
-  background-color: $primary;
-  color: $white;
+  background-color :$brand-500
 }
 
 .bg-secondary {
-  background-color: $secondary;
-  color: $white;
+  background-color: $background-500;
 }
 
 .bg-tertiary {
-  background-color: $tertiary;
-  color: $black;
+  background-color: $brand-tertiary-700;
 }
 
 .color-white {
-  color: $white;
+  color: $text-900;
 }
 
 .color-black {
-  color: $black;
-}
-
-.color-tertiary {
-  color: $tertiary;
+  color: $background-900;
 }
 
 .sr-only {
@@ -83,7 +74,6 @@
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
 
-  
   .btn,
   .button {
     width: fit-content;

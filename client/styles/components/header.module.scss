@@ -14,9 +14,8 @@
   padding-right: $half;
   align-items: center;
   justify-content: center;
-  background-color: $primary;
-  color: $white;
-  border-bottom: 1px solid $white;
+  background-color: $brand-500;
+  border-bottom: 1px solid $text-900;
 }
 
 .navigation,
@@ -74,9 +73,8 @@
     top: 0;
     width: 100vw;
     padding: $half;
-    background-color: $primary;
-    color: $white;
-    border-bottom: 1px solid $white;
+    background-color: $background-900;
+    border-bottom: 1px solid $text-900;
   }
 
   .wrapper {
@@ -108,7 +106,6 @@
     &:focus,
     &:hover {
       cursor: pointer;
-      color: $tertiary;
     }
   }
 

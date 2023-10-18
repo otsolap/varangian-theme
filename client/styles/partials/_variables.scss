@@ -1,27 +1,38 @@
 /* VARIABLES */
 
-// Brand
-$primary: #e39b41;
-$primaryLight: #ffddba;
-$primaryDark: #2b1700;
-$secondary: #33658a;
-$secondaryLight: #cce5ff;
-$secondaryDark: #001e31;
-$tertiary: #b42724;
-$tertiaryLight: #ffdad6;
-$tertiaryDark: #410002;
+// Backgrounds
+$background-900: #001f2a; // default
+$background-700: #002a3f;
+$background-500: #003a4f;
+$background-300: #004a5f;
 
-// Themes
-$success: #006d38;
-$error: #ba1a1a;
+// Text
+$text-900: #E1E2E1; // default
+$text-700: #B0B1B0;
 
+// Brand Colors
+$brand-900: #a56f1a;
+$brand-700: #c8852d;
+$brand-500: #e39b41; // default
+$brand-300: #f4af6d;
+$brand-100: #ffcc99;
 
-// Body
-$white: #faf7f2;
-$black: #001f2a;
-$body: #f5f5f6;
-$gray: #E1E2E1;
+// Call To Action (CTA)
+$cta-900: #15646b;  
+$cta-500: #1f8ea3; // default  
 
+// Tertiary color
+$brand-tertiary-700: #5a4a7a;
+
+// Success Colors
+$success-900: #388E3C;
+$success-500: #4CAF50;
+$success-100: #81C784;
+
+// Error Colors
+$error-900: #B71C1C;
+$error-500: #E53935;
+$error-100: #FF867C;
 
 // Spacing
 $quarter: .25rem;
@@ -31,3 +42,5 @@ $double: 2rem;
 $triple: 3rem;
 $quadruple: 4rem;
 $quintuple: 5rem;
+
+

@@ -8,7 +8,7 @@
     @include display-flex;
     @include flex-direction(column);
     flex-wrap: wrap;
-    background-color: $gray;
+    background-color: $text-700;
 }
 
 .wrapper,
@@ -30,7 +30,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: $single $single 0px 0px $primary;
+    box-shadow: $single $single 0px 0px $brand-500;
 }
 
 /* Tablet Styles */
@@ -63,6 +63,6 @@
     }
     
     .image {
-        box-shadow: 24px 24px 0px 0px $primary;
+        box-shadow: 24px 24px 0px 0px $brand-500;
     }
 }

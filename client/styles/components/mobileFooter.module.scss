@@ -6,8 +6,8 @@
 /* MOBILE  */
 
 .mobile {
-  border-top: $white 2px solid;
-  background-color: $tertiary;
+  border-top: $text-900 2px solid;
+  background-color: $brand-700;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -26,7 +26,7 @@
   
   a,
   button {
-    color: $white;
+    color: $text-900;
     position: relative;
     width: 5rem;
     height: 4rem;

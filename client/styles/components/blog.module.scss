@@ -5,15 +5,15 @@
 
 /* because of Blog-item we needed to recreate these classes inside the module */
 .bgPrimary  {
-    background-color: $primary;
+    background-color: $brand-500;
 }
 
 .bgSecondary  {
-    background-color: $secondary;
+    background-color: $background-300;
 }
 
 .header {
-    color: $white;
+    color: $text-900;
     padding-bottom: $double;
 }
 
@@ -37,12 +37,12 @@
 }
 
 .archiveLink {
-    color: $white;
+    color: $text-900;
 
     .bgPrimary & {
        &:hover,
        &:focus {
-           color: $secondary;
+           color:  $background-300;
        }
     }
 
@@ -63,20 +63,20 @@
     width: 100%;
     align-items: flex-start;
     border: 1px solid;
-    color: $black;
-    border-color: $black;
+    color: $background-900;
+    border-color: $background-900;
     cursor: pointer;
     
     .bgPrimary & {
-        background-color: $secondary;
-        color: $white;
-        border-color: $white;
+        background-color: $background-300;
+        color: $text-900;
+        border-color: $text-900;
     }
 
     .bgSecondary & {
-        background-color: $primary;
-        color: $white;
-        border-color: $white;
+        background-color: $brand-500;
+        color: $text-900;
+        border-color: $text-900;
     }
 }
 
@@ -85,11 +85,11 @@
     height: 215px;
     width: 100%;
     border: 1px solid;
-    border-color: $black;
+    border-color: $background-900;
 
     .bgPrimary &,
     .bgSecondary & {
-        border-color: $white;
+        border-color: $text-900;
     }
 }
 
@@ -125,7 +125,7 @@
 
     &:hover,
     &:focus {
-        color: $tertiary;
+        color: $background-300;
         cursor: pointer;
     }
 }
@@ -133,16 +133,16 @@
 
 .footer {
     width: 100%;
-    border-top: $white 2px solid;
+    border-top: $text-900 2px solid;
     @include display-flex;
     @include flex-direction(column);
     gap: $half;
     border-top: 1px solid;
-    border-color: $black;
+    border-color: $background-900;
 
     .bgPrimary &,
     .bgSecondary & {
-        border-color: $white;
+        border-color: $text-900;
     }
 }
 

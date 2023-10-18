@@ -4,7 +4,7 @@
 @import "../partials/util";
 
 .modal {
-    background-color: $black;
+    background-color: $background-900;
     position: fixed;
     inset: 0;
     z-index: 60; 
@@ -23,7 +23,6 @@
     justify-content: center; 
     align-content: center; 
     width: 100%; 
-    color: $white;
 }
 
 .button {

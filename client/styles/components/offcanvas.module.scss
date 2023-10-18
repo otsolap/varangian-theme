@@ -6,7 +6,7 @@
 $mobile-screen-padding-top: 6rem;
 
 #modal {
-    background-color: $primary;
+    background-color: $brand-500;
     position: fixed;
     top: 0;
     left: 0;
@@ -29,20 +29,20 @@ $mobile-screen-padding-top: 6rem;
     padding-bottom: $single;
     padding-left: $triple;
     list-style: none;
-    border-bottom: 2px solid $white;
+    border-bottom: 2px solid $text-900;
 }
 
 .link {
-    color: $white;
+    color: $text-900;
     font-size: 22px;
     font-weight: 700;
 }
 
 .active {
-    border-color: $secondary;
+    border-color: $background-300;
 
     .link {
-        color: $secondary;
+        color: $background-300;
     }
 
 }

@@ -5,8 +5,8 @@
 
 .footer {
   padding-bottom: 5rem;
-  background-color: $primary;
-  color: $white;
+  background-color: $brand-500;
+  color: $text-900;
   @include display-flex;
   @include flex-direction(column);
 }
@@ -54,7 +54,7 @@
   &:focus,
   &:hover {
     cursor: pointer;
-    color: $secondary;
+    color: $background-300;
     transition-property: color, background-color, border-color,
       text-decoration-color, fill, stroke, opacity, box-shadow, transform,
       filter, backdrop-filter;
@@ -83,7 +83,7 @@
 .flexBox {
   @include display-flex;
   border-bottom: 2px solid;
-  border-color: $white;
+  border-color: $text-900;
   align-items: center;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .contentDivider {
-  border-color: $white;
+  border-color:$text-900;
   border-top-width: 2px;
 }
 
@@ -136,7 +136,7 @@
 
 /* Subfooter  */
 .subFooter {
-  border-top: $white 2px solid;
+  border-top: $text-900 2px solid;
   padding: $single;
   @include display-flex;
   @include flex-direction(row);
@@ -146,8 +146,8 @@
 /* MOBILE  */
 
 .mobile {
-  border-top: $white 2px solid;
-  background-color: $primaryDark;
+  border-top: $text-900 2px solid;
+  background-color: $brand-900;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -166,7 +166,7 @@
   
   a,
   button {
-    color: $white;
+    color:$text-900;
     position: relative;
     width: 5rem;
     height: 4rem;

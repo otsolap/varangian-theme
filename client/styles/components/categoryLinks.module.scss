@@ -19,12 +19,12 @@
 }
 
 .button {
-    background-color: $primary;
-    color: $white;
+    background-color: $brand-500;
+    color: $text-900;
 
     &:hover,
     &:focus {
-        background-color: $secondary;
+        background-color: $background-300;
     }
 
 }
