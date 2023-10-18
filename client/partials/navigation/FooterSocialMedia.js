@@ -20,7 +20,7 @@ const FooterSocialMedia = ({  id, open, title, socialMedia }) => {
 
     return (
         <div key={id} className={styles.column}>
-        <div className={styles.button} onClick={toggleAccordion}>
+        <div className={styles.toggle} onClick={toggleAccordion}>
                 <div className={styles.wrapper}>
                     <div className={active ? `${styles.open}` : `${styles.closed}`}>
                         <div className={styles.flexBox}>

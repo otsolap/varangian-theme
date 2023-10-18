@@ -7,7 +7,6 @@
     @include display-flex;
     @include flex-direction(column-reverse);
     @extend .container;
-    background-color: $text-900;
     padding: $single;
 }
 

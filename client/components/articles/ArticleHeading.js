@@ -4,7 +4,6 @@ import styles from '@/styles/components/articleHeading.module.scss'
 import config from '@/utils/config'
 
 const ArticleHeading = ({ article, categories, author}) => {
-    console.log(author.image)
   return (
     <header className={styles.header}>
         <div className={styles.lead}>

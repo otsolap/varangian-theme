@@ -21,7 +21,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'blocks.accordion':
       Block = Accordion;
       break;
-    case 'util.article-text-block':
+    case 'blocks.article-text-block':
       Block = Textarea;
       break;
     case 'blocks.embed':

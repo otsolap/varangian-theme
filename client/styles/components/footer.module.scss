@@ -69,7 +69,7 @@
   gap: $single;
 }
 
-.button {
+.toggle {
   width: 100%;
   @include border(1px transparent);
 }
@@ -230,7 +230,7 @@
     width: $double;
   }
 
-  .button {
+  .toggle {
     width: initial;
     pointer-events: none;
   }
