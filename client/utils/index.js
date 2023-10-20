@@ -76,8 +76,6 @@ export async function fetchGlobalData() {
   }
 }
 
-
-
 export async function getPageData(slug) {
   let slugToReturn = '/'
   if (Array.isArray(slug) && slug.length > 0) {
@@ -89,10 +87,8 @@ export async function getPageData(slug) {
     slugToReturn = slug
   }
   
-  const apiUrl = `/api/pages?slug=${slugToReturn}${config.global.API_CONTENT_QUERY}`
-  
   return {
-    data: getStrapiURL(apiUrl),
+    data: getStrapiURL(`/api/pages?${config.global.API_CONTENT_QUERY}&filters[slug][$eq]=${slugToReturn}`),
     slug: slugToReturn,
   }
 }

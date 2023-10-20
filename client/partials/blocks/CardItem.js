@@ -14,8 +14,8 @@ const CardItem = ({ image, title, description, className }) => {
       ): null}
       {title || description ? (
         <div className={styles.body}>
-        {title && <h3 className={styles.title}>{title}</h3>}
-        {description && <p>{description}</p>}
+          {title && <h3 className={styles.title}>{title}</h3>}
+          {description && <p>{description}</p>}
         </div>
         ): null}
 
