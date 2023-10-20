@@ -2,10 +2,16 @@ import axios from 'axios';
 import { getStrapiURL } from "@/utils/index";
 import config from '@/utils/config';
 
-export default async function revalidateMedia(req, res) {
+export default async function revalidate(req, res) {
+    const webhookHeader = req.headers['x-strapi-revalidate-webhook'];
+
+    if (webhookHeader && webhookHeader !== 'true') {
+        return res.status(401).json({ message: 'Unauthorized: Invalid or missing required header value.' });
+    }
+
     const { secret, slug: rawSlug } = req.query;
 
-    if (secret !== process.env.NEXT_MEDIA_REVALIDATION_TOKEN) {
+    if (secret !== process.env.NEXT_REVALIDATION_TOKEN) {
         return res.status(401).json({ message: 'Invalid secret' });
     }
 
