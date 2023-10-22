@@ -4,7 +4,8 @@ import styles from '@/styles/components/articleFooter.module.scss'
 
 const ArticleFooter = ({ author }) => {
   return (
-    <footer className={styles.footer}>
+    author ? (
+      <footer className={styles.footer}>
         <div className={styles.column}>
             <figure className={styles.imageContainer}>
                 <NextImage image={author.image} className={styles.image} />
@@ -21,7 +22,8 @@ const ArticleFooter = ({ author }) => {
             )}
             </article>
         </div>
-  </footer>
+      </footer>
+    ): null
   )
 }
 
