@@ -5,7 +5,7 @@ import styles from '@/styles/components/headingLinks.module.scss'
 
 function HeadingLinks({ blocks, description, banner }) {
   const headings = blocks
-    .filter((block) => block.__component === "util.article-text-block")
+    .filter((block) => block.__component === "blocks.article-text-block")
     .flatMap((block) => {
       const blockHeadings = block.text?.match(/^#+\s*(.*)/gm);
       if (blockHeadings) {
@@ -22,7 +22,6 @@ function HeadingLinks({ blocks, description, banner }) {
         return [];
       }
     });
-
 
   return (
     <nav className={styles.nav}>
