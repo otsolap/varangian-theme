@@ -18,10 +18,8 @@ const CustomLink = ({ link, className }) => {
   // if target is blank
   if(link.target === '_blank') {
     return (
-      <Link href={link.href} passHref className={`${link.selectTheme ? `color-${link.selectTheme}` : ''} ${className || ''}`}>
-        <a target="_blank">
+      <Link href={link.href} target="_blank" rel="noopener noreferrer" className={`${link.selectTheme ? `color-${link.selectTheme}` : ''} ${className || ''}`}>
           {link.title}
-        </a>
       </Link>
     )
   }
