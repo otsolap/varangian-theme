@@ -1,13 +1,12 @@
 @import "../partials/mixins";
 @import "../partials/variables";
-@import "../partials/breakpoints";
 @import "../partials/util";
 
 /* MOBILE  */
 
 .mobile {
   border-top: $text-900 2px solid;
-  background-color: $brand-700;
+  background-color: $background-900;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -22,38 +21,4 @@
   @include flex-direction(row);
   flex-wrap: wrap;
   justify-content: center;
-  
-  
-  a,
-  button {
-    color: $text-900;
-    position: relative;
-    width: 5rem;
-    height: 4rem;
-    text-align: center;
-    z-index: 10;
-    cursor: pointer;
-    flex: 0 0 calc(100% / 4);
-    max-width: calc(100% / 4);
-  }
-  
-  button {
-    border: none;
-    outline: none;
-    background: none;
-  }
-}
-
-.icon {
-  margin-top: 0.75rem;
-  height: 1.875rem;
-  width: 1.875rem;
-}
-
-.text {
-  @include display-flex;
-  justify-content: center;
-  width: 100%;
-  font-size: 0.75rem;
-  line-height: 1.625;
 }

@@ -1,73 +1,55 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark, faBullseye, faCircleNodes,faCube, faPenNib } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/router";
-import styles from "@/styles/components/mobileFooter.module.scss";
-import useToggle from "@/hooks/useToggle"
+import useToggle from "@/hooks/useToggle";
 import Offcanvas from "@/components/navigation/Offcanvas";
+import MobileNavLinks from "@/partials/navigation/MobileNavLinks";
+import MenuButton from "@/partials/navigation/MenuButton";
+import styles from "@/styles/components/mobileFooter.module.scss";
 
 const MobileFooter = ({ navigation }) => {
-  const [showModal, setShowModal] = useToggle(false);
-  const router = useRouter();
-  const global = navigation && navigation.data ? navigation.data.attributes : {};
-  const PRIMARY_PAGES = 4;
-  let mobileNavigation = null;
+    const [showModal, setShowModal] = useToggle(false);
+    const [footerOpacity, setFooterOpacity] = useState(1);
+    const router = useRouter();
+    const lastScrollY = useRef(0);
 
-  const icons = {
-    bullseye: faBullseye,
-    node: faCircleNodes,
-    cube: faCube,
-    pen: faPenNib,
-  };
+    const handleScroll = useCallback(() => {
+        const currentScrollY = window.scrollY;
 
-  if (global && Array.isArray(global.blocks)) {
-    mobileNavigation = global.blocks.slice(0, PRIMARY_PAGES).map((block, i) => {
-      const { href, title } = block;
-      const icon = icons[block.icon];
-  
-      return (
-        <Link
-          className={router.pathname === href ? "active" : ""}
-          href={href}
-          key={i}
-          passHref
-        >
-          {icon ? (
-            <FontAwesomeIcon
-              className={styles.icon}
-              aria-label={title}
-              icon={icon}
-            />
-          ) : null}
-          <span className={styles.text}>{title}</span>
-        </Link>
-      );
-    });
-  }
-  
+        if (currentScrollY > lastScrollY.current) {
+            // Scrolling down
+            setFooterOpacity(0.5);
+        } else {
+            // Scrolling up
+            setFooterOpacity(1);
+        }
 
-  return (
-    <footer className={`mobile-only ${styles.mobile}`}>
-      <div className={styles.menuWrapper}>
-        {mobileNavigation}
-        <button onClick={() => setShowModal(true)}>
-              <FontAwesomeIcon
-                  className={styles.icon}
-                  aria-label={showModal == false ? 'Open Menu' : 'Close Menu'}
-                  icon={showModal == false ? faBars : faXmark}
-              />
-              <span className={styles.text}>
-                  { showModal == false ? 'Open Menu' : 'Close Menu'}
-              </span>
-          </button>
-          <Offcanvas
-              navigation={navigation}
-              show={showModal}
-              closeModal={() => setShowModal(false)}
-          />
-          </div>
-    </footer>
-  );
+        lastScrollY.current = currentScrollY;
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [handleScroll]);
+
+    const global = navigation && navigation.data ? navigation.data.attributes : {};
+    const PRIMARY_PAGES = 4;
+
+    return (
+        <footer className={`mobile-only ${styles.mobile}`} style={{ opacity: footerOpacity }}>
+            <div className={styles.menuWrapper}>
+                <MobileNavLinks blocks={global.blocks.slice(0, PRIMARY_PAGES)} currentPath={router.asPath} />
+                <MenuButton isMenuOpen={showModal} toggleMenu={setShowModal} />
+                <Offcanvas
+                    navigation={navigation}
+                    show={showModal}
+                    closeModal={() => setShowModal(false)}
+                />
+            </div>
+        </footer>
+    );
 };
 
 export default MobileFooter;

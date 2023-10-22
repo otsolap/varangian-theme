@@ -67,7 +67,6 @@ export async function getStaticProps({ params }) {
     ])
 
     const categorySlug = articleResponse.data.data[0].attributes.categories.data[0]?.attributes.slug
-    console.log(categorySlug)
 
     const [relatedArticlesresponse] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),

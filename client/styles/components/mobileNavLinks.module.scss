@@ -1,0 +1,32 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+
+.link {
+    color: $text-900;
+    position: relative;
+    width: $quintuple;
+    height: $quadruple;
+    text-align: center;
+    z-index: 10;
+    cursor: pointer;
+    flex: 0 0 calc(100% / 4);
+    max-width: calc(100% / 4);
+}
+
+.active {
+    color:  $brand-700;
+}
+
+.icon {
+  margin-top: 0.75rem;
+  height: 1.875rem;
+  width: 1.875rem;
+}
+
+.text {
+  @include display-flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 0.75rem;
+  line-height: 1.625;
+}
