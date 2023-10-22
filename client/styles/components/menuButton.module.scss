@@ -17,7 +17,7 @@
 }
 
 .icon {
-  margin-top: 0.75rem;
+  margin-top: $three-quarters;
   height: 1.875rem;
   width: 1.875rem;
 }
@@ -26,6 +26,6 @@
   @include display-flex;
   justify-content: center;
   width: 100%;
-  font-size: 0.75rem;
+  font-size: $three-quarters;
   line-height: 1.625;
 }

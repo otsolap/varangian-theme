@@ -2,6 +2,7 @@ import React from "react";
 import styles from "@/styles/components/modal.module.scss";
 
 const Modal = ({ show, handleClose, children }) => {
+  console.log('the modal children ' + children)
   return (
     <>
       {show && (

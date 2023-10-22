@@ -4,7 +4,6 @@ import Link from "next/link";
 import styles from '@/styles/components/headingLinks.module.scss'
 
 function HeadingLinks({ blocks, description, banner }) {
-  console.log(banner);
   const headings = blocks
     .filter((block) => block.__component === "blocks.article-text-block")
     .flatMap((block) => {
