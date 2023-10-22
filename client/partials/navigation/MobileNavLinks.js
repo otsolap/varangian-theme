@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBullseye, faCircleNodes,faCube, faPenNib } from "@fortawesome/free-solid-svg-icons";
+import { faBullseye, faCircleNodes, faCube, faPenNib } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/styles/components/mobileNavLinks.module.scss";
+import { useRouter } from 'next/router';
 
 const icons = {
     bullseye: faBullseye,
@@ -10,21 +10,30 @@ const icons = {
     pen: faPenNib,
 };
 
-const MobileNavLinks = ({ blocks, currentPath }) => {
+const MobileNavLinks = ({ blocks, currentPath, closeModal }) => {
+    const router = useRouter();
+
     if (!blocks) return null;
+
+    // This function will be triggered whenever a link is clicked.
+    const handleClick = async (e, href) => {
+        e.preventDefault();
+        closeModal()
+        await router.push(href);
+    };
 
     return blocks.map((block, i) => {
         const { href, title } = block;
         const icon = icons[block.icon];
 
         return (
-            <Link
+            <a
+                href={href}
+                onClick={(e) => handleClick(e, href)}
                 className={`${styles.link} ${
                     currentPath === href ? `${styles.active}` : ''
                 }`}
-                href={href}
                 key={i}
-                passHref
             >
                 {icon ? (
                     <FontAwesomeIcon
@@ -34,7 +43,7 @@ const MobileNavLinks = ({ blocks, currentPath }) => {
                     />
                 ) : null}
                 <span className={styles.text}>{title}</span>
-            </Link>
+            </a>
         );
     });
 };

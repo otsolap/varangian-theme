@@ -7,19 +7,20 @@ import useToggle from "@/hooks/useToggle"
 
 const Offcanvas = ({ navigation, show, closeModal }) => {
     const [isBrowser, setIsBrowswer] = useToggle(false);
-    const router = useRouter()
+    const router = useRouter();
     const global = navigation && navigation.data ? navigation.data.attributes : {};
-    const AFTER_PRIMARY_PAGES = 4
+    const AFTER_PRIMARY_PAGES = 4;
     let OffcanvasLinks = null;
 
     useEffect(() => {
         setIsBrowswer(true);
     }, [])
 
-    const handleClick = (e) => {
-        e.preventDefault()
-        closeModal()
-    }
+    const handleClick = async (e, href) => {
+        e.preventDefault();
+        closeModal();
+        await router.push(href);
+    };
 
     if (global && Array.isArray(global.blocks)) {
       OffcanvasLinks = global.blocks
@@ -29,34 +30,34 @@ const Offcanvas = ({ navigation, show, closeModal }) => {
     
           return (
             <li
-              onClick={handleClick}
               className={`${styles.linkWrapper} ${
                 router.asPath === href ? styles.active : ''
               }`}
               key={i}
             >
-              <Link className={styles.link} href={href}>
-                <span className={styles.text}>{title}</span>
+              <Link href={href} onClick={(e) => handleClick(e, href)} className={styles.link}>
+                  <span className={styles.text}>{title}</span>
               </Link>
             </li>
           );
         });
     }
+
     const modalComponent = show ? (
         <div tabIndex="-1" aria-hidden="true" aria-labelledby="Modal" id={styles.modal} className="mobile-only">
             <div className={styles.content}>
                 {OffcanvasLinks}
             </div>
         </div>
-    ) : null
+    ) : null;
 
     if (isBrowser) {
         return ReactDOM.createPortal(
             modalComponent,
             document.getElementById('modal-root')
-        )
+        );
     } else {
-        return null
+        return null;
     }
 }
 

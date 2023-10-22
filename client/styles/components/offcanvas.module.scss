@@ -16,8 +16,6 @@ $mobile-screen-padding-top: 6rem;
     height: 100%;
     width: 100%;
     padding-top: $mobile-screen-padding-top;
-    opacity: 0;  // Initially hidden
-    transition: opacity 0.25s ease;
 }
 
 .content {
@@ -35,9 +33,12 @@ $mobile-screen-padding-top: 6rem;
 }
 
 .link {
+    display: block;
     color: $text-900;
     font-size: 22px;
     font-weight: 700;
+    width: inherit;
+    height: inherit;
 }
 
 .active {

@@ -16,10 +16,8 @@ const MobileFooter = ({ navigation }) => {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > lastScrollY.current) {
-            // Scrolling down
             setFooterOpacity(0.5);
         } else {
-            // Scrolling up
             setFooterOpacity(1);
         }
 
