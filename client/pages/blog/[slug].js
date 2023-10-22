@@ -9,7 +9,6 @@ import BlogSection from "components/blocks/BlogSection";
 import config from '@/utils/config'
 
 const Article = ({ article, categories, author, banner, relatedItems }) => {
-  console.dir(relatedItems)
   return (
     <>
       <ArticleHeading article={article} categories={categories} author={author} />
@@ -20,7 +19,7 @@ const Article = ({ article, categories, author, banner, relatedItems }) => {
         <HeadingLinks blocks={article.blocks} description={article.title} banner={banner} />
       </div>
       <ArticleFooter author={author} />
-      {relatedItems &&       
+      {relatedItems.data &&       
         <BlogSection
           title={config.blog.RELATED_ARTICLES_TITLE}
           selectTheme={config.blog.RELATED_ARTICLES_THEME}
@@ -73,8 +72,6 @@ export async function getStaticProps({ params }) {
     const [relatedArticlesresponse] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
     ])
-
-    // console.log(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`))
 
     return {
       props: {
