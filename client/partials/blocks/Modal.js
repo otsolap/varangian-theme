@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "@/styles/components/modal.module.scss";
 
-
 const Modal = ({ show, handleClose, children }) => {
   return (
     <>

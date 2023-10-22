@@ -26,7 +26,7 @@ const FooterColumn = ({ id, open, title, description, links }) => {
         <div className={styles.wrapper}>
           <div className={active ? `${styles.open}` : `${styles.closed}`}>
             <div className={styles.flexBox}>
-              <h4 className={styles.heading}>{title}</h4>
+            {title && <h4 className={styles.heading}>{title}</h4>}
               <FontAwesomeIcon
                 className={styles.icon}
                 aria-label="Alatunnisteen lisätieto"

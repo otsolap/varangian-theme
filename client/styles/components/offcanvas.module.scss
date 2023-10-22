@@ -36,7 +36,6 @@ $mobile-screen-padding-top: $quintuple;
     display: block;
     color: $text-900;
     font-size: 22px;
-    font-weight: 700;
     width: inherit;
     height: inherit;
 }
@@ -45,7 +44,7 @@ $mobile-screen-padding-top: $quintuple;
     background-color: $background-300;
 
     .link {
-        font-weight: 700;
+        font-weight: 900;
     }
 
 }

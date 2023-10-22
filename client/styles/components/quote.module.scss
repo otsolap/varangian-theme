@@ -5,12 +5,16 @@
 
 .quoteWrapper {
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: $container-ipad;
 }
 
 .quote {
     font-size: 1.2rem;
     display: block;
-    margin: 1em 0 0 0;
+    margin-top: $single;
     text-align: center;
     font-style: italic;
 }
