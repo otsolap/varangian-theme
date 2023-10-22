@@ -3,7 +3,7 @@
 @import "../partials/breakpoints";
 @import "../partials/util";
 
-$mobile-screen-padding-top: 6rem;
+$mobile-screen-padding-top: $quintuple;
 
 #modal {
     background-color: $background-900;

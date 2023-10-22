@@ -12,24 +12,28 @@ const MobileFooter = ({ navigation }) => {
     const lastScrollY = useRef(0);
 
     const handleScroll = useCallback(() => {
-        const currentScrollY = window.scrollY;
+        if (showModal) {
+            setFooterOpacity(1);
+            return;
+        }
 
+        const currentScrollY = window.scrollY;
         if (currentScrollY > lastScrollY.current) {
             setFooterOpacity(0.5);
         } else {
             setFooterOpacity(1);
         }
-
         lastScrollY.current = currentScrollY;
-    }, []);
+    }, [showModal]);
 
     useEffect(() => {
+        handleScroll(); // Initial scroll position
         window.addEventListener("scroll", handleScroll);
         
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [handleScroll]);
+    }, [handleScroll, showModal]); 
 
     const global = navigation && navigation.data ? navigation.data.attributes : {};
     const PRIMARY_PAGES = 4;
