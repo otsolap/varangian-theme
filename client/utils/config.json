@@ -19,7 +19,7 @@
         "RELATED_ARTICLES_THEME":"secondary",
         "RELATED_ARTICLES_LINK":"blog/",
         "RELATED_ARTICLES_LINK_TITLE":"See blog archive",
-        "RELATED_ARTICLES_QUERY":"api/categories?filters[id][$eq]=",
+        "RELATED_ARTICLES_QUERY":"api/categories?filters[slug][$eq]=",
         "RELATED_ARTICLES_QUERY_ARGUMENTS":"&sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=articles,articles.image,articles.author,articles.categories"
     },
     "forms": {

@@ -9,6 +9,7 @@ import BlogSection from "components/blocks/BlogSection";
 import config from '@/utils/config'
 
 const Article = ({ article, categories, author, banner, relatedItems }) => {
+  console.dir(relatedItems)
   return (
     <>
       <ArticleHeading article={article} categories={categories} author={author} />
@@ -19,15 +20,16 @@ const Article = ({ article, categories, author, banner, relatedItems }) => {
         <HeadingLinks blocks={article.blocks} description={article.title} banner={banner} />
       </div>
       <ArticleFooter author={author} />
-      <BlogSection
-        title={config.blog.RELATED_ARTICLES_TITLE}
-        selectTheme={config.blog.RELATED_ARTICLES_THEME}
-        blogs={relatedItems}
-        link={{
-          href: `/${config.blog.RELATED_ARTICLES_LINK}`,
-          title: `${config.blog.RELATED_ARTICLES_LINK_TITLE}`
-        }}
-      />
+      {relatedItems &&       
+        <BlogSection
+          title={config.blog.RELATED_ARTICLES_TITLE}
+          selectTheme={config.blog.RELATED_ARTICLES_THEME}
+          blogs={relatedItems}
+          link={{
+            href: `/${config.blog.RELATED_ARTICLES_LINK}`,
+            title: `${config.blog.RELATED_ARTICLES_LINK_TITLE}`
+          }}
+        />}
     </>
   )
 }
@@ -66,10 +68,13 @@ export async function getStaticProps({ params }) {
     ])
 
     const categorySlug = articleResponse.data.data[0].attributes.categories.data[0]?.attributes.slug
+    console.log(categorySlug)
 
     const [relatedArticlesresponse] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
     ])
+
+    // console.log(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`))
 
     return {
       props: {
@@ -79,7 +84,6 @@ export async function getStaticProps({ params }) {
         banner: newsletterResponse.data.data.attributes ?? {},
         relatedItems: relatedArticlesresponse.data.data[0]?.attributes.articles ?? {},
       },
-      revalidate: 1,
     }
   } catch (error) {
     console.error('Error fetching article data:', error)

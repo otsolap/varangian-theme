@@ -28,9 +28,11 @@ const ArticleHeading = ({ article, categories, author}) => {
                      </article>
                 }
         </div>
-        <figure className={styles.imageContainer}>
-            <NextImage image={article.image} className={styles.image} />
-        </figure>
+        {article.image.data && 
+                <figure className={styles.imageContainer}>
+                <NextImage image={article.image} className={styles.image} />
+            </figure>
+        }
   </header>
   )
 }
