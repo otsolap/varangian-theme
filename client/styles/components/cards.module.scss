@@ -42,7 +42,6 @@
   justify-content: center;
 }
 
-
 .imageContainer {
   position: relative;
   height: 75px;
@@ -54,6 +53,8 @@
 .image {
   @include border-radius(100%);
   aspect-ratio: 16/9;
+  width: inherit;
+  height: inherit;
 }
 
 .title {
@@ -65,15 +66,19 @@
 @media ($container-ipad <= width <= $container-desktop) {
 
   .imageContainer {
-      width: 460px;
+/*       width: 460px; */
+width: 200px;
     }
     
   .wrapper {
+    @include flex-direction(row);
     align-items: center;
   }
 
   .card {
-    max-width: 75%;
+/*     max-width: 75%; */
+max-width: calc(100% / 3);
+flex: 0 0 calc(33.333% - $single);
   }
   
 }

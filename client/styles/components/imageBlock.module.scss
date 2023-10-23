@@ -3,9 +3,13 @@
 @import "../partials/breakpoints";
 @import "../partials/util";
 
+.wrapper {
+    @include display-flex;
+    justify-content: center;
+}
 
 .imageBlock {
-    height: 250px;
+    width: 320px;
     position: relative;
     padding: $single;
 }
@@ -21,7 +25,6 @@
 @media ($container-ipad <= width <= $container-desktop) {
     
     .imageBlock  {
-      height: 375px;
       width: 375px;
     }
     
@@ -31,12 +34,11 @@
 @media (width >= $container-desktop) {
 
     .imageBlock {
-        height: auto;
         width: auto;
     }
 
     .image {
-        max-height: 720px;
+        max-width: 720px;
     }
 
 }

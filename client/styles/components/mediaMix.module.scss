@@ -26,17 +26,15 @@
 .videoContainer {
   position: relative;
   height: 325px;
+  width: 325px;
 }
 
-.imageContainer {
-  width: 100%;
-}
 
 .image {
   @include border-radius($half);
-  width: 100%;
-  height: 100%;
-  box-shadow: $single $single 0px 0px $brand-500;
+  width: inherit;
+  height: inherit;
+  box-shadow: $three-quarters $three-quarters 0px 0px $brand-500;
   aspect-ratio: 16/9;
 }
 
@@ -59,10 +57,18 @@
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
 
+  .wrapper {
+    @include flex-direction(row);
+  }
+
   .imageContainer,
   .videoContainer {
-    height: 400px;
-    width: 400px;
+    height: 540px;
+    width: 540px;
+  }
+
+  .image {
+    box-shadow: $single $single 0px 0px $brand-500;
   }
   
 }
@@ -76,8 +82,8 @@
   
   .wrapper {
     @include flex-direction(row);
-    margin: $single auto;
-    gap: $double;
+/*     margin: $single auto;
+    gap: $double; */
   }
 
   .mediaMixColumn {
@@ -87,13 +93,10 @@
     justify-content: center;
   }
 
+  .imageContainer,
   .videoContainer {
-    height: 500px;
-    width: 720px;
-  }
-
-  .imageContainer {
-    height: 500px;
+    height: 540px;
+    max-width: 720px;
   }
 
   .image {

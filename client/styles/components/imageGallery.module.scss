@@ -19,8 +19,7 @@
 .imageContainer,
 .imageModalContainer {
     position: relative;
-    height: 250px;
-    width: 100%;
+    width: 320px
 }
 
 .slide {
@@ -52,7 +51,6 @@
     }
 
     .imageContainer {
-        height: 375px;
         max-width: 45%;
         flex: 0 0 45%;
     }
@@ -69,7 +67,6 @@
     }
 
     .imageContainer {
-        height: initial;
         max-width: calc(100% / 4);
         flex: 0 0 calc(100% / 4);
     }

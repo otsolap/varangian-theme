@@ -91,15 +91,15 @@
 }
 
 .text {
-  padding: $single 0.5rem;
+  padding: $single $half;
 }
 
 /* DESKTOP STYLES */
 @media (min-width: $container-desktop) {
 
   .accordion {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: $double;
+    padding-bottom: $double;
   }
 
   .container {

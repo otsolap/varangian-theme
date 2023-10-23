@@ -4,7 +4,7 @@ import styles from '@/styles/components/imageBlock.module.scss'
 const ImageBlock = ({  image }) => {
   return (
       image.data ? (
-        <section>
+        <section className={styles.wrapper}>
           <figure className={styles.imageBlock}>
             <NextImage image={image} className={styles.image}/>
           </figure>

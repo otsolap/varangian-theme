@@ -60,7 +60,6 @@
     @include display-flex();
     @include flex-direction(column);
     @include border-radius($half);
-    width: 100%;
     align-items: flex-start;
     border: 1px solid;
     color: $text-900;
@@ -78,8 +77,8 @@
 
 .imageContainer {
     position: relative;
-    height: 215px;
     width: 100%;
+    max-width: 360px;
     border: 1px solid;
     border-color: $text-700;
 
@@ -145,13 +144,23 @@
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
 
+    .wrapper {
+        @include flex-direction(row);
+         align-items: center;
+    }
+
+    .blog {
+        max-width: calc(100% / 3);
+        flex: 0 0 calc(33.333% - $single);
+    }
+
     .imageContainer {
-        height: 460px;
+        max-width: initial;
     }
       
-    .wrapper {
-      align-items: center;
-    }
+    .footer {
+        justify-content: flex-end;
+      }
     
 }
 
@@ -172,9 +181,12 @@
         justify-content: flex-end;
     }
 
-     /** item **/
     .blog {
-        max-width: calc(100% / 4);
-        flex: 0 0 calc(100% / 4);
+        max-width: calc(100% / 3);
+        flex: 0 0 calc(33.333% - $double);
     }
+
+    .imageContainer {
+        max-width: initial;
+      }
 }

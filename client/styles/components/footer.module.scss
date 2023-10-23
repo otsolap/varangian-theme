@@ -4,6 +4,7 @@
 @import "../partials/util";
 
 .footer {
+  @extend .container;
   padding-bottom: 5rem;
   background-color: $background-900;
   @include display-flex;
@@ -23,6 +24,13 @@
 .column {
   flex: 100%;
   max-width: 100%;
+
+  &:first-of-type {
+    margin-top: $single;
+    margin-bottom: $single;
+  }
+
+
 }
 
 .columnContainer {
@@ -134,6 +142,7 @@
 }
 
 /* Subfooter  */
+
 .subFooter {
   border-top: $text-900 2px solid;
   padding: $single;
