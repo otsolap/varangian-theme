@@ -61,7 +61,6 @@ export interface BlocksBlogs extends Schema.Component {
       'oneToMany',
       'api::article.article'
     >;
-    link: Attribute.Component<'partials.link'>;
   };
 }
 
