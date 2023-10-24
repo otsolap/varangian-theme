@@ -6,7 +6,7 @@
 .banner {
     @include display-flex();
     @include flex-direction(column);
-    padding: $single;
+   /*  padding: $single; */
 }
 
 .imageContainer {
@@ -43,7 +43,7 @@
     .banner {
         flex-direction: row;
         gap: $single;
-        padding: $double;
+    /*     padding: $double; */
     }
 
     .imageContainer {

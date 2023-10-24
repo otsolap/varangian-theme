@@ -17,7 +17,7 @@ const AccordionItem = ({ title, body, open }) => {
   };
 
   return (
-    <div role="button" className={styles.button} onClick={toggleAccordion}>
+    <div role="button" className={`${styles.toggle} ${active ? styles.activeToggle : styles.inactiveToggle}`} onClick={toggleAccordion}>
       <div className={styles.item}>
         <div className={styles.flexBox}>
           <h4 className={styles.heading}>{title}</h4>

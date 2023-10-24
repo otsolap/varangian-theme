@@ -27,11 +27,11 @@
 .card {
   @include display-flex();
   @include flex-direction(column);
-  @include border-radius($single);
+  @include border-radius($quarter);
+  border: 1px solid $brand-300;
   padding: $single;
   width: 100%;
   align-items: center;
-  background-color: $brand-500;
   color: $text-900;
 }
 
@@ -58,6 +58,8 @@
 }
 
 .title {
+  color:  $brand-500;
+  font-weight: 600;
   padding-bottom: $single;
   text-align: center;
 }
@@ -66,19 +68,18 @@
 @media ($container-ipad <= width <= $container-desktop) {
 
   .imageContainer {
-/*       width: 460px; */
-width: 200px;
-    }
+      width: 150px;
+      height: 150px;
+  }
     
   .wrapper {
-    @include flex-direction(row);
-    align-items: center;
+      @include flex-direction(row);
+      align-items: center;
   }
 
   .card {
-/*     max-width: 75%; */
-      max-width: calc(100% / 3);
-      flex: 0 0 calc(33.333% - $single);
+      max-width: calc(100% / 2);
+      flex: 0 0 calc(50% - $single);
   }
   
 }

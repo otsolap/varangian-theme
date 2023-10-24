@@ -61,12 +61,6 @@
     @include flex-direction(row);
   }
 
-  .imageContainer,
-  .videoContainer {
-    height: 540px;
-    width: 540px;
-  }
-
   .image {
     box-shadow: $single $single 0px 0px $brand-500;
   }
