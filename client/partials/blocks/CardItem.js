@@ -18,7 +18,6 @@ const CardItem = ({ image, title, description, className }) => {
           {description && <p>{description}</p>}
         </div>
         ): null}
-
     </article>
   );
 };
