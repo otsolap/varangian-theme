@@ -11,7 +11,7 @@ export default function BlogSection({ title, description, selectTheme, blogs, fi
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(getStrapiURL(`/${config.blog.CONTENT_BLOG_SECTION_LATEST_QUERY}`));
+      const res = await axios.get(getStrapiURL(`/${config.blocks.CONTENT_BLOG_SECTION_LATEST_QUERY}`));
       setItems(res.data);
     } catch (error) {
       console.error(error);
