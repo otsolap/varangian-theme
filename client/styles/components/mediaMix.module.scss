@@ -76,27 +76,23 @@
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
 
-  .mediaMix {
-    padding: $single;
-  }
-  
   .wrapper {
     @include flex-direction(row);
-/*     margin: $single auto;
-    gap: $double; */
+    gap: $double;
+
   }
 
   .mediaMixColumn {
     flex: 0 0 50%;
     padding: initial;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
   .imageContainer,
   .videoContainer {
-    height: 540px;
-    max-width: 720px;
+    height: 500px;
+    width: 668px;
   }
 
   .image {

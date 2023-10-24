@@ -55,8 +55,6 @@ display: none;
 
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
-
-  
     .mobile-only {
       display: none;
     }
@@ -69,6 +67,4 @@ display: none;
       padding-top: $triple;
       padding-bottom: $triple;
     }
-
-
 }

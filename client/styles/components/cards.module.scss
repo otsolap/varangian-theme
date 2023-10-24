@@ -77,8 +77,8 @@ width: 200px;
 
   .card {
 /*     max-width: 75%; */
-max-width: calc(100% / 3);
-flex: 0 0 calc(33.333% - $single);
+      max-width: calc(100% / 3);
+      flex: 0 0 calc(33.333% - $single);
   }
   
 }
@@ -101,7 +101,7 @@ flex: 0 0 calc(33.333% - $single);
   }
 
   .card {
-    max-width: calc(100% / 3);
-    flex: 0 0 calc(33.333% - $double);
+    max-width: calc(100% / 4);
+    flex: 0 0 calc(25% - $double);
   }
 }

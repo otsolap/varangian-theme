@@ -9,6 +9,8 @@
     @include flex-direction(column);
     flex-wrap: wrap;
     background-color: $text-700;
+    padding-top: $double;
+    padding-bottom: $double;
 }
 
 .wrapper,
@@ -49,6 +51,8 @@
     .footer {
         @include flex-direction(row);
         flex-wrap: nowrap;
+        padding-top: $triple;
+        margin-bottom: $triple;
     }
   
     .column {
