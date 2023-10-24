@@ -7,7 +7,7 @@ const Accordion = ({ image, accordions}) => {
     <section className={styles.accordion}>
       <div className={styles.container}>
           {image && (
-            <figure className={styles.imgContainer}>
+            <figure className={styles.imageContainer}>
               <NextImage className={styles.image} image={image} />
             </figure>
           )}

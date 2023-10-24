@@ -15,7 +15,7 @@
   @include flex-direction(column);
 }
 
-.imgContainer {
+.imageContainer {
   display: none;
 }
 
@@ -106,16 +106,16 @@
     flex-direction: row;
   }
 
-  .imgContainer,
+  .imageContainer,
   .content {
     max-width: 50%;
     flex: 0 0 50%;
   }
 
-  .imgContainer {
+  .imageContainer {
     display: block;
     height: 500px;
-    width: 600px;
+    width: 668px;
   }
 
   .image {

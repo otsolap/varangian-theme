@@ -35,6 +35,7 @@
 
 .columnContainer {
   padding: $single;
+  gap: $single;
   width: 100%;
   @include display-flex;
   @include flex-direction(column);
