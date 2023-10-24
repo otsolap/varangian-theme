@@ -9,7 +9,7 @@
 }
 
 .bgSecondary  {
-    background-color: $background-300;
+    background-color: $background-900;
 }
 
 .header {
@@ -39,20 +39,11 @@
 .archiveLink {
     color: $text-900;
 
-    .bgPrimary & {
        &:hover,
        &:focus {
-           color:  $background-300;
+            font-weight: 700;
+            cursor: pointer;
        }
-    }
-
-    .bgSecondary & {
-       &:hover,
-       &:focus {
-           text-decoration: underline;
-           text-underline-offset: $half;
-       }
-    }
 }
 
 /** item **/
@@ -67,11 +58,11 @@
     cursor: pointer;
     
     .bgPrimary & {
-        background-color: $brand-500;
+        border-color: $background-900;
     }
 
     .bgSecondary & {
-        background-color: $background-300;
+        border-color: $brand-500;
     }
 }
 
@@ -82,9 +73,12 @@
     border: 1px solid;
     border-color: $text-700;
 
-    .bgPrimary &,
+    .bgPrimary & {
+        border-color: $background-900;
+    }
+
     .bgSecondary & {
-        border-color: $text-900;
+        border-color: $brand-500;
     }
 }
 
@@ -120,7 +114,7 @@
 
     &:hover,
     &:focus {
-        color: $background-300;
+        color: $brand-tertiary-700;
         cursor: pointer;
     }
 }
@@ -133,12 +127,7 @@
     @include flex-direction(column);
     gap: $half;
     border-top: 1px solid;
-    border-color: $text-700;
-
-    .bgPrimary &,
-    .bgSecondary & {
-        border-color: $text-900;
-    }
+    border-color: $text-900;
 }
 
 /* Tablet Styles */
@@ -158,9 +147,10 @@
         max-width: initial;
     }
       
+    .linkWrapper,
     .footer {
         justify-content: flex-end;
-      }
+    }
     
 }
 

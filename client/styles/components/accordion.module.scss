@@ -5,7 +5,7 @@
 
 .accordion {
   @extend .container;
-  padding-bottom: $single;
+  padding: $single;
 }
 
 .container {
@@ -19,7 +19,6 @@
 .imageContainer {
   display: none;
 }
-
 
 .content {
   max-width: 100%;
@@ -51,7 +50,6 @@
   width: 100%;
   min-height: 10px;
   @include border(1px solid);
-  border-color: $brand-500;
 }
 
 .flexBox {
@@ -70,7 +68,6 @@
 
 .icon {
   background-image: none;
-  @include border(0px solid);
   cursor: pointer;
   margin-right: $single;
   margin-left: auto;

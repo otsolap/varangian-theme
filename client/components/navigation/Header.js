@@ -32,7 +32,7 @@ const Header= ({ navigation }) => {
           ): null}
           {global.buttons ? (
             global.buttons.map((button, i) => (
-                  <CustomLink link={button} key={i} className={`${styles.calender} button bg-${button.selectTheme}`} />
+                  <CustomLink link={button} key={i} className={`${styles.calender} button button--${button.selectTheme}`} />
               ))
             ): null}
         </div>

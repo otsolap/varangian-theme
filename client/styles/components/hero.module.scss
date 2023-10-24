@@ -67,7 +67,7 @@
   @include display-flex;
   @include flex-direction(row);
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: $single;
 }
 
 /* Tablet Styles */

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import styles from "@/styles/components/blog.module.scss";
 import BlogItem from "partials/blocks/BlogItem";
-import CustomLink from "partials/util/CustomLink";
+import Link from "next/link";
 import axios from "axios";
 import { getStrapiURL } from "@/utils/index";
 import config from '@/utils/config'
 
-export default function BlogSection({ title, description, selectTheme, blogs, filter, link }) {
+export default function BlogSection({ title, description, selectTheme, blogs, filter}) {
   const [items, setItems] = useState([]);
 
   const fetchData = async () => {
@@ -51,11 +51,11 @@ export default function BlogSection({ title, description, selectTheme, blogs, fi
           })}
         </div>
       ) : null}
-      {link ? (
-        <footer className={styles.linkWrapper}>
-          <CustomLink className={styles.archiveLink} link={link} />
-        </footer>
-      ) : null}
+      <footer className={styles.linkWrapper}>
+      <Link className={styles.archiveLink} href={`/${config.blog.BLOG_PATH}`}>
+          {config.blocks.CONTENT_BLOG_SECTION_BLOG_ARCHIVE_LEAD}
+       </Link>
+      </footer>
     </section>
   );
 };

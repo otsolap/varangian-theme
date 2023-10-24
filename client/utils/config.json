@@ -7,7 +7,8 @@
         "API_FOOTER_QUERY":"api/footer?=&populate=blocks,blocks.image,blocks.links,blocks.socialMedia,subFooter,subFooter.link"
     },
     "blocks": {
-        "CONTENT_BLOG_SECTION_LATEST_QUERY":"api/articles?sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=image,categories"
+        "CONTENT_BLOG_SECTION_LATEST_QUERY":"api/articles?sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=image,categories",
+        "CONTENT_BLOG_SECTION_BLOG_ARCHIVE_LEAD":"See blog archive"
     },
     "blog": {
         "BLOG_PATH":"blog",
