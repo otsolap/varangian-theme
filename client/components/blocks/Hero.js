@@ -12,21 +12,14 @@ const Hero = ({ image, alignContent, autoplay,  media, mediaWidth, title, video,
           className={`
           ${styles.mediaContainer} 
           ${alignContent == "left" ? styles.mediaLast : styles.mediaFirst} 
-          ${media == "video" && mediaWidth ? styles.fullVideo : ""} 
+          ${mediaWidth ? styles.fullWrapper : ""} 
           `}
         >
           {media == "image" && image.data ? (
-            mediaWidth ? (
-              <NextImage
-                className={styles.fullImage}
-                image={image}
-              />
-            ) : (
               <NextImage
                 className={styles.image}
                 image={image}
               />
-            )
           ): null}
           {media == "video" && video ? (
             <YoutubeEmbed
