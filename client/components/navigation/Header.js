@@ -19,7 +19,7 @@ const Header= ({ navigation }) => {
         </div>
         {global.buttons ? (
           global.buttons.map((button, i) => (
-                <CustomLink link={button} key={i} className={`${styles.calender} mobile-only button bg-${button.selectTheme}`} />
+                <CustomLink link={button} key={i} className={`${styles.calender} mobile-only button button--${button.selectTheme}`} />
             ))
           ): null}
     </header>

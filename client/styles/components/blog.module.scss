@@ -50,22 +50,34 @@
 .blog {
     @include display-flex();
     @include flex-direction(column);
-    @include border-radius($half);
+    @include border-radius($quarter);
     align-items: flex-start;
     border: 1px solid;
     color: $text-900;
     border-color: $text-900;
     cursor: pointer;
     overflow: hidden;
+    transition-duration: 150ms;
     
     &:hover,
     &:focus {
         .bgPrimary & {
             border-color: $background-900;
+
+            .imageContainer,
+            .footer {
+                border-color: $background-900;
+            }
+
         }
     
         .bgSecondary & {
             border-color: $brand-500;
+
+            .imageContainer,
+            .footer {
+                border-color: $brand-500;
+            }
         }
     }
 }
@@ -75,19 +87,7 @@
     display: flex;
     width: 100%;
     max-width: 360px;
-    border-bottom: 1px solid;
-    border-color: $text-900;
-
-    &:hover,
-    &:focus {
-        .bgPrimary & {
-            border-color: $background-900;
-        }
-    
-        .bgSecondary & {
-            border-color: $brand-500;
-        }
-    }
+    border-bottom: $text-900 1px solid;
 }
 
 .image {
@@ -121,7 +121,6 @@
 
     &:hover,
     &:focus {
-        color: $brand-tertiary-700;
         cursor: pointer;
     }
 }
@@ -129,12 +128,10 @@
 
 .footer {
     width: 100%;
-    border-top: $text-900 2px solid;
+    border-top: $text-900 1px solid;
     @include display-flex;
     @include flex-direction(column);
     gap: $half;
-    border-top: 1px solid;
-    border-color: $text-900;
 }
 
 /* Tablet Styles */
