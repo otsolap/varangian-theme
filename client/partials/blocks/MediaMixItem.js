@@ -20,9 +20,7 @@ const MediaMixItem = ({ type, image, video, markdown}) => {
         </figure>
       ): null}
       {type == "markdown" && markdown && (
-        <div className={styles.markdown}>
-          <MarkdownBlock markdown={markdown} />
-        </div>
+         <MarkdownBlock markdown={markdown} />
       )}
     </div>
   );

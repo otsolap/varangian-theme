@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.mediaMixColumn {
+  padding: $single;
+}
+
 .mediaMix,
 .wrapper,
 .mediaMixColumn {
@@ -18,40 +22,25 @@
   gap: $single;
 }
 
-.mediaMixColumn {
-  padding: $single;
-}
-
 .imageContainer,
 .videoContainer {
   position: relative;
-  height: 325px;
-  width: 325px;
+  height: 300px;
+  width: 300px;
 }
-
 
 .image {
   @include border-radius($half);
   width: inherit;
   height: inherit;
-  box-shadow: $three-quarters $three-quarters 0px 0px $brand-500;
+  box-shadow: $half $half 0px 0px $brand-500;
   aspect-ratio: 16/9;
 }
 
 .videoContainer {
   z-index: 30;
-  width: 325px;
+  width: 320px;
   padding: $single;
-}
-
-.buttonWrapper {
-  padding: 0 $single;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.button {
-  width: fit-content;
 }
 
 /* Tablet Styles */
@@ -59,6 +48,11 @@
 
   .wrapper {
     @include flex-direction(row);
+  }
+
+  .imageContainer {
+    height: 400px;
+    width: 400px;
   }
 
   .image {
@@ -76,7 +70,6 @@
 
   .mediaMixColumn {
     flex: 0 0 50%;
-    padding: $single;
     align-items: flex-start;
     justify-content: center;
   }
@@ -91,8 +84,4 @@
     box-shadow: 24px 24px 0px 0px $brand-500;
   }
 
-  .buttonWrapper {
-    margin-left: initial;
-    margin-right: initial;
-  }
 }

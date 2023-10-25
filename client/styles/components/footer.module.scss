@@ -4,6 +4,7 @@
 @import "../partials/util";
 
 .footer {
+  border-top: 1px solid $text-900;
   @extend .container;
   padding-bottom: 5rem;
   background-color: $background-900;
@@ -34,7 +35,6 @@
 }
 
 .columnContainer {
-  padding: $single;
   gap: $single;
   width: 100%;
   @include display-flex;
@@ -148,7 +148,7 @@
   border-top: $text-900 2px solid;
   padding: $single;
   @include display-flex;
-  @include flex-direction(row);
+  @include flex-direction(column);
   gap: $half;
 }
 
@@ -224,11 +224,11 @@
 
   .columnContainer {
     @include flex-direction(row);
+    gap: $double;
     max-width: $container-desktop;
     margin-left: auto;
     margin-right: auto;
   }
-
 
   .column {
     flex: 0 0 calc(100% / 3);
@@ -272,6 +272,10 @@
 
   .legal {
     padding-left: $half;
+  }
+
+  .subFooter {
+    @include flex-direction(row);
   }
 
 }

@@ -51,7 +51,7 @@
 }
 
 .content {
-  padding: $double;
+  padding: $single;
 
   h1 {
     font-size: $triple;
@@ -72,6 +72,10 @@
 
 /* Tablet Styles */
 @media ($container-ipad <= width <= $container-desktop) {
+
+  .content {
+    padding: $double;
+  }
 
   .mediaContainer {
     max-height: 540px;
@@ -130,6 +134,7 @@
   }
 
   .content {
+    padding: $double;
 
     h1 {
       padding-bottom: $single;

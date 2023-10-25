@@ -15,7 +15,7 @@ const Footer = ({ footer }) => {
         {global.subFooter ? (
           <div className={styles.subFooter}>
               <span className={styles.brand}>{global.subFooter.title} &#169; {new Date().getFullYear()} </span> 
-              <span> &#124;</span> 
+              <span className="desktop-only"> &#124;</span> 
                 {global.subFooter.link ?  (
                   <CustomLink className={styles.legal} link={global.subFooter.link} />
                 ): null}
