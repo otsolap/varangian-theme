@@ -56,29 +56,37 @@
     color: $text-900;
     border-color: $text-900;
     cursor: pointer;
+    overflow: hidden;
     
-    .bgPrimary & {
-        border-color: $background-900;
-    }
-
-    .bgSecondary & {
-        border-color: $brand-500;
+    &:hover,
+    &:focus {
+        .bgPrimary & {
+            border-color: $background-900;
+        }
+    
+        .bgSecondary & {
+            border-color: $brand-500;
+        }
     }
 }
 
 .imageContainer {
     position: relative;
+    display: flex;
     width: 100%;
     max-width: 360px;
-    border: 1px solid;
-    border-color: $text-700;
+    border-bottom: 1px solid;
+    border-color: $text-900;
 
-    .bgPrimary & {
-        border-color: $background-900;
-    }
-
-    .bgSecondary & {
-        border-color: $brand-500;
+    &:hover,
+    &:focus {
+        .bgPrimary & {
+            border-color: $background-900;
+        }
+    
+        .bgSecondary & {
+            border-color: $brand-500;
+        }
     }
 }
 
@@ -87,7 +95,6 @@
     width: inherit;
     object-fit: cover;
     object-position: 50% 50%;
-    aspect-ratio: 16/9;
 }
 
 .title {

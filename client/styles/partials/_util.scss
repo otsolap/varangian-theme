@@ -28,6 +28,19 @@
     color: $text-900;
   }
 
+  &--secondary,
+  &--tertiary,
+  &--transparent {
+    
+    color: $text-900;
+
+    &:hover,
+    &:focus {
+      background-color: $brand-700;
+      color: $background-900;
+    }
+  }
+
   &--secondary {
     background-color: $cta-900;
   }
@@ -38,18 +51,6 @@
 
   &--transparent {
     background-color: transparent;
-  }
-
-  &--secondary,
-  &--tertiary,
-  &--transparent {
-    color: $text-900;
-
-    &:hover,
-    &:focus {
-      background-color: $brand-700;
-      color: $background-900;
-    }
   }
 
 }
