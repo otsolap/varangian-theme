@@ -5,17 +5,15 @@
 
 .quoteWrapper {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+    width: 100%; 
     max-width: $container-ipad;
+    @include display-flex();
+    @include flex-direction(column);
+    padding: 0 $single;
 }
 
 .quote {
-    font-size: 1.2rem;
-    display: block;
-    margin-top: $single;
-    text-align: center;
+    margin: $single 0;
     font-style: italic;
 }
 
@@ -28,12 +26,15 @@
 
     &:last-of-type {
         margin-right: initial;
-        margin-left: auto;
     }
 }
 
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
+
+    .quoteWrapper {
+        padding: 0 $double;
+    }
 
     .quote {
         font-size: $double-half;
