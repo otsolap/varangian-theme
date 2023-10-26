@@ -39,6 +39,7 @@
   width: 100%;
   @include display-flex;
   @include flex-direction(column);
+  padding: $double $single;
 }
 
 .text {
@@ -62,7 +63,7 @@
   &:focus,
   &:hover {
     cursor: pointer;
-    color: $background-300;
+    color: $brand-500;
     transition-property: color, background-color, border-color,
       text-decoration-color, fill, stroke, opacity, box-shadow, transform,
       filter, backdrop-filter;
@@ -96,7 +97,7 @@
 }
 
 .heading {
-  font-weight: 700;
+  font-weight: 900;
   padding-top: $single;
 }
 
@@ -228,11 +229,12 @@
     max-width: $container-desktop;
     margin-left: auto;
     margin-right: auto;
+    padding: initial;
   }
 
   .column {
-    flex: 0 0 calc(100% / 3);
     max-width: calc(100% / 3);
+    flex: 0 0 calc(33.333% - $double);
   }
 
   .socialIcon {

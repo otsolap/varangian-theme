@@ -8,7 +8,7 @@
     @include display-flex;
     @include flex-direction(column);
     flex-wrap: wrap;
-    background-color: $text-700;
+    background-color: $background-700;
     padding-top: $double;
     padding-bottom: $double;
 }
@@ -28,7 +28,7 @@
 }
 
 .image {
-    @include border-radius($half);
+    @include border-radius($quarter);
     width: inherit;
     height: inherit;
     object-fit: cover;

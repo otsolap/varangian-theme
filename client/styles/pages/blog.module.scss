@@ -13,7 +13,7 @@
 .article {
     width: 100%;
     padding: $single;
-    @include border-radius($half);
+    @include border-radius($quarter);
 }
 
 /* DESKTOP STYLES */

@@ -23,9 +23,9 @@
 }
 
 .slide {
-    display: flex;
+    @include display-flex;
     justify-content: center;
-    flex-direction: column;
+    @include flex-direction(column);
 }
 
 .image {

@@ -41,7 +41,7 @@
 
        &:hover,
        &:focus {
-            font-weight: 700;
+            font-weight: 900;
             cursor: pointer;
        }
 }
@@ -86,7 +86,7 @@
 
 .imageContainer {
     position: relative;
-    display: flex;
+    @include display-flex;
     width: 100%;
     max-width: 360px;
     border-bottom: $text-900 1px solid;

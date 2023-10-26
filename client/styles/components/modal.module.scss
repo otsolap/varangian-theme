@@ -11,13 +11,13 @@
 }
 
 .header {
-    display: flex; 
+    @include display-flex;
     padding: $single; 
     justify-content: flex-end; 
 }
 
 .content {
-	display: flex; 
+    @include display-flex;
     position: relative; 
     padding: $single;  
     justify-content: center; 

@@ -12,7 +12,7 @@
 
 .nav {
     background-color: $text-900;
-    border-radius: $half;
+    @include border-radius($quarter);
 }
 
 .wrapper {

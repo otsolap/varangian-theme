@@ -30,7 +30,7 @@
 }
 
 .image {
-  @include border-radius($half);
+  @include border-radius($quarter);
   width: inherit;
   height: inherit;
   box-shadow: $half $half 0px 0px $brand-500;

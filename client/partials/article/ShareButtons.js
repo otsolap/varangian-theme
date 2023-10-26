@@ -23,7 +23,7 @@ const ShareButtons = ({ description }) => {
 
   return (
       <footer className={styles.shareButtons}>
-        <strong>Share article:</strong>
+        <h5>Share article:</h5>
         <div className={styles.wrapper}>
           <Link
             href={`mailto:?&subject=${description}!&cc=&bcc=&body=${url}\n${encodeURI(description)}`}

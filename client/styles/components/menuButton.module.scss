@@ -14,6 +14,11 @@
     border: none;
     outline: none;
     background: none;
+
+    &:hover {
+      color: $brand-700;
+    }
+
 }
 
 .icon {

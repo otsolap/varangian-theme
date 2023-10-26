@@ -7,10 +7,21 @@
     width: $quintuple;
     height: $quadruple;
     text-align: center;
+    transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+    filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
     z-index: 10;
     cursor: pointer;
     flex: 0 0 calc(100% / 4);
     max-width: calc(100% / 4);
+
+    &:hover,
+    &:focus {
+      color: $brand-700;
+    }
+
 }
 
 .active {

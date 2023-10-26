@@ -18,7 +18,7 @@ const Banner = ({ title, description, image, button, selectTheme, isAside }) => 
         {title || description || button ? (
         <div className={styles.content}>
           {title && (
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={isAside ? asideStyles.title : styles.title}>{title}</h2>
           )}
           {description && <MarkdownBlock markdown={description} />}
           {button && (

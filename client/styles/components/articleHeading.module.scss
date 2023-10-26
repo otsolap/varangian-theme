@@ -61,7 +61,7 @@
 }
 
 .image {
-    @include border-radius($half);
+    @include border-radius($quarter);
     height: inherit;
     width: inherit;
     object-fit: cover;

@@ -43,6 +43,10 @@
 
 .activeToggle {
   background-color: $brand-500;
+
+  .heading {
+    font-weight: 900;
+  }
 }
 
 .item {
@@ -64,6 +68,11 @@
   margin-left: $single;
   padding-top: $single;
   padding-bottom: $single;
+  transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .icon {
@@ -102,7 +111,7 @@
   }
 
   .container {
-    flex-direction: row;
+    @include flex-direction(row);
     gap: $double;
   }
 
