@@ -8,7 +8,7 @@
     @include display-flex;
     @include flex-direction(column);
     flex-wrap: wrap;
-    background-color: $background-700;
+    background-color: $background-500;
     padding-top: $double;
     padding-bottom: $double;
 }
