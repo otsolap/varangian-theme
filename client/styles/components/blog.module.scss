@@ -137,7 +137,7 @@
 }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >= $container-ipad) {
 
     .wrapper {
         @include flex-direction(row);
@@ -169,20 +169,11 @@
     }
 
     .wrapper {
-        @include flex-direction(row);
         gap: $triple;
-    }
-
-    .linkWrapper {
-        justify-content: flex-end;
     }
 
     .blog {
         max-width: calc(100% / 3);
         flex: 0 0 calc(33.333% - $double);
     }
-
-    .imageContainer {
-        max-width: initial;
-      }
 }

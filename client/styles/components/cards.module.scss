@@ -65,7 +65,7 @@
 }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >= $container-ipad) {
 
   .imageContainer {
       width: 150px;
@@ -85,6 +85,7 @@
 
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
+
   .header {
     max-width: calc($container-desktop / 2);
     flex: 0 0 50%;
@@ -96,7 +97,6 @@
   }
 
   .wrapper {
-    @include flex-direction(row);
     gap: $double;
   }
 

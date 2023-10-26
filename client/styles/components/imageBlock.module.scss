@@ -22,7 +22,7 @@
 }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >=  $container-ipad) {
     
     .imageBlock  {
       width: 375px;

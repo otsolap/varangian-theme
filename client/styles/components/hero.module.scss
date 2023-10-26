@@ -71,7 +71,7 @@
 }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >=  $container-ipad ) {
 
   .content {
     padding: $double;
@@ -134,7 +134,6 @@
   }
 
   .content {
-    padding: $double;
 
     h1 {
       padding-bottom: $single;

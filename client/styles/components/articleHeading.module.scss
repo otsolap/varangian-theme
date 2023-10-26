@@ -69,19 +69,17 @@
     aspect-ratio: 16/9;
 }
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >= $container-ipad) {
     
+    .header,
+    .author {
+        @include flex-direction(row);
+    }
+
     .lead,
     .imageContainer {
       max-width: 50%;
       flex: 0 0 50%;
-    }
-
-
-    .header,
-    .author {
-        @include flex-direction(row);
-        flex-wrap: nowrap;
     }
 
     .imageContainer {

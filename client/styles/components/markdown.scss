@@ -51,7 +51,7 @@
   }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >=  $container-ipad) {
   .markdown {
     article {
       img {

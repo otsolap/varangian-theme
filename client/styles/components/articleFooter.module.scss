@@ -36,7 +36,7 @@
 }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >= $container-ipad) {
     
     .imageContainer {
       height: 400px;
@@ -52,7 +52,7 @@
         @include flex-direction(row);
         flex-wrap: nowrap;
         padding-top: $triple;
-        margin-bottom: $triple;
+        padding-bottom: $triple;
     }
   
     .column {

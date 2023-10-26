@@ -31,3 +31,12 @@
         margin-left: auto;
     }
 }
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+    .quote {
+        font-size: $double-half;
+    }
+
+}

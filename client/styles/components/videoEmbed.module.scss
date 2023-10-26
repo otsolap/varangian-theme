@@ -10,7 +10,7 @@
 }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >=  $container-ipad) {
     
     .videoContainer {
         height: 375px;
@@ -24,7 +24,6 @@
     .videoContainer {
         max-width: $width-max-article;
         height: 500px;
-
     }
   
 }

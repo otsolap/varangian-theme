@@ -44,7 +44,7 @@
 }
 
 /* Tablet Styles */
-@media ($container-ipad <= width <= $container-desktop) {
+@media (width >= $container-ipad) {
 
   .wrapper {
     @include flex-direction(row);
@@ -63,10 +63,6 @@
 
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
-
-  .wrapper {
-    @include flex-direction(row);
-  }
 
   .mediaMixColumn {
     flex: 0 0 50%;
