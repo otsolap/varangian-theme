@@ -7,6 +7,7 @@
     @include display-flex();
     @include flex-direction(column);
     gap: $single;
+    margin-bottom: initial;
 }
 
 .title {
@@ -26,4 +27,10 @@
 .image {
     width: inherit;
     height: inherit;
+}
+
+@media (width >= $container-desktop) {
+    .banner {
+        margin-bottom: initial;
+    }
 }

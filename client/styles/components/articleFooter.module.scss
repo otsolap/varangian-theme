@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     background-color: $background-500;
     padding-top: $double;
-    padding-bottom: $double;
+    margin-bottom: $double;
 }
 
 .wrapper,
@@ -52,7 +52,7 @@
         @include flex-direction(row);
         flex-wrap: nowrap;
         padding-top: $triple;
-        padding-bottom: $triple;
+        margin-bottom: $triple;
     }
   
     .column {

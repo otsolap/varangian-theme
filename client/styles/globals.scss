@@ -33,7 +33,7 @@ main {
 
 section {
   padding-top: $double;
-  padding-bottom: $double;
+  margin-bottom: $double;
 }
 
 .youtube {
@@ -65,6 +65,6 @@ display: none;
 
     section {
       padding-top: $triple;
-      padding-bottom: $triple;
+      margin-bottom: $triple;
     }
 }
