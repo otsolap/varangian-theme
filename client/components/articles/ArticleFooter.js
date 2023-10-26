@@ -1,10 +1,11 @@
 import NextImage from "partials/util/NextImage"
 import CustomLink from "partials/util/CustomLink"
 import styles from '@/styles/components/articleFooter.module.scss'
+import { isNotEmpty } from "@/utils/index";
 
 const ArticleFooter = ({ author }) => {
   return (
-    author ? (
+    isNotEmpty(author) ? (
       <footer className={styles.footer}>
         <div className={styles.column}>
             <figure className={styles.imageContainer}>
