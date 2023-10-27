@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "@/styles/components/accordion.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 const AccordionItem = ({ title, body, open }) => {
   const contentRef = useRef(null);
@@ -22,9 +22,9 @@ const AccordionItem = ({ title, body, open }) => {
         <div className={styles.flexBox}>
           <h4 className={styles.heading}>{title}</h4>
           <FontAwesomeIcon
-            className={styles.icon}
+            className={`${styles.icon} ${active ? styles.iconLeft : styles.iconDown}`}
             aria-label="Usein kysytty kysymys"
-            icon={active ? faAngleLeft : faAngleDown}
+            icon={faAngleDown}
           />
         </div>
         <div
