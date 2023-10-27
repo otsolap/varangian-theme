@@ -28,11 +28,19 @@
   @include display-flex();
   @include flex-direction(column);
   @include border-radius($quarter);
-  border: 1px solid $brand-300;
+  border: 1px solid $text-900;
   padding: $single;
   width: 100%;
   align-items: center;
   color: $text-900;
+  transition-duration: 250ms;
+
+  &:focus,
+  &:hover {
+    background-color: $background-700;
+    border-color: $brand-500;
+  }
+
 }
 
 .body {
@@ -58,7 +66,7 @@
 }
 
 .title {
-  color:  $brand-500;
+  color: $text-900;
   font-weight: 600;
   padding-bottom: $single;
   text-align: center;

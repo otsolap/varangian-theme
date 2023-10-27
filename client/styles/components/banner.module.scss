@@ -6,6 +6,7 @@
 .banner {
     @include display-flex();
     @include flex-direction(column);
+    padding: $double;
 }
 
 .imageContainer {
@@ -42,12 +43,12 @@
     .banner {
         @include flex-direction(row);
         gap: $single;
+        padding: $triple;
     }
 
     .imageContainer {
-        max-height: 100px;
-        max-width: 100px;
-        padding-top: $double;
+        max-height: 200px;
+        max-width: 200px;
     }
 
 }
