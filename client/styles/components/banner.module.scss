@@ -7,6 +7,8 @@
     @include display-flex();
     @include flex-direction(column);
     padding: $double;
+   @include border(1px solid transparent);
+    @include border-radius($quarter);
 }
 
 .imageContainer {
