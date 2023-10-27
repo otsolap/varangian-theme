@@ -2,7 +2,7 @@
 
 Personal portfolio with Strapi backend and NextJS frontend. Self-hosted.
 
-## To Do with Antti Laukkanen
+## To Do with Secret Mentor Bad Boy from East Helsinki
 
 ### Form Input frontend and styling
 
