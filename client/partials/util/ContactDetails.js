@@ -2,7 +2,7 @@ import styles from "@/styles/components/footer.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faInstagram, faTwitter
+  faInstagram, faXTwitter
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
@@ -25,7 +25,7 @@ const ContactDetails = ({ list }) => {
             {contacts.title}
           </Link>
         ) : null}
-              {contacts.type === "Twitter" ? (
+              {contacts.type === "X|Twitter" ? (
           <Link
             className={styles.someLink}
             href={contacts.url}
@@ -33,8 +33,8 @@ const ContactDetails = ({ list }) => {
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon
-              aria-label="Twitter"
-              icon={faTwitter}
+              aria-label="X|Twitter"
+              icon={faXTwitter}
               className={styles.socialIcon}
             />
             {contacts.title}

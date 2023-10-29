@@ -6,9 +6,9 @@
 .banner {
     @include display-flex();
     @include flex-direction(column);
-    padding: $double;
-   @include border(1px solid transparent);
+    @include border(1px solid transparent);
     @include border-radius($quarter);
+    padding: $double;
 }
 
 .imageContainer {
@@ -16,8 +16,6 @@
     @include display-flex;
     @include flex-direction(row);
     justify-content: center;
-    height: 100px;
-    width: 100px;
     margin: 0 auto;
 }
 
@@ -28,8 +26,8 @@
 
 .image {
     @include border-radius(100%);
-    width: inherit;
-    height: inherit;
+    width: 100px;
+    height: 100px;
     aspect-ratio: 16/9;
   }
   
@@ -45,17 +43,16 @@
 
     .banner {
         @include flex-direction(row);
-        gap: $single;
-        padding: $triple;
+        gap: $triple;
+        padding: $double $triple;
+    }
+
+    .imageContainer {
+        margin: initial;
     }
 
     .content {
         padding-top: initial;
-    }
-
-    .imageContainer {
-        max-height: 200px;
-        max-width: 200px;
     }
 
 }
