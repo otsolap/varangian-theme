@@ -35,6 +35,7 @@
   height: inherit;
   box-shadow: $half $half 0px 0px $brand-500;
   aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
 .videoContainer {
