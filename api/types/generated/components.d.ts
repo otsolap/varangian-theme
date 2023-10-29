@@ -345,7 +345,7 @@ export interface UtilSocialMediaType extends Schema.Component {
     description: '';
   };
   attributes: {
-    type: Attribute.Enumeration<['Email', 'Twitter', 'Instagram']>;
+    type: Attribute.Enumeration<['Email', 'X|Twitter', 'Instagram']>;
     title: Attribute.String;
     url: Attribute.Text;
   };

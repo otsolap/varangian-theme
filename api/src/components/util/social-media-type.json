@@ -10,7 +10,7 @@
       "type": "enumeration",
       "enum": [
         "Email",
-        "Twitter",
+        "X|Twitter",
         "Instagram"
       ]
     },
