@@ -14,8 +14,8 @@
     transition-duration: 150ms;
     z-index: 10;
     cursor: pointer;
-    flex: 0 0 calc(100% / 4);
-    max-width: calc(100% / 4);
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
 
     &:hover,
     &:focus {

@@ -26,6 +26,7 @@
 .title {
   font-size: 1.75rem;
   margin-bottom: 0;
+  font-weight: 900;
 }
 
 .calender {
@@ -36,6 +37,24 @@
   margin-top: $three-quarters;
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+/* Tablet Styles */
+@media (width >= $container-ipad) {
+
+  .brand {
+    width: 100%;
+    @include display-flex;
+    @include flex-direction(row);
+    align-items: center;
+    gap: $double;
+  }
+  
+  .slogan {
+    display: block;
+    margin-bottom: 0;
+  }
+
 }
 
 /* DESKTOP STYLES */
@@ -55,12 +74,7 @@
   }
 
   .brand {
-    width: 100%;
     max-width: $container-desktop;
-  }
-
-  .slogan {
-    display: block;
   }
 
   .navigation {
@@ -86,7 +100,6 @@
     margin: 0 auto;
   }
 
-  .brand,
   .menu {
     @include display-flex;
     @include flex-direction(row);
@@ -111,7 +124,5 @@
   .icon {
     display: none;
   }
-  
-
 
 }

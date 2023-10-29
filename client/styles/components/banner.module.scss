@@ -23,6 +23,7 @@
 
 .content {
     text-align: center;
+    padding-top: $single;
 }
 
 .image {
@@ -46,6 +47,10 @@
         @include flex-direction(row);
         gap: $single;
         padding: $triple;
+    }
+
+    .content {
+        padding-top: initial;
     }
 
     .imageContainer {

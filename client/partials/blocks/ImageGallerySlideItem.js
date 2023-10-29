@@ -2,7 +2,7 @@ import React from "react";
 import NextImage from 'partials/util/NextImage';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from 'swiper/modules';
+import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 // import required modules
 import styles from "@/styles/components/imageGallery.module.scss";
 
@@ -17,7 +17,7 @@ const ImageGallerySlideItem = ({ images, selectedImage }) => {
             pagination={{
               type: 'fraction',
             }}
-            modules={[Pagination, Navigation]}
+            modules={[Keyboard, Pagination, Navigation]}
             rewind={true}
             initialSlide={selectedImage}
         >
