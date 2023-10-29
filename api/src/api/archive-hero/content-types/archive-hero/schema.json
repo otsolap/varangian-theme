@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "archive_heroes",
+  "info": {
+    "singularName": "archive-hero",
+    "pluralName": "archive-heroes",
+    "displayName": "ArchiveHero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.hero"
+    }
+  }
+}

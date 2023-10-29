@@ -1,11 +1,16 @@
-import React from "react"
 import axios from "axios"
 import { getStrapiURL } from "@/utils/index"
+import Hero from "@/components/blocks/Hero"
 import ArchiveSection from "@/components/articles/ArchiveSection"
 import config from '@/utils/config'
 
-const Category = ({ items, categories }) => {
-  return <ArchiveSection items={items} categories={categories} />
+const Category = ({ hero, items, categories }) => {
+  return  (
+    <>
+      <Hero {...hero} />
+      <ArchiveSection items={items} categories={categories} />
+    </>
+  )
 }
 
 export async function getStaticPaths() {
@@ -36,7 +41,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const [categoryResponse, allCategories] = await Promise.all([
+    const [archiveHeroResponse,categoryResponse, allCategories] = await Promise.all([
+      axios.get(getStrapiURL(`/${config.blog.API_ARCHIVE_HERO_QUERY}`)),
       axios.get(getStrapiURL(`/${config.blog.API_CATEGORIES_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
       axios.get(getStrapiURL("/api/categories")),
     ])
@@ -47,6 +53,7 @@ export async function getStaticProps({ params }) {
 
     return {
       props: {
+        hero: archiveHeroResponse.data.data.attributes.hero ?? {},
         items: matchingCategory.attributes.articles.data ?? {},
         categories: allCategories.data.data ?? {},
       },

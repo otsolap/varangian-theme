@@ -11,6 +11,7 @@
         "CONTENT_BLOG_SECTION_BLOG_ARCHIVE_LEAD":"See blog archive"
     },
     "blog": {
+        "API_ARCHIVE_HERO_QUERY":"api/archive-hero?=&populate=hero, hero.buttons, hero.image",
         "BLOG_PATH":"blog",
         "CATEGORY_PATH":"category",
         "API_CATEGORIES_CONTENT_QUERY":"api/categories?&populate=articles,articles.image,articles.author,articles.categories",
