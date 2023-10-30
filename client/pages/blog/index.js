@@ -5,8 +5,6 @@ import axios from "axios"
 import config from '@/utils/config'
 
 const Blog = ({ hero, items, categories }) => {
-  console.log(hero)
-
   return  (
     <>
       <Hero {...hero} />

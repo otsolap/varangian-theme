@@ -91,6 +91,8 @@
   .hero {
     @include flex-direction(row);
     position: relative;
+    height: 561px;
+    max-height: 561px;
   }
 
   .mediaContainer,
@@ -103,8 +105,8 @@
   }
 
   .video {
-    height: 580px;
-    max-height: 580px;
+    height: 561px;
+    max-height: 561px;
   }
 
   .fullWrapper {
@@ -112,14 +114,11 @@
     max-width: 1440px;
     inset: 0;
 
-    .image {
-      height: 500px;
-      max-height: 500px;
-    }
 
+    .image,
     .video {
-      height: 612px;
-      max-height: 612px;
+      height: 561px;
+      max-height: 561px;
     }
   }
 
@@ -134,15 +133,14 @@
   }
 
   .content {
+      h1 {
+        padding-bottom: $single;
+        font-size: 3.5rem;
+      }
 
-    h1 {
-      padding-bottom: $single;
-      font-size: 3.5rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      padding-bottom: $single;
-    }
+      h3 {
+        font-size: 1.5rem;
+        padding-bottom: $single;
+      }
   }
 }
