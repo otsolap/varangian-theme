@@ -825,6 +825,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::article.article'
     >;
     slug: Attribute.UID<'api::category.category', 'title'> & Attribute.Required;
+    hero: Attribute.Component<'blocks.hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

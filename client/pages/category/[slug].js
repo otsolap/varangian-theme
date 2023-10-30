@@ -41,8 +41,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const [archiveHeroResponse,categoryResponse, allCategories] = await Promise.all([
-      axios.get(getStrapiURL(`/${config.blog.API_ARCHIVE_HERO_QUERY}`)),
+    const [categoryResponse, allCategories] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.API_CATEGORIES_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
       axios.get(getStrapiURL("/api/categories")),
     ])
@@ -53,7 +52,7 @@ export async function getStaticProps({ params }) {
 
     return {
       props: {
-        hero: archiveHeroResponse.data.data.attributes.hero ?? {},
+        hero: matchingCategory.attributes.hero ?? {},
         items: matchingCategory.attributes.articles.data ?? {},
         categories: allCategories.data.data ?? {},
       },
