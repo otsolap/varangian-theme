@@ -13,6 +13,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "caption": {
+      "type": "string"
     }
   }
 }

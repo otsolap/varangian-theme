@@ -120,6 +120,7 @@ export interface BlocksImageBlock extends Schema.Component {
   };
   attributes: {
     image: Attribute.Media;
+    caption: Attribute.String;
   };
 }
 

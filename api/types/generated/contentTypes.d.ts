@@ -784,10 +784,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'api::article.article'
     >;
     subtitle: Attribute.Text;
-    buttons: Attribute.Component<'partials.link', true> &
-      Attribute.SetMinMax<{
-        max: 2;
-      }>;
+    buttons: Attribute.Component<'partials.link', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

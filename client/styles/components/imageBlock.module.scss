@@ -21,6 +21,12 @@
     object-position: center;
 }
 
+.caption {
+    font-style: italic;
+    font-size: $three-quarters;
+    text-align: center;
+}
+
 /* Tablet Styles */
 @media (width >=  $container-ipad) {
     
@@ -38,7 +44,7 @@
     }
 
     .image {
-        max-width: 720px;
+        max-width: $width-max-article;
     }
 
 }
