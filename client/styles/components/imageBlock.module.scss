@@ -30,18 +30,15 @@
 /* Tablet Styles */
 @media (width >=  $container-ipad) {
     
-    .imageBlock  {
-      width: 375px;
+    .imageBlock {
+        width: auto;
     }
-    
 }
 
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
 
-    .imageBlock {
-        width: auto;
-    }
+
 
     .image {
         max-width: $width-max-article;

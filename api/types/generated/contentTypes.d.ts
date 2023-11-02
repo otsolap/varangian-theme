@@ -720,10 +720,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     image: Attribute.Media;
-    description: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
+    description: Attribute.String;
     author: Attribute.Relation<
       'api::article.article',
       'oneToOne',

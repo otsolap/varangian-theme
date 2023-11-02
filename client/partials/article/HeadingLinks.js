@@ -36,7 +36,7 @@ function HeadingLinks({ blocks, description, banner }) {
           ))}
         </ul>
       <ShareButtons description={description} />
-      <Banner {...banner} isAside={true} />
+      {banner.data && <Banner {...banner} isAside={true} />}
     </nav>
   );
 }

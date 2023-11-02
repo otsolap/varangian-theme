@@ -63,22 +63,23 @@ export async function getStaticProps({ params }) {
   try {
     const [articleResponse, newsletterResponse] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.API_ARTICLE_QUERY}${params.slug}`)),
-      axios.get(getStrapiURL(`/${config.global.API_NEWSLETTER_BANNER_QUERY}}`)),
+   //   axios.get(getStrapiURL(`/${config.global.API_NEWSLETTER_BANNER_QUERY}`)),
     ])
 
     const categorySlug = articleResponse.data.data[0].attributes.categories.data[0]?.attributes.slug
 
-    const [relatedArticlesresponse] = await Promise.all([
+    const [relatedArticlesResponse] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
     ])
+
 
     return {
       props: {
         article: articleResponse.data.data[0]?.attributes ?? {},
         categories: articleResponse.data.data[0]?.attributes.categories.data[0]?.attributes ?? {},
         author: articleResponse.data.data[0]?.attributes.author.data?.attributes ?? {},
-        banner: newsletterResponse.data.data.attributes ?? {},
-        relatedItems: relatedArticlesresponse.data.data[0]?.attributes.articles ?? {},
+        banner: {}, // newsletterResponse.data?.data?.attributes ?? 
+        relatedItems: relatedArticlesResponse.data?.data[0]?.attributes.articles ?? {}
       },
     }
   } catch (error) {

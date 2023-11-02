@@ -24,8 +24,7 @@
       ]
     },
     "description": {
-      "type": "string",
-      "maxLength": 80
+      "type": "string"
     },
     "author": {
       "type": "relation",

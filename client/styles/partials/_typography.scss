@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: $single-half;
 }
 h3 {
   font-size: 1.25rem;
@@ -54,7 +54,7 @@ a {
   }
   h3,
   .h3 {
-    font-size: 1.5rem;
+    font-size: $single-half;
   }
   h4,
   .h4 {

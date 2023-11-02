@@ -9,7 +9,7 @@
     max-width: $container-ipad;
     @include display-flex();
     @include flex-direction(column);
-    padding: 0 $single;
+    padding: $single;
 }
 
 .quote {
@@ -29,19 +29,15 @@
     }
 }
 
-/* DESKTOP STYLES */
-@media (width >= $container-desktop) {
-
-    .quoteWrapper {
-        padding: 0 $double;
-    }
+/* iPad STYLES */
+@media (width >= $container-ipad) {
 
     .quote {
-        font-size: $double-half;
+        font-size: $single
     }
 
     .quotationMark {
-        max-width: 40px; 
+        max-width: $single-half; 
     }
     
 
