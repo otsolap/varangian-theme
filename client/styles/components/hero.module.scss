@@ -78,8 +78,8 @@
   }
 
   .mediaContainer {
-    max-height: 540px;
-    height: 540px;
+    max-height: 561px;
+    height: 561px;
   }
     
 }
@@ -134,12 +134,15 @@
 
   .content {
       h1 {
-        padding-bottom: $single;
         font-size: 3.5rem;
       }
 
       h3 {
         font-size: $single-half;
+      }
+
+      h1, h3 {
+        text-shadow: 1px 1px 2px $background-900;
         padding-bottom: $single;
       }
   }

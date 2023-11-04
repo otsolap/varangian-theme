@@ -59,7 +59,6 @@
 }
 
 .image {
-  @include border-radius(100%);
   aspect-ratio: 16/9;
   width: inherit;
   height: inherit;

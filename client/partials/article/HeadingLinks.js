@@ -25,16 +25,19 @@ function HeadingLinks({ blocks, description, banner }) {
 
   return (
     <nav className={styles.nav}>
-      <ul className={styles.wrapper}>
-        <h4>Table of Contents</h4>
-          {headings.map((heading, index) => (
-            <li className={styles.list} key={index}>
-              <Link className={styles.link}  href={`#${heading.id}`}>
-                {heading.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      {headings && headings.length > 0 && (
+          <ul className={styles.wrapper}>
+          <h4>Table of Contents</h4>
+            {headings.map((heading, index) => (
+              <li className={styles.list} key={index}>
+                <Link className={styles.link}  href={`#${heading.id}`}>
+                  {heading.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )
+      }
       <ShareButtons description={description} />
       {banner.data && <Banner {...banner} isAside={true} />}
     </nav>
