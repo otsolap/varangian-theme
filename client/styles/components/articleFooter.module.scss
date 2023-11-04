@@ -40,6 +40,13 @@
     box-shadow: $half $half 0px 0px $brand-500;
 }
 
+.buttonWrapper {
+    @include display-flex;
+    @include flex-direction(row);
+    flex-wrap: wrap;
+    gap: $single;
+}
+
 /* Tablet Styles */
 @media (width >= $container-ipad) {
 

@@ -46,7 +46,7 @@
     "buttons": {
       "type": "component",
       "repeatable": true,
-      "component": "partials.link"
+      "component": "partials.button"
     }
   }
 }

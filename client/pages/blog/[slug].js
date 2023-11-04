@@ -13,7 +13,7 @@ const Article = ({ article, categories, author, banner, relatedItems }) => {
     <>
       <ArticleHeading article={article} categories={categories} author={author} />
       <div className={styles.wrapper}>
-        <article className={styles.article}>
+        <article id={'post'} className={styles.article}>
           <Blocks blocks={article.blocks} />
         </article>
         <HeadingLinks blocks={article.blocks} description={article.title} banner={banner} />

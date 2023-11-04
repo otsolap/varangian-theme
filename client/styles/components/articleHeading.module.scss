@@ -35,10 +35,15 @@
 .lead {
     justify-content: center;
     padding-left: $single;
+    gap: $half;
 }
 
 .author {
     gap: $single;
+}
+
+.column {
+    gap: $half;
 }
 
 .title {
@@ -76,7 +81,6 @@
     .author {
         @include flex-direction(row);
     }
-    
 
     .lead,
     .imageContainer {
