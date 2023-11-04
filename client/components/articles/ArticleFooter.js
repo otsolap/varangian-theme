@@ -19,7 +19,7 @@ const ArticleFooter = ({ author }) => {
                 {author.buttons && (
                   <div className={styles.buttonWrapper}>
                     {author.buttons.map((button, i) => (
-                      <CustomLink link={button} key={i} className={`button bg-${button.selectTheme}`} />
+                      <CustomLink link={button} key={i} className={`button`} />
                     ))}
                   </div>
             )}

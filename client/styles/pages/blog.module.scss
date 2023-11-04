@@ -12,8 +12,14 @@
 
 .article {
     width: 100%;
-    padding: $single;
     @include border-radius($quarter);
+}
+
+/* Tablet Styles */
+@media (width >= $container-ipad) {
+    .article{
+        padding: $single;
+    }
 }
 
 /* DESKTOP STYLES */

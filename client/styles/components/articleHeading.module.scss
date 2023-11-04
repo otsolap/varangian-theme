@@ -20,6 +20,7 @@
 
     &:hover,
     &:focus {
+        color: $brand-700;
         font-weight: 900;
         cursor: pointer;
     }
@@ -34,7 +35,6 @@
 
 .lead {
     justify-content: center;
-    padding-left: $single;
     gap: $half;
 }
 
@@ -62,9 +62,10 @@
 }
 
 .imageContainer {
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
 }
+
 
 .image {
     @include border-radius($quarter);
@@ -91,9 +92,9 @@
     }
 
     .imageContainer {
-        height: 400px;
-        width: 400px;
+        align-self: center;
     }
+        
 
     .image {
         box-shadow: $single $single 0px 0px $brand-500;
@@ -115,6 +116,7 @@
     .imageContainer {
         height: 500px;
         width: 668px;
+        align-self: initial;
     }
 
     .image {
