@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBullseye, faCircleNodes, faCube, faPenNib } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/styles/components/mobileNavLinks.module.scss";
 import { useRouter } from 'next/router';
+import Link from "next/link";
 
 const icons = {
     bullseye: faBullseye,
@@ -27,7 +28,7 @@ const MobileNavLinks = ({ blocks, currentPath, closeModal }) => {
         const icon = icons[block.icon];
 
         return (
-            <a
+            <Link
                 href={href}
                 onClick={(e) => handleClick(e, href)}
                 className={`${styles.link} ${
@@ -43,7 +44,7 @@ const MobileNavLinks = ({ blocks, currentPath, closeModal }) => {
                     />
                 ) : null}
                 <span className={styles.text}>{title}</span>
-            </a>
+            </Link>
         );
     });
 };
