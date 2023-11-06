@@ -52,6 +52,7 @@
 
 .content {
   padding: $single;
+  text-shadow: 1px 1px 2px $background-900;
 
   h1 {
     font-size: $triple;
@@ -142,7 +143,6 @@
       }
 
       h1, h3 {
-        text-shadow: 1px 1px 2px $background-900;
         padding-bottom: $single;
       }
   }

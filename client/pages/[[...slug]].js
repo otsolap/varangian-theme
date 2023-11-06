@@ -5,6 +5,7 @@ import Blocks from "@/components/Blocks"
 import Banner from "@/components/blocks/Banner"
 import axios from 'axios'
 import ErrorPage from "next/error"
+import config from '@/utils/config';
 
 const DynamicPages = ({ pageData, showServicesBanner, servicesBannerData }) => {
   const router = useRouter()
@@ -26,6 +27,12 @@ const DynamicPages = ({ pageData, showServicesBanner, servicesBannerData }) => {
 
 export async function getServerSideProps(context) {
   const { slug } = context.query
+  const { nonPageSlugs } = config;
+
+ // Check if the slug is a non-page slug and return notFound if it is
+ if (nonPageSlugs.includes(slug?.[0])) {
+  return { notFound: true };
+}
 
   try {
     const data = await getPageData(slug)

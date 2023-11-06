@@ -26,6 +26,7 @@
     },
     "forms": {
         "COLLECTIONS_PATH":"api/contacts/"
-    }
+    },
+    "nonPageSlugs": ["robots.txt", "humans.txt", "ads.txt", "sitemap.xml", "favicon.ico"]
 }  
 
