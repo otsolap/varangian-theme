@@ -14,6 +14,7 @@
         "API_ARCHIVE_HERO_QUERY":"api/archive-hero?=&populate=hero, hero.buttons, hero.image",
         "BLOG_PATH":"blog",
         "CATEGORY_PATH":"category",
+        "API_AUTHORS_CONTENT_QUERY":"api/authors?populate=image,buttons",
         "API_CATEGORIES_CONTENT_QUERY":"api/categories?&populate=articles,articles.image,articles.author,articles.categories,hero,hero.buttons,hero.image",
         "API_ARTICLES_QUERY":"api/articles?&populate=author,author.image,author.buttons,image,blocks,blocks.image,categories",
         "API_ARTICLE_QUERY":"api/articles?&populate=author,author.image,author.buttons,image,blocks,blocks.image,blocks.images.image,categories&filters[slug][$eq]=",

@@ -41,6 +41,10 @@ async function fetchDataByType(type, slug) {
             endpoint: 'categories',
             query: config.global.API_CATEGORIES_CONTENT_QUERY
         },
+        'author': {
+            endpoint: 'authors',
+            query: config.global.API_AUTHORS_CONTENT_QUERY
+        },
         'page': {
             endpoint: 'pages',
             query: config.global.API_CONTENT_QUERY
