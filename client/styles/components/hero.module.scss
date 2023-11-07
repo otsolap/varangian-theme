@@ -74,6 +74,19 @@
 /* Tablet Styles */
 @media (width >=  $container-ipad ) {
 
+  .hero {
+    @include flex-direction(row);
+    position: relative;
+    height: 561px;
+    max-height: 561px;
+  }
+
+  .mediaContainer,
+  .contentContainer {
+    flex: 0 0 50%;
+  }
+
+
   .content {
     padding: $double;
   }
@@ -89,17 +102,6 @@
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
 
-  .hero {
-    @include flex-direction(row);
-    position: relative;
-    height: 561px;
-    max-height: 561px;
-  }
-
-  .mediaContainer,
-  .contentContainer {
-    flex: 0 0 50%;
-  }
 
   .mediaContainer {
     max-height: initial;

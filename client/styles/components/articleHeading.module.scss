@@ -40,6 +40,7 @@
 
 .author {
     gap: $single;
+    @include flex-direction(row);
 }
 
 .column {
@@ -54,6 +55,7 @@
 .imageContainer {
     position: relative;
 }
+
 
 .authorImage {
     height: $triple;
@@ -78,8 +80,7 @@
 /* Tablet Styles */
 @media (width >= $container-ipad) {
     
-    .header,
-    .author {
+    .header {
         @include flex-direction(row);
     }
 

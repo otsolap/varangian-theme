@@ -42,7 +42,7 @@
 
 .buttonWrapper {
     @include display-flex;
-    @include flex-direction(column);
+    @include flex-direction(row);
     flex-wrap: wrap;
     gap: $single;
 }
@@ -80,10 +80,6 @@
         justify-content: center;
     }
 
-    .buttonWrapper {
-        @include flex-direction(row);
-    }
-  
     .imageContainer {
         height: 500px;
         width: 668px;
