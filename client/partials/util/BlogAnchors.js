@@ -33,7 +33,7 @@ const BlogAnchors = ({ blogAnchors}) => {
           {blogItems.data.map((item, i) => {
             console.log(item);
             return (
-              <Link  className={styles.link} key={i} href={item.attributes.slug}>
+              <Link  className={styles.link} key={i} href={`/${config.blog.BLOG_PATH}/${item.attributes.slug}`}>
                 {item.attributes.title}
                 </Link>
             );
