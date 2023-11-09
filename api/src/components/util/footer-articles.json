@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_util_footer_articles",
+  "info": {
+    "displayName": "footerArticles",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "open": {
+      "type": "boolean"
+    },
+    "blogAnchors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.blog-anchors"
+    }
+  }
+}

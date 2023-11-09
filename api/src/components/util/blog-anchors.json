@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_util_blog_anchors",
+  "info": {
+    "displayName": "blogAnchors",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "filter": {
+      "type": "enumeration",
+      "enum": [
+        "latest",
+        "custom"
+      ]
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}

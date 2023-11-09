@@ -16,7 +16,6 @@
   position: relative;
   height: auto;
   width: 100%;
-  max-height: 400px;
 }
 
 .image {
@@ -52,7 +51,10 @@
 
 .content {
   padding: $single;
+
+  h1,h3 {
   text-shadow: 1px 1px 2px $background-900;
+  }
 
   h1 {
     font-size: $triple;

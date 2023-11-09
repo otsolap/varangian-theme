@@ -4,6 +4,7 @@ import BlogSection from '@/components/blocks/BlogSection';
 import Cards from '@/components/blocks/Cards';
 import FormEmbed from '@/components/blocks/FormEmbed';
 import FooterColumn from '@/partials/navigation/FooterColumn';
+import FooterArticles from '@/partials/navigation/FooterArticles';
 import FooterSocialMedia from '@/partials/navigation/FooterSocialMedia';
 import Hero from '@/components/blocks/Hero';
 import ImageBlock from '@/components/blocks/ImageBlock';
@@ -44,6 +45,9 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       break;
     case 'util.footer-social-media':
       Block = FooterSocialMedia;
+      break;
+    case 'util.footer-articles':
+      Block = FooterArticles;
       break;
     case 'blocks.hero':
       Block = Hero;

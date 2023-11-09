@@ -16,7 +16,8 @@
       "type": "dynamiczone",
       "components": [
         "util.footer-column",
-        "util.footer-social-media"
+        "util.footer-social-media",
+        "util.footer-articles"
       ],
       "min": 3,
       "max": 3

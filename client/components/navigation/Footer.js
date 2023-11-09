@@ -9,7 +9,7 @@ const Footer = ({ footer }) => {
       <footer className={styles.footer}>
         {global.blocks ? (
           <div className={styles.columnContainer}>
-            <Blocks  blocks={global.blocks} />
+            <Blocks blocks={global.blocks} />
           </div>
         ): null}
         {global.subFooter ? (

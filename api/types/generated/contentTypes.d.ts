@@ -914,7 +914,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
   attributes: {
     blocks: Attribute.DynamicZone<
-      ['util.footer-column', 'util.footer-social-media']
+      ['util.footer-column', 'util.footer-social-media', 'util.footer-articles']
     > &
       Attribute.SetMinMax<{
         min: 3;

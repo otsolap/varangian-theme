@@ -43,6 +43,10 @@
 /* Tablet Styles */
 @media (width >= $container-ipad) {
 
+  .header {
+    width: 100%;
+  }
+
   .brand {
     width: 100%;
     @include display-flex;
@@ -69,6 +73,7 @@
     justify-content: space-evenly;
     @include flex-direction(column);
     padding: initial;
+    width: 100vw;
   }
 
   .title {

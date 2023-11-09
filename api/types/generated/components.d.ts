@@ -272,6 +272,36 @@ export interface PartialsMediaMixItem extends Schema.Component {
   };
 }
 
+export interface UtilBlogAnchors extends Schema.Component {
+  collectionName: 'components_util_blog_anchors';
+  info: {
+    displayName: 'blogAnchors';
+    description: '';
+  };
+  attributes: {
+    filter: Attribute.Enumeration<['latest', 'custom']>;
+    blogs: Attribute.Relation<
+      'util.blog-anchors',
+      'oneToMany',
+      'api::article.article'
+    >;
+  };
+}
+
+export interface UtilFooterArticles extends Schema.Component {
+  collectionName: 'components_util_footer_articles';
+  info: {
+    displayName: 'footerArticles';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    open: Attribute.Boolean;
+    blogAnchors: Attribute.Component<'util.blog-anchors'>;
+  };
+}
+
 export interface UtilFooterColumn extends Schema.Component {
   collectionName: 'components_partials_footer_columns';
   info: {
@@ -385,6 +415,8 @@ declare module '@strapi/strapi' {
       'partials.card': PartialsCard;
       'partials.link': PartialsLink;
       'partials.media-mix-item': PartialsMediaMixItem;
+      'util.blog-anchors': UtilBlogAnchors;
+      'util.footer-articles': UtilFooterArticles;
       'util.footer-column': UtilFooterColumn;
       'util.footer-social-media': UtilFooterSocialMedia;
       'util.menu-item': UtilMenuItem;
