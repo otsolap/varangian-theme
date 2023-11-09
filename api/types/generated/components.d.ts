@@ -313,6 +313,7 @@ export interface UtilFooterColumn extends Schema.Component {
     description: Attribute.RichText;
     open: Attribute.Boolean & Attribute.DefaultTo<true>;
     links: Attribute.Component<'partials.link', true>;
+    image: Attribute.Media;
   };
 }
 

@@ -20,6 +20,16 @@
       "type": "component",
       "repeatable": true,
       "component": "partials.link"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

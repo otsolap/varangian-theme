@@ -917,8 +917,8 @@ export interface ApiFooterFooter extends Schema.SingleType {
       ['util.footer-column', 'util.footer-social-media', 'util.footer-articles']
     > &
       Attribute.SetMinMax<{
-        min: 3;
-        max: 3;
+        min: 0;
+        max: 5;
       }>;
     subFooter: Attribute.Component<'util.sub-footer'>;
     createdAt: Attribute.DateTime;

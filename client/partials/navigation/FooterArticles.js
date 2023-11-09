@@ -6,7 +6,6 @@ import BlogAnchors from '@/partials/util/BlogAnchors'
 import styles from '@/styles/components/footer.module.scss';
 
 const FooterArticles = ({  id, open, title, blogAnchors }) => {
-    console.log(blogAnchors)
     const contentRef = useRef(null)
     const [active, setActive] = useToggle(open)
     useEffect(() => {

@@ -19,8 +19,8 @@
         "util.footer-social-media",
         "util.footer-articles"
       ],
-      "min": 3,
-      "max": 3
+      "min": 0,
+      "max": 5
     },
     "subFooter": {
       "type": "component",

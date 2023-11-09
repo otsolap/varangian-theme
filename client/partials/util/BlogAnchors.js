@@ -31,7 +31,6 @@ const BlogAnchors = ({ blogAnchors}) => {
       blogItems?.data?.length ? (
         <div className={styles.wrapper}>
           {blogItems.data.map((item, i) => {
-            console.log(item);
             return (
               <Link  className={styles.link} key={i} href={`/${config.blog.BLOG_PATH}/${item.attributes.slug}`}>
                 {item.attributes.title}

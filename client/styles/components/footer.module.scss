@@ -233,8 +233,29 @@
   }
 
   .column {
-    max-width: calc(100% / 3);
-    flex: 0 0 calc(33.333% - $double);
+    max-width: 100%;
+    flex: 0 0 100%;
+
+    .doubleColumn & {
+      max-width: calc(100% / 2);
+      flex: 0 0 calc(50% - $double);
+    }
+
+    .tripleColumn & {
+      max-width: calc(100% / 3);
+      flex: 0 0 calc(33.333% - $double);
+    }
+
+    .quadrupleColumn & {
+      max-width: calc(100% / 4);
+      flex: 0 0 calc(25% - $double);
+    }
+
+    .quintupleColumn & {
+      max-width: calc(100% / 5);
+      flex: 0 0 calc(20% - $double);
+    }
+
   }
 
   .socialIcon {
