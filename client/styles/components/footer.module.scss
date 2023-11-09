@@ -50,6 +50,13 @@
   width: $single;
 }
 
+.image {
+  width: 100%;
+  height: 400px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
 .linkWrapper {
   @include display-flex;
   @include flex-direction(column);
