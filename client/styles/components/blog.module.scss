@@ -38,9 +38,13 @@
 
 .archiveLink {
     color: $text-900;
+    transition-duration: .3s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
 
        &:hover,
        &:focus {
+            color:  $brand-500;
             font-weight: 900;
             cursor: pointer;
        }
