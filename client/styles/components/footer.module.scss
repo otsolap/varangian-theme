@@ -66,16 +66,14 @@
 .link,
 .someLink {
   font-size: $single;
+  transition-duration: .3s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
 
   &:focus,
   &:hover {
     cursor: pointer;
     color: $brand-500;
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-      filter, backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
   }
 }
 
@@ -267,6 +265,10 @@
 
   .socialIcon {
     width: $double;
+  }
+
+  .someLink {
+    align-items: center;
   }
 
   .toggle {

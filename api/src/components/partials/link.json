@@ -27,11 +27,11 @@
     "selectTheme": {
       "type": "enumeration",
       "enum": [
-        "white",
-        "black",
-        "tertiary"
-      ],
-      "default": "white"
+        "primary",
+        "secondary",
+        "tertiary",
+        "transparent"
+      ]
     }
   }
 }

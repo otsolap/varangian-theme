@@ -251,8 +251,9 @@ export interface PartialsLink extends Schema.Component {
     isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
     target: Attribute.Enumeration<['_self', '_blank']> &
       Attribute.DefaultTo<'_self'>;
-    selectTheme: Attribute.Enumeration<['white', 'black', 'tertiary']> &
-      Attribute.DefaultTo<'white'>;
+    selectTheme: Attribute.Enumeration<
+      ['primary', 'secondary', 'tertiary', 'transparent']
+    >;
   };
 }
 
@@ -387,6 +388,7 @@ export interface UtilSubFooter extends Schema.Component {
   collectionName: 'components_util_sub_footers';
   info: {
     displayName: 'subFooter';
+    description: '';
   };
   attributes: {
     title: Attribute.String;

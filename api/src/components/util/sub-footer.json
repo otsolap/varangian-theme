@@ -1,7 +1,8 @@
 {
   "collectionName": "components_util_sub_footers",
   "info": {
-    "displayName": "subFooter"
+    "displayName": "subFooter",
+    "description": ""
   },
   "options": {},
   "attributes": {

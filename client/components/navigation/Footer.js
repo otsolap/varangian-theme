@@ -28,8 +28,6 @@ const Footer = ({ footer }) => {
     </div>
   ) : null;
 
-  console.log(getSupportClass(global.blocks.length))
-
   return (
     <>
       <footer className={styles.footer}>
