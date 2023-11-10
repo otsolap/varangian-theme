@@ -52,8 +52,8 @@
 
 .imageContainer {
   position: relative;
-  height: 75px;
-  width: 75px;
+  height: 150px;
+  width: 150px;
   margin-top: $single;
   margin-bottom: $double;
 }
@@ -74,11 +74,6 @@
 /* Tablet Styles */
 @media (width >= $container-ipad) {
 
-  .imageContainer {
-      width: 150px;
-      height: 150px;
-  }
-    
   .wrapper {
       @include flex-direction(row);
   }

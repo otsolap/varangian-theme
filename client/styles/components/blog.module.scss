@@ -144,7 +144,6 @@
 
     .wrapper {
         @include flex-direction(row);
-         align-items: center;
     }
 
     .blog {
