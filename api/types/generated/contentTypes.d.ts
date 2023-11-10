@@ -781,7 +781,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'api::article.article'
     >;
     subtitle: Attribute.Text;
-    buttons: Attribute.Component<'partials.button', true>;
+    socialMedia: Attribute.Component<'util.social-media-type'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

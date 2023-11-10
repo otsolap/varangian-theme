@@ -30,8 +30,6 @@
     margin-top: $single;
     margin-bottom: $single;
   }
-
-
 }
 
 .columnContainer {
@@ -44,10 +42,6 @@
 
 .text {
   margin-bottom: $single;
-}
-
-.socialIcon {
-  width: $single;
 }
 
 .image {
@@ -63,8 +57,7 @@
   gap: $single;
 }
 
-.link,
-.someLink {
+.link {
   font-size: $single;
   transition-duration: .3s;
   transition-property: all;
@@ -75,12 +68,6 @@
     cursor: pointer;
     color: $brand-500;
   }
-}
-
-.someLink {
-  @include display-flex;
-  @include flex-direction(row);
-  gap: $single;
 }
 
 .toggle {
@@ -261,14 +248,6 @@
       flex: 0 0 calc(20% - $double);
     }
 
-  }
-
-  .socialIcon {
-    width: $double;
-  }
-
-  .someLink {
-    align-items: center;
   }
 
   .toggle {

@@ -1,7 +1,7 @@
 {
   "collectionName": "components_util_social_media_types",
   "info": {
-    "displayName": "socialMediaType",
+    "displayName": "socialMedia",
     "description": ""
   },
   "options": {},
@@ -9,9 +9,16 @@
     "type": {
       "type": "enumeration",
       "enum": [
+        "Facebook",
+        "Instagram",
+        "X",
+        "LinkedIn",
+        "Whatsapp",
+        "TikTok",
+        "Telegram",
+        "Pinterest",
         "Email",
-        "X|Twitter",
-        "Instagram"
+        "Link"
       ]
     },
     "title": {

@@ -92,7 +92,6 @@
     position: relative;
     @include display-flex;
     width: 100%;
-    max-width: 360px;
     border-bottom: $text-900 1px solid;
 }
 
@@ -151,10 +150,6 @@
     .blog {
         max-width: calc(100% / 3);
         flex: 0 0 calc(33.333% - $single);
-    }
-
-    .imageContainer {
-        max-width: initial;
     }
       
     .linkWrapper,

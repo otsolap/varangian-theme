@@ -374,11 +374,24 @@ export interface UtilSeo extends Schema.Component {
 export interface UtilSocialMediaType extends Schema.Component {
   collectionName: 'components_util_social_media_types';
   info: {
-    displayName: 'socialMediaType';
+    displayName: 'socialMedia';
     description: '';
   };
   attributes: {
-    type: Attribute.Enumeration<['Email', 'X|Twitter', 'Instagram']>;
+    type: Attribute.Enumeration<
+      [
+        'Facebook',
+        'Instagram',
+        'X',
+        'LinkedIn',
+        'Whatsapp',
+        'TikTok',
+        'Telegram',
+        'Pinterest',
+        'Email',
+        'Link'
+      ]
+    >;
     title: Attribute.String;
     url: Attribute.Text;
   };

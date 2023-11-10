@@ -43,10 +43,10 @@
     "subtitle": {
       "type": "text"
     },
-    "buttons": {
+    "socialMedia": {
       "type": "component",
-      "repeatable": true,
-      "component": "partials.button"
+      "repeatable": false,
+      "component": "util.social-media-type"
     }
   }
 }

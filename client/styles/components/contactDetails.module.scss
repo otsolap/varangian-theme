@@ -1,0 +1,48 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.socialIcon {
+  width: $single;
+}
+
+.someLink {
+  @include display-flex;
+  @include flex-direction(row);
+  gap: $single;
+  font-size: $single;
+  transition-duration: .3s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    color: $brand-500;
+  }
+}
+
+.icon {
+  background-image: none;
+  @include border(0px solid);
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: $single;
+  width: 0.875rem;
+  line-height: 2.25rem;
+}
+
+
+/* DESKTOP STYLES */
+@media (min-width: $container-desktop) {
+
+  .socialIcon {
+    width: $double;
+  }
+
+  .someLink {
+    align-items: center;
+  }
+
+}

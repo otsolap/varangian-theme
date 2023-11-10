@@ -1,60 +1,53 @@
-import styles from "@/styles/components/footer.module.scss";
+import styles from "@/styles/components/contactDetails.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faInstagram, faXTwitter
+  faFacebook,
+  faInstagram,
+  faXTwitter,
+  faPinterest,
+  faLinkedin,
+  faTelegramPlane,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLink } from "@fortawesome/free-solid-svg-icons";
+
+// Define the mapping from contact type to icon and URL prefix
+const contactMappings = {
+  Email: { icon: faEnvelope, prefix: 'mailto:' },
+  Facebook: { icon: faFacebook, prefix: 'https://www.facebook.com/' },
+  Instagram: { icon: faInstagram, prefix: 'https://www.instagram.com/' },
+  X: { icon: faXTwitter, prefix: 'https://x.com/' },
+  Pinterest: { icon: faPinterest, prefix: 'https://www.pinterest.com/' },
+  LinkedIn: { icon: faLinkedin, prefix: 'https://www.linkedin.com/in/' },
+  Telegram: { icon: faTelegramPlane, prefix: 'https://t.me/' },
+  WhatsApp: { icon: faWhatsapp, prefix: 'https://wa.me/' },
+  Link: { icon: faLink, prefix: '' }, // No prefix for general links
+};
 
 const ContactDetails = ({ list }) => {
-  const contactInfo = list.map((contacts, i) => {
+  const contactInfo = list.map((contact, index) => {
+    // Get the correct prefix for the contact type if available, or default to the URL provided
+    const urlPrefix = contactMappings[contact.type]?.prefix || '';
+    const href = contact.type === 'Link' ? contact.url : `${urlPrefix}${contact.url}`;
+
     return (
-      <p className={styles.contactText} key={i}>
-        {contacts.type === "Email" ? (
+      <p className={styles.contactText} key={index}>
+        {contactMappings[contact.type] && (
           <Link
             className={styles.someLink}
-            href={`mailto:${contacts.url}`}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon
-              aria-label="Sähköposti"
-              icon={faEnvelope}
+              aria-label={contact.type}
+              icon={contactMappings[contact.type].icon}
               className={styles.socialIcon}
             />
-            {contacts.title}
+            {contact.title}
           </Link>
-        ) : null}
-              {contacts.type === "X|Twitter" ? (
-          <Link
-            className={styles.someLink}
-            href={contacts.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              aria-label="X|Twitter"
-              icon={faXTwitter}
-              className={styles.socialIcon}
-            />
-            {contacts.title}
-          </Link>
-        ) : null}
-        {contacts.type === "Instagram" ? (
-          <Link
-            className={styles.someLink}
-            href={contacts.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              aria-label="Instagram"
-              icon={faInstagram}
-              className={styles.socialIcon}
-            />
-            {contacts.title}
-          </Link>
-        ) : null}
+        )}
       </p>
     );
   });
