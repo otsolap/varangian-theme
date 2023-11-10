@@ -1,7 +1,7 @@
 import NextImage from "partials/util/NextImage"
-import CustomLink from "partials/util/CustomLink"
 import styles from '@/styles/components/articleFooter.module.scss'
 import { isNotEmpty } from "@/utils/index";
+import ContactDetails from '@/partials/util/ContactDetails'
 
 const ArticleFooter = ({ author }) => {
   return (
@@ -16,11 +16,9 @@ const ArticleFooter = ({ author }) => {
             <article className={styles.wrapper}>
                 {author.title && <h3>{author.title}</h3>}
                 {author.description && <p>{author.description}</p>}
-                {author.buttons && (
+                {author.socialMedia && (
                   <div className={styles.buttonWrapper}>
-                    {author.buttons.map((button, i) => (
-                      <CustomLink link={button} key={i} className={`button`} />
-                    ))}
+                      <ContactDetails list={author.socialMedia} />
                   </div>
             )}
             </article>

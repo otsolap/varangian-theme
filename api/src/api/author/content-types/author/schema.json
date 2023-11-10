@@ -45,7 +45,7 @@
     },
     "socialMedia": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "util.social-media-type"
     }
   }

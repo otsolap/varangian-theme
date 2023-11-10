@@ -72,7 +72,6 @@ export async function getStaticProps({ params }) {
       axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
     ])
 
-
     return {
       props: {
         article: articleResponse.data.data[0]?.attributes ?? {},

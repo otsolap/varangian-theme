@@ -42,7 +42,7 @@
 
 .buttonWrapper {
     @include display-flex;
-    @include flex-direction(row);
+    @include flex-direction(column);
     flex-wrap: wrap;
     gap: $single;
 }
