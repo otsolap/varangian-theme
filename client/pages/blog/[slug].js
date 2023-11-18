@@ -8,7 +8,7 @@ import HeadingLinks from "@/partials/article/HeadingLinks";
 import BlogSection from "components/blocks/BlogSection";
 import config from '@/utils/config'
 
-const Article = ({ article, categories, author, banner, relatedItems }) => {
+const Blog = ({ article, categories, author, banner, relatedItems }) => {
   return (
     <>
       <ArticleHeading article={article} categories={categories} author={author} />
@@ -82,7 +82,7 @@ export async function getStaticProps({ params }) {
       },
     }
   } catch (error) {
-    console.error('Error fetching article data:', error)
+    console.error('Error fetching blog data:', error)
 
     return {
       notFound: true,
@@ -90,4 +90,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default Article
+export default Blog
