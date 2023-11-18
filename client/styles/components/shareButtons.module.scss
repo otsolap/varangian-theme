@@ -15,8 +15,7 @@
 .wrapper {
     @include display-flex();
     @include flex-direction(row);
-    gap: $single;
-
+    gap: $single-half;
 }
 
 
