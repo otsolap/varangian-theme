@@ -1,5 +1,4 @@
 import styles from "@/styles/components/contactDetails.module.scss";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -34,7 +33,7 @@ const ContactDetails = ({ list }) => {
     return (
       <p className={styles.contactText} key={index}>
         {contactMappings[contact.type] && (
-          <Link
+          <a
             className={styles.someLink}
             href={href}
             target="_blank"
@@ -46,7 +45,7 @@ const ContactDetails = ({ list }) => {
               className={styles.socialIcon}
             />
             {contact.title}
-          </Link>
+          </a>
         )}
       </p>
     );
