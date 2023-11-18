@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-const ShareButtons = ({ description }) => {
+const ShareButtons = ({ title }) => {
   const router = useRouter();
   const [url, setUrl] = useState("");
 
@@ -22,11 +22,11 @@ const ShareButtons = ({ description }) => {
   }, [router.asPath]);
 
   return (
-      <footer className={styles.shareButtons}>
+      <div className={styles.shareButtons}>
         <h5>Share article:</h5>
         <div className={styles.wrapper}>
           <Link
-            href={`mailto:?&subject=${description}!&cc=&bcc=&body=${url}\n${encodeURI(description)}`}
+            href={`mailto:?&subject=${title}!&cc=&bcc=&body=${url}\n${encodeURI(title)}`}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
@@ -39,7 +39,7 @@ const ShareButtons = ({ description }) => {
             />
           </Link>
           <Link
-            href={`whatsapp://send?text=${description}-${url}`}
+            href={`whatsapp://send?text=${title}-${url}`}
             data-action="share/whatsapp/share"
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +79,7 @@ const ShareButtons = ({ description }) => {
             />
           </Link>
         </div>
-      </footer>
+      </div>
   );
 };
 

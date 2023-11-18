@@ -4,13 +4,19 @@
 
 .shareButtons {
     padding: $single;
-    color: $background-900;
+    color: $text-900;
+    @include display-flex();
+    @include flex-direction(row);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $single;
 }
 
 .wrapper {
     @include display-flex();
     @include flex-direction(row);
     gap: $single;
+
 }
 
 
@@ -19,7 +25,7 @@
     height: auto;
     max-width: $double;
     max-height: $double;
-    color: $background-300;
+    color: inherit;
 
     &:hover,
     &:focus {
@@ -30,9 +36,5 @@
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
 
-    .shareButtons {
-        padding-left: $double;
-        padding-right: $double;
-    }
 
 }

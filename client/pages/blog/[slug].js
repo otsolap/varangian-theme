@@ -1,3 +1,5 @@
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "@/pages/_app.js";
 import axios from "axios"
 import { getStrapiURL } from "utils"
 import Blocks from "@/components/Blocks";
@@ -9,6 +11,18 @@ import BlogSection from "components/blocks/BlogSection";
 import config from '@/utils/config'
 
 const Blog = ({ article, categories, author, banner, relatedItems }) => {
+
+  const { setBlogNavigation } = useContext(GlobalContext);
+
+  useEffect(() => {
+    setBlogNavigation({
+      title: article.title,
+      href: `/blog/${article.slug}`
+    });
+  
+    return () => setBlogNavigation(null);
+  }, [article, setBlogNavigation]);
+
   return (
     <>
       <ArticleHeading article={article} categories={categories} author={author} />
@@ -16,7 +30,7 @@ const Blog = ({ article, categories, author, banner, relatedItems }) => {
         <article id={'post'} className={styles.article}>
           <Blocks blocks={article.blocks} />
         </article>
-        <HeadingLinks blocks={article.blocks} description={article.title} banner={banner} />
+        <HeadingLinks blocks={article.blocks} title={article.title} banner={banner} />
       </div>
       <ArticleFooter author={author} />
       {relatedItems.data &&       
