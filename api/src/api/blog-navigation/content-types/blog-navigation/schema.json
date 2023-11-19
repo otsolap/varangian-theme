@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_navigations",
+  "info": {
+    "singularName": "blog-navigation",
+    "pluralName": "blog-navigations",
+    "displayName": "BlogNavigation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "social": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.blog-social-share"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.button"
+    }
+  }
+}

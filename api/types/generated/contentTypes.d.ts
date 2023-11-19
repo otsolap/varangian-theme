@@ -800,6 +800,38 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogNavigationBlogNavigation extends Schema.SingleType {
+  collectionName: 'blog_navigations';
+  info: {
+    singularName: 'blog-navigation';
+    pluralName: 'blog-navigations';
+    displayName: 'BlogNavigation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    social: Attribute.Component<'util.blog-social-share'>;
+    button: Attribute.Component<'partials.button'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-navigation.blog-navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-navigation.blog-navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -992,7 +1024,7 @@ export interface ApiNavigationNavigation extends Schema.SingleType {
   };
   attributes: {
     blocks: Attribute.DynamicZone<['util.menu-item']>;
-    buttons: Attribute.Component<'partials.button', true>;
+    button: Attribute.Component<'partials.button'>;
     title: Attribute.String;
     slogan: Attribute.Text;
     createdAt: Attribute.DateTime;
@@ -1209,6 +1241,7 @@ declare module '@strapi/strapi' {
       'api::archive-hero.archive-hero': ApiArchiveHeroArchiveHero;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::blog-navigation.blog-navigation': ApiBlogNavigationBlogNavigation;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;

@@ -289,6 +289,21 @@ export interface UtilBlogAnchors extends Schema.Component {
   };
 }
 
+export interface UtilBlogSocialShare extends Schema.Component {
+  collectionName: 'components_util_blog_social_shares';
+  info: {
+    displayName: 'BlogSocialShare';
+  };
+  attributes: {
+    X: Attribute.Boolean;
+    WhatsApp: Attribute.Boolean;
+    Link: Attribute.Boolean;
+    Email: Attribute.Boolean;
+    LinkedIn: Attribute.Boolean;
+    Facebook: Attribute.Boolean;
+  };
+}
+
 export interface UtilFooterArticles extends Schema.Component {
   collectionName: 'components_util_footer_articles';
   info: {
@@ -374,7 +389,7 @@ export interface UtilSeo extends Schema.Component {
 export interface UtilSocialMediaType extends Schema.Component {
   collectionName: 'components_util_social_media_types';
   info: {
-    displayName: 'socialMedia';
+    displayName: 'contactDetails';
     description: '';
   };
   attributes: {
@@ -432,6 +447,7 @@ declare module '@strapi/strapi' {
       'partials.link': PartialsLink;
       'partials.media-mix-item': PartialsMediaMixItem;
       'util.blog-anchors': UtilBlogAnchors;
+      'util.blog-social-share': UtilBlogSocialShare;
       'util.footer-articles': UtilFooterArticles;
       'util.footer-column': UtilFooterColumn;
       'util.footer-social-media': UtilFooterSocialMedia;

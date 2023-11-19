@@ -18,9 +18,9 @@
         "util.menu-item"
       ]
     },
-    "buttons": {
+    "button": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "partials.button"
     },
     "title": {
