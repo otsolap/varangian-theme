@@ -23,7 +23,7 @@ const Blog = ({ article, categories, author, banner, relatedItems, blogNavigatio
     });
   
     return () => setBlogNavigation(null);
-  }, [article, setBlogNavigation]);
+  }, [article, blogNavigation, setBlogNavigation]);
 
   return (
     <>
