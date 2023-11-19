@@ -16,15 +16,13 @@ const Banner = ({ title, description, image, button, selectTheme }) => {
         )}
         {title || description || button ? (
         <div className={styles.content}>
-          {title && (
-            <h2 className={styles.title}>{title}</h2>
-          )}
+          {title && <h2>{title}</h2>}
           {description && <MarkdownBlock markdown={description} />}
           {button && (
-          <footer className={styles.buttonWrapper}>
-              <CustomLink link={button} className={`button button--${button.selectTheme}`}  />
-          </footer>
-        )}
+            <footer className={styles.buttonWrapper}>
+                <CustomLink link={button} className={`button button--${button.selectTheme}`}  />
+            </footer>
+          )}
         </div>
         ): null}
       </section>
