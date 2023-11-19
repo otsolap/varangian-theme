@@ -4,6 +4,7 @@ import styles from "@/styles/components/header.module.scss";
 import Blocks from "@/components/Blocks";
 import ArticleNavigation from 'partials/article/ArticleNavigation';
 import CustomLink from "@/partials/util/CustomLink";
+import Link from 'next/link';
 
 const Header = ({ navigation }) => {
   const {  blogNavigation } = useContext(GlobalContext);
@@ -30,13 +31,23 @@ const Header = ({ navigation }) => {
       <nav className={styles.navigation}>
         <div className={styles.wrapper}>
           {blogNavigation ? (
-            <div className={styles.menu}>
-              <ArticleNavigation {...blogNavigation} />
-            </div>
+            <>
+              <div className={styles.menu}>
+                <ArticleNavigation {...blogNavigation} />
+              </div>
+              <Link href="/subscribe" className={`${styles.calender} button button--primary`}>Subscribe</Link>
+            </>
           ) : global.blocks && (
-            <div className={styles.menu}>
-              <Blocks blocks={global.blocks} />
-            </div>
+            <>
+              <div className={styles.menu}>
+                <Blocks blocks={global.blocks} />
+              </div>
+              {global.buttons ? (
+              global.buttons.map((button, i) => (
+                    <CustomLink link={button} key={i} className={`${styles.calender} button button--${button.selectTheme}`} />
+                ))
+              ): null}
+            </>
           )}
         </div>
       </nav>

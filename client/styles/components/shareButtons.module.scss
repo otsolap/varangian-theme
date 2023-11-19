@@ -9,6 +9,7 @@
     @include flex-direction(row);
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
     gap: $single;
 }
 
@@ -18,6 +19,9 @@
     gap: $single-half;
 }
 
+.title {
+    margin-bottom: initial;
+}
 
 .icon {
     width: 100%;
@@ -30,10 +34,4 @@
     &:focus {
         color: $brand-900;
     }
-}
-
-/* DESKTOP STYLES */
-@media (width >= $container-desktop) {
-
-
 }

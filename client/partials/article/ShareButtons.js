@@ -49,7 +49,7 @@ const ShareButtons = ({ title }) => {
 
   return (
     <div className={styles.shareButtons}>
-      <h5>Share article:</h5>
+      <h5 className={styles.title}>Share article:</h5>
       <div className={styles.wrapper}>
         {Object.entries(shareMappings).map(([key, { icon, getUrl }]) => (
           <a

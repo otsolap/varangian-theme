@@ -6,9 +6,8 @@ function ArticleNavigation ({  title }) {
 
     return (
       <div className={styles.wrapper}>
-        <h5>{title}</h5>
+        <h4 className={styles.title}>{title}</h4>
         <ShareButtons title={title} />
-        <Link href="/subscribe" className={'button button--primary'}>Subscribe</Link>
       </div>
     );
   }
