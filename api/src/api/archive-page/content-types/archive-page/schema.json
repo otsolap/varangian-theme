@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "archive_heroes",
+  "collectionName": "archive_pages",
   "info": {
-    "singularName": "archive-hero",
-    "pluralName": "archive-heroes",
-    "displayName": "ArchiveHero"
+    "singularName": "archive-page",
+    "pluralName": "archive-pages",
+    "displayName": "ArchivePage"
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +15,11 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.hero"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.seo"
     }
   }
 }

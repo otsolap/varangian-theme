@@ -16,6 +16,7 @@ export const GlobalContext = createContext({
 })
 
 function MyApp({ Component, pageProps }) {
+  console.log(pageProps)
   const [blogNavigation, setBlogNavigation] = useState(null);
   // extracting necessary data
   const { global } = pageProps
@@ -28,7 +29,6 @@ function MyApp({ Component, pageProps }) {
     blogNavigation,
     setBlogNavigation
   };
-  
 
   return (
     <>

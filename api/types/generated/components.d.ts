@@ -359,17 +359,6 @@ export interface UtilMenuItem extends Schema.Component {
   };
 }
 
-export interface UtilMeta extends Schema.Component {
-  collectionName: 'components_util_metas';
-  info: {
-    displayName: 'meta';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface UtilSeo extends Schema.Component {
   collectionName: 'components_blocks_seos';
   info: {
@@ -377,12 +366,17 @@ export interface UtilSeo extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    image: Attribute.Media;
-    meta: Attribute.Component<'util.meta', true>;
+    title: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    description: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
     preventIndexing: Attribute.Boolean & Attribute.DefaultTo<false>;
-    structuredData: Attribute.JSON;
+    keywords: Attribute.Text;
+    imageBlock: Attribute.Component<'blocks.image-block'>;
   };
 }
 
@@ -452,7 +446,6 @@ declare module '@strapi/strapi' {
       'util.footer-column': UtilFooterColumn;
       'util.footer-social-media': UtilFooterSocialMedia;
       'util.menu-item': UtilMenuItem;
-      'util.meta': UtilMeta;
       'util.seo': UtilSeo;
       'util.social-media-type': UtilSocialMediaType;
       'util.sub-footer': UtilSubFooter;

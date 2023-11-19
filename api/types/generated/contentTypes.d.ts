@@ -676,29 +676,30 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiArchiveHeroArchiveHero extends Schema.SingleType {
-  collectionName: 'archive_heroes';
+export interface ApiArchivePageArchivePage extends Schema.SingleType {
+  collectionName: 'archive_pages';
   info: {
-    singularName: 'archive-hero';
-    pluralName: 'archive-heroes';
-    displayName: 'ArchiveHero';
+    singularName: 'archive-page';
+    pluralName: 'archive-pages';
+    displayName: 'ArchivePage';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::archive-hero.archive-hero',
+      'api::archive-page.archive-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::archive-hero.archive-hero',
+      'api::archive-page.archive-page',
       'oneToOne',
       'admin::user'
     > &
@@ -741,6 +742,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
+    seo: Attribute.Component<'util.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -852,6 +854,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::category.category', 'title'> & Attribute.Required;
     hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1238,7 +1241,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::archive-hero.archive-hero': ApiArchiveHeroArchiveHero;
+      'api::archive-page.archive-page': ApiArchivePageArchivePage;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-navigation.blog-navigation': ApiBlogNavigationBlogNavigation;
