@@ -7,10 +7,11 @@ import axios from 'axios'
 import ErrorPage from "next/error"
 import config from '@/utils/config';
 
-const DynamicPages = ({ pageData, showServicesBanner, servicesBannerData }) => {
+const DynamicPages = ({ metaData, pageData, showServicesBanner, servicesBannerData }) => {
   const router = useRouter()
   const blocks = pageData.blocks ?? []
   const servicesBanner = servicesBannerData?.serviceBannerData?.data?.attributes?.banner
+  console.log(metaData)
 
   // Check if the required data was provided
   if (!router.isFallback && !blocks?.length) {
@@ -53,12 +54,19 @@ export async function getServerSideProps(context) {
     }
 
     const blocks = pageDataObj.attributes.blocks
+
+    const metaData = pageDataObj.attributes?.seo ?? {}
     const showServicesBanner = pageDataObj.attributes.showServicesBanner
     const pageData = blocks ? await getDataDependencies(blocks) : {}
     const servicesBannerData = await fetchServicesBannerData()
 
     return {
-      props: { pageData, servicesBannerData, showServicesBanner },
+      props: { 
+        metaData, 
+        pageData, 
+        servicesBannerData, 
+        showServicesBanner 
+      },
     }
   } catch (error) {
     console.error('Error:', error)
