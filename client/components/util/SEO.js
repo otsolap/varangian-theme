@@ -5,7 +5,8 @@ const SEO = ({ metadata }) => {
   // Check for metadata, return null if not available
   if (!metadata) return null;
 
-  const { title, description, imageBlock, preventIndexing, keywords } = global;
+  const { metaData: { title, description, preventIndexing, keywords, imageBlock } } = metadata;
+  // Deconstructing the image formats if imageBlock exists
   const imageFormats = imageBlock?.image?.data?.attributes?.formats;
 
   return (
@@ -17,7 +18,7 @@ const SEO = ({ metadata }) => {
       additionalMetaTags={[
         {
           name: 'keywords',
-          content: keywords?.join(', ') || '',
+          content: keywords || '',
         },
       ]}
       openGraph={{

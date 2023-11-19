@@ -17,6 +17,8 @@ export const GlobalContext = createContext({
 
 function MyApp({ Component, pageProps }) {
   const [blogNavigation, setBlogNavigation] = useState(null);
+  const [metaData, setMetaData] = useState(null);
+  
   // extracting necessary data
   const { global } = pageProps
   if (global == null) {
@@ -24,6 +26,8 @@ function MyApp({ Component, pageProps }) {
   }
 
   const globalContextValue = {
+    metaData,
+    setMetaData,
     globalData: global,
     blogNavigation,
     setBlogNavigation
@@ -32,7 +36,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalContext.Provider value={globalContextValue}>
-        <Layout global={global}>
+        <Layout global={global} metadata={metaData}>
           <Component {...pageProps} />
         </Layout>
       </GlobalContext.Provider>

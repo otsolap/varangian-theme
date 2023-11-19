@@ -1,3 +1,5 @@
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "@/pages/_app.js";
 import { getDataDependencies } from "@/utils/api"
 import { useRouter } from "next/router"
 import { getPageData, fetchServicesBannerData } from "@/utils/index"
@@ -8,10 +10,20 @@ import ErrorPage from "next/error"
 import config from '@/utils/config';
 
 const DynamicPages = ({ metaData, pageData, showServicesBanner, servicesBannerData }) => {
+  
+  const { setMetaData } = useContext(GlobalContext);
+
+  useEffect(() => {
+    setMetaData({
+        metaData,
+    });
+  
+    return () => setMetaData(null);
+  }, [metaData, setMetaData]);
+
   const router = useRouter()
   const blocks = pageData.blocks ?? []
   const servicesBanner = servicesBannerData?.serviceBannerData?.data?.attributes?.banner
-  console.log(metaData)
 
   // Check if the required data was provided
   if (!router.isFallback && !blocks?.length) {
