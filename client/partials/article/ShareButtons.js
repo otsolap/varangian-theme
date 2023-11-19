@@ -37,7 +37,7 @@ const shareMappings = {
   },
 };
 
-const ShareButtons = ({ title }) => {
+const ShareButtons = ({ title, settings }) => {
   const router = useRouter();
   const [url, setUrl] = useState("");
 
@@ -52,20 +52,21 @@ const ShareButtons = ({ title }) => {
       <h5 className={styles.title}>Share article:</h5>
       <div className={styles.wrapper}>
         {Object.entries(shareMappings).map(([key, { icon, getUrl }]) => (
-          <a
-            key={key}
-            href={getUrl(title, url)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-            passHref
-          >
-            <FontAwesomeIcon
-              className={styles.icon}
-              aria-label={key}
-              icon={icon}
-            />
-          </a>
+          settings[key] && (
+            <a
+              key={key}
+              href={getUrl(title, url)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
+              <FontAwesomeIcon
+                className={styles.icon}
+                aria-label={key}
+                icon={icon}
+              />
+            </a>
+          )
         ))}
       </div>
     </div>

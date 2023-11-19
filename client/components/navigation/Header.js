@@ -4,7 +4,7 @@ import styles from "@/styles/components/header.module.scss";
 import Blocks from "@/components/Blocks";
 import ArticleNavigation from 'partials/article/ArticleNavigation';
 import CustomLink from "@/partials/util/CustomLink";
-import Link from 'next/link';
+
 
 const Header = ({ navigation }) => {
   const {  blogNavigation } = useContext(GlobalContext);
@@ -22,11 +22,17 @@ const Header = ({ navigation }) => {
             <p className={styles.slogan}>{global.slogan}</p>
           ) : null}
         </div>
-        {global.buttons ? (
-          global.buttons.map((button, i) => (
-            <CustomLink link={button} key={i} className={`${styles.calendar} mobile-only button button--${button.selectTheme}`} />
-          ))
-        ) : null}
+        {blogNavigation && blogNavigation.button ? ( 
+          <CustomLink 
+            link={blogNavigation.button} 
+            className={`${styles.calendar} mobile-only button button--${global.button.selectTheme}`} 
+          />
+        ) : global.button ? (
+          <CustomLink 
+            link={global.button} 
+            className={`${styles.calendar} mobile-only button button--${global.button.selectTheme}`} 
+          />
+        ) : null }
       </header>
       <nav className={styles.navigation}>
         <div className={styles.wrapper}>
@@ -35,18 +41,24 @@ const Header = ({ navigation }) => {
               <div className={styles.menu}>
                 <ArticleNavigation {...blogNavigation} />
               </div>
-              <Link href="/subscribe" className={`${styles.calender} button button--primary`}>Subscribe</Link>
+              {blogNavigation.button ? (
+                <CustomLink 
+                link={blogNavigation.button} 
+                className={`${styles.calendar} button button--${global.button.selectTheme}`} 
+              />
+              ) : null}
             </>
           ) : global.blocks && (
             <>
               <div className={styles.menu}>
                 <Blocks blocks={global.blocks} />
               </div>
-              {global.buttons ? (
-              global.buttons.map((button, i) => (
-                    <CustomLink link={button} key={i} className={`${styles.calender} button button--${button.selectTheme}`} />
-                ))
-              ): null}
+              {global.button ? (
+                  <CustomLink 
+                    link={global.button} 
+                    className={`${styles.calendar} button button--${global.button.selectTheme}`} 
+                  />
+                ) : null }
             </>
           )}
         </div>

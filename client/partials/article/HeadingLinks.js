@@ -1,9 +1,7 @@
-import ShareButtons from "@/partials/article/ShareButtons";
-import Banner from "components/blocks/Banner";
 import Link from "next/link";
 import styles from '@/styles/components/headingLinks.module.scss'
 
-function HeadingLinks({ blocks, banner }) {
+function HeadingLinks({ blocks }) {
   const headings = blocks
     .filter((block) => block.__component === "blocks.article-text-block")
     .flatMap((block) => {
@@ -38,7 +36,6 @@ function HeadingLinks({ blocks, banner }) {
           </ul>
         )
       }
-      {banner.data && <Banner {...banner} isAside={true} />}
     </nav>
   );
 }
