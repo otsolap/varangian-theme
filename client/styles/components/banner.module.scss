@@ -26,8 +26,8 @@
 
 .image {
     @include border-radius(100%);
-    width: 100px;
-    height: 100px;
+    height: 150px;
+    width: 150px;
     aspect-ratio: 16/9;
   }
   
@@ -50,6 +50,7 @@
     .imageContainer {
         margin: initial;
     }
+
 
     .content {
         padding-top: initial;
