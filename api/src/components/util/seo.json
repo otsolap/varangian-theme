@@ -25,6 +25,9 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.image-block"
+    },
+    "XTwitter": {
+      "type": "string"
     }
   }
 }
