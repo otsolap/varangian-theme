@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "base_seos",
+  "info": {
+    "singularName": "base-seo",
+    "pluralName": "base-seos",
+    "displayName": "BaseSEO",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.seo"
+    }
+  }
+}

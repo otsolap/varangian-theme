@@ -4,10 +4,11 @@ import Footer from "@/components/navigation/Footer";
 import MobileFooter from "@/components/navigation/MobileFooter";
 
 export default function Layout({ metadata, global, children}) {
-  const { navigation, footer, } = global
+  const { navigation, footer, baseSEO } = global
+
   return (
     <>
-      <SEO metadata={metadata} />
+      <SEO baseSEO={baseSEO} metadata={metadata} />
       <Header navigation={navigation} />
         <main className={`container`}>
           {children}

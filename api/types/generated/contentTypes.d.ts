@@ -802,6 +802,37 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
 }
 
+export interface ApiBaseSeoBaseSeo extends Schema.SingleType {
+  collectionName: 'base_seos';
+  info: {
+    singularName: 'base-seo';
+    pluralName: 'base-seos';
+    displayName: 'BaseSEO';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'util.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::base-seo.base-seo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::base-seo.base-seo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogNavigationBlogNavigation extends Schema.SingleType {
   collectionName: 'blog_navigations';
   info: {
@@ -1244,6 +1275,7 @@ declare module '@strapi/strapi' {
       'api::archive-page.archive-page': ApiArchivePageArchivePage;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::base-seo.base-seo': ApiBaseSeoBaseSeo;
       'api::blog-navigation.blog-navigation': ApiBlogNavigationBlogNavigation;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;

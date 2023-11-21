@@ -1,11 +1,26 @@
 import { NextSeo } from "next-seo";
-import { getStrapiMedia } from "@/utils/index";
+import { getStrapiMedia, isNotEmpty } from "@/utils/index";
 
-const SEO = ({ metadata, canonicalUrl }) => {
-  // Check for metadata, return null if not available
-  if (!metadata) return null;
+const SEO = ({ metadata, baseSEO, canonicalUrl }) => {
+  // Use metadata if it's available and not empty, otherwise use baseSEO
+  let seoData = isNotEmpty(metadata) && metadata.seo != null ? metadata : baseSEO;
 
-  const { metaData: { title, description, preventIndexing, keywords, XTwitter, imageBlock } } = metadata;
+  // Exit if seoData is still not valid
+  if (!isNotEmpty(seoData)) return null;
+
+  // Initialize default values
+  let title, description, preventIndexing, keywords, XTwitter, imageBlock;
+
+  // Determine the structure of seoData and extract values
+  if (seoData?.data?.attributes?.seo) {
+    // BaseSEO structure
+    ({ seo: { title, description, preventIndexing, keywords, XTwitter, imageBlock } } = seoData.data.attributes);
+  } else if (seoData?.metaData) {
+    // Page-specific SEO structure
+    ({ metaData: { title, description, preventIndexing, keywords, XTwitter, imageBlock } } = seoData);
+  }
+
+  console.log(title, description, preventIndexing, keywords, XTwitter, imageBlock)
   // Deconstructing the image formats if imageBlock exists
   const imageFormats = imageBlock?.image?.data?.attributes?.formats;
 

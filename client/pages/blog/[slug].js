@@ -12,9 +12,13 @@ import config from '@/utils/config'
 import Banner from "components/blocks/Banner";
 
 const Blog = ({ article, categories, author, banner, relatedItems, blogNavigation }) => {
-  const { setBlogNavigation } = useContext(GlobalContext);
+  const { setMetaData, setBlogNavigation } = useContext(GlobalContext);
 
   useEffect(() => {
+    setMetaData({
+      metaData: article.seo,
+    });
+
     setBlogNavigation({
       title: article.title,
       href: `/blog/${article.slug}`,
@@ -22,8 +26,12 @@ const Blog = ({ article, categories, author, banner, relatedItems, blogNavigatio
       button: blogNavigation.button,
     });
   
-    return () => setBlogNavigation(null);
-  }, [article, blogNavigation, setBlogNavigation]);
+    return () => {
+      setMetaData(null); 
+      setBlogNavigation(null);
+    };
+  }, [article, setMetaData, blogNavigation, setBlogNavigation ]);
+  
 
   return (
     <>
