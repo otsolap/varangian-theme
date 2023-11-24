@@ -1202,6 +1202,7 @@ export interface ApiSubscribeFormSubscribeForm extends Schema.SingleType {
   };
   attributes: {
     form: Attribute.DynamicZone<['form-inputs.text-field']>;
+    formID: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

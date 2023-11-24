@@ -17,6 +17,9 @@
       "components": [
         "form-inputs.text-field"
       ]
+    },
+    "formID": {
+      "type": "uid"
     }
   }
 }
