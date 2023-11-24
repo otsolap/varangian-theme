@@ -24,7 +24,7 @@ import config from '@/utils/config'
 
     // For other data types, return false (or however you want to handle them)
     return false;
-}
+  }
 
   
   // Get the url of the Strapi API based on the env variable or the default local one.
@@ -67,18 +67,21 @@ import config from '@/utils/config'
     try {
       const navigationPromise = axios.get(getStrapiURL(`/${config.global.API_NAVIGATION_QUERY}`));
       const footerPromise = axios.get(getStrapiURL(`/${config.global.API_FOOTER_QUERY}`));
+      const baseSEOPromise = axios.get(getStrapiURL(`/${config.global.API_BASE_SEO_QUERY}`));
 
-      let navigationResponse, footerResponse;
+      let navigationResponse, footerResponse, baseSEOResponse;
       try {
-        [navigationResponse, footerResponse] = await Promise.all([navigationPromise, footerPromise]);
+        [navigationResponse, footerResponse, baseSEOResponse] = await Promise.all([navigationPromise, footerPromise, baseSEOPromise]);
       } catch (error) {
         console.error('Failed to fetch API data:', error);
       }
 
       const navigationData = navigationResponse?.data || null;
       const footerData = footerResponse?.data || null;
+      const baseSEOData = baseSEOResponse?.data || null;
 
       const globalData = {
+        baseSEO: baseSEOData,
         navigation: navigationData,
         footer: footerData
       };

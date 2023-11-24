@@ -7,30 +7,27 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 60
     },
     "description": {
-      "type": "text"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "meta": {
-      "type": "component",
-      "repeatable": true,
-      "component": "util.meta"
+      "type": "text",
+      "maxLength": 150
     },
     "preventIndexing": {
       "type": "boolean",
       "default": false
     },
-    "structuredData": {
-      "type": "json"
+    "keywords": {
+      "type": "text"
+    },
+    "imageBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.image-block"
+    },
+    "XTwitter": {
+      "type": "string"
     }
   }
 }

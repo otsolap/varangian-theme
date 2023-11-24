@@ -30,6 +30,11 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.hero"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.seo"
     }
   }
 }

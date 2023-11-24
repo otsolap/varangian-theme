@@ -1,3 +1,5 @@
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "@/pages/_app.js";
 import { getDataDependencies } from "@/utils/api"
 import { useRouter } from "next/router"
 import { getPageData, fetchServicesBannerData } from "@/utils/index"
@@ -7,7 +9,18 @@ import axios from 'axios'
 import ErrorPage from "next/error"
 import config from '@/utils/config';
 
-const DynamicPages = ({ pageData, showServicesBanner, servicesBannerData }) => {
+const DynamicPages = ({ metaData, pageData, showServicesBanner, servicesBannerData }) => {
+  
+  const { setMetaData } = useContext(GlobalContext);
+
+  useEffect(() => {
+    setMetaData({
+        metaData,
+    });
+  
+    return () => setMetaData(null);
+  }, [metaData, setMetaData]);
+
   const router = useRouter()
   const blocks = pageData.blocks ?? []
   const servicesBanner = servicesBannerData?.serviceBannerData?.data?.attributes?.banner
@@ -29,10 +42,10 @@ export async function getServerSideProps(context) {
   const { slug } = context.query
   const { nonPageSlugs } = config;
 
- // Check if the slug is a non-page slug and return notFound if it is
- if (nonPageSlugs.includes(slug?.[0])) {
-  return { notFound: true };
-}
+  // Check if the slug is a non-page slug and return notFound if it is
+  if (nonPageSlugs.includes(slug?.[0])) {
+      return { notFound: true };
+  }
 
   try {
     const data = await getPageData(slug)
@@ -53,12 +66,19 @@ export async function getServerSideProps(context) {
     }
 
     const blocks = pageDataObj.attributes.blocks
+
+    const metaData = pageDataObj.attributes?.seo ?? {}
     const showServicesBanner = pageDataObj.attributes.showServicesBanner
     const pageData = blocks ? await getDataDependencies(blocks) : {}
     const servicesBannerData = await fetchServicesBannerData()
 
     return {
-      props: { pageData, servicesBannerData, showServicesBanner },
+      props: { 
+        metaData, 
+        pageData, 
+        servicesBannerData, 
+        showServicesBanner 
+      },
     }
   } catch (error) {
     console.error('Error:', error)

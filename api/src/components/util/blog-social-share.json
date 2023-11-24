@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_util_blog_social_shares",
+  "info": {
+    "displayName": "BlogSocialShare"
+  },
+  "options": {},
+  "attributes": {
+    "X": {
+      "type": "boolean"
+    },
+    "WhatsApp": {
+      "type": "boolean"
+    },
+    "Link": {
+      "type": "boolean"
+    },
+    "Email": {
+      "type": "boolean"
+    },
+    "LinkedIn": {
+      "type": "boolean"
+    },
+    "Facebook": {
+      "type": "boolean"
+    }
+  }
+}

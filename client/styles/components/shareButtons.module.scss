@@ -4,35 +4,34 @@
 
 .shareButtons {
     padding: $single;
-    color: $background-900;
+    color: $text-900;
+    @include display-flex();
+    @include flex-direction(row);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $single;
 }
 
 .wrapper {
     @include display-flex();
     @include flex-direction(row);
-    gap: $single;
+    gap: $single-half;
 }
 
+.title {
+    margin-bottom: initial;
+}
 
 .icon {
     width: 100%;
     height: auto;
     max-width: $double;
     max-height: $double;
-    color: $background-300;
+    color: inherit;
 
     &:hover,
     &:focus {
         color: $brand-900;
     }
-}
-
-/* DESKTOP STYLES */
-@media (width >= $container-desktop) {
-
-    .shareButtons {
-        padding-left: $double;
-        padding-right: $double;
-    }
-
 }

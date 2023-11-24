@@ -676,29 +676,30 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiArchiveHeroArchiveHero extends Schema.SingleType {
-  collectionName: 'archive_heroes';
+export interface ApiArchivePageArchivePage extends Schema.SingleType {
+  collectionName: 'archive_pages';
   info: {
-    singularName: 'archive-hero';
-    pluralName: 'archive-heroes';
-    displayName: 'ArchiveHero';
+    singularName: 'archive-page';
+    pluralName: 'archive-pages';
+    displayName: 'ArchivePage';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::archive-hero.archive-hero',
+      'api::archive-page.archive-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::archive-hero.archive-hero',
+      'api::archive-page.archive-page',
       'oneToOne',
       'admin::user'
     > &
@@ -741,6 +742,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
+    seo: Attribute.Component<'util.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -800,6 +802,69 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
 }
 
+export interface ApiBaseSeoBaseSeo extends Schema.SingleType {
+  collectionName: 'base_seos';
+  info: {
+    singularName: 'base-seo';
+    pluralName: 'base-seos';
+    displayName: 'BaseSEO';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'util.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::base-seo.base-seo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::base-seo.base-seo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogNavigationBlogNavigation extends Schema.SingleType {
+  collectionName: 'blog_navigations';
+  info: {
+    singularName: 'blog-navigation';
+    pluralName: 'blog-navigations';
+    displayName: 'BlogNavigation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    social: Attribute.Component<'util.blog-social-share'>;
+    button: Attribute.Component<'partials.button'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-navigation.blog-navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-navigation.blog-navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -820,6 +885,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::category.category', 'title'> & Attribute.Required;
     hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -992,7 +1058,7 @@ export interface ApiNavigationNavigation extends Schema.SingleType {
   };
   attributes: {
     blocks: Attribute.DynamicZone<['util.menu-item']>;
-    buttons: Attribute.Component<'partials.button', true>;
+    button: Attribute.Component<'partials.button'>;
     title: Attribute.String;
     slogan: Attribute.Text;
     createdAt: Attribute.DateTime;
@@ -1206,9 +1272,11 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::archive-hero.archive-hero': ApiArchiveHeroArchiveHero;
+      'api::archive-page.archive-page': ApiArchivePageArchivePage;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::base-seo.base-seo': ApiBaseSeoBaseSeo;
+      'api::blog-navigation.blog-navigation': ApiBlogNavigationBlogNavigation;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;

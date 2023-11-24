@@ -289,6 +289,21 @@ export interface UtilBlogAnchors extends Schema.Component {
   };
 }
 
+export interface UtilBlogSocialShare extends Schema.Component {
+  collectionName: 'components_util_blog_social_shares';
+  info: {
+    displayName: 'BlogSocialShare';
+  };
+  attributes: {
+    X: Attribute.Boolean;
+    WhatsApp: Attribute.Boolean;
+    Link: Attribute.Boolean;
+    Email: Attribute.Boolean;
+    LinkedIn: Attribute.Boolean;
+    Facebook: Attribute.Boolean;
+  };
+}
+
 export interface UtilFooterArticles extends Schema.Component {
   collectionName: 'components_util_footer_articles';
   info: {
@@ -344,17 +359,6 @@ export interface UtilMenuItem extends Schema.Component {
   };
 }
 
-export interface UtilMeta extends Schema.Component {
-  collectionName: 'components_util_metas';
-  info: {
-    displayName: 'meta';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
 export interface UtilSeo extends Schema.Component {
   collectionName: 'components_blocks_seos';
   info: {
@@ -362,19 +366,25 @@ export interface UtilSeo extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    image: Attribute.Media;
-    meta: Attribute.Component<'util.meta', true>;
+    title: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    description: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
     preventIndexing: Attribute.Boolean & Attribute.DefaultTo<false>;
-    structuredData: Attribute.JSON;
+    keywords: Attribute.Text;
+    imageBlock: Attribute.Component<'blocks.image-block'>;
+    XTwitter: Attribute.String;
   };
 }
 
 export interface UtilSocialMediaType extends Schema.Component {
   collectionName: 'components_util_social_media_types';
   info: {
-    displayName: 'socialMedia';
+    displayName: 'contactDetails';
     description: '';
   };
   attributes: {
@@ -432,11 +442,11 @@ declare module '@strapi/strapi' {
       'partials.link': PartialsLink;
       'partials.media-mix-item': PartialsMediaMixItem;
       'util.blog-anchors': UtilBlogAnchors;
+      'util.blog-social-share': UtilBlogSocialShare;
       'util.footer-articles': UtilFooterArticles;
       'util.footer-column': UtilFooterColumn;
       'util.footer-social-media': UtilFooterSocialMedia;
       'util.menu-item': UtilMenuItem;
-      'util.meta': UtilMeta;
       'util.seo': UtilSeo;
       'util.social-media-type': UtilSocialMediaType;
       'util.sub-footer': UtilSubFooter;

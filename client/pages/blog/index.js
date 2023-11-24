@@ -15,15 +15,15 @@ const Blog = ({ hero, items, categories }) => {
 
 export async function getStaticProps() {
   try {
-    const [archiveHeroResponse, articlesResponse, categoriesResponse] = await Promise.all([
-      axios.get(getStrapiURL(`/${config.blog.API_ARCHIVE_HERO_QUERY}`)),
+    const [archivePageResponse, articlesResponse, categoriesResponse] = await Promise.all([
+      axios.get(getStrapiURL(`/${config.blog.API_ARCHIVE_PAGE_QUERY}`)),
       axios.get(getStrapiURL(`/${config.blog.API_ARTICLES_QUERY}`)),
       axios.get(getStrapiURL('/api/categories')),
     ])
 
     return {
       props: {
-        hero: archiveHeroResponse.data.data.attributes.hero ?? {},
+        hero: archivePageResponse.data.data.attributes.hero ?? {},
         items: articlesResponse.data.data ?? {},
         categories: categoriesResponse.data.data ?? {},
       },

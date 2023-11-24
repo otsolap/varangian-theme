@@ -1,20 +1,21 @@
 {
   "kind": "singleType",
-  "collectionName": "archive_heroes",
+  "collectionName": "base_seos",
   "info": {
-    "singularName": "archive-hero",
-    "pluralName": "archive-heroes",
-    "displayName": "ArchiveHero"
+    "singularName": "base-seo",
+    "pluralName": "base-seos",
+    "displayName": "BaseSEO",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "hero": {
+    "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "blocks.hero"
+      "component": "util.seo"
     }
   }
 }
