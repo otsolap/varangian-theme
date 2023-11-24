@@ -3,7 +3,7 @@ import { getStrapiMedia, isNotEmpty } from "@/utils/index";
 
 const SEO = ({ metadata, baseSEO, canonicalUrl }) => {
   // Use metadata if it's available and not empty, otherwise use baseSEO
-  let seoData = isNotEmpty(metadata) && metadata.seo != null ? metadata : baseSEO;
+  let seoData = isNotEmpty(metadata) && metadata.metaData != null ? metadata : baseSEO;
 
   // Exit if seoData is still not valid
   if (!isNotEmpty(seoData)) return null;
@@ -20,7 +20,6 @@ const SEO = ({ metadata, baseSEO, canonicalUrl }) => {
     ({ metaData: { title, description, preventIndexing, keywords, XTwitter, imageBlock } } = seoData);
   }
 
-  console.log(title, description, preventIndexing, keywords, XTwitter, imageBlock)
   // Deconstructing the image formats if imageBlock exists
   const imageFormats = imageBlock?.image?.data?.attributes?.formats;
 
