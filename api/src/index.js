@@ -20,7 +20,7 @@ module.exports = {
       try {
         // Fetch the ConvertKit form ID from your API
         const formResponse = await axios.get(`${process.env.PUBLIC_API_URL}/api/subscribe-form`);
-        const formID = formResponse.data.data.attributes.formID;
+        const formID = formResponse.data?.data?.attributes?.formID;
 
         // Check if the form ID exists
         if (formID) {
