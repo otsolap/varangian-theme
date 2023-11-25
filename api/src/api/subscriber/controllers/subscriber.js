@@ -16,10 +16,11 @@ module.exports = createCoreController('api::subscriber.subscriber', ({ strapi })
       // Extract the request data
       const requestData = ctx.request.body.data;
 
-      // Check for required fields (assuming email is required)
+      // Check for required fields and correct formID
       if (!requestData || !requestData.email || requestData.subscribeFormId !== formID) {
         return ctx.badRequest('Email and correct formID are required');
       }
+
 
       // Prepare data for ConvertKit
       const convertKitData = {
