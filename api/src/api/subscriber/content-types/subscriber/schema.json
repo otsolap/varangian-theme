@@ -14,12 +14,6 @@
   "attributes": {
     "email": {
       "type": "email"
-    },
-    "form": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::form.form",
-      "inversedBy": "email"
     }
   }
 }

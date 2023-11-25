@@ -38,12 +38,6 @@
         "images"
       ]
     },
-    "email": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::subscriber.subscriber",
-      "mappedBy": "form"
-    },
     "endpoint": {
       "type": "string",
       "required": true,

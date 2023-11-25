@@ -1024,11 +1024,6 @@ export interface ApiFormForm extends Schema.CollectionType {
     description: Attribute.Text;
     button: Attribute.Component<'partials.button'>;
     image: Attribute.Media;
-    email: Attribute.Relation<
-      'api::form.form',
-      'oneToOne',
-      'api::subscriber.subscriber'
-    >;
     endpoint: Attribute.String & Attribute.Required & Attribute.Unique;
     contact: Attribute.Relation<
       'api::form.form',
@@ -1234,11 +1229,6 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
   };
   attributes: {
     email: Attribute.Email;
-    form: Attribute.Relation<
-      'api::subscriber.subscriber',
-      'oneToOne',
-      'api::form.form'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
