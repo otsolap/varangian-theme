@@ -51,8 +51,8 @@ async function setupConvertKitWebhook(formID, strapi) {
     const payload = {
       webhook: {
         api_secret: process.env.CONVERTKIT_SECRET_KEY,
-        url:  `${process.env.PUBLIC_API_URL}/subscribers/webhook/activate`, // Replace with your actual webhook URL
-        events: ['subscribe'] // Define the events you want to listen to
+        url:  `${process.env.PUBLIC_API_URL}/api/subscribers/webhook/activate`,
+        event: ['subscriber.subscriber_activate'],
       }
     };
 
