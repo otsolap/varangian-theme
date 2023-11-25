@@ -1,33 +1,25 @@
 'use strict';
 
-/**
- * subscriber controller
- */
-
+const axios = require('axios');
 const { createCoreController } = require('@strapi/strapi').factories;
-const axios = require('axios'); // Ensure axios is installed
 
 module.exports = createCoreController('api::subscriber.subscriber', ({ strapi }) => ({
+  /**
+   * Create a subscriber entry.
+   */
   async create(ctx) {
     try {
-      // Fetch the formID from your subscribe-form endpoint
+      // Fetch the form configuration
       const formResponse = await axios.get(`${process.env.PUBLIC_API_URL}/api/subscribe-form`);
-      // Convert formID to a number for comparison
-      const formID = parseInt(formResponse.data.data.attributes.formID);
+      const formID = formResponse.data.data.attributes.formID;
 
       // Extract the request data
       const requestData = ctx.request.body.data;
 
-      // Convert requestData.subscribeFormId to a number for comparison
-      const requestFormId = parseInt(requestData.subscribeFormId);
-
       // Check for required fields (assuming email is required)
-      if (!requestData || !requestData.email || requestFormId !== formID) {
+      if (!requestData || !requestData.email || requestData.subscribeFormId !== formID) {
         return ctx.badRequest('Email and correct formID are required');
       }
-
-      // ConvertKit API request setup
-      const convertKitApiUrl = `https://api.convertkit.com/v3/forms/${formID}/subscribe`;
 
       // Prepare data for ConvertKit
       const convertKitData = {
@@ -36,24 +28,50 @@ module.exports = createCoreController('api::subscriber.subscriber', ({ strapi })
         // Add any other fields required by ConvertKit
       };
 
-      // Send the subscriber data to ConvertKit
-      await axios.post(convertKitApiUrl, convertKitData);
+      // Send data to ConvertKit
+      await axios.post('https://api.convertkit.com/v3/subscribers', convertKitData);
 
-      // Proceed with the creation logic in Strapi
-      const entity = await strapi.entityService.create('api::subscriber.subscriber', {
-        data: {
-          email: requestData.email,
-          // Add any other fields you need to store for a subscriber
-        },
-      });
-
-      // Return the created entity
-      return ctx.created(entity);
+      // Respond with a success message (or you can customize this response)
+      return ctx.response.send('Subscription successful');
 
     } catch (error) {
-      // Handle errors
-      console.error('Error in subscriber creation:', error);
-      return ctx.internalServerError('Error processing your request');
+      strapi.log.error('Subscription error:', error);
+      return ctx.badRequest('Subscription failed');
     }
-  }
+  },
+
+  /**
+   * Webhook handler for subscriber activation.
+   */
+  async webhookActivate(ctx) {
+    try {
+      const webhookData = ctx.request.body;
+
+      // Validate the webhook data
+      if (!webhookData || !webhookData.email) {
+        return ctx.badRequest('Invalid webhook data');
+      }
+
+      // Prepare the data for saving to Strapi
+      const subscriberData = {
+        data: {
+          email: webhookData.email,
+          // You can add additional fields here if needed
+        },
+      };
+
+      // Save the subscriber to the database
+      const savedSubscriber = await strapi.entityService.create('api::subscriber.subscriber', subscriberData);
+
+      // Optionally publish the subscriber if your business logic requires it
+      // await strapi.entityService.publish('api::subscriber.subscriber', savedSubscriber.id);
+
+      // Send a response back to the webhook sender
+      return ctx.response.send({ message: 'Subscriber saved successfully', subscriber: savedSubscriber });
+
+    } catch (error) {
+      strapi.log.error('Webhook handling error:', error);
+      return ctx.badRequest('Error handling webhook');
+    }
+  },
 }));

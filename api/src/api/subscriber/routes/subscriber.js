@@ -1,9 +1,14 @@
 'use strict';
 
-/**
- * subscriber router
- */
+module.exports = {
+  async triggerWebhookCreation(ctx) {
+    try {
+      const response = await strapi.services.subscribers.createWebhook();
+      ctx.send(response);
+    } catch (error) {
+      ctx.throw(500, error.message);
+    }
+  },
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
-
-module.exports = createCoreRouter('api::subscriber.subscriber');
+  // Other route handlers...
+};
