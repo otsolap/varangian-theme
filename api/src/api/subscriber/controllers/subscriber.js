@@ -11,16 +11,15 @@ module.exports = createCoreController('api::subscriber.subscriber', ({ strapi })
     try {
       // Fetch the form configuration
       const formResponse = await axios.get(`${process.env.PUBLIC_API_URL}/api/subscribe-form`);
-      const formID = formResponse.data.data.attributes.formID;
+      const formID = parseInt(formResponse.data.data.attributes.formID);
 
       // Extract the request data
       const requestData = ctx.request.body.data;
 
       // Check for required fields and correct formID
-      if (!requestData || !requestData.email || requestData.subscribeFormId !== formID) {
+      if (!requestData || !requestData.email || parseInt(requestData.subscribeFormId) !== formID) {
         return ctx.badRequest('Email and correct formID are required');
       }
-
 
       // Prepare data for ConvertKit
       const convertKitData = {
@@ -30,13 +29,13 @@ module.exports = createCoreController('api::subscriber.subscriber', ({ strapi })
       };
 
       // Send data to ConvertKit
-      await axios.post('https://api.convertkit.com/v3/subscribers', convertKitData);
+      await axios.post(`https://api.convertkit.com/v3/forms/${formID}/subscribe`, convertKitData);
 
       // Respond with a success message (or you can customize this response)
       return ctx.response.send('Subscription successful');
 
     } catch (error) {
-      strapi.log.error('Subscription error:', error);
+      strapi.log.error('Subscription error:', error.message);
       return ctx.badRequest('Subscription failed');
     }
   },
