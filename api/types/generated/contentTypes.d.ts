@@ -904,44 +904,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiContactContact extends Schema.CollectionType {
-  collectionName: 'contacts';
-  info: {
-    singularName: 'contact';
-    pluralName: 'contacts';
-    displayName: 'Contact';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    form: Attribute.Relation<
-      'api::contact.contact',
-      'oneToOne',
-      'api::form.form'
-    >;
-    name: Attribute.String;
-    textarea: Attribute.Text;
-    email: Attribute.Email & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::contact.contact',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::contact.contact',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -1025,11 +987,6 @@ export interface ApiFormForm extends Schema.CollectionType {
     button: Attribute.Component<'partials.button'>;
     image: Attribute.Media;
     endpoint: Attribute.String & Attribute.Required & Attribute.Unique;
-    contact: Attribute.Relation<
-      'api::form.form',
-      'oneToOne',
-      'api::contact.contact'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1269,7 +1226,6 @@ declare module '@strapi/strapi' {
       'api::base-seo.base-seo': ApiBaseSeoBaseSeo;
       'api::blog-navigation.blog-navigation': ApiBlogNavigationBlogNavigation;
       'api::category.category': ApiCategoryCategory;
-      'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::form.form': ApiFormForm;

@@ -42,12 +42,6 @@
       "type": "string",
       "required": true,
       "unique": true
-    },
-    "contact": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::contact.contact",
-      "mappedBy": "form"
     }
   }
 }
