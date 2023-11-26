@@ -1,4 +1,4 @@
-const convertKitCron = require('../cron/convertKit');
+const convertKitCron = require('../../cron/convertKit');
 
 module.exports = ({ env }) => ({
   host: env('HOST', '127.0.0.1'),
