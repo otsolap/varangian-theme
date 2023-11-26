@@ -1186,6 +1186,7 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
   };
   attributes: {
     email: Attribute.Email;
+    convertkitID: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

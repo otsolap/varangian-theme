@@ -1,11 +1,11 @@
 const axios = require('axios');
 
 module.exports = {
-  // 0 1 * * *
-  '* * * * *': async () => {
+  // Schedule: Once a day
+  '0 1 * * *': async () => {
     try {
-      console.log('Active subscriber data fetched from ConvertKit')
-      // Fetch the form ID dynamically
+      console.log('Active subscriber data fetched from ConvertKit');
+      // Fetch the form ID
       const formResponse = await axios.get(`${process.env.PUBLIC_API_URL}/api/subscribe-form`);
       const formID = parseInt(formResponse.data.data.attributes.formID);
 
@@ -24,23 +24,33 @@ module.exports = {
       // Process each subscription
       for (const subscription of subscribersResponse.data.subscriptions) {
         const email = subscription.subscriber.email_address;
+        const convertKitID = subscription.subscriber.id;
 
-     // Check if the subscriber already exists in Strapi
+        // Check if the subscriber already exists in Strapi
         const existingSubscriber = await strapi.entityService.findMany('api::subscriber.subscriber', {
-          filters: { email }
+          filters: { convertkitID: convertKitID }
         });
+
         // If not, create a new subscriber
-        if (!existingSubscriber) {
+        if (existingSubscriber.length === 0) {
           await strapi.service('api::subscriber.subscriber').createAndPublish({
+            convertkitID: convertKitID,
             email: email,
             // Add other relevant fields
           });
+        } else {
+          // Update existing subscriber if needed (for instance, if email changes)
+          await strapi.entityService.update('api::subscriber.subscriber', existingSubscriber[0].id, {
+            data: {
+              email: email,
+              // Update other relevant fields if necessary
+            }
+          });
         }
       }
-
       console.log('Subscribers updated from ConvertKit');
     } catch (error) {
-      console.error('Error updating subscribers from ConvertKit:', error);
+      console.error('Error updating subscribers from ConvertKit:', error.message);
     }
   },
 };
