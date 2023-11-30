@@ -6,14 +6,19 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import "swiper/scss/effect-coverflow";
 import Layout from "@/components/Layout"
-import { fetchGlobalData } from "utils/index"
+// Styles
 import "@/styles/globals.scss"
 // Store Strapi Global object in context
+import { fetchGlobalData } from "utils/index"
+
 export const GlobalContext = createContext({
   globalData: {}, 
   blogNavigation: null,
   setBlogNavigation: () => {}
 })
+
+// Analytics Tag Manager
+import AnalyticsTagManager from "@/components/util/AnalyticsTagManager"
 
 function MyApp({ Component, pageProps }) {
   const [blogNavigation, setBlogNavigation] = useState(null);
@@ -36,6 +41,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalContext.Provider value={globalContextValue}>
+        <AnalyticsTagManager />
         <Layout global={global} metadata={metaData}>
           <Component {...pageProps} />
         </Layout>
