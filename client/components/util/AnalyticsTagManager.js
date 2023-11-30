@@ -3,6 +3,7 @@ import Script from 'next/script';
 const AnalyticsTagManager = () => {
   return (
     <Script 
+      id="analytics-tag-manager"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
