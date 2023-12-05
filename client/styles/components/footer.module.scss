@@ -78,7 +78,7 @@
 .wrapper {
   text-align: left;
   width: 100%;
-  min-height: 1.25rem;
+  min-height: $single-quarter;
 }
 
 .flexBox {
@@ -140,6 +140,7 @@
 .subFooter {
   border-top: $text-900 2px solid;
   padding: $single;
+  margin-top: $single;
   @include display-flex;
   @include flex-direction(column);
   gap: $half;
@@ -287,6 +288,7 @@
 
   .subFooter {
     @include flex-direction(row);
+    margin-top: $double;
   }
 
 }

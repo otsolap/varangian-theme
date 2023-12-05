@@ -4,53 +4,43 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-hind-guntur);
   margin-bottom: $single;
 }
 
-h1 {
+h1,
+.h1 {
+  font-size: $double-half;
+}
+h2,
+.h2 {
   font-size: $double;
 }
-
-h2 {
+h3,
+.h3 {
   font-size: $single-half;
 }
-h3 {
-  font-size: 1.25rem;
+h4,
+.h4 {
+  font-size: $single-quarter;
 }
-
-h4 {
+h5,
+.h5 {
   font-size: $single;
 }
 
-p {
-  margin-bottom: $single;
+a,
+p,
+input,
+span,
+button,
+strong,
+small {
+  font-family: var(--font-poppins);
 }
 
 a {
   color: inherit;
   text-decoration-line: none;
   font-weight: 700;
-}
-
-@media (width >= $container-desktop) {
-  h1,
-  .h1 {
-    font-size: $double-half;
-  }
-  h2,
-  .h2 {
-    font-size: $double;
-  }
-  h3,
-  .h3 {
-    font-size: $single-half;
-  }
-  h4,
-  .h4 {
-    font-size: 1.25rem;
-  }
-  h5,
-  .h5 {
-    font-size: 1rem;
-  }
 }

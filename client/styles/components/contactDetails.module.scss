@@ -3,6 +3,11 @@
 @import "../partials/breakpoints";
 @import "../partials/util";
 
+
+.socialWrapper {
+  padding: $half 0;
+}
+
 .socialIcon {
   width: $single;
 }
@@ -12,7 +17,7 @@
   @include flex-direction(row);
   gap: $single;
   font-size: $single;
-  transition-duration: .3s;
+  transition-duration: .6s;
   transition-property: all;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
 

@@ -31,7 +31,7 @@ const ContactDetails = ({ list }) => {
     const href = contact.type === 'Link' ? contact.url : `${urlPrefix}${contact.url}`;
 
     return (
-      <p className={styles.contactText} key={index}>
+      <p className={styles.socialWrapper} key={index}>
         {contactMappings[contact.type] && (
           <a
             className={styles.someLink}

@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-size: 1.75rem;
+  font-size: $single-quarter;
   margin-bottom: 0;
   font-weight: 900;
   text-shadow: 1px 1px 2px #001f2a;
@@ -32,6 +32,8 @@
 
 .calendar {
   margin-left: auto;
+  width: 100%;
+  max-width: fit-content
 }
 
 .icon {
