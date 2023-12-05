@@ -6,10 +6,12 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import "swiper/scss/effect-coverflow";
 import Layout from "@/components/Layout"
+// Fonts
+import { poppins, hind_guntur } from "@/utils/fonts";
 // Styles
 import "@/styles/globals.scss"
 // Store Strapi Global object in context
-import { fetchGlobalData } from "utils/index"
+import { fetchGlobalData } from "@/utils/index"
 
 export const GlobalContext = createContext({
   globalData: {}, 
@@ -40,6 +42,14 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${poppins.style.fontFamily}, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-family: ${hind_guntur.style.fontFamily}, serif;
+        }
+      `}</style>
       <GlobalContext.Provider value={globalContextValue}>
         <AnalyticsTagManager />
         <Layout global={global} metadata={metaData}>
