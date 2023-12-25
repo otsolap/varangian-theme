@@ -2,8 +2,7 @@ import AccordionItem from "@/partials/blocks/AccordionItem";
 import NextImage from "@/partials/util/NextImage";
 import styles from "@/styles/components/accordion.module.scss";
 
-const Accordion = ({ image, accordions }) => {
-  // todo: tulee null jos accordions.data on tyhjää.
+const Accordion = ({ title, description, image, accordions }) => {
   return (
     <section className={styles.accordion}>
         {title && (
@@ -12,7 +11,7 @@ const Accordion = ({ image, accordions }) => {
             {description && <p>{description}</p>}
           </header>
         )}
-      <div className={styles.container}>
+      <div className={styles.wrapper}>
           {image?.data && (
             <figure className={styles.imageContainer}>
               <NextImage className={styles.image} image={image} />

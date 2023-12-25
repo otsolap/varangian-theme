@@ -15,7 +15,7 @@
   padding-bottom: $double;
 }
 
-.container {
+.wrapper {
   position: relative;
   @include display-flex;
   @include flex-direction(column);
@@ -131,7 +131,7 @@
     flex: 0 0 50%;
   }
 
-  .container {
+  .wrapper {
     @include flex-direction(row);
     gap: $double;
   }
