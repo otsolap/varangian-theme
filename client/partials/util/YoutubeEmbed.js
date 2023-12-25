@@ -4,7 +4,7 @@ import { YouTubeGetID } from "@/utils/index";
 const YoutubeEmbed = ({ url, className, autoplay }) => {
   return (
     <iframe
-      title="Forest Entity"
+      title="Varangian Ventures Youtube Video"
       className={`youtube ${className}`}
       allow="autoplay; encrypted-media"
       allowFullScreen
