@@ -89,7 +89,7 @@
 @media (width >= $container-desktop) {
 
   .header {
-    max-width: calc($container-desktop / 2);
+    max-width: $container-ipad-landscape;
     flex: 0 0 50%;
   }
 
