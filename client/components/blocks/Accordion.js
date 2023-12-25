@@ -6,6 +6,12 @@ const Accordion = ({ image, accordions }) => {
   // todo: tulee null jos accordions.data on tyhjää.
   return (
     <section className={styles.accordion}>
+        {title && (
+          <header className={styles.header}>
+            {title && <h2>{title}</h2>}
+            {description && <p>{description}</p>}
+          </header>
+        )}
       <div className={styles.container}>
           {image?.data && (
             <figure className={styles.imageContainer}>

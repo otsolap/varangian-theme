@@ -8,6 +8,13 @@
   padding: $single;
 }
 
+.header {
+  @include display-flex();
+  @include flex-direction(column);
+  gap: $single;
+  padding-bottom: $double;
+}
+
 .container {
   position: relative;
   @include display-flex;
@@ -117,6 +124,11 @@
   .accordion {
     padding-top: $double;
     margin-bottom: $double;
+  }
+
+  .header {
+    max-width: $container-ipad-landscape;
+    flex: 0 0 50%;
   }
 
   .container {

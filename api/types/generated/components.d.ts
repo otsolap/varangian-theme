@@ -14,6 +14,7 @@ export interface BlocksAccordion extends Schema.Component {
       'api::faq.faq'
     >;
     title: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
