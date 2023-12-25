@@ -234,8 +234,8 @@ export interface PartialsCard extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
     image: Attribute.Media;
+    description: Attribute.RichText;
   };
 }
 

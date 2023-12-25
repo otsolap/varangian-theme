@@ -1,5 +1,6 @@
 import styles from "@/styles/components/cards.module.scss";
 import NextImage from "@/partials/util/NextImage";
+import MarkdownBlock from "@/partials/util/MarkdownBlock";
 
 const CardItem = ({ image, title, description, className }) => {
   return (
@@ -15,7 +16,7 @@ const CardItem = ({ image, title, description, className }) => {
       {title || description ? (
         <div className={styles.body}>
           {title && <h3 className={styles.title}>{title}</h3>}
-          {description && <p>{description}</p>}
+          {description && <MarkdownBlock markdown={description} />}
         </div>
         ): null}
     </article>
