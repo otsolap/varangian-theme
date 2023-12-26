@@ -171,8 +171,7 @@ export interface BlocksTextArea extends Schema.Component {
   };
   attributes: {
     text: Attribute.RichText;
-    selectTheme: Attribute.Enumeration<['primary', 'secondary', 'plain']> &
-      Attribute.DefaultTo<'plain'>;
+    selectTheme: Attribute.Enumeration<['primary', 'secondary', 'tertiary']>;
   };
 }
 
