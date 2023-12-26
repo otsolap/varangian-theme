@@ -55,6 +55,7 @@
   @include display-flex;
   @include flex-direction(column);
   gap: $single;
+  margin-top: $single;
 }
 
 .link {

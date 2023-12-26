@@ -20,9 +20,23 @@
         padding-bottom: $half;
       }
   
+      ul, ol {
+        padding-left: $single;
+      }
+  
       ul li {
         padding-top: $quarter;
         padding-bottom: $quarter;
+      }
+
+      li:has(strong) {
+        list-style-image: url("/images/circle-check.svg");
+        padding-left: $half;
+
+        path {
+          color: $brand-500;
+        }
+
       }
   
       img {
