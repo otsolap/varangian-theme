@@ -28,6 +28,8 @@ const NextImage = ({ image, className }) => {
         width={width}
         height={height}
         priority
+        placeholder="blur"
+        blurDataURL={getStrapiMedia(url)}
         quality={100}
         className={className || ''}
       />
@@ -41,6 +43,8 @@ const NextImage = ({ image, className }) => {
       fill
       sizes="100vw"
       priority
+      placeholder="blur"
+      blurDataURL={getStrapiMedia(url)}
       quality={100}
       className={className || ''}
     />

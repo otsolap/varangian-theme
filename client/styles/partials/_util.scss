@@ -26,9 +26,16 @@
     color: $text-900;
   }
 
+  &--secondary {
+    background-color: $cta-900;
+  }
+
+  &--tertiary {
+    background-color: $cta-500;
+  }
+  
   &--secondary,
   &--tertiary {
-    
     color: $text-900;
 
     &:hover,
@@ -36,14 +43,6 @@
       background-color: $brand-700;
       color: $background-900;
     }
-  }
-
-  &--secondary {
-    background-color: $cta-900;
-  }
-
-  &--tertiary {
-    background-color: $brand-tertiary-700
   }
 
   &--transparent {
@@ -60,7 +59,7 @@
 }
 
 .bg-primary {
-  background-color :$brand-500
+  background-color :$brand-500;
 }
 
 .bg-secondary {
@@ -81,6 +80,10 @@
 
 .color-black {
   color: $background-900;
+}
+
+.color-primary {
+  color: $brand-500;
 }
 
 .sr-only {
