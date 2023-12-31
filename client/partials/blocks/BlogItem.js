@@ -14,7 +14,7 @@ const BlogItem = ({ image, title, description, slug, categories, publishedAt }) 
   return (
       <article className={styles.blog}>
         {image.data &&
-            <Link  href={`/${config.blog.BLOG_PATH}/${slug}`}>
+            <Link aria-label={`Read more about ${title}`} className={styles.imageLink}  href={`/${config.blog.BLOG_PATH}/${slug}`}>
               <figure className={styles.imageContainer}>
                 <NextImage image={image} className={styles.image}/>
               </figure>

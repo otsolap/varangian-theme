@@ -110,12 +110,18 @@
       justify-content: center;
     }
 
+    .title {
+        font-size: $double-half;
+    }
+
     .category,
-    .title,
-    .description,
-    .authorTitle,
     .authorSubtitle {
-        font-size: initial;
+        font-size: $single-quarter;
+    }
+
+    .description,
+    .authorTitle{
+        font-size: $single-half;
     }
 
     .imageContainer {
