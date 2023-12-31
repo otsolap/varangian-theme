@@ -16,12 +16,14 @@ const NextImage = ({ image, width=500, height=500, priority = false,  sizes = '1
   return (
     <Image 
       src={getStrapiMedia(url)}
-      alt={alternativeText || 'Image description'}
+      alt={alternativeText || ''}
       width={width}
       height={height}
       priority={priority}
       sizes={sizes}
       className={className || ''}
+      placeholder="blur"
+      blurDataURL={getStrapiMedia(url)}
     />
   );
 };
