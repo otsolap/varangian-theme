@@ -26,6 +26,7 @@ const SEO = ({ metadata, baseSEO, canonicalUrl }) => {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta httpEquiv="Content-Language" content="en" />
       <link rel="canonical" href={canonicalUrl} />
       {preventIndexing && (
         <>
