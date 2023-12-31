@@ -1,4 +1,4 @@
-import { NextSeo } from "next-seo";
+import Head from 'next/head';
 import { getStrapiMedia, isNotEmpty } from "@/utils/index";
 
 const SEO = ({ metadata, baseSEO, canonicalUrl }) => {
@@ -8,17 +8,8 @@ const SEO = ({ metadata, baseSEO, canonicalUrl }) => {
   // Exit if seoData is still not valid
   if (!isNotEmpty(seoData)) return null;
 
-  // Initialize default values
-  let title, description, preventIndexing, keywords, XTwitter, imageBlock;
-
-  // Determine the structure of seoData and extract values
-  if (seoData?.data?.attributes?.seo) {
-    // BaseSEO structure
-    ({ seo: { title, description, preventIndexing, keywords, XTwitter, imageBlock } } = seoData.data.attributes);
-  } else if (seoData?.metaData) {
-    // Page-specific SEO structure
-    ({ metaData: { title, description, preventIndexing, keywords, XTwitter, imageBlock } } = seoData);
-  }
+  // Extract the necessary values from seoData
+  const { title, description, preventIndexing, keywords, XTwitter, imageBlock } = seoData.metaData || seoData.data.attributes.seo || {};
 
   // Deconstructing the image formats if imageBlock exists
   const imageFormats = imageBlock?.image?.data?.attributes?.formats;
@@ -32,39 +23,32 @@ const SEO = ({ metadata, baseSEO, canonicalUrl }) => {
   })) : [];
 
   return (
-    <NextSeo
-      title={title}
-      description={description}
-      canonical={canonicalUrl}
-      noindex={preventIndexing}
-      nofollow={preventIndexing}
-      additionalMetaTags={[
-        {
-          name: 'keywords',
-          content: keywords || '',
-        },
-        {
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1',
-        },
-        {
-          httpEquiv: 'x-ua-compatible',
-          content: 'ie=edge',
-        }
-      ]}
-      openGraph={{
-        title,
-        description,
-        url: canonicalUrl,
-        type: 'website',
-        images: ogImages,
-      }}
-      twitter={{
-        handle:`@${XTwitter}`,
-        site: `@${XTwitter}`,
-        cardType: ogImages.length > 0 ? 'summary_large_image' : 'summary',
-      }}
-    />
+    <Head>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonicalUrl} />
+      {preventIndexing && (
+        <>
+          <meta name="robots" content="noindex, nofollow" />
+          <meta name="googlebot" content="noindex, nofollow" />
+        </>
+      )}
+      {keywords && <meta name="keywords" content={keywords} />}
+      {ogImages.map((image, index) => (
+        <meta key={index} property="og:image" content={image.url} />
+      ))}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:type" content="website" />
+      {XTwitter && (
+        <>
+          <meta name="twitter:card" content={ogImages.length > 0 ? 'summary_large_image' : 'summary'} />
+          <meta name="twitter:site" content={`@${XTwitter}`} />
+          <meta name="twitter:creator" content={`@${XTwitter}`} />
+        </>
+      )}
+    </Head>
   );
 };
 
