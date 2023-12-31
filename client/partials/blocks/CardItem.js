@@ -8,6 +8,8 @@ const CardItem = ({ image, title, description, className }) => {
       {image.data ? (
         <figure className={styles.imageContainer}>
           <NextImage
+            width={150}
+            height={150}
             image={image}
             className={styles.image}
           />

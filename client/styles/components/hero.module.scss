@@ -119,6 +119,10 @@
     max-width: 1440px;
     inset: 0;
 
+    .image {
+      aspect-ratio: 16 / 9;
+    }
+
 
     .image,
     .video {

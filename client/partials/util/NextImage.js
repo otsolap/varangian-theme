@@ -1,51 +1,26 @@
-import { getStrapiMedia } from "utils/index";
-import Image from "next/image";
+import Image from 'next/image';
+import { getStrapiMedia } from 'utils/index';
 
-const NextImage = ({ image, className }) => {
-  let imageData = null;
-
-  if (image && image.data) {
-    if (image.data.length > 0) {
-      imageData = Array.isArray(image.data) ? image.data[0].attributes : image.data.attributes;
-    } else {
-      imageData = image.data.attributes;
-    }
-  } else if (image && image.attributes) {
-    imageData = image.attributes;
-  }
-
-  if (!imageData) {
+const NextImage = ({ image, width=500, height=500, priority = false,  sizes = '100vw', className }) => {
+  if (!image?.data) {
     return null;
   }
 
-  const { url, width, height, alternativeText } = imageData;
+  const imageData = Array.isArray(image.data) ? image.data[0].attributes : image.data.attributes;
+  const { url, alternativeText } = imageData || {};
 
-  if(width && height) {
-    return (
-      <Image 
-        src={getStrapiMedia(url)}
-        alt={alternativeText || ""}
-        width={width}
-        height={height}
-        priority
-        placeholder="blur"
-        blurDataURL={getStrapiMedia(url)}
-        quality={100}
-        className={className || ''}
-      />
-    )
+  if (!url) {
+    return null;
   }
 
   return (
-    <Image
+    <Image 
       src={getStrapiMedia(url)}
-      alt={alternativeText || ""}
-      fill
-      sizes="100vw"
-      priority
-      placeholder="blur"
-      blurDataURL={getStrapiMedia(url)}
-      quality={100}
+      alt={alternativeText || 'Image description'}
+      width={width}
+      height={height}
+      priority={priority}
+      sizes={sizes}
       className={className || ''}
     />
   );

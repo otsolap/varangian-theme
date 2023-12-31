@@ -12,8 +12,8 @@ const ArticleHeading = ({ article, categories, author}) => {
                         <h4 className={styles.category}>{categories.title}</h4>
                     </Link>
                 }
-                {article.title && <h1>{article.title}</h1>}
-                {article.description && <h3>{article.description}</h3>}
+                {article.title && <h1 className={styles.title}>{article.title}</h1>}
+                {article.description && <h3 className={styles.description}>{article.description}</h3>}
                 {author &&
                      <article className={styles.author}>
                         {author.image &&
@@ -22,14 +22,14 @@ const ArticleHeading = ({ article, categories, author}) => {
                         </figure>
                         }
                         <div className={styles.column}>
-                            {author.title && <h3 className={styles.title}>{author.title}</h3>}
-                            {author.subtitle && <h4>{author.subtitle}</h4>}
+                            {author.title && <h3 className={styles.authorTitle}>{author.title}</h3>}
+                            {author.subtitle && <h4 className={styles.authorSubtitle}>{author.subtitle}</h4>}
                         </div>
                      </article>
                 }
         </div>
         {article.image.data && 
-                <figure className={styles.imageContainer}>
+            <figure className={styles.imageContainer}>
                 <NextImage image={article.image} className={styles.image} />
             </figure>
         }

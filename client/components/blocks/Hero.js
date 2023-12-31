@@ -19,6 +19,10 @@ const Hero = ({ image, alignContent, autoplay,  media, mediaWidth, title, video,
               <NextImage
                 className={styles.image}
                 image={image}
+                priority={true}
+                height={560}
+                width={mediaWidth ? 1440 : 720}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 100vw"
               />
           ): null}
           {media == "video" && video ? (

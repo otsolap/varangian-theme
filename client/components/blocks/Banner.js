@@ -11,6 +11,8 @@ const Banner = ({ title, description, image, button, selectTheme }) => {
             <NextImage
               className={styles.image}
               image={image}
+              width={150}
+              height={150}
             />
           </figure>
         )}

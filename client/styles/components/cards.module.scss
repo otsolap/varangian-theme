@@ -52,16 +52,12 @@
 
 .imageContainer {
   position: relative;
-  height: 150px;
-  width: 150px;
   margin-top: $single;
   margin-bottom: $double;
 }
 
 .image {
-  aspect-ratio: 16/9;
-  width: inherit;
-  height: inherit;
+  aspect-ratio: 1/1;
 }
 
 .title {

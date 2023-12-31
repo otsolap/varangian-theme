@@ -90,7 +90,7 @@
 
 .imageContainer {
     position: relative;
-    @include display-flex;
+    display: block;
     width: 100%;
     border-bottom: $text-900 1px solid;
 }
@@ -98,6 +98,7 @@
 .image {
     height: inherit;
     width: inherit;
+    aspect-ratio: 16/9;
     object-fit: cover;
     object-position: 50% 50%;
 }

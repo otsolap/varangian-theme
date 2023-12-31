@@ -38,6 +38,19 @@
     gap: $half;
 }
 
+.title {
+    font-size: 1.75rem;
+}
+
+.category,
+.description {
+    font-size: $single;
+}
+
+.description {
+    font-weight: 400;
+}
+
 .author {
     gap: $single;
     @include flex-direction(row);
@@ -47,8 +60,13 @@
     gap: $half;
 }
 
-.title {
+.authorTitle {
+    font-size: $single-quarter;
     margin-bottom: initial;
+}
+
+.authorSubtitle {
+    font-size: $three-quarters;
 }
 
 .authorImageContainer,
@@ -92,10 +110,17 @@
       justify-content: center;
     }
 
+    .category,
+    .title,
+    .description,
+    .authorTitle,
+    .authorSubtitle {
+        font-size: initial;
+    }
+
     .imageContainer {
         align-self: center;
     }
-        
 
     .image {
         box-shadow: $single $single 0px 0px $brand-500;

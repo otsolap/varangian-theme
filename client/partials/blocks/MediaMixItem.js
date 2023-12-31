@@ -16,6 +16,8 @@ const MediaMixItem = ({ type, image, video, markdown}) => {
           <NextImage
             image={image}
             className={styles.image}
+            width={668}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </figure>
       ): null}
