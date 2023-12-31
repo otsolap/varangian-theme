@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { GlobalContext } from "@/pages/_app.js";
 import { getDataDependencies } from "@/utils/api"
 import { useRouter } from "next/router"
-import { getPageData, fetchServicesBannerData } from "@/utils/index"
+import { getPageData, getAllPageSlugs, fetchServicesBannerData } from "@/utils/index"
 import Blocks from "@/components/Blocks"
 import Banner from "@/components/blocks/Banner"
 import axios from 'axios'
@@ -38,8 +38,22 @@ const DynamicPages = ({ metaData, pageData, showServicesBanner, servicesBannerDa
   )
 }
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query
+export async function getStaticPaths() {
+  const slugs = await getAllPageSlugs(); // Fetch all slugs
+
+  const paths = slugs.map(slugSegments => ({
+    params: { slug: slugSegments }
+  }));
+
+  return {
+    paths,
+    fallback: 'blocking'
+  };
+}
+
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
   const { nonPageSlugs } = config;
 
   // Check if the slug is a non-page slug and return notFound if it is
@@ -85,5 +99,6 @@ export async function getServerSideProps(context) {
     return { notFound: true }
   }
 }
+
 
 export default DynamicPages

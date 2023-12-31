@@ -93,6 +93,25 @@ import config from '@/utils/config'
     }
   }
 
+  export async function getAllPageSlugs() {
+    const url = getStrapiURL('/api/pages'); // Your API endpoint
+    try {
+      const response = await axios.get(url);
+      // Extract and split slugs into segments
+      const slugs = response.data.data.map(item => {
+        // Split the slug string into an array of segments
+        const slugSegments = item.attributes.slug.split('/').filter(Boolean);
+        return slugSegments;
+      });
+      return slugs;
+    } catch (error) {
+      console.error("Error fetching page slugs:", error);
+      return [];
+    }
+  }
+  
+  
+
   export async function getPageData(slug) {
     let slugToReturn = '/'
     if (Array.isArray(slug) && slug.length > 0) {
