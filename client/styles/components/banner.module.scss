@@ -39,7 +39,8 @@
     margin: 0 auto;
 }
 
-@media (width >= $container-desktop) {
+/* Tablet Styles */
+@media (width >= $container-ipad) {
 
     .banner {
         @include flex-direction(row);
@@ -53,7 +54,12 @@
 
 
     .content {
+        text-align: initial;
         padding-top: initial;
+    }
+
+    .buttonWrapper {
+        justify-content: flex-start
     }
 
 }

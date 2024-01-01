@@ -96,14 +96,15 @@
 
 .imageLink {
     border-bottom: $text-900 1px solid;
+    width: 100%;
 }
 
 .image {
     height: inherit;
     width: inherit;
-    aspect-ratio: 16/9;
     object-fit: cover;
     object-position: 50% 50%;
+    aspect-ratio: 16/9;
 }
 
 .title {

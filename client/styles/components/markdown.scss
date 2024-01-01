@@ -68,6 +68,11 @@
 @media (width >=  $container-ipad) {
   .markdown {
     article {
+
+      ul, ol {
+        padding-left: $double;
+      }
+
       img {
         height: 450px;
         max-width: 450px;

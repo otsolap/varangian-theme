@@ -16,7 +16,7 @@ const BlogItem = ({ image, title, description, slug, categories, publishedAt }) 
         {image.data &&
             <Link aria-label={`Read more about ${title}`} className={styles.imageLink}  href={`/${config.blog.BLOG_PATH}/${slug}`}>
               <figure className={styles.imageContainer}>
-                <NextImage image={image} className={styles.image}/>
+                <NextImage image={image} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className={styles.image}/>
               </figure>
              </Link>
         }
