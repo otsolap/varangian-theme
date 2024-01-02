@@ -676,37 +676,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiArchivePageArchivePage extends Schema.SingleType {
-  collectionName: 'archive_pages';
-  info: {
-    singularName: 'archive-page';
-    pluralName: 'archive-pages';
-    displayName: 'ArchivePage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    hero: Attribute.Component<'blocks.hero'>;
-    seo: Attribute.Component<'util.seo'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::archive-page.archive-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::archive-page.archive-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiArticleArticle extends Schema.CollectionType {
   collectionName: 'articles';
   info: {
@@ -754,6 +723,38 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiArticleArchivePageArticleArchivePage
+  extends Schema.SingleType {
+  collectionName: 'article_archive_pages';
+  info: {
+    singularName: 'article-archive-page';
+    pluralName: 'article-archive-pages';
+    displayName: 'ArticleArchivePage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article-archive-page.article-archive-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article-archive-page.article-archive-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1110,6 +1111,86 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
+  info: {
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'Services';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::service.service', 'title'>;
+    seo: Attribute.Component<'util.seo'>;
+    blocks: Attribute.DynamicZone<
+      [
+        'blocks.accordion',
+        'blocks.banner',
+        'blocks.cards',
+        'blocks.form-embed',
+        'blocks.hero',
+        'blocks.image-block',
+        'blocks.image-gallery',
+        'blocks.media-mix',
+        'blocks.quote',
+        'blocks.text-area',
+        'blocks.video-embed'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceArchivePageServiceArchivePage
+  extends Schema.SingleType {
+  collectionName: 'service_archive_pages';
+  info: {
+    singularName: 'service-archive-page';
+    pluralName: 'service-archive-pages';
+    displayName: 'ServiceArchivePage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-archive-page.service-archive-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-archive-page.service-archive-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServicesBannerServicesBanner extends Schema.SingleType {
   collectionName: 'services_banners';
   info: {
@@ -1221,8 +1302,8 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::archive-page.archive-page': ApiArchivePageArchivePage;
       'api::article.article': ApiArticleArticle;
+      'api::article-archive-page.article-archive-page': ApiArticleArchivePageArticleArchivePage;
       'api::author.author': ApiAuthorAuthor;
       'api::base-seo.base-seo': ApiBaseSeoBaseSeo;
       'api::blog-navigation.blog-navigation': ApiBlogNavigationBlogNavigation;
@@ -1233,6 +1314,8 @@ declare module '@strapi/strapi' {
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::newsletter-banner.newsletter-banner': ApiNewsletterBannerNewsletterBanner;
       'api::page.page': ApiPagePage;
+      'api::service.service': ApiServiceService;
+      'api::service-archive-page.service-archive-page': ApiServiceArchivePageServiceArchivePage;
       'api::services-banner.services-banner': ApiServicesBannerServicesBanner;
       'api::subscribe-form.subscribe-form': ApiSubscribeFormSubscribeForm;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;

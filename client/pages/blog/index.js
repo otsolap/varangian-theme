@@ -4,7 +4,7 @@ import { getStrapiURL } from "@/utils/index"
 import axios from "axios"
 import config from '@/utils/config'
 
-const Blog = ({ hero, items, categories }) => {
+const BlogArchive = ({ hero, items, categories }) => {
   return  (
     <>
       <Hero {...hero} />
@@ -37,4 +37,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Blog
+export default BlogArchive

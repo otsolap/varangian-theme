@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_archive_pages",
+  "info": {
+    "singularName": "service-archive-page",
+    "pluralName": "service-archive-pages",
+    "displayName": "ServiceArchivePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.hero"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.seo"
+    }
+  }
+}

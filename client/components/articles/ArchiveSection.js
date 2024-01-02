@@ -21,9 +21,11 @@ const ArchiveSection = ({ items, categories }) => {
 
   return (
     <>
-      <header className={styles.header}>
-        <CategoryLinks categories={categories} />
-      </header>
+      {categories && 
+        <header className={styles.header}>
+          <CategoryLinks categories={categories} />
+        </header>
+      }
       <div className={styles.wrapper}>
         {paginatedPosts.map((item, i) => {
           return (

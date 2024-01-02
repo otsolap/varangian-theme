@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "archive_pages",
+  "collectionName": "article_archive_pages",
   "info": {
-    "singularName": "archive-page",
-    "pluralName": "archive-pages",
-    "displayName": "ArchivePage"
+    "singularName": "article-archive-page",
+    "pluralName": "article-archive-pages",
+    "displayName": "ArticleArchivePage"
   },
   "options": {
     "draftAndPublish": true
