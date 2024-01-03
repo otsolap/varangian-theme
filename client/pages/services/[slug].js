@@ -3,7 +3,7 @@ import { GlobalContext } from "@/pages/_app.js";
 import axios from "axios"
 import { getStrapiURL } from "utils"
 import Blocks from "@/components/Blocks";
-import styles from '@/styles/pages/blog.module.scss'
+// import styles from '@/styles/pages/blog.module.scss'
 import config from '@/utils/config'
 
 const Service = ({ service  }) => {

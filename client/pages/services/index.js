@@ -1,10 +1,10 @@
 import Hero from "@/components/blocks/Hero"
-import ArchiveSection from "@/components/articles/ArchiveSection"
+// import ArchiveSection from "@/components/articles/ArchiveSection"
 import { getStrapiURL } from "@/utils/index"
 import axios from "axios"
 import config from '@/utils/config'
 
-const ServiceArchive = ({ hero, items }) => {
+const ServiceArchive = ({ hero }) => {
   return  (
     <>
       <Hero {...hero} />
