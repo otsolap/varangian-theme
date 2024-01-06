@@ -1,10 +1,10 @@
 import Hero from "@/components/blocks/Hero"
-import { ArchiveSection } from "@/components/articles/ArchiveSection"
+import { ArchiveSection }from "@/components/services/ArchiveSection"
 import { getStrapiURL } from "@/utils/index"
 import axios from "axios"
 import config from '@/utils/config'
 
-const BlogArchive = ({ hero, items, categories }) => {
+const ServiceType = ({ hero, items, categories }) => {
   return  (
     <>
       <Hero {...hero} />
@@ -16,9 +16,9 @@ const BlogArchive = ({ hero, items, categories }) => {
 export async function getStaticProps() {
   try {
     const [archivePageResponse, articlesResponse, categoriesResponse] = await Promise.all([
-      axios.get(getStrapiURL(`/${config.blog.API_ARCHIVE_PAGE_QUERY}`)),
-      axios.get(getStrapiURL(`/${config.blog.API_ARTICLES_QUERY}`)),
-      axios.get(getStrapiURL('/api/categories')),
+      axios.get(getStrapiURL(`/${config.services.API_ARCHIVE_PAGE_QUERY}`)),
+      axios.get(getStrapiURL(`/${config.services.API_ARTICLES_QUERY}`)),
+      axios.get(getStrapiURL('/api/service-types')),
     ])
 
     return {
@@ -37,4 +37,4 @@ export async function getStaticProps() {
   }
 }
 
-export default BlogArchive
+export default ServiceType

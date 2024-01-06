@@ -3,13 +3,13 @@ import Link from "next/link"
 import styles from '@/styles/components/articleHeading.module.scss'
 import config from '@/utils/config'
 
-const ArticleHeading = ({ article, categories, author}) => {
+const ArticleHeading = ({ article, category, author }) => {
   return (
     <header className={styles.header}>
         <div className={styles.lead}>
-            {categories && 
-                <Link href={`/${config.blog.CATEGORY_PATH}/${categories.slug}`}>
-                    <h4 className={styles.category}>{categories.title}</h4>
+            {category && 
+                <Link href={`/${config.blog.CATEGORY_PATH}/${category.slug}`}>
+                    <h4 className={styles.category}>{category.title}</h4>
                 </Link>
             }
             {article.title && <h1 className={styles.title}>{article.title}</h1>}

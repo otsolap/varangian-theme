@@ -11,7 +11,7 @@ import BlogSection from "components/blocks/BlogSection";
 import config from '@/utils/config'
 import Banner from "components/blocks/Banner";
 
-const Blog = ({ article, categories, author, banner, relatedItems, blogNavigation }) => {
+const Blog = ({ article, category, author, banner, relatedItems, blogNavigation }) => {
   const { setMetaData, setBlogNavigation } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Blog = ({ article, categories, author, banner, relatedItems, blogNavigatio
 
   return (
     <>
-      <ArticleHeading article={article} categories={categories} author={author} />
+      <ArticleHeading article={article} category={category} author={author} />
       <div className={styles.wrapper}>
         <article id={'post'} className={styles.article}>
           <Blocks blocks={article.blocks} />
@@ -92,7 +92,8 @@ export async function getStaticProps({ params }) {
       axios.get(getStrapiURL(`/${config.global.API_NEWSLETTER_BANNER_QUERY}`)),
     ])
 
-    const categorySlug = articleResponse.data.data[0].attributes.categories.data[0]?.attributes.slug
+
+    const categorySlug = articleResponse.data.data[0].attributes.category.data[0]?.attributes.slug
 
     const [relatedArticlesResponse] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.RELATED_ARTICLES_QUERY}${categorySlug}${config.blog.RELATED_ARTICLES_QUERY_ARGUMENTS}`)),
@@ -101,7 +102,7 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         article: articleResponse.data.data[0]?.attributes ?? {},
-        categories: articleResponse.data.data[0]?.attributes.categories.data[0]?.attributes ?? {},
+        category: articleResponse.data.data[0]?.attributes.category.data[0]?.attributes ?? {},
         author: articleResponse.data.data[0]?.attributes.author.data?.attributes ?? {},
         banner: newsletterResponse.data?.data?.attributes ?? {},
         relatedItems: relatedArticlesResponse.data?.data[0]?.attributes.articles ?? {},

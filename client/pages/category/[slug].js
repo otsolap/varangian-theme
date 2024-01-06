@@ -1,7 +1,7 @@
 import axios from "axios"
 import { getStrapiURL } from "@/utils/index"
 import Hero from "@/components/blocks/Hero"
-import ArchiveSection from "@/components/articles/ArchiveSection"
+import { ArchiveSection } from "@/components/articles/ArchiveSection"
 import config from '@/utils/config'
 
 const Category = ({ hero, items, categories }) => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import BlogItem from "partials/blocks/BlogItem"
+import ServicesItem from "partials/blocks/ServicesItem"
 import CategoryLinks from "partials/navigation/CategoryLinks"
 import Pagination from "partials/navigation/Pagination"
 import { paginate } from "@/utils/index"
@@ -29,15 +29,14 @@ export const ArchiveSection = ({ items, categories }) => {
       <div className={styles.wrapper}>
         {paginatedPosts.map((item, i) => {
           return (
-            <BlogItem
+            <ServicesItem
               key={i}
               image={item.attributes.image}
               title={item.attributes.title}
               description={item.attributes.description}
+              price={item.attributes.price}
+              serviceType={item.attributes.service_type.data?.attributes}
               slug={item.attributes.slug}
-              author={item.attributes.author}
-              category={item.attributes.category.data?.attributes}
-              publishedAt={item.attributes.publishedAt}
             />
           )
         })}
@@ -51,4 +50,3 @@ export const ArchiveSection = ({ items, categories }) => {
     </>
   )
 }
-

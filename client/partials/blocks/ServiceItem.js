@@ -23,7 +23,7 @@ const ServiceItem = ({ image, title, description, price, slug, serviceType }) =>
         {serviceType?.data || price? (
           <footer className={styles.footer}>
             {serviceType &&
-              <Link passHref href={`/${config.services.SERVICE_TYPE_PATH}/${serviceType.slug}`}>
+              <Link passHref href={`/${config.services.SERVICE_TYPES_PATH}/${serviceType.slug}`}>
                 <h4 className={styles.category}>{serviceType.title}</h4>
                 </Link>
             }
