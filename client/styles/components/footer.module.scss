@@ -5,7 +5,8 @@
 
 .footer {
   border-top: 1px solid $text-900;
-  @extend .container;
+  margin: 0 auto;
+  width: 100%;
   padding-bottom: $quintuple;
   background-color: $background-900;
   @include display-flex;
@@ -139,9 +140,12 @@
 /* Subfooter  */
 
 .subFooter {
-  border-top: $text-900 2px solid;
   padding: $single;
   margin-top: $single;
+  border-top: $text-900 2px solid;
+}
+
+.subFooterContent {
   @include display-flex;
   @include flex-direction(column);
   gap: $half;
@@ -279,6 +283,17 @@
     border-color: transparent;
   }
 
+  .subFooter {
+    margin-top: $double;
+  }
+
+  .subFooterContent {
+    @include flex-direction(row);
+    margin: 0 auto;
+    max-width: $container-desktop;
+  }
+
+
   .brand {
     padding-right: $half;
   }
@@ -287,9 +302,6 @@
     padding-left: $half;
   }
 
-  .subFooter {
-    @include flex-direction(row);
-    margin-top: $double;
-  }
+
 
 }

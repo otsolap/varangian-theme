@@ -14,11 +14,11 @@ const BlogItem = ({ image, title, description, slug, categories, publishedAt }) 
   return (
       <article className={styles.blog}>
         {image.data &&
-            <Link aria-label={`Read more about ${title}`} className={styles.imageLink}  href={`/${config.blog.BLOG_PATH}/${slug}`}>
-              <figure className={styles.imageContainer}>
-                <NextImage image={image} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className={styles.image}/>
-              </figure>
-             </Link>
+            <figure className={styles.imageContainer}>
+                <Link aria-label={`Read more about ${title}`} className={styles.imageLink}  href={`/${config.blog.BLOG_PATH}/${slug}`}>
+                  <NextImage image={image} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className={styles.image}/>
+                </Link>
+            </figure>
         }
         {title && 
           <Link href={`/${config.blog.BLOG_PATH}/${slug}`}>

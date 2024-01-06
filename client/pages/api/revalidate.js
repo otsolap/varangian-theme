@@ -35,15 +35,19 @@ async function fetchDataByType(type, slug) {
     const typeConfig = {
         'blog': {
             endpoint: 'articles',
-            query: config.global.API_ARTICLES_QUERY
+            query: config.blog.API_ARTICLES_QUERY
         },
         'category': {
             endpoint: 'categories',
-            query: config.global.API_CATEGORIES_CONTENT_QUERY
+            query: config.blog.API_CATEGORIES_CONTENT_QUERY
+        },
+        'services': {
+            endpoint: 'services',
+            query: config.services.API_SERVICES_CONTENT_QUERY
         },
         'author': {
             endpoint: 'authors',
-            query: config.global.API_AUTHORS_CONTENT_QUERY
+            query: config.blog.API_AUTHORS_CONTENT_QUERY
         },
         'page': {
             endpoint: 'pages',
