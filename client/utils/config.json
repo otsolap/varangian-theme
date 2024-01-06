@@ -30,7 +30,6 @@
         "API_ARTICLE_CONTENT_QUERY":"api/articles?&populate=seo,seo.imageBlock.image,author,author.image,author.socialMedia,image,blocks,blocks.image,blocks.images.image,category&filters[slug][$eq]=",
         "RELATED_ARTICLES_TITLE":"Related Articles",
         "RELATED_ARTICLES_THEME":"secondary",
-        "RELATED_ARTICLES_LINK":"blog/",
         "RELATED_ARTICLES_LINK_TITLE":"See blog archive",
         "RELATED_ARTICLES_QUERY":"api/categories?filters[slug][$eq]=",
         "RELATED_ARTICLES_QUERY_ARGUMENTS":"&sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=articles,articles.image,articles.author,articles.category",

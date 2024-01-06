@@ -21,7 +21,7 @@ const Blog = ({ article, category, author, banner, relatedItems, blogNavigation 
 
     setBlogNavigation({
       title: article.title,
-      href: `/blog/${article.slug}`,
+      href: `/${config.blog.BLOG_PATH}/${article.slug}`,
       socialShareSettings: blogNavigation.social,
       button: blogNavigation.button,
     });
@@ -50,7 +50,7 @@ const Blog = ({ article, category, author, banner, relatedItems, blogNavigation 
           selectTheme={config.blog.RELATED_ARTICLES_THEME}
           blogs={relatedItems}
           link={{
-            href: `/${config.blog.RELATED_ARTICLES_LINK}`,
+            href: `/${config.blog.BLOG_PATH}`,
             title: `${config.blog.RELATED_ARTICLES_LINK_TITLE}`
           }}
         />}
@@ -91,7 +91,6 @@ export async function getStaticProps({ params }) {
       axios.get(getStrapiURL(`/${config.blog.API_BLOG_NAVIGATION_QUERY}`)),
       axios.get(getStrapiURL(`/${config.global.API_NEWSLETTER_BANNER_QUERY}`)),
     ])
-
 
     const categorySlug = articleResponse.data.data[0].attributes.category.data[0]?.attributes.slug
 
