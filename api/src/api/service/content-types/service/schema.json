@@ -39,6 +39,14 @@
         "blocks.text-area",
         "blocks.video-embed"
       ]
+    },
+    "price": {
+      "type": "string"
+    },
+    "service_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service-type.service-type"
     }
   }
 }

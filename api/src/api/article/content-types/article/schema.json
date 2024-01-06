@@ -47,11 +47,11 @@
         "blocks.image-gallery"
       ]
     },
-    "categories": {
+    "category": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::category.category",
-      "mappedBy": "articles"
+      "inversedBy": "articles"
     },
     "seo": {
       "type": "component",

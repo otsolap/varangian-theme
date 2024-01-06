@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "service_types",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Category",
+    "singularName": "service-type",
+    "pluralName": "service-types",
+    "displayName": "Service Type",
     "description": ""
   },
   "options": {
@@ -17,8 +17,12 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
+      "targetField": "title"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
     },
     "hero": {
       "type": "component",
@@ -29,12 +33,6 @@
       "type": "component",
       "repeatable": false,
       "component": "util.seo"
-    },
-    "articles": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::article.article",
-      "mappedBy": "category"
     }
   }
 }

@@ -163,6 +163,23 @@ export interface BlocksQuote extends Schema.Component {
   };
 }
 
+export interface BlocksServices extends Schema.Component {
+  collectionName: 'components_blocks_services';
+  info: {
+    displayName: 'Services';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    selectTheme: Attribute.Enumeration<['primary', 'secondary']>;
+    services: Attribute.Relation<
+      'blocks.services',
+      'oneToMany',
+      'api::service.service'
+    >;
+  };
+}
+
 export interface BlocksTextArea extends Schema.Component {
   collectionName: 'components_blocks_text_areas';
   info: {
@@ -433,6 +450,7 @@ declare module '@strapi/types' {
       'blocks.image-gallery': BlocksImageGallery;
       'blocks.media-mix': BlocksMediaMix;
       'blocks.quote': BlocksQuote;
+      'blocks.services': BlocksServices;
       'blocks.text-area': BlocksTextArea;
       'blocks.video-embed': BlocksVideoEmbed;
       'form-inputs.text-field': FormInputsTextField;

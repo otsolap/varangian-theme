@@ -798,7 +798,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         'blocks.image-gallery'
       ]
     >;
-    categories: Attribute.Relation<
+    category: Attribute.Relation<
       'api::article.article',
       'manyToMany',
       'api::category.category'
@@ -971,14 +971,14 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
+    slug: Attribute.UID<'api::category.category', 'title'> & Attribute.Required;
+    hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
     articles: Attribute.Relation<
       'api::category.category',
       'manyToMany',
       'api::article.article'
     >;
-    slug: Attribute.UID<'api::category.category', 'title'> & Attribute.Required;
-    hero: Attribute.Component<'blocks.hero'>;
-    seo: Attribute.Component<'util.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1233,6 +1233,12 @@ export interface ApiServiceService extends Schema.CollectionType {
         'blocks.video-embed'
       ]
     >;
+    price: Attribute.String;
+    service_type: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'api::service-type.service-type'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1276,6 +1282,45 @@ export interface ApiServiceArchivePageServiceArchivePage
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::service-archive-page.service-archive-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceTypeServiceType extends Schema.CollectionType {
+  collectionName: 'service_types';
+  info: {
+    singularName: 'service-type';
+    pluralName: 'service-types';
+    displayName: 'Service Type';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.UID<'api::service-type.service-type', 'title'>;
+    service: Attribute.Relation<
+      'api::service-type.service-type',
+      'oneToOne',
+      'api::service.service'
+    >;
+    hero: Attribute.Component<'blocks.hero'>;
+    seo: Attribute.Component<'util.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-type.service-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-type.service-type',
       'oneToOne',
       'admin::user'
     > &
@@ -1410,6 +1455,7 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::service.service': ApiServiceService;
       'api::service-archive-page.service-archive-page': ApiServiceArchivePageServiceArchivePage;
+      'api::service-type.service-type': ApiServiceTypeServiceType;
       'api::services-banner.services-banner': ApiServicesBannerServicesBanner;
       'api::subscribe-form.subscribe-form': ApiSubscribeFormSubscribeForm;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
