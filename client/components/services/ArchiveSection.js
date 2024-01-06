@@ -35,6 +35,7 @@ export const ArchiveSection = ({ items, categories }) => {
               title={item.attributes.title}
               description={item.attributes.description}
               price={item.attributes.price}
+              currency={item.attributes.currency}
               serviceType={item.attributes.service_type.data?.attributes}
               slug={item.attributes.slug}
             />

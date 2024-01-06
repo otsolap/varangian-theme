@@ -27,7 +27,7 @@ const BlogItem = ({ image, title, description, slug, category, publishedAt }) =>
         }
         {description && <p className={styles.description}>{description}</p>}
         {category?.data || formattedDate ? (
-          <footer className={styles.footer}>
+       <footer className={`${styles.footer} ${styles.footerColumn}`}>
             {category &&
               <Link passHref href={`/${config.blog.CATEGORY_PATH}/${category.slug}`}>
                 <h4 className={styles.category}>{category.title}</h4>

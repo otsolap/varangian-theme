@@ -139,9 +139,31 @@
     width: 100%;
     border-top: $text-900 1px solid;
     @include display-flex;
-    @include flex-direction(column);
     gap: $half;
 }
+
+.footerColumn {
+    @include flex-direction(column);
+}
+
+.footerRow {
+    @include flex-direction(row);
+    justify-content: space-between;
+}
+
+.currency {
+    background-size: cover; 
+    display: inline-block;
+}
+
+.euro {
+    background-image:  url("/images/euro.svg");
+}
+
+.dollar {
+    background-image:  url("/images/dollar.svg");
+}
+
 
 /* Tablet Styles */
 @media (width >= $container-ipad) {
@@ -156,7 +178,7 @@
     }
       
     .linkWrapper,
-    .footer {
+    .footerColumn {
         justify-content: flex-end;
     }
     
