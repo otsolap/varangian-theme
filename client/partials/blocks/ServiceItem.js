@@ -1,15 +1,16 @@
-import styles from "@/styles/components/blog.module.scss";
+import styles from "@/styles/components/articleAndServices.module.scss";
 import NextImage from "@/partials/util/NextImage";
 import Link from "next/link";
 import config from '@/utils/config'
 
 const ServiceItem = ({ image, title, description, price, slug, serviceType }) => {
+  console.log(serviceType)
 
   return (
       <article className={styles.blog}>
         {image.data &&
             <figure className={styles.imageContainer}>
-                <Link aria-label={`Read more about ${title}`} className={styles.imageLink}  href={`/${config.blog.BLOG_PATH}/${slug}`}>
+                <Link aria-label={`Learn more about ${title}`} className={styles.imageLink}  href={`/${config.services.SERVICE_PATH}/${slug}`}>
                   <NextImage image={image} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className={styles.image}/>
                 </Link>
             </figure>

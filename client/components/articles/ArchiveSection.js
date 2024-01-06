@@ -3,7 +3,7 @@ import BlogItem from "partials/blocks/BlogItem"
 import CategoryLinks from "partials/navigation/CategoryLinks"
 import Pagination from "partials/navigation/Pagination"
 import { paginate } from "@/utils/index"
-import styles from "@/styles/components/blog.module.scss";
+import styles from "@/styles/components/articleAndServices.module.scss";
 
 const ArchiveSection = ({ items, categories }) => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -36,7 +36,7 @@ const ArchiveSection = ({ items, categories }) => {
               description={item.attributes.description}
               slug={item.attributes.slug}
               author={item.attributes.author}
-              categories={item.attributes.categories.data[0]?.attributes}
+              categories={item.attributes.category.data[0]?.attributes}
               publishedAt={item.attributes.publishedAt}
             />
           )

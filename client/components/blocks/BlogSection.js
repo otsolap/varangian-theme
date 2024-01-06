@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "@/styles/components/blog.module.scss";
+import styles from "@/styles/components/articleAndServices.module.scss";
 import BlogItem from "partials/blocks/BlogItem";
 import Link from "next/link";
 import axios from "axios";
@@ -37,13 +37,14 @@ export default function BlogSection({ title, description, selectTheme, blogs, fi
       {blogItems?.data?.length ? (
         <div className={styles.wrapper}>
           {blogItems.data.map((item, i) => {
+            console.log(item)
             return (
               <BlogItem
                 key={i}
                 image={item.attributes.image}
                 title={item.attributes.title}
                 description={item.attributes.description}
-                categories={item.attributes.categories.data[0]?.attributes}
+                categories={item.attributes.category.data[0]?.attributes}
                 publishedAt={item.attributes.publishedAt}
                 slug={item.attributes.slug}
               />

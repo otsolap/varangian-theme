@@ -47,6 +47,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::service-type.service-type"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

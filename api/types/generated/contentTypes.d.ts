@@ -1240,6 +1240,8 @@ export interface ApiServiceService extends Schema.CollectionType {
       'oneToOne',
       'api::service-type.service-type'
     >;
+    image: Attribute.Media;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
