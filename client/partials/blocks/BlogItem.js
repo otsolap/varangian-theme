@@ -3,7 +3,7 @@ import NextImage from "@/partials/util/NextImage";
 import Link from "next/link";
 import config from '@/utils/config'
 
-const BlogItem = ({ image, title, description, slug, categories, publishedAt }) => {
+const BlogItem = ({ image, title, description, slug, category, publishedAt }) => {
   let formattedDate = null;
   if(publishedAt) {
     const dateObj = new Date(publishedAt);
@@ -12,7 +12,7 @@ const BlogItem = ({ image, title, description, slug, categories, publishedAt }) 
   }
 
   return (
-      <article className={styles.blog}>
+      <article className={styles.item}>
         {image.data &&
             <figure className={styles.imageContainer}>
                 <Link aria-label={`Read more about ${title}`} className={styles.imageLink}  href={`/${config.blog.BLOG_PATH}/${slug}`}>
@@ -26,11 +26,11 @@ const BlogItem = ({ image, title, description, slug, categories, publishedAt }) 
           </Link>
         }
         {description && <p className={styles.description}>{description}</p>}
-        {categories?.data || formattedDate ? (
+        {category?.data || formattedDate ? (
           <footer className={styles.footer}>
-            {categories &&
-              <Link passHref href={`/${config.blog.CATEGORY_PATH}/${categories.slug}`}>
-                <h4 className={styles.category}>{categories.title}</h4>
+            {category &&
+              <Link passHref href={`/${config.blog.CATEGORY_PATH}/${category.slug}`}>
+                <h4 className={styles.category}>{category.title}</h4>
                 </Link>
             }
           {formattedDate && <p>{formattedDate}</p>}

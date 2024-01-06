@@ -50,8 +50,7 @@
        }
 }
 
-/** item **/
-.blog {
+.item {
     @include display-flex();
     @include flex-direction(column);
     @include border-radius($quarter);
@@ -151,7 +150,7 @@
         @include flex-direction(row);
     }
 
-    .blog {
+    .item {
         max-width: calc(100% / 3);
         flex: 0 0 calc(33.333% - $single);
     }
@@ -175,7 +174,7 @@
         gap: $triple;
     }
 
-    .blog {
+    .item {
         max-width: calc(100% / 3);
         flex: 0 0 calc(33.333% - $double);
     }

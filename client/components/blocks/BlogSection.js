@@ -37,14 +37,13 @@ export default function BlogSection({ title, description, selectTheme, blogs, fi
       {blogItems?.data?.length ? (
         <div className={styles.wrapper}>
           {blogItems.data.map((item, i) => {
-            console.log(item)
             return (
               <BlogItem
                 key={i}
                 image={item.attributes.image}
                 title={item.attributes.title}
                 description={item.attributes.description}
-                categories={item.attributes.category.data[0]?.attributes}
+                category={item.attributes.category.data?.attributes}
                 publishedAt={item.attributes.publishedAt}
                 slug={item.attributes.slug}
               />

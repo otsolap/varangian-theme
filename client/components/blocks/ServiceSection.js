@@ -22,7 +22,7 @@ export default function ServiceSection({ title, description, selectTheme, servic
                 title={item.attributes.title}
                 description={item.attributes.description}
                 price={item.attributes.price}
-                serviceType={item.attributes.service_type.data[0]?.attributes}
+                serviceType={item.attributes.service_type.data?.attributes}
                 slug={item.attributes.slug}
               />
             );

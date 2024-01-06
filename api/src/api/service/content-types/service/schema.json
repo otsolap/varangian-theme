@@ -58,6 +58,13 @@
     },
     "description": {
       "type": "text"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "dollar",
+        "euro"
+      ]
     }
   }
 }

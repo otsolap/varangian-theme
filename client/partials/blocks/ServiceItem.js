@@ -4,19 +4,18 @@ import Link from "next/link";
 import config from '@/utils/config'
 
 const ServiceItem = ({ image, title, description, price, slug, serviceType }) => {
-  console.log(serviceType)
 
   return (
-      <article className={styles.blog}>
+      <article className={styles.item}>
         {image.data &&
             <figure className={styles.imageContainer}>
-                <Link aria-label={`Learn more about ${title}`} className={styles.imageLink}  href={`/${config.services.SERVICE_PATH}/${slug}`}>
+                <Link aria-label={`Learn more about ${title}`} className={styles.imageLink}  href={`/${config.services.SERVICES_PATH}/${slug}`}>
                   <NextImage image={image} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className={styles.image}/>
                 </Link>
             </figure>
         }
         {title && 
-          <Link href={`/${config.blog.BLOG_PATH}/${slug}`}>
+          <Link href={`/${config.services.SERVICES_PATH}/${slug}`}>
               <h3 className={styles.title}>{title}</h3>
           </Link>
         }
