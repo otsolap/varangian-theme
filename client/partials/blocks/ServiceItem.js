@@ -3,7 +3,7 @@ import NextImage from "@/partials/util/NextImage";
 import Link from "next/link";
 import config from '@/utils/config'
 
-const ServiceItem = ({ image, title, description, slug, serviceTypes }) => {
+const ServiceItem = ({ image, title, description, price, slug, serviceType }) => {
 
   return (
       <article className={styles.blog}>
@@ -20,13 +20,14 @@ const ServiceItem = ({ image, title, description, slug, serviceTypes }) => {
           </Link>
         }
         {description && <p className={styles.description}>{description}</p>}
-        {categories?.data || formattedDate ? (
+        {serviceType?.data || price? (
           <footer className={styles.footer}>
-            {categories &&
-              <Link passHref href={`/${config.services.SERVICE_TYPE_PATH}/${categories.slug}`}>
-                <h4 className={styles.category}>{categories.title}</h4>
+            {serviceType &&
+              <Link passHref href={`/${config.services.SERVICE_TYPE_PATH}/${serviceType.slug}`}>
+                <h4 className={styles.category}>{serviceType.title}</h4>
                 </Link>
             }
+            {price && <p>{price}</p>}
           </footer>
         ): null}
       </article>

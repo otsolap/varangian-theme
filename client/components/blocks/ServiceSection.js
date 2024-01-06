@@ -1,5 +1,5 @@
 import styles from "@/styles/components/blog.module.scss";
-import BlogItem from "partials/blocks/BlogItem";
+import ServiceItem from "partials/blocks/ServiceItem";
 import Link from "next/link";
 import config from '@/utils/config'
 
@@ -21,8 +21,8 @@ export default function ServiceSection({ title, description, selectTheme, servic
                 image={item.attributes.image}
                 title={item.attributes.title}
                 description={item.attributes.description}
+                price={item.attributes.price}
                 serviceType={item.attributes.categories.data[0]?.attributes}
-                publishedAt={item.attributes.publishedAt}
                 slug={item.attributes.slug}
               />
             );

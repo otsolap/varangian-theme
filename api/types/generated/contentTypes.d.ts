@@ -1187,7 +1187,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'blocks.video-embed',
         'blocks.image-block',
         'blocks.image-gallery',
-        'blocks.quote'
+        'blocks.quote',
+        'blocks.services'
       ]
     >;
     showServicesBanner: Attribute.Boolean &
