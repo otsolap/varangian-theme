@@ -19,10 +19,11 @@
       "type": "uid",
       "targetField": "title"
     },
-    "service": {
+    "services": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::service.service"
+      "relation": "manyToMany",
+      "target": "api::service.service",
+      "inversedBy": "service_types"
     },
     "hero": {
       "type": "component",

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '@/styles/components/categoryLinks.module.scss';
-import config from '@/utils/config'
+import config from '@/utils/config';
 
-function CategoryLinks({ categories }) {
+function CategoryLinks({ categories, service_types }) {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -17,20 +17,35 @@ function CategoryLinks({ categories }) {
     return () => window.removeEventListener('resize', handleResize);
   }, [isDesktop]);
 
+  const data = categories || service_types;
+  const isCategory = categories != null;
+
+  const getPath = (item) => {
+    const baseSlug = item.attributes.slug;
+    return isCategory
+      ? `/${config.blog.CATEGORY_PATH}/${baseSlug}`
+      : `/${config.services.SERVICE_TYPES_PATH}/${baseSlug}`;
+  };
+
+  const renderItem = (item, id) => (
+    <li className={styles.item} key={id}>
+      <Link className={`button ${styles.button}`} href={getPath(item)}>
+        {item.attributes.title}
+      </Link>
+    </li>
+  );
+
+  const renderSelectOption = (item, id) => (
+    <option value={getPath(item)} key={id}>
+      {item.attributes.title}
+    </option>
+  );
+
   const renderLinks = () => {
     if (isDesktop) {
       return (
         <ul className={styles.wrapper}>
-          {categories.map((category, id) => (
-            <li className={styles.item} key={id}>
-              <Link
-                className={`button ${styles.button}`}
-                href={`/${config.blog.CATEGORY_PATH}/${category.attributes.slug}`}
-              >
-                {category.attributes.title}
-              </Link>
-            </li>
-          ))}
+          {data.map((item, id) => renderItem(item, id))}
         </ul>
       );
     } else {
@@ -41,14 +56,7 @@ function CategoryLinks({ categories }) {
             window.location.href = e.target.value;
           }}
         >
-          {categories.map((category, id) => (
-            <option
-              value={`/${config.blog.CATEGORY_PATH}/${category.attributes.slug}`}
-              key={id}
-            >
-              {category.attributes.title}
-            </option>
-          ))}
+          {data.map((item, id) => renderSelectOption(item, id))}
         </select>
       );
     }

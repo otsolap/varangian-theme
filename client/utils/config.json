@@ -15,14 +15,17 @@
     "services": {
         "API_ARCHIVE_PAGE_QUERY":"api/service-archive-page?=&populate=seo,seo.imageBlock.image,hero,hero.buttons,hero.image",
         "SERVICES_PATH":"services",
+        "SERVICE_TYPES_PATH":"service-types",
+        "API_SERVICE_TYPES_PATH_QUERY": "api/service-types",
         "API_SERVICE_TYPES_CONTENT_QUERY":"api/service-types?&populate=services,services.image,services.service_type,hero,hero.buttons,hero.image,seo.imageBlock.image",
-        "API_SERVICES_QUERY":"api/services?&populate=image,blocks,blocks.image",
+        "API_SERVICES_QUERY":"api/services?&populate=image,blocks,blocks.image,service_type",
         "API_SERVICE_CONTENT_QUERY":"api/services?&populate=seo,seo.imageBlock.image,blocks,blocks.image,blocks.accordion,blocks.accordions,blocks.button,blocks.buttons,blocks.blogs,blocks.blogs.author,blocks.blogs.image,blocks.blogs.category,blocks.link,blocks.cards,blocks.cards.image,blocks.form,blocks.form.inputs,blocks.form.image,blocks.form.button,blocks.images.image,blocks.mediaMixItems,blocks.mediaMixItems.image&filters[slug][$eq]="
     },
     "blog": {
         "API_ARCHIVE_PAGE_QUERY":"api/article-archive-page?=&populate=seo,seo.imageBlock.image,hero,hero.buttons,hero.image, seo,seo.imageBlock.image",
         "BLOG_PATH":"blog",
         "CATEGORY_PATH":"category",
+        "API_CATEGORY_PATH_QUERY": "api/categories",
         "API_AUTHORS_CONTENT_QUERY":"api/authors?populate=image,socialMedia",
         "API_CATEGORIES_CONTENT_QUERY":"api/categories?&populate=articles,articles.image,articles.author,articles.category,hero,hero.buttons,hero.image, seo, seo.imageBlock.image",
         "API_ARTICLES_QUERY":"api/articles?&populate=author,author.image,author.socialMedia,image,blocks,blocks.image,category",

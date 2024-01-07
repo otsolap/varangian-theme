@@ -15,7 +15,7 @@ const Category = ({ hero, items, categories }) => {
 
 export async function getStaticPaths() {
   try {
-    const response = await axios.get(`${getStrapiURL(`/api/categories`)}`)
+    const response = await axios.get(`${getStrapiURL(`/${config.blog.API_CATEGORY_PATH_QUERY}`)}`)
 
     if (!response.data) {
       throw new Error("Failed to fetch API data")
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
   try {
     const [categoryResponse, allCategories] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.API_CATEGORIES_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
-      axios.get(getStrapiURL("/api/categories")),
+      axios.get(getStrapiURL(`/${config.blog.API_CATEGORY_PATH_QUERY}`)),
     ])
 
     const matchingCategory = categoryResponse.data.data.find(

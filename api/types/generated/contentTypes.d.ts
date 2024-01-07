@@ -1242,6 +1242,11 @@ export interface ApiServiceService extends Schema.CollectionType {
     >;
     image: Attribute.Media;
     currency: Attribute.Enumeration<['dollar', 'euro']>;
+    service_types: Attribute.Relation<
+      'api::service.service',
+      'manyToMany',
+      'api::service-type.service-type'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1306,9 +1311,9 @@ export interface ApiServiceTypeServiceType extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     slug: Attribute.UID<'api::service-type.service-type', 'title'>;
-    service: Attribute.Relation<
+    services: Attribute.Relation<
       'api::service-type.service-type',
-      'oneToOne',
+      'manyToMany',
       'api::service.service'
     >;
     hero: Attribute.Component<'blocks.hero'>;

@@ -18,7 +18,7 @@ export async function getStaticProps() {
     const [archivePageResponse, articlesResponse, categoriesResponse] = await Promise.all([
       axios.get(getStrapiURL(`/${config.blog.API_ARCHIVE_PAGE_QUERY}`)),
       axios.get(getStrapiURL(`/${config.blog.API_ARTICLES_QUERY}`)),
-      axios.get(getStrapiURL('/api/categories')),
+      axios.get(getStrapiURL(`/${config.blog.API_CATEGORY_PATH_QUERY}`)),
     ])
 
     return {

@@ -62,6 +62,12 @@
         "dollar",
         "euro"
       ]
+    },
+    "service_types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service-type.service-type",
+      "mappedBy": "services"
     }
   }
 }
