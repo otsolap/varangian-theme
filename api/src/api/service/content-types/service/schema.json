@@ -56,9 +56,6 @@
         "images"
       ]
     },
-    "description": {
-      "type": "text"
-    },
     "currency": {
       "type": "enumeration",
       "enum": [

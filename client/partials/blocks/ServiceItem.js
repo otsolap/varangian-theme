@@ -2,8 +2,10 @@ import styles from "@/styles/components/articleAndServices.module.scss";
 import NextImage from "@/partials/util/NextImage";
 import Link from "next/link";
 import config from '@/utils/config'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEuroSign, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
-const ServiceItem = ({ image, title, description, price, currency, slug, serviceType }) => {
+const ServiceItem = ({ image, title, price, currency, slug, serviceType }) => {
 
   return (
       <article className={styles.item}>
@@ -19,17 +21,12 @@ const ServiceItem = ({ image, title, description, price, currency, slug, service
               <h3 className={styles.title}>{title}</h3>
           </Link>
         }
-        {description && <p className={styles.description}>{description}</p>}
         {serviceType?.data || price? (
           <footer className={`${styles.footer} ${styles.footerRow}`}>
-            {serviceType &&
-              <Link passHref href={`/${config.services.SERVICE_TYPES_PATH}/${serviceType.slug}`}>
-                <h4 className={styles.category}>{serviceType.title}</h4>
-                </Link>
-            }
+            {serviceType && <h4 className={styles.category}>{serviceType.title}</h4>}
             {price && 
-              <p>
-                <span className={`${styles.currency} ${currency.type === 'euro' ? styles.euro : styles.dollar}`}></span>
+              <p className={styles.price}>
+                <FontAwesomeIcon className={styles.currency} aria-label="currency" icon={currency === 'euro' ? faEuroSign : faDollarSign} />
                 {price}
               </p>
             }

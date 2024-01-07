@@ -1241,7 +1241,6 @@ export interface ApiServiceService extends Schema.CollectionType {
       'api::service-type.service-type'
     >;
     image: Attribute.Media;
-    description: Attribute.Text;
     currency: Attribute.Enumeration<['dollar', 'euro']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

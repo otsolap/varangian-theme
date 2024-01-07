@@ -31,9 +31,9 @@ export default function ServiceSection({ title, description, selectTheme, servic
         </div>
       ) : null}
       <footer className={styles.linkWrapper}>
-      <Link className={styles.archiveLink} href={`/${config.services.SERVICE_PATH}`}>
-          {config.blocks.CONTENT_SERVICES_SECTION_SERVICES_ARCHIVE_LEAD}
-       </Link>
+        <Link className={styles.archiveLink} href={`/${config.services.SERVICES_PATH}`}>
+            {config.blocks.CONTENT_SERVICES_SECTION_SERVICE_ARCHIVE_LEAD}
+        </Link>
       </footer>
     </section>
   );

@@ -149,21 +149,27 @@
 .footerRow {
     @include flex-direction(row);
     justify-content: space-between;
+    align-items: center;
+    padding: $single;
+
+    .category {
+        margin-bottom: initial;
+    }
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    gap: $quarter;
+    align-items: center;
 }
 
 .currency {
     background-size: cover; 
     display: inline-block;
+    height: $single;
+    width: $single;
 }
-
-.euro {
-    background-image:  url("/images/euro.svg");
-}
-
-.dollar {
-    background-image:  url("/images/dollar.svg");
-}
-
 
 /* Tablet Styles */
 @media (width >= $container-ipad) {

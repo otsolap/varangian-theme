@@ -25,7 +25,7 @@ const FooterSocialMedia = ({  id, open, title, socialMedia }) => {
                     <div className={active ? `${styles.open}` : `${styles.closed}`}>
                         <div className={styles.flexBox}>
                             {title && <h4 className={styles.heading}>{title}</h4>}
-                            <FontAwesomeIcon className={styles.icon} aria-label="Alatunnisteen lisätieto" icon={active ? faAngleUp : faAngleDown} />
+                            <FontAwesomeIcon className={styles.icon} aria-label="Additional information on Footer" icon={active ? faAngleUp : faAngleDown} />
                         </div>
                     </div>
                     <div ref={contentRef} className={active ? `${styles.content} ${styles.contentDivider}` : `${styles.content}`} >
