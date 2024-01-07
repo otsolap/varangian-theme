@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import ServicesItem from "partials/blocks/ServicesItem"
-import CategoryLinks from "partials/navigation/CategoryLinks"
-import Pagination from "partials/navigation/Pagination"
+import ServicesItem from "@/partials/blocks/ServicesItem"
+import CategoryLinks from "@/partials/navigation/CategoryLinks"
+import Pagination from "@/partials/navigation/Pagination"
 import { paginate } from "@/utils/index"
 import styles from "@/styles/components/articleAndServices.module.scss";
 
