@@ -5,7 +5,7 @@ import config from '@/utils/config'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEuroSign, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
-const ServiceItem = ({ image, title, price, currency, slug, serviceType }) => {
+const ServicesItem = ({ image, title, price, currency, slug, serviceType }) => {
 
   return (
       <article className={styles.item}>
@@ -36,4 +36,4 @@ const ServiceItem = ({ image, title, price, currency, slug, serviceType }) => {
   );
 };
 
-export default ServiceItem;
+export default ServicesItem;

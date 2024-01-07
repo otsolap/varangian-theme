@@ -33,7 +33,6 @@ export const ArchiveSection = ({ items, categories }) => {
               key={i}
               image={item.attributes.image}
               title={item.attributes.title}
-              description={item.attributes.description}
               price={item.attributes.price}
               currency={item.attributes.currency}
               serviceType={item.attributes.service_type.data?.attributes}
