@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import styles from '@/styles/components/categoryLinks.module.scss';
+import styles from '@/styles/components/taxonomyLinks.module.scss';
 import config from '@/utils/config';
 
-function CategoryLinks({ categories, service_types }) {
+function TaxonomyLinks({ categories, service_types }) {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -65,4 +65,4 @@ function CategoryLinks({ categories, service_types }) {
   return renderLinks();
 }
 
-export default CategoryLinks;
+export default TaxonomyLinks;

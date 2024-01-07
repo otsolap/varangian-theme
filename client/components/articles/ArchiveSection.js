@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import BlogItem from "partials/blocks/BlogItem"
-import CategoryLinks from "partials/navigation/CategoryLinks"
+import TaxonomyLinks from "partials/navigation/TaxonomyLinks"
 import Pagination from "partials/navigation/Pagination"
 import { paginate } from "@/utils/index"
 import styles from "@/styles/components/articleAndServices.module.scss";
@@ -23,7 +23,7 @@ export const ArchiveSection = ({ items, categories }) => {
     <>
       {categories && 
         <header className={styles.header}>
-          <CategoryLinks categories={categories} />
+          <TaxonomyLinks categories={categories} />
         </header>
       }
       <div className={styles.wrapper}>
