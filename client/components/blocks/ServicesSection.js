@@ -1,5 +1,5 @@
 import styles from "@/styles/components/articleAndServices.module.scss";
-import ServiceItem from "@/partials/blocks/ServiceItem";
+import ServicesItem from "@/partials/blocks/ServicesItem";
 import Link from "next/link";
 import config from '@/utils/config'
 
@@ -16,7 +16,7 @@ export default function ServiceSection({ title, description, selectTheme, servic
         <div className={styles.wrapper}>
           {services.data.map((item, i) => {
             return (
-              <ServiceItem
+              <ServicesItem
                 key={i}
                 image={item.attributes.image}
                 title={item.attributes.title}

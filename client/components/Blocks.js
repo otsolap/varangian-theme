@@ -12,7 +12,7 @@ import ImageGallery from '@/components/blocks/ImageGallery';
 import MediaMix from '@/components/blocks/MediaMix';
 import MenuItem from '@/partials/navigation/MenuItem';
 import Textarea from '@/components/blocks/Textarea'
-import ServiceSection from '@/components/blocks/ServiceSection';
+import ServicesSection from '@/components/blocks/ServicesSection';
 import VideoEmbed from '@/components/blocks/VideoEmbed';
 import Quote from '@/components/blocks/Quote';
 
@@ -66,7 +66,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       Block = MenuItem;
       break;
     case 'blocks.services':
-      Block = ServiceSection;
+      Block = ServicesSection;
       break;
     case 'blocks.text-area':
       Block = Textarea;
