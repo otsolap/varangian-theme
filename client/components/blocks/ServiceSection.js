@@ -1,5 +1,5 @@
 import styles from "@/styles/components/articleAndServices.module.scss";
-import ServiceItem from "partials/blocks/ServiceItem";
+import ServiceItem from "@/partials/blocks/ServiceItem";
 import Link from "next/link";
 import config from '@/utils/config'
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "@/styles/components/articleAndServices.module.scss";
-import BlogItem from "partials/blocks/BlogItem";
+import BlogItem from "@/partials/blocks/BlogItem";
 import Link from "next/link";
 import axios from "axios";
 import { getStrapiURL } from "@/utils/index";
