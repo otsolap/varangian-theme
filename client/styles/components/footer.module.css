@@ -3,7 +3,6 @@
 @import '../partials/breakpoints.css';
 @import '../partials/util.css';
 
-/* Footer */
 .footer {
   border-top: 1px solid var(--text-900);
   margin: 0 auto;
@@ -14,7 +13,6 @@
   flex-direction: column;
 }
 
-/* Logo Container */
 .logoContainer {
   position: relative;
   height: 50px;
@@ -23,7 +21,6 @@
   margin-left: var(--single);
 }
 
-/* Column */
 .column {
   flex: 100%;
   max-width: 100%;
@@ -34,7 +31,6 @@
   }
 }
 
-/* Column Container */
 .columnContainer {
   gap: var(--single);
   width: 100%;
@@ -43,12 +39,10 @@
   padding: var(--double) var(--single);
 }
 
-/* Text */
 .text {
   margin-bottom: var(--single);
 }
 
-/* Image */
 .image {
   width: 100%;
   height: 400px;
@@ -56,7 +50,6 @@
   object-fit: cover;
 }
 
-/* Link Wrapper */
 .linkWrapper {
   display: flex;
   flex-direction: column;
@@ -64,7 +57,6 @@
   margin-top: var(--single);
 }
 
-/* Link */
 .link {
   font-size: var(--single);
   transition: all .3s cubic-bezier(.4,0,.2,1);
@@ -76,20 +68,17 @@
   }
 }
 
-/* Toggle */
 .toggle {
   width: 100%;
   border: 1px transparent;
 }
 
-/* Wrapper */
 .wrapper {
   text-align: left;
   width: 100%;
   min-height: var(--single-quarter);
 }
 
-/* Flex Box */
 .flexBox {
   display: flex;
   border-bottom: 2px solid;
@@ -97,13 +86,11 @@
   align-items: center;
 }
 
-/* Heading */
 .heading {
   font-weight: 900;
   padding-top: var(--single);
 }
 
-/* Icon */
 .icon {
   background-image: none;
   border: 0px solid;
@@ -114,20 +101,17 @@
   line-height: 2.25rem;
 }
 
-/* Content Divider */
 .contentDivider {
   border-color: var(--text-900);
   border-top-width: 2px;
 }
 
-/* Closed, Open, Content */
 .closed,
 .open,
 .content {
   background: inherit;
 }
 
-/* Content */
 .content {
   transition: max-height 0.6s ease;
   max-height: 0;
@@ -136,7 +120,6 @@
   padding-right: var(--half);
 }
 
-/* Text, TextNOPadding */
 .text,
 .textNOPadding {
   font-weight: 700;
@@ -150,21 +133,18 @@
   padding: 0;
 }
 
-/* SubFooter */
 .subFooter {
   padding: var(--single);
   margin-top: var(--single);
   border-top: 2px solid var(--text-900);
 }
 
-/* SubFooter Content */
 .subFooterContent {
   display: flex;
   flex-direction: column;
   gap: var(--half);
 }
 
-/* Mobile */
 .mobile {
   border-top: 2px solid var(--text-900);
   background-color: var(--brand-900);
@@ -177,7 +157,6 @@
   text-align: center;
 }
 
-/* Mobile Menu Wrapper */
 .mobileMenuWrapper {
   display: flex;
   flex-direction: row;
@@ -204,14 +183,12 @@
   }
 }
 
-/* Mobile Icon */
 .mobileIcon {
   margin-top: var(--three-quarters);
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
-/* Mobile Link Text */
 .mobileLinkText {
   display: flex;
   justify-content: center;
@@ -221,7 +198,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
   .footer {
     padding-bottom: 0;
     justify-content: center;

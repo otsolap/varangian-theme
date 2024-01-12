@@ -65,7 +65,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
   .header {
     position: relative;
     max-height: 999px;

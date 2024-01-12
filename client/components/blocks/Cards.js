@@ -1,4 +1,4 @@
-import styles from "@/styles/components/cards.module.scss";
+import styles from "@/styles/components/cards.module.css";
 import CardItem from "@/partials/blocks/CardItem";
 
 const Cards = ({ title, description, cards }) => {

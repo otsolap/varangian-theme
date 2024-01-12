@@ -1,4 +1,4 @@
-import styles from "@/styles/components/pagination.module.scss";
+import styles from "@/styles/components/pagination.module.css";
 
 const Pagination = ({ items, pageSize, currentPage, onPageChange }) => {
   const pagesCount = Math.ceil(items / pageSize);

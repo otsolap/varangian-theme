@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/styles/components/menuButton.module.scss";
+import styles from "@/styles/components/menuButton.module.css";
 
 const MenuButton = ({ isMenuOpen, toggleMenu }) => {
     return (

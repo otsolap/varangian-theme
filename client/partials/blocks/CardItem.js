@@ -1,4 +1,4 @@
-import styles from "@/styles/components/cards.module.scss";
+import styles from "@/styles/components/cards.module.css";
 import NextImage from "@/partials/util/NextImage";
 import MarkdownBlock from "@/partials/util/MarkdownBlock";
 

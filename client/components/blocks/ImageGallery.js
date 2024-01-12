@@ -3,7 +3,7 @@ import { useLocalStorage }from "@/hooks/useStorage"
 import NextImage from 'partials/util/NextImage';
 import Modal from "partials/blocks/Modal";
 import ImageGallerySlideItem from "partials/blocks/ImageGallerySlideItem";
-import styles from '@/styles/components/imageGallery.module.scss'
+import styles from '@/styles/components/imageGallery.module.css'
 
 const ImageGallery = ({ images, title }) => {
   const [show, toggleModal] = useToggle(false);

@@ -1,4 +1,4 @@
-import styles from "@/styles/components/textarea.module.scss";
+import styles from "@/styles/components/textarea.module.css";
 import MarkdownBlock from "@/partials/util/MarkdownBlock";
 
 const Textarea = ({ text, selectTheme }) => {

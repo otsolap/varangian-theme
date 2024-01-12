@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/components/modal.module.scss";
+import styles from "@/styles/components/modal.module.css";
 
 const Modal = ({ show, handleClose, children }) => {
   return (

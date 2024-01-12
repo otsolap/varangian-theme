@@ -1,5 +1,5 @@
 import YoutubeEmbed from "@/partials/util/YoutubeEmbed";
-import styles from '@/styles/components/videoEmbed.module.scss'
+import styles from '@/styles/components/videoEmbed.module.css'
 
 const VideoEmbed = ({ url }) => {
   return (url ? (

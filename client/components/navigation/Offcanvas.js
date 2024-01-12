@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styles from '@/styles/components/offcanvas.module.scss'
+import styles from '@/styles/components/offcanvas.module.css'
 import useToggle from "@/hooks/useToggle"
 
 const Offcanvas = ({ navigation, show, closeModal }) => {

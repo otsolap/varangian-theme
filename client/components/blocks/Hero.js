@@ -1,7 +1,7 @@
 import React from "react";
 import NextImage from "@/partials/util/NextImage"
 import CustomLink from "@/partials/util/CustomLink";
-import styles from "@/styles/components/hero.module.scss";
+import styles from "@/styles/components/hero.module.css";
 import YoutubeEmbed from "@/partials/util/YoutubeEmbed";
 
 

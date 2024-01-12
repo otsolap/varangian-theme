@@ -67,7 +67,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
   .wrapper {
       flex-direction: row;
   }
@@ -79,7 +79,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
 
   .header {
     max-width: var(--container-ipad-landscape);

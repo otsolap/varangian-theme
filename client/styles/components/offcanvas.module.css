@@ -51,7 +51,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
     #modal {
         display: none;
     }

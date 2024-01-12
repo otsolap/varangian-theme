@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import styles from '@/styles/components/taxonomyLinks.module.scss';
+import styles from '@/styles/components/taxonomyLinks.module.css';
 import config from '@/utils/config';
 
 function TaxonomyLinks({ categories, service_types }) {

@@ -1,4 +1,4 @@
-import styles from '@/styles/pages/error.module.scss'
+import styles from '@/styles/pages/error.module.css'
 import Link from "next/link";
 
 export default function Custom404() {

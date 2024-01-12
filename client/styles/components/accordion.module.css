@@ -129,7 +129,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
   .accordion {
     padding-top: var(--double);
     margin-bottom: var(--double);

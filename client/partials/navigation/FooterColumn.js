@@ -5,7 +5,7 @@ import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
 import MarkdownBlock from "@/partials/util/MarkdownBlock"
 import CustomLink from "@/partials/util/CustomLink"
 import NextImage from "@/partials/util/NextImage";
-import styles from '@/styles/components/footer.module.scss'
+import styles from '@/styles/components/footer.module.css'
 
 const FooterColumn = ({ id, open, title, description, image, links }) => {
   const contentRef = useRef(null)

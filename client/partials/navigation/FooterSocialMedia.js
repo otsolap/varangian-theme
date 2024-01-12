@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import useToggle from '@/hooks/useToggle';
 import ContactDetails from '@/partials/util/ContactDetails'
-import styles from '@/styles/components/footer.module.scss';
+import styles from '@/styles/components/footer.module.css';
 
 const FooterSocialMedia = ({  id, open, title, socialMedia }) => {
     const contentRef = useRef(null)

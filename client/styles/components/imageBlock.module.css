@@ -27,7 +27,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
     .imageBlock {
         width: auto;
     }

@@ -1,10 +1,10 @@
 import { useState, createContext } from "react"
 import ErrorPage from "next/error"
 // Import Swiper styles
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
-import "swiper/scss/effect-coverflow";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 import Layout from "@/components/Layout"
 // Fonts
 import { poppins, hind_guntur } from "@/utils/fonts";

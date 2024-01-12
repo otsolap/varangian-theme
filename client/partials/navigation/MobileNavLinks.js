@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBullseye, faCircleNodes, faCube, faPenNib } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/styles/components/mobileNavLinks.module.scss";
+import styles from "@/styles/components/mobileNavLinks.module.css";
 import { useRouter } from 'next/router';
 import Link from "next/link";
 

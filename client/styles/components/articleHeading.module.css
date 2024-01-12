@@ -90,7 +90,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
     .header {
         flex-direction: row;
     }
@@ -127,7 +127,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
     .header {
         padding: var(--triple) var(--single);
     }

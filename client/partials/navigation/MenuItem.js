@@ -1,4 +1,4 @@
-import styles from "@/styles/components/header.module.scss";
+import styles from "@/styles/components/header.module.css";
 import { useRouter } from 'next/router';
 import CustomLink from "@/partials/util/CustomLink";
 

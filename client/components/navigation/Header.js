@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalContext } from '@/pages/_app';
-import styles from "@/styles/components/header.module.scss";
+import styles from "@/styles/components/header.module.css";
 import Blocks from "@/components/Blocks";
 import ArticleNavigation from 'partials/article/ArticleNavigation';
 import CustomLink from "@/partials/util/CustomLink";

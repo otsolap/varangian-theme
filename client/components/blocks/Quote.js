@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Quotation from '@/public/images/quotation.svg'
-import styles from '@/styles/components/quote.module.scss'
+import styles from '@/styles/components/quote.module.css'
 
 const Quote = ({ title }) => {
     return (

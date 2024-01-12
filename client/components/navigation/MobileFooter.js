@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Offcanvas from "@/components/navigation/Offcanvas";
 import MobileNavLinks from "@/partials/navigation/MobileNavLinks";
 import MenuButton from "@/partials/navigation/MenuButton";
-import styles from "@/styles/components/mobileFooter.module.scss";
+import styles from "@/styles/components/mobileFooter.module.css";
 
 const MobileFooter = ({ navigation }) => {
     const [showModal, setShowModal] = useState(false);

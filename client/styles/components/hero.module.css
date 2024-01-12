@@ -75,7 +75,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
   .hero {
     flex-direction: row;
     position: relative;
@@ -99,7 +99,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
   .mediaContainer {
     max-height: initial;
   }

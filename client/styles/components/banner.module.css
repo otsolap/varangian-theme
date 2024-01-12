@@ -39,7 +39,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
     .banner {
         flex-direction: row;
         gap: var(--triple);

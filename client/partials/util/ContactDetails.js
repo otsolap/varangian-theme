@@ -1,4 +1,4 @@
-import styles from "@/styles/components/contactDetails.module.scss";
+import styles from "@/styles/components/contactDetails.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,

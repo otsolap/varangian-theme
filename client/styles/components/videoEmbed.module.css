@@ -9,7 +9,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
     
     .videoContainer {
         height: 375px;
@@ -18,7 +18,7 @@
 }
 
 /* DESKTOP STYLES */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
 
     .videoContainer {
         max-width: var(--width-max-article);

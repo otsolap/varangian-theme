@@ -38,7 +38,6 @@
   padding-left: var(--half);
 }
 
-/* The path color styling might not work as expected in CSS as it does in SCSS */
 .markdown article li:has(strong) path {
   color: var(--brand-500);
 }
@@ -67,7 +66,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
   .markdown article ul,
   .markdown article ol {
     padding-left: var(--double);
@@ -81,7 +80,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
   .markdown article img {
     height: 600px;
     max-width: 600px;

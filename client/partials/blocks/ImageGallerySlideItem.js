@@ -4,7 +4,7 @@ import NextImage from 'partials/util/NextImage';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Pagination, Navigation } from 'swiper/modules';
 // import required modules
-import styles from "@/styles/components/imageGallery.module.scss";
+import styles from "@/styles/components/imageGallery.module.css";
 
 const ImageGallerySlideItem = ({ images, selectedImage }) => {
   return (

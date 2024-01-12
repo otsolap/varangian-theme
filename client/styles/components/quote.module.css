@@ -30,7 +30,7 @@
 }
 
 /* iPad STYLES */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
 
     .quote {
         font-size: var(--single)

@@ -44,7 +44,8 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= var(--container-ipad)) {
+  
   .wrapper {
     flex-direction: row;
   }
@@ -60,7 +61,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= var(--container-desktop)) {
   .mediaMixColumn {
     flex: 0 0 50%;
     align-items: flex-start;

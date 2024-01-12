@@ -1,4 +1,4 @@
-import styles from "@/styles/components/mediaMix.module.scss";
+import styles from "@/styles/components/mediaMix.module.css";
 import NextImage from "@/partials/util/NextImage";
 import MarkdownBlock from "@/partials/util/MarkdownBlock";
 import YoutubeEmbed from "@/partials/util/YoutubeEmbed";
