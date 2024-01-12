@@ -12,7 +12,7 @@ const Pagination = ({ items, pageSize, currentPage, onPageChange }) => {
         <a
           key={page}
           onClick={() => onPageChange(page)}
-          className={page === currentPage ? styles.active : styles.item}
+          className={page === currentPage ?  styles.item + styles.active : styles.item}
         >
           {page}
         </a>

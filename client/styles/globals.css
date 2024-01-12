@@ -1,0 +1,73 @@
+@import './partials/mixins.css';
+@import './partials/variables.css';
+@import './partials/breakpoints.css';
+@import './partials/typography.css';
+@import './partials/util.css';
+@import './components/markdown.css';
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: auto;
+  width: 100%;
+  color: var(--text-900);
+  background-color: var(--background-900);
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  position: relative;
+  background-color: var(--background-900);
+}
+
+section {
+  padding-top: var(--double);
+  margin-bottom: var(--double);
+}
+
+.youtube {
+    /* Convert SCSS mixin 'border' to equivalent CSS if possible */
+    width: 100%;
+    height: 100%;
+    padding: var(--single);
+}
+
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+    .mobile-only {
+      display: none;
+    }
+
+    .desktop-only {
+      display: block;
+    }
+
+    section {
+      padding-top: var(--triple);
+      padding-bottom: var(--triple);
+      margin-bottom: var(--triple);
+    }
+
+    #post section {
+      padding-top: var(--single);
+      padding-bottom: var(--single);
+      margin-bottom: var(--single);
+    }
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "@/styles/components/blogAnchor.module.scss";
+import styles from "@/styles/components/blogAnchor.module.css";
 import Link from "next/link";
 import axios from "axios";
 import { getStrapiURL } from "@/utils/index";

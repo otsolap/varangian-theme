@@ -1,0 +1,89 @@
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.footer {
+    width: 100%;
+    padding: var(--single);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+    border-radius: var(--quarter);
+    background-color: var(--background-500);
+    padding-top: var(--double);
+    padding-bottom: var(--double);
+    margin-bottom: var(--double);
+}
+
+
+.wrapper,
+.column {
+    gap: var(--single);
+    display: flex;
+    flex-direction: column;
+}
+
+.column {
+    padding: var(--single);
+}
+
+.imageContainer {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+
+.image {
+    border-radius: var(--quarter);
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    box-shadow: var(--half) var(--half) 0px 0px var(--brand-500);
+}
+
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--single);
+}
+
+/* Tablet Styles */
+@media (min-width: var(--container-ipad)) {
+    .footer {
+        flex-direction: row;
+    }
+
+    .imageContainer {
+      height: 400px;
+      width: 400px;
+    }
+
+    .image {
+        box-shadow: var(--single) var(--single) 0px 0px var(--brand-500);
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+    .footer {
+        padding-top: var(--triple);
+        padding-bottom: var(--triple);
+        margin-bottom: var(--triple);
+    }
+
+    .column {
+        flex: 0 0 50%;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        height: 500px;
+        width: 668px;
+    }
+    
+    .image {
+        box-shadow: 24px 24px 0px 0px var(--brand-500);
+    }
+}

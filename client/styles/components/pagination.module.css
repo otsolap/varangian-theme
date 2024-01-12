@@ -1,0 +1,34 @@
+/* Import partials */
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+
+/* Pagination */
+.pagination {
+    width: 100%;
+    padding-top: var(--single);
+    padding-bottom: var(--single);
+    gap: var(--single);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Item */
+.item {
+    text-align: center;
+    width: var(--double-half);
+    height: var(--double-half);
+    font-size: var(--single-quarter);
+    line-height: 1.75;
+    color: var(--text-900);
+    background-color: var(--brand-700);
+    border: 1px solid;
+    border-color: var(--brand-700);
+    border-radius: 100%;
+}
+
+/* Active */
+.item.active {
+    color: var(--background-900);
+}

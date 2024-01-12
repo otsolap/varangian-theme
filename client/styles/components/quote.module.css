@@ -1,0 +1,44 @@
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.quoteWrapper {
+    position: relative;
+    width: 100%; 
+    max-width: var(--container-ipad);
+    display: flex;
+    flex-direction: column;
+    padding: var(--single);
+}
+
+.quote {
+    margin: var(--single);
+    font-style: italic;
+}
+
+.quotationMark {
+    width: 100%;
+    height: auto;
+    max-width: 20px; 
+    margin-right: auto;
+
+
+}
+
+.quotationMark:last-of-type {
+    margin-right: initial;
+}
+
+/* iPad STYLES */
+@media (min-width: var(--container-ipad)) {
+
+    .quote {
+        font-size: var(--single)
+    }
+
+    .quotationMark {
+        max-width: var(--single-half); 
+    }
+    
+
+}

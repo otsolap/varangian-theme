@@ -1,0 +1,171 @@
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.accordion {
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--single);
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--single);
+  padding-bottom: var(--double);
+}
+
+/* Wrapper */
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--single);
+}
+
+/* Image Container */
+.imageContainer {
+  display: none;
+}
+
+/* Content */
+.content {
+  max-width: 100%;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: var(--quarter);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Toggle */
+.toggle {
+  border: 1px solid var(--text-900);
+  transition: 0.6s ease-in-out;
+}
+
+/* Inactive Toggle */
+.inactiveToggle {
+  background-color: var(--background-900);
+}
+
+/* Active Toggle */
+.activeToggle {
+  background-color: var(--brand-500);
+}
+
+.activeToggle .heading {
+  font-weight: 900;
+}
+
+/* Item */
+.item {
+  text-align: left;
+  width: 100%;
+  min-height: 10px;
+  border: 1px solid;
+}
+
+/* Flex Box */
+.flexBox {
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+}
+
+/* Heading */
+.heading {
+  color: inherit;
+  font-weight: 700;
+  margin-left: var(--single);
+  padding-top: var(--single);
+  padding-bottom: var(--single);
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Icon */
+.icon {
+  background-image: none;
+  cursor: pointer;
+  margin-right: var(--single);
+  margin-left: auto;
+  width: 1.875rem;
+  line-height: 2.25rem;
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Icon Down */
+.iconDown {
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Icon Left */
+.iconLeft {
+  transform: rotate(90deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Divider */
+.divider {
+  border-color: var(--text-900);
+  border-top-width: 2px;
+}
+
+/* Answer */
+.answer {
+  transition: max-height 0.6s ease;
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--background-700);
+}
+
+/* Text */
+.text {
+  padding: var(--single) var(--half);
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+  .accordion {
+    padding-top: var(--double);
+    margin-bottom: var(--double);
+  }
+
+  .header {
+    max-width: var(--container-ipad-landscape);
+    flex: 0 0 50%;
+  }
+
+  .wrapper {
+    flex-direction: row;
+    gap: var(--double);
+  }
+
+  .imageContainer,
+  .content {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+
+  .imageContainer {
+    display: block;
+    height: 500px;
+    width: 668px;
+  }
+
+  .image {
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+    aspect-ratio: 16/9;
+    box-shadow: 24px 24px 0px 0px var(--brand-500);
+  }
+
+  .text {
+    padding: var(--double) var(--single);
+  }
+}

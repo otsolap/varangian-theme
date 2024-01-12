@@ -1,0 +1,24 @@
+/* Import partials */
+@import '../partials/variables.css';
+@import '../partials/util.css';
+
+/* Mobile */
+.mobile {
+  border-top: 2px solid var(--text-900);
+  background-color: var(--background-900);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4.5rem;
+  width: 100%;
+  z-index: 50;
+  text-align: center;
+}
+
+/* Menu Wrapper */
+.menuWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

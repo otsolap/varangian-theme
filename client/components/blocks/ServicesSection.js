@@ -1,4 +1,4 @@
-import styles from "@/styles/components/articleAndServices.module.scss";
+import styles from "@/styles/components/articleAndServices.module.css";
 import ServicesItem from "@/partials/blocks/ServicesItem";
 import Link from "next/link";
 import config from '@/utils/config'

@@ -1,0 +1,151 @@
+/* Import partials */
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.hero {
+  background-color: var(--background-500);
+  color: var(--text-900);
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mediaContainer {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.image {
+  width: inherit;
+  height: inherit;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video {
+  height: 400px;
+}
+
+.textWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.content {
+  padding: var(--single);
+
+  *:not(a):not(.button) {
+    text-shadow: 1px 1px 2px var(--background-900);
+  }
+
+  h1 {
+    font-size: var(--triple);
+  }
+
+  h3 {
+    font-size: var(--single);
+    font-weight: 500;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--single);
+}
+
+/* Tablet Styles */
+@media (min-width: var(--container-ipad)) {
+  .hero {
+    flex-direction: row;
+    position: relative;
+    height: 561px;
+    max-height: 561px;
+  }
+
+  .mediaContainer,
+  .contentContainer {
+    flex: 0 0 50%;
+  }
+
+  .content {
+    padding: var(--double);
+  }
+
+  .mediaContainer {
+    max-height: 561px;
+    height: 561px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+  .mediaContainer {
+    max-height: initial;
+  }
+
+  .video {
+    height: 561px;
+    max-height: 561px;
+  }
+
+  .fullWrapper {
+    position: absolute;
+    max-width: 1440px;
+    inset: 0;
+
+    .image {
+      aspect-ratio: 16/9;
+    }
+
+    .image,
+    .video {
+      height: 561px;
+      max-height: 561px;
+    }
+  }
+
+  .mediaFirst,
+  .contentFirst {
+    order: 1;
+  }
+
+  .mediaLast,
+  .contentLast {
+    order: 2;
+  }
+
+  .content {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h3 {
+      font-size: var(--single-half);
+    }
+
+    h1, h3 {
+      padding-bottom: var(--single);
+    }
+  }
+}

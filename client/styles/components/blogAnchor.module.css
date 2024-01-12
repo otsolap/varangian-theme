@@ -1,0 +1,21 @@
+/* Import partials */
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--single);
+}
+
+.link {
+    font-size: var(--single);
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+  
+    &:focus,
+    &:hover {
+      cursor: pointer;
+      color: var(--brand-500);
+    }
+}

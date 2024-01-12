@@ -1,0 +1,47 @@
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.nav,
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--single);
+}
+
+.nav {
+    background-color: var(--text-900);
+    border-radius: var(--quarter);
+}
+
+.wrapper {
+    color: var(--background-900);
+    padding: var(--single);
+}
+
+.list {
+    list-style-type: none;
+}
+
+.link {
+    color: var(--background-300);
+
+    &:hover,
+    &:focus {
+        color: var(--brand-900);
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+    .nav {
+        max-width: 440px;
+        border-left: 2px solid var(--text-700);
+        height: min-content;
+    }
+
+    .wrapper {
+        padding-left: var(--double);
+        padding-right: var(--double);
+    }
+}

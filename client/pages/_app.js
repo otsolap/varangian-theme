@@ -9,7 +9,7 @@ import Layout from "@/components/Layout"
 // Fonts
 import { poppins, hind_guntur } from "@/utils/fonts";
 // Styles
-import "@/styles/globals.scss"
+import "@/styles/globals.css"
 // Store Strapi Global object in context
 import { fetchGlobalData } from "@/utils/index"
 

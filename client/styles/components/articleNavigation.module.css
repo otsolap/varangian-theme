@@ -1,0 +1,15 @@
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--double);
+}
+
+.title {
+    margin-bottom: initial;
+}

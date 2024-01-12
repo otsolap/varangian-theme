@@ -1,0 +1,90 @@
+/* Import partials */
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+/* Markdown Styles */
+.markdown article h1,
+.markdown article h2,
+.markdown article h3,
+.markdown article h4,
+.markdown article h5,
+.markdown article h6,
+.markdown article p {
+  margin-bottom: var(--single);
+}
+
+.markdown article p strong {
+  color: var(--brand-500);
+}
+
+.markdown article p {
+  padding-bottom: var(--half);
+}
+
+.markdown article ul,
+.markdown article ol {
+  padding-left: var(--single);
+}
+
+.markdown article ul li,
+.markdown article ol li {
+  padding-top: var(--quarter);
+  padding-bottom: var(--quarter);
+}
+
+.markdown article li:has(strong) {
+  list-style-image: url("/images/circle-check.svg");
+  padding-left: var(--half);
+}
+
+/* The path color styling might not work as expected in CSS as it does in SCSS */
+.markdown article li:has(strong) path {
+  color: var(--brand-500);
+}
+
+.markdown article img {
+  object-fit: contain;
+  object-position: 50% 50%;
+  height: fit-content;
+  width: 100%;
+  max-width: 350px;
+  max-height: 350px;
+  border-radius: var(--single);
+}
+
+.markdown article a {
+  color: var(--brand-500);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.markdown article a:hover,
+.markdown article a:focus {
+  text-decoration: underline;
+  text-underline-offset: var(--half);
+}
+
+/* Tablet Styles */
+@media (min-width: var(--container-ipad)) {
+  .markdown article ul,
+  .markdown article ol {
+    padding-left: var(--double);
+  }
+
+  .markdown article img {
+    height: 450px;
+    max-width: 450px;
+    max-height: 450px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+  .markdown article img {
+    height: 600px;
+    max-width: 600px;
+    max-height: 600px;
+  }
+}

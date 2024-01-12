@@ -1,0 +1,49 @@
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.socialWrapper {
+  padding: var(--half) 0;
+}
+
+.socialIcon {
+  width: var(--single);
+}
+
+.someLink {
+  display: flex;
+  flex-direction: row;
+  gap: var(--single);
+  font-size: var(--single);
+  transition: all .6s cubic-bezier(.4,0,.2,1);
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    color: var(--brand-500);
+  }
+}
+
+.icon {
+  background-image: none;
+  border: 0px solid;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: var(--single);
+  width: 0.875rem;
+  line-height: 2.25rem;
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+
+  .socialIcon {
+    width: var(--double);
+  }
+
+  .someLink {
+    align-items: center;
+  }
+  
+}
+

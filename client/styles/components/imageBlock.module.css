@@ -1,0 +1,34 @@
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.imageBlock {
+    width: 320px;
+    position: relative;
+    padding: var(--single);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.caption {
+    font-style: italic;
+    font-size: var(--three-quarters);
+    text-align: center;
+}
+
+/* Tablet Styles */
+@media (min-width: var(--container-ipad)) {
+    .imageBlock {
+        width: auto;
+    }
+}

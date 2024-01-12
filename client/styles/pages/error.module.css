@@ -1,0 +1,11 @@
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.padding {
+    padding: var(--single);
+}
+
+.buttonWrapper {
+    display: flex;
+}

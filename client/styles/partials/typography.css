@@ -1,0 +1,34 @@
+@import './variables.css';
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-hind-guntur);
+  margin-bottom: var(--single);
+}
+
+h1, .h1 {
+  font-size: var(--double-half);
+}
+h2, .h2 {
+  font-size: var(--double);
+}
+h3, .h3 {
+  font-size: var(--single-half);
+}
+h4, .h4 {
+  font-size: var(--single-quarter);
+}
+h5, .h5 {
+  font-size: var(--single);
+}
+
+/* Text Elements */
+a, p, input, span, button, strong, small {
+  font-family: var(--font-poppins);
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+  font-weight: 700;
+}

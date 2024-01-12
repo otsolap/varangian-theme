@@ -1,0 +1,45 @@
+:root {
+    /* Backgrounds */
+    --background-900: #001f2a; /* default */
+    --background-700: #002a3f;
+    --background-500: #003a4f;
+    --background-300: #004a5f;
+
+    /* Text */
+    --text-900: #E1E2E1; /* default */
+    --text-700: #B0B1B0;
+
+    /* Brand Colors */
+    --brand-900: #a56f1a;
+    --brand-700: #c8852d;
+    --brand-500: #e39b41; /* default */
+    --brand-300: #f4af6d;
+    --brand-100: #ffcc99;
+
+    /* Call To Action (CTA) */
+    --cta-900: #15646b;  
+    --cta-500: #1f8ea3; /* default */
+
+    /* Success Colors */
+    --success-900: #388E3C;
+    --success-500: #4CAF50;
+    --success-100: #81C784;
+
+    /* Error Colors */
+    --error-900: #B71C1C;
+    --error-500: #E53935;
+    --error-100: #FF867C;
+
+    /* Spacing */
+    --quarter: .25rem;
+    --half: .5rem;
+    --three-quarters: .75rem;
+    --single: 1rem;
+    --single-half: 1.5rem;
+    --single-quarter: 1.25rem;
+    --double: 2rem;
+    --double-half: 2.5rem;
+    --triple: 3rem;
+    --quadruple: 4rem;
+    --quintuple: 5rem;
+}

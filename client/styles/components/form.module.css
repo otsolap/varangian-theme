@@ -1,0 +1,19 @@
+/* Import partials */
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.form {
+  /* Add styles for .form here if needed */
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--single);
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+  /* Add desktop-specific styles for .form or other elements here if needed */
+}

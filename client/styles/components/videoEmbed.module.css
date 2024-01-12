@@ -1,0 +1,28 @@
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.videoContainer {
+    height: 250px;
+    width: 100%;
+    margin: var(--half) 0;
+}
+
+/* Tablet Styles */
+@media (min-width: var(--container-ipad)) {
+    
+    .videoContainer {
+        height: 375px;
+    }
+    
+}
+
+/* DESKTOP STYLES */
+@media (min-width: var(--container-desktop)) {
+
+    .videoContainer {
+        max-width: var(--width-max-article);
+        height: 500px;
+    }
+  
+}

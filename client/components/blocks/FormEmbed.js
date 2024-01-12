@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import axios from 'axios';
 import Inputs from '@/components/Inputs';
-import styles from '@/styles/components/form.module.scss';
+import styles from '@/styles/components/form.module.css';
 import config from '@/utils/config'
 
 const FormEmbed = ({ form }) => {

@@ -1,6 +1,6 @@
 import AccordionItem from "@/partials/blocks/AccordionItem";
 import NextImage from "@/partials/util/NextImage";
-import styles from "@/styles/components/accordion.module.scss";
+import styles from "@/styles/components/accordion.module.css";
 
 const Accordion = ({ title, description, image, accordions }) => {
   return ( 

@@ -9,7 +9,7 @@ The Varangian Theme is the primary theme for projects developed by the Varangian
 
 ## Features
 
-- **Dynamic Content Zones**: Strapi’s dynamic zones offer the flexibility to choose and customize content blocks without being confined to strict page layouts. This feature enhances the adaptability of your web pages, allowing you to tailor the layout according to specific content needs.
+- **Dynamic Content Zones**: Dynamic zones offer the flexibility to choose and customize content blocks without being confined to strict page layouts. This feature enhances the adaptability of your web pages, allowing you to tailor the layout according to specific content needs.
 - **Collection Types**: The theme includes two primary collection types: Articles and Services. This dual functionality makes the theme highly versatile, suitable both for blogging platforms and service information portals.
 - **Built-in Integrations**:
   - **Matomo**: For GDPR-compliant data analytics, ensuring that you can monitor and analyze website traffic without infringing on user privacy.

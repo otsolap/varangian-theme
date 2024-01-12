@@ -1,0 +1,40 @@
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+    gap: var(--single);
+}
+
+.select {
+    width: 100%;
+    text-align: center;
+}
+
+.item {
+    list-style: none;
+}
+
+.button {
+    background-color: var(--brand-500);
+    color: var(--background-900);
+    transition: 0.6s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--brand-500);
+    color: var(--background-900);
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+
+    .wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}

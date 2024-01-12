@@ -1,0 +1,64 @@
+@import '../partials/mixins.css';
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+.imageGallery,
+.imageGallerySwiper {
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: var(--single);
+}
+
+.imageContainer,
+.imageModalContainer {
+    position: relative;
+    width: 320px;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    aspect-ratio: auto;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+/* Tablet Styles */
+@media (min-width: var(--container-ipad)) {
+    .imageModalContainer{
+        height: 75vh;
+        width: 75vw;
+        margin: 0 auto;
+    }
+
+    .imageContainer {
+        max-width: 45%;
+        flex: 0 0 45%;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+    .imageContainer {
+        max-width: calc(100% / 4);
+        flex: 0 0 calc(100% / 4);
+    }
+}

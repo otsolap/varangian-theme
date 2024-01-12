@@ -1,5 +1,5 @@
 import ShareButtons from "@/partials/article/ShareButtons";
-import styles from '@/styles/components/articleNavigation.module.scss'
+import styles from '@/styles/components/articleNavigation.module.css'
 
 function ArticleNavigation ({  title, socialShareSettings }) {
     return (

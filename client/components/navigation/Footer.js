@@ -1,5 +1,5 @@
 import Blocks from "@/components/Blocks";
-import styles from '@/styles/components/footer.module.scss'
+import styles from '@/styles/components/footer.module.css'
 import CustomLink from '@/partials/util/CustomLink'
 
 const Footer = ({ footer }) => {

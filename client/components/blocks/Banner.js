@@ -1,4 +1,4 @@
-import styles from "@/styles/components/banner.module.scss";
+import styles from "@/styles/components/banner.module.css";
 import MarkdownBlock from "@/partials/util/MarkdownBlock";
 import NextImage from "@/partials/util/NextImage";
 import CustomLink from "@/partials/util/CustomLink";

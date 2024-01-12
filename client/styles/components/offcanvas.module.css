@@ -1,0 +1,58 @@
+@import '../partials/variables.css';
+@import '../partials/breakpoints.css';
+@import '../partials/util.css';
+
+/* Mobile screen padding top */
+:root {
+    --mobile-screen-padding-top: var(--quintuple);
+}
+
+#modal {
+    background-color: var(--background-900);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    padding-top: var(--mobile-screen-padding-top);
+}
+
+.content {
+    position: sticky;
+    width: inherit;
+    z-index: 10;
+}
+
+.linkWrapper {
+    padding-top: var(--single);
+    padding-bottom: var(--single);
+    padding-left: var(--triple);
+    list-style: none;
+    border-bottom: 2px solid var(--text-900);
+}
+
+.link {
+    display: block;
+    color: var(--text-900);
+    font-size: 22px;
+    width: inherit;
+    height: inherit;
+}
+
+.active {
+    background-color: var(--background-300);
+}
+
+.active .link {
+    font-weight: 900;
+}
+
+/* Desktop Styles */
+@media (min-width: var(--container-desktop)) {
+    #modal {
+        display: none;
+    }
+}
