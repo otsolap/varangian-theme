@@ -40,6 +40,7 @@
         flex-direction: row;
         gap: var(--triple);
         padding: var(--double) var(--triple);
+        max-width: var(--container-desktop);
     }
 
     .imageContainer {

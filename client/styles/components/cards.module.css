@@ -85,6 +85,7 @@
   .cards {
     padding-top: var(--double);
     padding-bottom: var(--double);
+    max-width: var(--container-desktop);
   }
 
   .wrapper {

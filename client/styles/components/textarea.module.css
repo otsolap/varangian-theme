@@ -5,3 +5,10 @@
   padding-left: var(--single);
   padding-right: var(--single);
 }
+
+/* Desktop Styles */
+@media (width >= var(--container-desktop)) {
+  .content {
+    max-width: var(--container-desktop);
+  }
+}

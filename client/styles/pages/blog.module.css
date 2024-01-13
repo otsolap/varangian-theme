@@ -22,6 +22,7 @@
 @media (width >= var(--container-desktop)) {
 
     .wrapper {
+        max-width: var(--container-desktop);
         flex-direction: row;
         gap: var(--triple);
     }

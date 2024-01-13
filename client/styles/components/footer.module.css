@@ -197,6 +197,7 @@
   .footer {
     padding-bottom: 0;
     justify-content: center;
+    max-width: var(--container-desktop);
   }
 
   .logoContainer {

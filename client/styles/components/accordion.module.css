@@ -129,6 +129,7 @@
   .accordion {
     padding-top: var(--double);
     margin-bottom: var(--double);
+    max-width: var(--container-desktop);
   }
 
   .header {

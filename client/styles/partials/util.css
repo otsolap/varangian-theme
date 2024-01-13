@@ -1,12 +1,8 @@
-@import './variables.css';
-
-/* Container */
 .container {
   margin: 0 auto;
   width: 100%;
 }
 
-/* Button */
 .button {
   background-color: var(--brand-700);
   color: var(--background-900);

@@ -98,6 +98,11 @@
 
 /* Desktop Styles */
 @media (width >= var(--container-desktop)) {
+
+  .hero {
+    max-width: var(--container-desktop);
+  }
+
   .mediaContainer {
     max-height: initial;
   }
