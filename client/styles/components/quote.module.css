@@ -1,7 +1,3 @@
-@import "../partials/variables";
-@import "../partials/breakpoints";
-@import "../partials/util";
-
 .quoteWrapper {
     position: relative;
     width: 100%; 

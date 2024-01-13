@@ -1,5 +1,3 @@
-@import '../partials/variables.css';
-
 .toggle {
     color: var(--text-900);
     position: relative;
@@ -13,10 +11,10 @@
     border: none;
     outline: none;
     background: none;
+}
 
-    &:hover {
-      color: var(--brand-700);
-    }
+.toggle:hover {
+  color: var(--brand-700);
 }
 
 .icon {

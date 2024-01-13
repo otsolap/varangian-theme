@@ -1,8 +1,3 @@
-/* Import partials */
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
 .hero {
   background-color: var(--background-500);
   color: var(--text-900);
@@ -56,16 +51,19 @@
   *:not(a):not(.button) {
     text-shadow: 1px 1px 2px var(--background-900);
   }
-
-  h1 {
-    font-size: var(--triple);
-  }
-
-  h3 {
-    font-size: var(--single);
-    font-weight: 500;
-  }
+ 
 }
+
+.content h1 {
+  font-size: var(--triple);
+}
+
+.content h3 {
+  font-size: var(--single);
+  font-weight: 500;
+}
+
+
 
 .buttonWrapper {
   display: flex;
@@ -135,17 +133,16 @@
     order: 2;
   }
 
-  .content {
-    h1 {
-      font-size: 3.5rem;
-    }
+  .content h1 {
+    font-size: 3.5rem;
+    padding-bottom: var(--single);
 
-    h3 {
-      font-size: var(--single-half);
-    }
-
-    h1, h3 {
-      padding-bottom: var(--single);
-    }
   }
+
+  .content h3 {
+    font-size: var(--single-half);
+    padding-bottom: var(--single);
+
+  }
+
 }

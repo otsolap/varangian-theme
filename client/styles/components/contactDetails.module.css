@@ -1,7 +1,3 @@
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
 .socialWrapper {
   padding: var(--half) 0;
 }
@@ -16,12 +12,12 @@
   gap: var(--single);
   font-size: var(--single);
   transition: all .6s cubic-bezier(.4,0,.2,1);
+}
 
-  &:focus,
-  &:hover {
-    cursor: pointer;
-    color: var(--brand-500);
-  }
+.someLink:focus,
+.someLink:hover {
+  cursor: pointer;
+  color: var(--brand-500);
 }
 
 .icon {

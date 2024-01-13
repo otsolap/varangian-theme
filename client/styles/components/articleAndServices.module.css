@@ -1,8 +1,3 @@
-/* Import partials */
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
 .bgPrimary {
     background-color: var(--brand-500);
 }
@@ -38,14 +33,15 @@
 .archiveLink {
     color: var(--text-900);
     transition: all .3s cubic-bezier(.4,0,.2,1);
-
-    &:hover,
-    &:focus {
-        color: var(--brand-500);
-        font-weight: 900;
-        cursor: pointer;
-    }
 }
+
+.archiveLink:hover,
+.archiveLink:focus {
+    color: var(--brand-500);
+    font-weight: 900;
+    cursor: pointer;
+}
+
 
 .item {
     display: flex;
@@ -118,11 +114,11 @@
 
 .category {
     transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    &:hover,
-    &:focus {
-        cursor: pointer;
-    }
+.category:hover,
+.category:focus {
+    cursor: pointer;
 }
 
 .footer {

@@ -1,7 +1,3 @@
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
 .header {
     display: flex;
     flex-direction: column;

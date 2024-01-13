@@ -1,12 +1,3 @@
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
-/* Mobile screen padding top */
-:root {
-    --mobile-screen-padding-top: var(--quintuple);
-}
-
 #modal {
     background-color: var(--background-900);
     position: fixed;
@@ -17,7 +8,7 @@
     justify-content: flex-start;
     height: 100%;
     width: 100%;
-    padding-top: var(--mobile-screen-padding-top);
+    padding-top: var(--quintuple);
 }
 
 .content {

@@ -1,7 +1,3 @@
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
 .cards {
   margin: 0 auto;
   width: 100%;
@@ -34,12 +30,12 @@
   align-items: center;
   color: var(--text-900);
   transition-duration: 250ms;
+}
 
-  &:focus,
-  &:hover {
-    background-color: var(--background-700);
-    border-color: var(--brand-500);
-  }
+.card:focus,
+.card:hover {
+  background-color: var(--background-700);
+  border-color: var(--brand-500);
 }
 
 .body {

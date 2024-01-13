@@ -1,6 +1,3 @@
-@import "../partials/variables";
-@import "../partials/breakpoints";
-
 .shareButtons {
     padding: var(--single);
     color: var(text-900);

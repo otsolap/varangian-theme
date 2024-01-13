@@ -1,8 +1,3 @@
-/* Import partials */
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
 .footer {
   border-top: 1px solid var(--text-900);
   margin: 0 auto;
@@ -24,11 +19,11 @@
 .column {
   flex: 100%;
   max-width: 100%;
+}
 
-  &:first-of-type {
-    margin-top: var(--single);
-    margin-bottom: var(--single);
-  }
+.column:first-of-type {
+  margin-top: var(--single);
+  margin-bottom: var(--single);
 }
 
 .columnContainer {
@@ -60,12 +55,12 @@
 .link {
   font-size: var(--single);
   transition: all .3s cubic-bezier(.4,0,.2,1);
+}
 
-  &:focus,
-  &:hover {
-    cursor: pointer;
-    color: var(--brand-500);
-  }
+.link:focus,
+.link:hover {
+  cursor: pointer;
+  color: var(--brand-500);
 }
 
 .toggle {
@@ -162,9 +157,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
 
-  a,
-  button {
+.mobileMenuWrapper a,
+.mobileMenuWrapper button {
     color: var(--text-900);
     position: relative;
     width: var(--quintuple);
@@ -174,13 +170,12 @@
     cursor: pointer;
     flex: 0 0 calc(100% / 3);
     max-width: calc(100% / 3);
-  }
+}
 
-  button {
-    border: none;
-    outline: none;
-    background: none;
-  }
+.mobileMenuWrapper button {
+  border: none;
+  outline: none;
+  background: none;
 }
 
 .mobileIcon {

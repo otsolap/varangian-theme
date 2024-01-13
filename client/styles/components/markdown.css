@@ -1,9 +1,3 @@
-/* Import partials */
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
-/* Markdown Styles */
 .markdown article h1,
 .markdown article h2,
 .markdown article h3,

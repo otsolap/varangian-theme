@@ -1,8 +1,3 @@
-/* Import partials */
-@import '../partials/variables.css';
-@import '../partials/util.css';
-
-/* Mobile */
 .mobile {
   border-top: 2px solid var(--text-900);
   background-color: var(--background-900);
@@ -15,7 +10,6 @@
   text-align: center;
 }
 
-/* Menu Wrapper */
 .menuWrapper {
   display: flex;
   flex-direction: row;

@@ -1,7 +1,3 @@
-@import '../partials/variables.css';
-@import '../partials/breakpoints.css';
-@import '../partials/util.css';
-
 .footer {
     width: 100%;
     padding: var(--single);

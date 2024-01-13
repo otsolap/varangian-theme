@@ -1,5 +1,3 @@
-@import '../partials/variables.css';
-
 .link {
     color: var(--text-900);
     position: relative;
@@ -11,11 +9,11 @@
     cursor: pointer;
     flex: 0 0 calc(100% / 4);
     max-width: calc(100% / 4);
+}
 
-    &:hover,
-    &:focus {
-      color: var(--brand-700);
-    }
+.link:hover,
+.link:focus {
+    color: var(--brand-700);
 }
 
 .active {

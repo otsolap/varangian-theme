@@ -6,8 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import Layout from "@/components/Layout"
-// Fonts
-import { poppins, hind_guntur } from "@/utils/fonts";
+
 // Styles
 import "@/styles/globals.css"
 // Store Strapi Global object in context
@@ -42,14 +41,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <style jsx global>{`
-        html {
-          font-family: ${poppins.style.fontFamily}, sans-serif;
-        }
-        h1, h2, h3, h4, h5, h6 {
-          font-family: ${hind_guntur.style.fontFamily}, serif;
-        }
-      `}</style>
+
       <GlobalContext.Provider value={globalContextValue}>
         <AnalyticsTagManager />
         <Layout global={global} metadata={metaData}>
@@ -69,3 +61,19 @@ MyApp.getInitialProps = async (appContext) => {
 }
 
 export default MyApp
+
+
+/*
+// Fonts
+import { poppins, hind_guntur } from "@/utils/fonts";
+
+      <style jsx global>{`
+        html {
+          font-family: ${poppins.style.fontFamily}, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-family: ${hind_guntur.style.fontFamily}, serif;
+        }
+      `}</style>
+
+*/
