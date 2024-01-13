@@ -12,14 +12,14 @@
 }
 
 /* Tablet Styles */
-@media (width >= var(--container-ipad)) {
+@media (width >= 768px) {
     .article{
         padding: var(--single);
     }
 }
 
 /* DESKTOP STYLES */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
 
     .wrapper {
         max-width: var(--container-desktop);

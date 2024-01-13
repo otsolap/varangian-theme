@@ -35,7 +35,7 @@
 }
 
 /* Tablet Styles */
-@media (width >= var(--container-ipad)) {
+@media (width >= 768px) {
     .banner {
         flex-direction: row;
         gap: var(--triple);

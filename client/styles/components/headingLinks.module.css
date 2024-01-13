@@ -29,7 +29,7 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
     .nav {
         max-width: 440px;
         border-left: 2px solid var(--text-700);

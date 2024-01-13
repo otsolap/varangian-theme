@@ -9,6 +9,6 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
   /* Add desktop-specific styles for .form or other elements here if needed */
 }

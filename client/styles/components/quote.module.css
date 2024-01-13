@@ -26,7 +26,7 @@
 }
 
 /* iPad STYLES */
-@media (width >= var(--container-ipad)) {
+@media (width >= 768px) {
 
     .quote {
         font-size: var(--single)

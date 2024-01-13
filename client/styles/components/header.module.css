@@ -39,7 +39,7 @@
 }
 
 /* Tablet Styles */
-@media (min-width: var(--container-ipad)) {
+@media (width >= 768px) {
   .header {
     width: 100%;
   }
@@ -61,7 +61,7 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
   .header {
     position: relative;
     max-height: 999px;

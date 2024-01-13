@@ -193,7 +193,7 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
   .footer {
     padding-bottom: 0;
     justify-content: center;

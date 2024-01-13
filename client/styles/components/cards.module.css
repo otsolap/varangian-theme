@@ -63,7 +63,8 @@
 }
 
 /* Tablet Styles */
-@media (width >= var(--container-ipad)) {
+@media (width >= 768px) {
+  
   .wrapper {
       flex-direction: row;
   }
@@ -75,7 +76,7 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
 
   .header {
     max-width: var(--container-ipad-landscape);

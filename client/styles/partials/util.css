@@ -98,7 +98,7 @@
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= 1440px) {
   .container {
     max-width: var(--container-desktop);
   }

@@ -73,7 +73,7 @@
 }
 
 /* Tablet Styles */
-@media (width >= var(--container-ipad)) {
+@media (width >= 768px) {
   .hero {
     flex-direction: row;
     position: relative;
@@ -97,7 +97,7 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
 
   .hero {
     max-width: var(--container-desktop);
@@ -141,7 +141,6 @@
   .content h1 {
     font-size: 3.5rem;
     padding-bottom: var(--single);
-
   }
 
   .content h3 {

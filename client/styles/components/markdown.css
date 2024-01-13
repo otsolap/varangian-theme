@@ -60,7 +60,8 @@
 }
 
 /* Tablet Styles */
-@media (width >= var(--container-ipad)) {
+@media (width >= 768px) {
+
   .markdown article ul,
   .markdown article ol {
     padding-left: var(--double);
@@ -74,7 +75,8 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
+  
   .markdown article img {
     height: 600px;
     max-width: 600px;

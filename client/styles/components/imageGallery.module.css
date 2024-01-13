@@ -37,7 +37,8 @@
 }
 
 /* Tablet Styles */
-@media (width >= var(--container-ipad)) {
+@media (width >= 768px) {
+    
     .imageModalContainer{
         height: 75vh;
         width: 75vw;
@@ -51,7 +52,7 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
     .imageContainer {
         max-width: calc(100% / 4);
         flex: 0 0 calc(100% / 4);

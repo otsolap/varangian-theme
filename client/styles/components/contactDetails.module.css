@@ -31,7 +31,7 @@
 }
 
 /* Desktop Styles */
-@media (width >= var(--container-desktop)) {
+@media (width >= 1440px) {
 
   .socialIcon {
     width: var(--double);

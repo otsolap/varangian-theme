@@ -49,7 +49,7 @@ section {
 }
 
 /* Desktop Styles */
-@media (min-width: var(--container-desktop)) {
+@media (width >= 1440px) {
     .mobile-only {
       display: none;
     }
