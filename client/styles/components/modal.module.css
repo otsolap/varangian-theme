@@ -38,6 +38,6 @@
   
   .button:hover,
   .button:focus {
-    background-color: var(--cta-900);
+    background-color: var(--background-900);
     color: var(--text-900);
   }
