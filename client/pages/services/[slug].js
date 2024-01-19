@@ -51,12 +51,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-      const response = await axios.get(getStrapiURL(`/${config.services.API_SERVICE_CONTENT_QUERY}${params.slug}`));
+      const response = await axios.get(getStrapiURL(`/${config.services.API_SERVICES_CONTENT_QUERY}${params.slug}`));
   
       if (!response.data) {
         throw new Error('Failed to fetch API data')
       }
-  
 
       return {
         props: {
