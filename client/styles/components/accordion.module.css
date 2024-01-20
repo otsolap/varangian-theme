@@ -150,16 +150,11 @@
 
   .imageContainer {
     display: block;
-    height: 500px;
-    width: 668px;
   }
 
   .image {
     object-fit: cover;
-    width: inherit;
-    height: inherit;
     aspect-ratio: 16/9;
-    box-shadow: 24px 24px 0px 0px var(--brand-500);
   }
 
   .text {

@@ -3,7 +3,7 @@ import ServicesItem from "@/partials/blocks/ServicesItem";
 import Link from "next/link";
 import config from '@/utils/config'
 
-export default function ServicesSection({ title, description, selectTheme, services}) {
+export default function ServicesSection({ title, description, selectTheme, services }) {
   return (
     <section className={selectTheme == 'primary' ? styles.bgPrimary : styles.bgSecondary}>
       {title || description ? (
