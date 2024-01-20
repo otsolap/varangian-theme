@@ -35,8 +35,6 @@ module.exports = {
       script: 'npm',
       args: 'run start',
       cwd: './client',
-      watch: false,
-      post_deploy: 'npm run clear-cache',
       env_production: {
         NODE_ENV: 'production'
       },
