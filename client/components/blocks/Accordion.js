@@ -13,17 +13,17 @@ const Accordion = ({ title, description, image, accordions }) => {
             </header>
           )}
         <div className={styles.wrapper}>
-            {image?.data && (
-              <figure className={styles.imageContainer}>
-                <NextImage className={styles.image} image={image} />
-              </figure>
-            )}
             {accordions.data && (
                 <div className={styles.content}>
                   {accordions.data.map((item, i) => (
                       <AccordionItem key={i} {...item.attributes} />
                   ))}
               </div>
+            )}
+            {image?.data && (
+              <figure className={styles.imageContainer}>
+                <NextImage className={styles.image} image={image} />
+              </figure>
             )}
         </div>
       </section>
