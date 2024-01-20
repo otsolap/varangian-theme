@@ -1,27 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'api-dev',
-      script: 'npm',
-      args: 'run dev',
-      cwd: './api',
-      watch: true,
-      env_development: {
-        NODE_ENV: 'development'
-      },
-    },
-    {
-      name: 'client-dev',
-      script: 'npm',
-      args: 'run dev',
-      cwd: './client',
-      watch: true,
-      env_development: {
-        NODE_ENV: 'development'
-      },
-    },
-    {
-      name: 'api-prod',
+      name: 'api',
       script: 'npm',
       args: 'run start',
       cwd: './api',
@@ -31,7 +11,7 @@ module.exports = {
       },
     },
     {
-      name: 'client-prod',
+      name: 'client',
       script: './client/node_modules/next/dist/bin/next',
       args: 'start',
       watch: ['./client/.next'],
