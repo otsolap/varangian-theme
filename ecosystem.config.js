@@ -32,8 +32,9 @@ module.exports = {
     },
     {
       name: 'client-prod',
-      script: 'npm',
-      args: 'run start',
+      script: './client/node_modules/next/dist/bin/next',
+      args: 'start',
+      watch: ['./client/.next'],
       cwd: './client',
       env_production: {
         NODE_ENV: 'production'
