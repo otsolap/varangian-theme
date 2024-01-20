@@ -13,7 +13,7 @@ module.exports = {
     {
       name: 'client',
       script: './client/node_modules/next/dist/bin/next',
-      args: 'start',
+      args: 'next start ./client',
       watch: ['./client/.next'],
       ignore_watch: ['./client/node_modules', './client/public',],
       cwd: './client',
