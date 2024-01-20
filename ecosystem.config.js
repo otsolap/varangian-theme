@@ -15,8 +15,8 @@ module.exports = {
       script: 'npx',
       args: 'next start',
       cwd: './client', 
-      watch: ['./client/.next/static'],
-      ignore_watch: ['./client/node_modules', './client/public'],
+      watch: ['./client/.next/static', './client/.next/server'],
+      ignore_watch: ['./client/node_modules', './client/public', './client/.next/cache'],
       env_production: {
         NODE_ENV: 'production'
       },
