@@ -9,8 +9,8 @@ module.exports = {
     },
     {
       name: 'client',
-      script: 'npx',
-      args: 'next start',
+      script: 'npm',
+      args: 'run start',
       cwd: './client', 
       watch: ['./client/.next/static', './client/.next/server'],
       ignore_watch: ['./client/node_modules', './client/public', './client/.next/cache'],
