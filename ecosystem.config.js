@@ -9,19 +9,17 @@ module.exports = {
       env_production: {
         NODE_ENV: 'production'
       },
+      log_date_format: 'DD-MM-YYYY HH:mm:ss',
     },
     {
       name: 'client',
       script: 'npm',
       args: 'run start',
       cwd: './client', 
+      watch: false,
       // watch: ['./client/.next/static', './client/.next/server'],
       // ignore_watch: ['./client/node_modules', './client/public', './client/.next/cache'],
-      env_production: {
-        HOST: '127.0.0.1',
-        PORT: 3000,
-        NODE_ENV: 'production'
-      },
+      log_date_format: 'DD-MM-YYYY HH:mm:ss'
     },
   ],
 };
