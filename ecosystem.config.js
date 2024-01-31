@@ -15,10 +15,9 @@ module.exports = {
       name: 'client',
       script: 'npm',
       args: 'run start',
-      cwd: './client', 
-      watch: false,
-      // watch: ['./client/.next/static', './client/.next/server'],
-      // ignore_watch: ['./client/node_modules', './client/public', './client/.next/cache'],
+      cwd: './client',
+      watch: ['./client/.next/static', './client/.next/server'],
+      ignore_watch: ['./client/node_modules', './client/public', './client/.next/cache'],
       log_date_format: 'DD-MM-YYYY HH:mm:ss'
     },
   ],
