@@ -87,7 +87,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   try {
     const [articleResponse, blogNavigationResponse, newsletterResponse] = await Promise.all([
-      axios.get(getStrapiURL(`/${config.blog.API_ARTICLE_CONTENT_QUERY}${params.slug}`)),
+      axios.get(getStrapiURL(`/${config.blog.API_ARTICLE_CONTENT_QUERY}&filters[slug][$eq]=${params.slug}`)),
       axios.get(getStrapiURL(`/${config.blog.API_BLOG_NAVIGATION_QUERY}`)),
       axios.get(getStrapiURL(`/${config.global.API_NEWSLETTER_BANNER_QUERY}`)),
     ])
