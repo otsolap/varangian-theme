@@ -41,6 +41,10 @@ async function fetchDataByType(type, slug) {
             endpoint: 'categories',
             query: config.blog.API_CATEGORIES_CONTENT_QUERY
         },
+        'service-types': {
+            endpoint: 'service-types',
+            query: config.services.API_SERVICE_TYPES_CONTENT_QUERY
+        },
         'services': {
             endpoint: 'services',
             query: config.services.API_SERVICES_CONTENT_QUERY
