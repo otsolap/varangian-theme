@@ -30,11 +30,15 @@ export default async function revalidate(req, res) {
     }
 
     try {
-        await fetchDataByType(type, slug)
-        return res.json({ revalidated: true, slug: rawSlug })
+        await fetchDataByType(type, slug);
+        const pathToRevalidate = slug === '/' ? '/' : `/${slug}`;
+        await res.revalidate(pathToRevalidate);
+        console.log(`Successfully revalidated ${type} with slug: ${slug}`);
+
+        return res.json({ revalidated: true, slug: rawSlug });
     } catch (error) {
-        console.error("Error during revalidation:", error.message)
-        return res.status(500).json({ message: error.message })
+        console.error("Error during revalidation:", error.message);
+        return res.status(500).json({ message: error.message });
     }
 }
 
@@ -73,7 +77,6 @@ async function fetchDataByType(type, slug) {
         throw new Error(`No ${type} found with slug: ${slug}`)
     }
 
-    console.log(`Revalidated ${type} with slug: ${slug}`)
-
     return response.data
 }
+
