@@ -73,5 +73,7 @@ async function fetchDataByType(type, slug) {
         throw new Error(`No ${type} found with slug: ${slug}`)
     }
 
+    console.log(`Revalidated ${type} with slug: ${slug}`)
+
     return response.data
 }
