@@ -56,7 +56,7 @@ async function fetchDataByType(type, slug) {
         },
         'article': {
             endpoint: 'articles',
-            query: config.blog.API_ARTICLES_QUERY
+            query: config.blog.API_ARTICLE_CONTENT_QUERY
         },
         'author': {
             endpoint: 'authors',
