@@ -869,7 +869,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     image: Attribute.Media;
-    slug: Attribute.UID<'api::author.author', 'title'> & Attribute.Private;
+    slug: Attribute.UID<'api::author.author', 'title'>;
     article: Attribute.Relation<
       'api::author.author',
       'oneToOne',
