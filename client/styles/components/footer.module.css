@@ -243,10 +243,10 @@
 
   .toggle {
     width: initial;
-    pointer-events: none;
   }
 
   .icon {
+    pointer-events: none;
     display: none !important;
   }
 
