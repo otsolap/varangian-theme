@@ -65,7 +65,7 @@ async function fetchDataByType(type, slug) {
         'category': {
             endpoint: 'categories',
             query: config.blog.API_CATEGORIES_CONTENT_QUERY
-        },
+        }
     };
 
     const { endpoint, query } = typeConfig[type] || typeConfig['page'];
