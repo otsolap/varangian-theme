@@ -29,9 +29,13 @@ export default async function revalidate(req, res) {
         }
 
         await fetchDataByType(model, slug);
-        const pathToRevalidate = slug === '/' ? '/' : `/${slug}`;
+
+        const routePrefix = getRoutePrefix(model);
+
+        const pathToRevalidate = routePrefix + (slug === '/' ? '/' : `/${slug}`);
+
         await res.revalidate(pathToRevalidate);
-        console.log(`Successfully revalidated ${model} with slug: ${slug}`);
+        console.log(`Successfully revalidated ${model} with slug: ${pathToRevalidate}`);
 
         return res.json({ revalidated: true, slug });
     } catch (error) {
@@ -78,4 +82,23 @@ async function fetchDataByType(type, slug) {
     }
 
     return response.data;
+}
+
+function getRoutePrefix(model) {
+    switch (model) {
+        case 'page':
+            return '';
+        case 'service':
+            return '/services';
+        case 'service-type':
+            return '/service-types';
+        case 'article':
+            return '/blog';
+        case 'author':
+            return '/authors';
+        case 'category':
+            return '/categories';
+        default:
+            return '';
+    }
 }
