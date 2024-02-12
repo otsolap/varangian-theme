@@ -27,14 +27,14 @@ export async function getStaticPaths() {
           slug: service_type.attributes.slug,
         },
       })),
-      fallback: false,
+       fallback:'blocking'
     }
   } catch (error) {
     console.error("Error fetching service_type:", error)
 
     return {
       paths: [],
-      fallback: false,
+       fallback:'blocking'
     }
   }
 }

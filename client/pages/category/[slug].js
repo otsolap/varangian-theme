@@ -27,14 +27,14 @@ export async function getStaticPaths() {
           slug: category.attributes.slug,
         },
       })),
-      fallback: false,
+      fallback:'blocking'
     }
   } catch (error) {
     console.error("Error fetching category:", error)
 
     return {
       paths: [],
-      fallback: false,
+      fallback:'blocking'
     }
   }
 }

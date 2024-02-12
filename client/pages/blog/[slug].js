@@ -72,14 +72,14 @@ export async function getStaticPaths() {
           slug: article.attributes.slug,
         },
       })),
-      fallback: false,
+       fallback:'blocking'
     }
   } catch (error) {
     console.error('Error fetching articles:', error)
 
     return {
       paths: [],
-      fallback: false,
+       fallback:'blocking'
     }
   }
 }
