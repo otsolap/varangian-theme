@@ -91,13 +91,13 @@ function getRoutePrefix(model) {
         case 'service':
             return '/services';
         case 'service-type':
-            return '/service-types';
+            return '/service-type';
         case 'article':
             return '/blog';
         case 'author':
             return '/authors';
         case 'category':
-            return '/categories';
+            return '/category';
         default:
             return '';
     }
