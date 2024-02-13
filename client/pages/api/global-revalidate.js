@@ -20,7 +20,17 @@ export default async function globalRevalidate(req, res) {
             return res.status(400).json({ message: 'Model is missing in the webhook payload.' });
         }
 
-        if (model !== 'footer' && model !== 'navigation') {
+        const validModels = [
+            'base-seo',
+            'blog-navigation',
+            'footer', 
+            'navigation',
+            'newsletter-banner',
+            'services-banner',
+            'subscribe-form', 
+        ];
+
+        if (!validModels.includes(model)) {
             return res.status(400).json({ message: 'Invalid model for global revalidation.' });
         }
 
