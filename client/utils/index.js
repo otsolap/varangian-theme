@@ -111,7 +111,6 @@ import config from '@/utils/config'
   }
   
   
-
   export async function getPageData(slug) {
     let slugToReturn = '/'
     if (Array.isArray(slug) && slug.length > 0) {

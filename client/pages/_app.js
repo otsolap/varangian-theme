@@ -1,3 +1,4 @@
+import App from "next/app"
 import { useState, createContext } from "react"
 import ErrorPage from "next/error"
 // Import Swiper styles
@@ -59,11 +60,14 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-
+// getInitialProps disables automatic static optimization for pages that don't
+// have getStaticProps. So [[...slug]] pages still get SSG.
 MyApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext)
   const globalRes = await fetchGlobalData(appContext)
   
   return {
+    ...appProps,
     pageProps: { global: globalRes},
   }
 }

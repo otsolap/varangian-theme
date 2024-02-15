@@ -9,7 +9,10 @@ import axios from 'axios'
 import ErrorPage from "next/error"
 import config from '@/utils/config';
 
-const DynamicPages = ({ metaData, pageData, showServicesBanner, servicesBannerData }) => {
+// The file is called [[...slug]].js because we're using Next's
+// optional catch all routes feature. See the related docs:
+// https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
+const DynamicPage = ({ metaData, pageData, showServicesBanner, servicesBannerData }) => {
   
   const { setMetaData } = useContext(GlobalContext);
 
@@ -101,4 +104,4 @@ export async function getStaticProps({ params }) {
 }
 
 
-export default DynamicPages
+export default DynamicPage
