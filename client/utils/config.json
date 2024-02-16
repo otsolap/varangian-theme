@@ -29,7 +29,7 @@
         "API_AUTHORS_CONTENT_QUERY":"api/authors?populate=image,socialMedia",
         "API_CATEGORIES_CONTENT_QUERY":"api/categories?&populate=articles,articles.image,articles.author,articles.category,hero,hero.buttons,hero.image,seo,seo.imageBlock.image",
         "API_ARTICLES_QUERY":"api/articles?&populate=author,author.image,author.socialMedia,image,blocks,blocks.image,category",
-        "API_ARTICLE_CONTENT_QUERY":"api/articles?&populate=seo,seo.imageBlock.image,author,author.image,author.buttons,image,blocks,blocks.image,blocks.images.image,category",
+        "API_ARTICLE_CONTENT_QUERY":"api/articles?&populate=seo,seo.imageBlock.image,author,author.image,author.socialMedia,image,blocks,blocks.image,blocks.images.image,category",
         "RELATED_ARTICLES_TITLE":"Related Articles",
         "RELATED_ARTICLES_THEME":"secondary",
         "RELATED_ARTICLES_LINK_TITLE":"See blog archive",
