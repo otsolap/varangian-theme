@@ -28,8 +28,6 @@ export default async function revalidate(req, res) {
             return res.status(400).json({ message: 'Slug is missing in the webhook payload.' });
         }
 
-        await fetchDataByType(model, slug);
-
         const routePrefix = getRoutePrefix(model);
 
         const pathToRevalidate = routePrefix + (slug === '/' ? '/' : `/${slug}`);
@@ -44,45 +42,6 @@ export default async function revalidate(req, res) {
     }
 }
 
-async function fetchDataByType(type, slug) {
-    const typeConfig = {
-        'page': {
-            endpoint: 'pages',
-            query: config.global.API_CONTENT_QUERY
-        },
-        'service': {
-            endpoint: 'services',
-            query: config.services.API_SERVICES_CONTENT_QUERY
-        },
-        'service-type': {
-            endpoint: 'service-types',
-            query: config.services.API_SERVICE_TYPES_CONTENT_QUERY
-        },
-        'article': {
-            endpoint: 'articles',
-            query: config.blog.API_ARTICLE_CONTENT_QUERY
-        },
-        'author': {
-            endpoint: 'authors',
-            query: config.blog.API_AUTHORS_CONTENT_QUERY
-        },
-        'category': {
-            endpoint: 'categories',
-            query: config.blog.API_CATEGORIES_CONTENT_QUERY
-        }
-    };
-
-    const { endpoint, query } = typeConfig[type] || typeConfig['page'];
-
-    const url = getStrapiURL(`/api/${endpoint}?${query}&filters[slug][$eq]=${slug}`);
-    const response = await axios.get(url);
-
-    if (!response.data.data || response.data.data.length === 0) {
-        throw new Error(`No ${type} found with slug: ${slug}`);
-    }
-
-    return response.data;
-}
 
 function getRoutePrefix(model) {
     switch (model) {

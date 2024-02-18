@@ -31,8 +31,6 @@ export default async function revalidate(req, res) {
             return res.status(400).json({ message: 'Invalid model for collection type revalidation.' });
         }
 
-        await fetchDataByType(model);
-
         const pathToRevalidate = getRouter(model);
 
         await res.revalidate(pathToRevalidate);
@@ -43,30 +41,6 @@ export default async function revalidate(req, res) {
         console.error("Error during revalidation:", error.message);
         return res.status(500).json({ message: error.message });
     }
-}
-
-async function fetchDataByType(type) {
-    const typeConfig = {
-        'service-archive-page': {
-            endpoint: 'services',
-            query: config.services.API_ARCHIVE_PAGE_QUERY
-        },
-        'article-archive-page': {
-            endpoint: 'articles',
-            query: config.blog.API_ARCHIVE_PAGE_QUERY
-        },
-    };
-
-    const { endpoint, query } = typeConfig[type];
-
-    const url = getStrapiURL(`/api/${endpoint}?${query}`);
-    const response = await axios.get(url);
-
-    if (!response.data.data || response.data.data.length === 0) {
-        throw new Error(`No ${type} found with slug: ${slug}`);
-    }
-
-    return response.data;
 }
 
 function getRouter(model) {
