@@ -3,6 +3,7 @@ import axios from 'axios';
 import Inputs from '@/components/Inputs';
 import styles from '@/styles/components/form.module.css';
 import config from '@/utils/config'
+import { getStrapiURL } from "utils"
 
 const FormEmbed = ({ form, formID }) => {
   const formRef = useRef(null);
@@ -19,7 +20,7 @@ const FormEmbed = ({ form, formID }) => {
   
     const data = { data: formData };
   
-    axios.post(`${config.forms.COLLECTIONS_PATH || 'http://localhost:1337/api'}/${endpoint}`, data).then((response) => {
+    axios.post(`${config.forms.COLLECTIONS_PATH || getStrapiURL() + '/api'}/${endpoint}`, data).then((response) => {
         console.log(response); // handle the response from the server
     })
     .catch((error) => {
