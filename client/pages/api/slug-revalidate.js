@@ -1,6 +1,3 @@
-import axios from 'axios';
-import { getStrapiURL } from '@/utils/index';
-import config from '@/utils/config';
 
 export default async function revalidate(req, res) {
     const webhookHeader = req.headers['x-strapi-revalidate-webhook'];
@@ -41,7 +38,6 @@ export default async function revalidate(req, res) {
         return res.status(500).json({ message: error.message });
     }
 }
-
 
 function getRoutePrefix(model) {
     switch (model) {
