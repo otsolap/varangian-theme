@@ -22,14 +22,14 @@ export default async function globalRevalidate(req, res) {
         }
 
         const validModels = [
-            'services-banner',
+            'subscribe-form', 
         ];
 
         if (!validModels.includes(model)) {
             return res.status(400).json({ message: 'Invalid model for global revalidation.' });
         }
 
-        getPagesWithServicesBanner().then(routes => {
+        getPagesWithSubscriptionForm().then(routes => {
             routes.forEach(route => {
                 res.revalidate(route);
             });
@@ -43,11 +43,11 @@ export default async function globalRevalidate(req, res) {
     }
 }
 
-async function getPagesWithServicesBanner() {
+async function getPagesWithSubscriptionForm() {
     try {
-        const responses = await axios.get(getStrapiURL(`${config.revalidate.SERVICES_BANNER_PATH}`))
+        const responses = await axios.get(getStrapiURL(`/${config.revalidate.SUBSCRIPTION_FORM_PATH}`))
 
-        const routes = responses.flatMap((response) => {
+        const routes = responses.flatMap((response, index) => {
             const slugs = response.data.data.map(item => item.attributes.slug);
             return slugs.map(slug => {
                 if (slug === '/') {

@@ -4,7 +4,7 @@ import Inputs from '@/components/Inputs';
 import styles from '@/styles/components/form.module.css';
 import config from '@/utils/config'
 
-const FormEmbed = ({ form }) => {
+const FormEmbed = ({ form, formID }) => {
   const formRef = useRef(null);
   const { title, description, inputs, button, endpoint } = form.data.attributes;
 

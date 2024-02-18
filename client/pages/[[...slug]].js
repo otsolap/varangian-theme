@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import { getPageData, getAllPageSlugs, fetchServicesBannerData } from "@/utils/index"
 import Blocks from "@/components/Blocks"
 import Banner from "@/components/blocks/Banner"
+import FormEmbed from "components/blocks/FormEmbed";
 import axios from 'axios'
 import ErrorPage from "next/error"
 import config from '@/utils/config';
@@ -12,7 +13,7 @@ import config from '@/utils/config';
 // The file is called [[...slug]].js because we're using Next's
 // optional catch all routes feature. See the related docs:
 // https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
-const DynamicPage = ({ metaData, pageData, showServicesBanner, servicesBannerData }) => {
+const DynamicPage = ({ metaData, pageData, showServicesBanner, servicesBannerData, showSubscribeForm, subscribeFormData }) => {
   
   const { setMetaData } = useContext(GlobalContext);
 
@@ -27,6 +28,7 @@ const DynamicPage = ({ metaData, pageData, showServicesBanner, servicesBannerDat
   const router = useRouter()
   const blocks = pageData.blocks ?? []
   const servicesBanner = servicesBannerData?.serviceBannerData?.data?.attributes?.banner
+  const subscribeForm = subscribeFormData?.subscribeFormData?.data?.attributes
 
   // Check if the required data was provided
   if (!router.isFallback && !blocks?.length) {
@@ -37,6 +39,7 @@ const DynamicPage = ({ metaData, pageData, showServicesBanner, servicesBannerDat
     <>
       <Blocks blocks={blocks} />
       {showServicesBanner && <Banner {...servicesBanner} />}
+      {showSubscribeForm && <FormEmbed {...subscribeForm} />}
     </>
   )
 }
@@ -83,10 +86,13 @@ export async function getStaticProps({ params }) {
     }
 
     const blocks = pageDataObj.attributes.blocks
-
     const metaData = pageDataObj.attributes?.seo ?? {}
-    const showServicesBanner = pageDataObj.attributes.showServicesBanner
     const pageData = blocks ? await getDataDependencies(blocks) : {}
+
+    const showSubscribeForm = pageDataObj.attributes.showSubscribeForm
+    const subscribeFormData = await fetchSubscribeFormData()
+    
+    const showServicesBanner = pageDataObj.attributes.showServicesBanner
     const servicesBannerData = await fetchServicesBannerData()
 
     return {
@@ -94,7 +100,9 @@ export async function getStaticProps({ params }) {
         metaData, 
         pageData, 
         servicesBannerData, 
-        showServicesBanner 
+        showServicesBanner,
+        showSubscribeForm, 
+        subscribeFormData
       },
     }
   } catch (error) {

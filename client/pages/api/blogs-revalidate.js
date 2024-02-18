@@ -47,7 +47,7 @@ export default async function globalRevalidate(req, res) {
 
 async function getAllArticles() {
     try {
-        const response = await  axios.get(getStrapiURL(`${config.revalidate.ARTICLES_PATH}`))
+        const response = await  axios.get(getStrapiURL(`/${config.revalidate.ARTICLES_PATH}`))
         const slugs = response.data.data.map(item => item.attributes.slug)
 
         const routes = slugs.map(slug => `/blog/${slug}`)

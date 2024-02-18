@@ -26,7 +26,6 @@ export default async function globalRevalidate(req, res) {
             'base-seo',
             'footer', 
             'navigation',
-            'subscribe-form', 
         ]
 
         if (!validModels.includes(model)) {
@@ -57,9 +56,9 @@ export default async function globalRevalidate(req, res) {
 async function getAllPages() {
     try {
         const responses = await Promise.all([
-            axios.get(getStrapiURL(`${config.revalidate.PAGES_PATH}`)),
-            axios.get(getStrapiURL(`${config.revalidate.ARTICLES_PATH}`)),
-            axios.get(getStrapiURL(`${config.revalidate.SERVICES_PATH}`)),
+            axios.get(getStrapiURL(`/${config.revalidate.PAGES_PATH}`)),
+            axios.get(getStrapiURL(`/${config.revalidate.ARTICLES_PATH}`)),
+            axios.get(getStrapiURL(`/${config.revalidate.SERVICES_PATH}`)),
         ])
 
         const types = ['page', 'article', 'service']

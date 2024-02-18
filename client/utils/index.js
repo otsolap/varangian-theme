@@ -63,6 +63,23 @@ import config from '@/utils/config'
     }
   }
 
+  export async function fetchSubscribeFormData() {
+    try {
+      const response = await axios.get(getStrapiURL(`/${config.global.API_SUBSCRIBE_FORM_QUERY}`))
+
+      if (!response.data) {
+        throw new Error('Failed to fetch service banner data')
+      }
+
+      const subscribeFormData = response.data
+
+      return { subscribeFormData }
+    } catch (error) {
+      console.error(error)
+      return { subscribeFormData: null }
+    }
+  }
+
   export async function fetchGlobalData() {
     try {
       const navigationPromise = axios.get(getStrapiURL(`/${config.global.API_NAVIGATION_QUERY}`));
