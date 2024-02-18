@@ -40,6 +40,12 @@
     "forms": {
         "COLLECTIONS_PATH":"api/contacts/"
     },
+    "revalidate": {
+        "PAGES_PATH:": "api/pages",
+        "BLOG_PATH": "api/articles",
+        "SERVICES_PATH": "api/services",
+        "SERVICES_BANNER_PATH": "api/pages?populate=showServicesBanner&filters[showServicesBanner][$eq]=true"
+    },
     "nonPageSlugs": ["robots.txt", "humans.txt", "ads.txt", "sitemap.xml", "favicon.ico"]
 }  
 

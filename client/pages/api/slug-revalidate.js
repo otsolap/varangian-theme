@@ -1,9 +1,9 @@
 
 export default async function revalidate(req, res) {
-    const webhookHeader = req.headers['x-strapi-revalidate-webhook'];
+    const webhookHeader = req.headers['x-strapi-revalidate-webhook']
 
     if (webhookHeader && webhookHeader !== 'true') {
-        return res.status(401).json({ message: 'Unauthorized: Invalid or missing required header value.' });
+        return res.status(401).json({ message: 'Unauthorized: Invalid or missing required header value.' })
     }
 
     const { secret } = req.query
@@ -13,16 +13,16 @@ export default async function revalidate(req, res) {
     }
 
     try {
-        const {  model, entry } = req.body;
+        const {  model, entry } = req.body
 
         if (!model) {
-            return res.status(400).json({ message: 'Model is missing in the webhook payload.' });
+            return res.status(400).json({ message: 'Model is missing in the webhook payload.' })
         }
 
-        const { slug } = entry;
+        const { slug } = entry
 
         if (!slug) {
-            return res.status(400).json({ message: 'Slug is missing in the webhook payload.' });
+            return res.status(400).json({ message: 'Slug is missing in the webhook payload.' })
         }
 
         const validModels = [
@@ -31,40 +31,40 @@ export default async function revalidate(req, res) {
             'service-type',
             'article',
             'category'
-        ];
+        ]
 
         if (!validModels.includes(model)) {
-            return res.status(400).json({ message: 'Invalid model for slug type revalidation.' });
+            return res.status(400).json({ message: 'Invalid model for slug type revalidation.' })
         }
 
 
-        const routePrefix = getRoutePrefix(model);
+        const routePrefix = getRoutePrefix(model)
 
-        const pathToRevalidate = routePrefix + (slug === '/' ? '/' : `/${slug}`);
+        const pathToRevalidate = routePrefix + (slug === '/' ? '/' : `/${slug}`)
 
-        await res.revalidate(pathToRevalidate);
-        console.log(`Successfully revalidated ${model} with slug: ${pathToRevalidate}`);
+        await res.revalidate(pathToRevalidate)
+        console.log(`Successfully revalidated ${model} with slug: ${pathToRevalidate}`)
 
-        return res.json({ revalidated: true, slug });
+        return res.json({ revalidated: true, slug })
     } catch (error) {
-        console.error("Error during revalidation:", error.message);
-        return res.status(500).json({ message: error.message });
+        console.error("Error during revalidation:", error.message)
+        return res.status(500).json({ message: error.message })
     }
 }
 
 function getRoutePrefix(model) {
     switch (model) {
         case 'page':
-            return '';
+            return ''
         case 'service':
-            return '/services';
+            return '/services'
         case 'service-type':
-            return '/service-type';
+            return '/service-type'
         case 'article':
-            return '/blog';
+            return '/blog'
         case 'category':
-            return '/category';
+            return '/category'
         default:
-            return '';
+            return ''
     }
 }
