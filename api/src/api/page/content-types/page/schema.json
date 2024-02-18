@@ -46,9 +46,10 @@
       "default": true,
       "required": true
     },
-    "showSubscriptionForm": {
+    "showSubscribeForm": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
     }
   }
 }

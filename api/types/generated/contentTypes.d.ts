@@ -1194,7 +1194,9 @@ export interface ApiPagePage extends Schema.CollectionType {
     showServicesBanner: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
-    showSubscriptionForm: Attribute.Boolean & Attribute.DefaultTo<false>;
+    showSubscribeForm: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
