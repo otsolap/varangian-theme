@@ -33,9 +33,15 @@ export default async function globalRevalidate(req, res) {
             return res.status(400).json({ message: 'Invalid model for global revalidation.' });
         }
 
+        // Manually added pages.
+        const archivePages = [
+            '/blog', 
+            '/services'
+        ];
 
         getAllPages().then(routes => {
-            routes.forEach(route => {
+            const allRoutes = [...archivePages, ...routes];
+            allRoutes.forEach(route => {
                 res.revalidate(route);
             });
         });
@@ -69,7 +75,7 @@ async function getAllPages() {
                 return `${prefix}/${slug}`;
             });
         });
-        
+
         return routes;
     } catch (error) {
         console.error("Error during fetching pages:", error.message);
