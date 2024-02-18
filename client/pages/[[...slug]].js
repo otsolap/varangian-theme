@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { GlobalContext } from "@/pages/_app.js";
 import { getDataDependencies } from "@/utils/api"
 import { useRouter } from "next/router"
-import { getPageData, getAllPageSlugs, fetchServicesBannerData } from "@/utils/index"
+import { getPageData, getAllPageSlugs, fetchServicesBannerData, fetchSubscribeFormData } from "@/utils/index"
 import Blocks from "@/components/Blocks"
 import Banner from "@/components/blocks/Banner"
 import FormEmbed from "components/blocks/FormEmbed";
