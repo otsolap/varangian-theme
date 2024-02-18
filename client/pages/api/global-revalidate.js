@@ -62,9 +62,14 @@ async function getAllPages() {
             const slugs = response.data.data.map(item => item.attributes.slug);
             const type = types[index];
             const prefix = getRoutePrefix(type);
-            return slugs.map(slug => `${prefix}/${slug}`);
+            return slugs.map(slug => {
+                if (type === 'page' && slug === '/') {
+                    return '/';
+                }
+                return `${prefix}/${slug}`;
+            });
         });
-
+        
         return routes;
     } catch (error) {
         console.error("Error during fetching pages:", error.message);
