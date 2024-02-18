@@ -39,7 +39,12 @@ const FormEmbed = ({ form, formID }) => {
         {description && <p>{description}</p>}
       </header>
       {inputs.length ? (
-        <form className={styles.form} ref={formRef} onSubmit={handleSubmit}>
+        <form 
+          id={formID ? formID : null}
+          className={styles.form} 
+          ref={formRef} 
+          onSubmit={handleSubmit}
+          >
           <div className={styles.inputWrapper}>
             <Inputs inputs={inputs} formRef={formRef} />
           </div>
