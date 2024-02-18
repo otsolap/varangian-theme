@@ -47,10 +47,10 @@ export default async function globalRevalidate(req, res) {
 
 async function getAllArticles() {
     try {
-        const response = await axios.get(getStrapiURL(`api/articles`));
-        const slugs = response.data.map(item => item.attributes.slug);
+        const response = await axios.get(getStrapiURL(`/api/articles`));
+        const slugs = response.data.data.map(item => item.attributes.slug);
 
-        const routes = slugs.map(slug => `blog/${slug}`);
+        const routes = slugs.map(slug => `/blog/${slug}`);
 
         return routes;
     } catch (error) {
