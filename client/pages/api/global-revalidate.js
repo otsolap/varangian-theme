@@ -56,13 +56,13 @@ async function getAllPages() {
             axios.get(getStrapiURL(`/api/services`)),
         ]);
 
-        const slugs = responses.map(response => response.data.map(item => item.attributes.slug));
         const types = ['page', 'article', 'service'];
 
-        const routes = slugs.flat().map((slug, index) => {
-            const type = types[index % types.length];
+        const routes = responses.flatMap((response, index) => {
+            const slugs = response.data.data.map(item => item.attributes.slug);
+            const type = types[index];
             const prefix = getRoutePrefix(type);
-            return `${prefix}/${slug}`;
+            return slugs.map(slug => `${prefix}/${slug}`);
         });
 
         return routes;
