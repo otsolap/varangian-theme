@@ -25,6 +25,19 @@ export default async function revalidate(req, res) {
             return res.status(400).json({ message: 'Slug is missing in the webhook payload.' });
         }
 
+        const validModels = [
+            'page',
+            'service',
+            'service-type',
+            'article',
+            'category'
+        ];
+
+        if (!validModels.includes(model)) {
+            return res.status(400).json({ message: 'Invalid model for slug type revalidation.' });
+        }
+
+
         const routePrefix = getRoutePrefix(model);
 
         const pathToRevalidate = routePrefix + (slug === '/' ? '/' : `/${slug}`);
@@ -49,8 +62,6 @@ function getRoutePrefix(model) {
             return '/service-type';
         case 'article':
             return '/blog';
-        case 'author':
-            return '/authors';
         case 'category':
             return '/category';
         default:

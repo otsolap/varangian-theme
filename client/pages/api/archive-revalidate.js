@@ -24,7 +24,7 @@ export default async function revalidate(req, res) {
         ];
 
         if (!validModels.includes(model)) {
-            return res.status(400).json({ message: 'Invalid model for collection type revalidation.' });
+            return res.status(400).json({ message: 'Invalid model for archive type revalidation.' });
         }
 
         const pathToRevalidate = getRouter(model);

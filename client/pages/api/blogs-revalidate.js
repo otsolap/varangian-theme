@@ -21,6 +21,7 @@ export default async function globalRevalidate(req, res) {
         }
 
         const validModels = [
+            'author',
             'blog-navigation',
             'newsletter-banner', 
         ];
