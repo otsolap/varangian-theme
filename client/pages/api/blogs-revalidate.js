@@ -47,7 +47,7 @@ export default async function globalRevalidate(req, res) {
 
 async function getAllArticles() {
     try {
-        const response = await axios.get(getStrapiURL(`/articles`));
+        const response = await axios.get(getStrapiURL(`api/articles`));
         const slugs = response.data.map(item => item.attributes.slug);
 
         const routes = slugs.map(slug => `blog/${slug}`);
@@ -55,5 +55,6 @@ async function getAllArticles() {
         return routes;
     } catch (error) {
         console.error("Error during fetching articles:", error.message);
+        return []; // Return an empty array in case of error
     }
 }

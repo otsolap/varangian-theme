@@ -51,9 +51,9 @@ export default async function globalRevalidate(req, res) {
 async function getAllPages() {
     try {
         const responses = await Promise.all([
-            axios.get(getStrapiURL(`/pages`)),
-            axios.get(getStrapiURL(`/articles`)),
-            axios.get(getStrapiURL(`/services`)),
+            axios.get(getStrapiURL(`api/pages`)),
+            axios.get(getStrapiURL(`api/articles`)),
+            axios.get(getStrapiURL(`api/services`)),
         ]);
 
         const slugs = responses.map(response => response.data.map(item => item.attributes.slug));
@@ -68,6 +68,7 @@ async function getAllPages() {
         return routes;
     } catch (error) {
         console.error("Error during fetching pages:", error.message);
+        return []; // Return an empty array in case of error
     }
 }
 
