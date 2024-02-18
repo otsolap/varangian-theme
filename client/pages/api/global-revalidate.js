@@ -1,3 +1,4 @@
+import { getStrapiURL } from "@/utils/index"
 import axios from "axios"
 
 export default async function globalRevalidate(req, res) {
