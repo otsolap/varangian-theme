@@ -5,32 +5,48 @@ import styles from '@/styles/components/form.module.css';
 import config from '@/utils/config'
 import { getStrapiURL } from "utils"
 
-const FormEmbed = ({ form, formID }) => {
+
+const FormEmbed = ({ form }) => {
   const formRef = useRef(null);
-  const { title, description, inputs, button, endpoint } = form.data.attributes;
+  const { formID, title, description, inputs, button } = form.data.attributes;
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const formData = {};
+
     inputs.forEach((input) => {
       if (formRef.current[input.name]) {
         formData[input.name] = formRef.current[input.name].value;
       }
     });
   
-    const data = { data: formData };
+    const formattedDataString = Object.entries(formData)
+      .map(([key, value]) => `label: ${key}\nvalue: ${value}\n`)
+      .join('');
   
-    axios.post(`${config.forms.COLLECTIONS_PATH || getStrapiURL() + '/api'}/${endpoint}`, data).then((response) => {
+    const data = {
+      data: {
+        form: data.form.data.id,
+        details: formattedDataString
+      }
+    };
+
+    axios.post(getStrapiURL() + `/${config.forms.COLLECTIONS_PATH}`, data)
+      .then((response) => {
         console.log(response); // handle the response from the server
-    })
-    .catch((error) => {
-      const errorMessage =
-      error.response?.data?.error?.message || 'Unknown error. Blame your internet.';
-      console.log(errorMessage);
-    })
-    .finally(() => {
-    });
+      })
+      .catch((error) => {
+        const errorMessage =
+          error.response?.data?.error?.message || 'Unknown error. Blame your internet.';
+        console.log(errorMessage);
+      })
+      .finally(() => {
+        // Any final cleanup or logic after the request
+      });
   };
+  
 
   return (
     <section className={styles.section}>

@@ -997,6 +997,42 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contacts';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    details: Attribute.Text;
+    form: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'api::form.form'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -1073,13 +1109,23 @@ export interface ApiFormForm extends Schema.CollectionType {
   };
   attributes: {
     inputs: Attribute.DynamicZone<
-      ['form-inputs.text-field', 'form-inputs.textarea-field']
+      [
+        'form-inputs.text-field',
+        'form-inputs.textarea-field',
+        'form-inputs.email'
+      ]
     >;
     title: Attribute.String;
     description: Attribute.Text;
     button: Attribute.Component<'partials.button'>;
     image: Attribute.Media;
-    endpoint: Attribute.String & Attribute.Required & Attribute.Unique;
+    showLabels: Attribute.Boolean & Attribute.DefaultTo<false>;
+    formID: Attribute.UID & Attribute.Required;
+    contact: Attribute.Relation<
+      'api::form.form',
+      'oneToOne',
+      'api::contact.contact'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1458,6 +1504,7 @@ declare module '@strapi/types' {
       'api::base-seo.base-seo': ApiBaseSeoBaseSeo;
       'api::blog-navigation.blog-navigation': ApiBlogNavigationBlogNavigation;
       'api::category.category': ApiCategoryCategory;
+      'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::form.form': ApiFormForm;

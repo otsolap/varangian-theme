@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_form_inputs_emails",
+  "info": {
+    "displayName": "email-field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "placeholder": {
+      "type": "string",
+      "default": "email@email.com"
+    }
+  }
+}

@@ -16,7 +16,8 @@
       "type": "dynamiczone",
       "components": [
         "form-inputs.text-field",
-        "form-inputs.textarea-field"
+        "form-inputs.textarea-field",
+        "form-inputs.email"
       ]
     },
     "title": {
@@ -38,10 +39,19 @@
         "images"
       ]
     },
-    "endpoint": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "showLabels": {
+      "type": "boolean",
+      "default": false
+    },
+    "formID": {
+      "type": "uid",
+      "required": true
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact",
+      "mappedBy": "form"
     }
   }
 }

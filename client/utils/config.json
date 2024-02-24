@@ -39,7 +39,7 @@
         "API_BLOG_NAVIGATION_QUERY": "api/blog-navigation?populate=social,button"
     },
     "forms": {
-        "COLLECTIONS_PATH":"api/contacts/"
+        "COLLECTIONS_PATH":"api/contacts"
     },
     "revalidate": {
         "PAGES_PATH:": "api/pages",
