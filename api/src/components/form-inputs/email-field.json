@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_form_inputs_emails",
+  "collectionName": "components_form_inputs_email_fields",
   "info": {
     "displayName": "email-field",
     "description": ""
@@ -10,8 +10,7 @@
       "type": "email"
     },
     "placeholder": {
-      "type": "string",
-      "default": "email@email.com"
+      "type": "string"
     }
   }
 }

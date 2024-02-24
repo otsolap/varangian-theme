@@ -1109,11 +1109,7 @@ export interface ApiFormForm extends Schema.CollectionType {
   };
   attributes: {
     inputs: Attribute.DynamicZone<
-      [
-        'form-inputs.text-field',
-        'form-inputs.textarea-field',
-        'form-inputs.email'
-      ]
+      ['form-inputs.text-field', 'form-inputs.textarea-field']
     >;
     title: Attribute.String;
     description: Attribute.Text;

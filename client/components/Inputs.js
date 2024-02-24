@@ -1,4 +1,5 @@
 import TextField from '@/partials/form/TextField';
+import EmailField from 'partials/form/EmailField';
 import TextAreaField from '@/partials/form/TextAreaField';
 
 const getInputField = ({ __component, ...rest  }, index, formRef) => {
@@ -7,6 +8,9 @@ const getInputField = ({ __component, ...rest  }, index, formRef) => {
   switch (__component) {
     case 'form-inputs.text-field':
       Input = TextField;
+    break;
+    case 'form-inputs.email-field':
+      Input = EmailField;
     break;
     case 'form-inputs.textarea-field':
       Input = TextAreaField;

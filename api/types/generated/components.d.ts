@@ -203,15 +203,15 @@ export interface BlocksVideoEmbed extends Schema.Component {
   };
 }
 
-export interface FormInputsEmail extends Schema.Component {
-  collectionName: 'components_form_inputs_emails';
+export interface FormInputsEmailField extends Schema.Component {
+  collectionName: 'components_form_inputs_email_fields';
   info: {
     displayName: 'email-field';
     description: '';
   };
   attributes: {
     email: Attribute.Email;
-    placeholder: Attribute.String & Attribute.DefaultTo<'email@email.com'>;
+    placeholder: Attribute.String;
   };
 }
 
@@ -467,7 +467,7 @@ declare module '@strapi/types' {
       'blocks.services': BlocksServices;
       'blocks.text-area': BlocksTextArea;
       'blocks.video-embed': BlocksVideoEmbed;
-      'form-inputs.email': FormInputsEmail;
+      'form-inputs.email-field': FormInputsEmailField;
       'form-inputs.text-field': FormInputsTextField;
       'form-inputs.textarea-field': FormInputsTextareaField;
       'partials.button': PartialsButton;
