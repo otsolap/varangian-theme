@@ -1,12 +1,16 @@
 {
   "collectionName": "components_form_inputs_textarea_fields",
   "info": {
-    "displayName": "Textarea-field"
+    "displayName": "Textarea-field",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "textarea": {
       "type": "text"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

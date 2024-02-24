@@ -9,7 +9,7 @@ import { getStrapiURL } from "utils"
 const FormEmbed = ({ form }) => {
   const formRef = useRef(null);
   const { formID, title, description, inputs, button } = form.data.attributes;
-
+  const token = process.env.NEXT_PUBLIC_API_TOKEN;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +25,12 @@ const FormEmbed = ({ form }) => {
     const formattedDataString = Object.entries(formData)
       .map(([key, value]) => `label: ${key}\nvalue: ${value}\n`)
       .join('');
-  
+      
+    const headers = {
+      Authorization: `Bearer ${token}`
+     };
+    
+
     const data = {
       data: {
         form: data.form.data.id,
@@ -33,9 +38,10 @@ const FormEmbed = ({ form }) => {
       }
     };
 
-    axios.post(getStrapiURL() + `/${config.forms.COLLECTIONS_PATH}`, data)
+    axios.post(getStrapiURL() + `/${config.forms.COLLECTIONS_PATH}`, data, { headers })
       .then((response) => {
-        console.log(response); // handle the response from the server
+       // Handle successful response
+       console.log(response.data)
       })
       .catch((error) => {
         const errorMessage =
