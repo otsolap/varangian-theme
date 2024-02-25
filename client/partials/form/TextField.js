@@ -10,6 +10,7 @@ const TextField = ({ name, placeholder, showLabels, formRef }) => {
     name={name}
     id={name}
     placeholder={placeholder ? placeholder : name}
+    required={required ? true : null}
     ref={formRef}
     />
     </>

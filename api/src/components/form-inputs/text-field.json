@@ -11,6 +11,10 @@
     },
     "placeholder": {
       "type": "string"
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

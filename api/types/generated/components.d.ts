@@ -207,10 +207,25 @@ export interface FormInputsEmailField extends Schema.Component {
   collectionName: 'components_form_inputs_email_fields';
   info: {
     displayName: 'email-field';
+    description: '';
   };
   attributes: {
     email: Attribute.Email;
     placeholder: Attribute.String;
+    required: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface FormInputsSelectField extends Schema.Component {
+  collectionName: 'components_form_inputs_select_fields';
+  info: {
+    displayName: 'select-field';
+    description: '';
+  };
+  attributes: {
+    placeholder: Attribute.String;
+    title: Attribute.String;
+    options: Attribute.Component<'util.option', true>;
   };
 }
 
@@ -223,6 +238,7 @@ export interface FormInputsTextField extends Schema.Component {
   attributes: {
     name: Attribute.String;
     placeholder: Attribute.String;
+    required: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -389,6 +405,17 @@ export interface UtilMenuItem extends Schema.Component {
   };
 }
 
+export interface UtilOption extends Schema.Component {
+  collectionName: 'components_util_options';
+  info: {
+    displayName: 'option';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+  };
+}
+
 export interface UtilSeo extends Schema.Component {
   collectionName: 'components_blocks_seos';
   info: {
@@ -467,6 +494,7 @@ declare module '@strapi/types' {
       'blocks.text-area': BlocksTextArea;
       'blocks.video-embed': BlocksVideoEmbed;
       'form-inputs.email-field': FormInputsEmailField;
+      'form-inputs.select-field': FormInputsSelectField;
       'form-inputs.text-field': FormInputsTextField;
       'form-inputs.textarea-field': FormInputsTextareaField;
       'partials.button': PartialsButton;
@@ -479,6 +507,7 @@ declare module '@strapi/types' {
       'util.footer-column': UtilFooterColumn;
       'util.footer-social-media': UtilFooterSocialMedia;
       'util.menu-item': UtilMenuItem;
+      'util.option': UtilOption;
       'util.seo': UtilSeo;
       'util.social-media-type': UtilSocialMediaType;
       'util.sub-footer': UtilSubFooter;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_form_inputs_select_fields",
+  "info": {
+    "displayName": "select-field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "placeholder": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "util.option"
+    }
+  }
+}
