@@ -8,7 +8,12 @@ import { getStrapiURL } from "utils"
 
 const FormEmbed = ({ form }) => {
   const formRef = useRef(null)
-  const { formID, title, description, inputs, button } = form.data.attributes;
+
+  if (!form || !form.data) {
+    return null;
+}
+
+  const { formID, title, description, inputs, image, button } = form.data.attributes;
   const token = process.env.NEXT_PUBLIC_API_TOKEN
 
   const handleSubmit = async (e) => {

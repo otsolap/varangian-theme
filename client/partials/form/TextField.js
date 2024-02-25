@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '@/styles/components/form.module.css'
 
-const TextField = ({ name, placeholder, showLabels, formRef }) => {
+const TextField = ({ name, placeholder, showLabels, required, formRef }) => {
   return (
     <>
     <label htmlFor={name} className={showLabels ? '' : 'sr-only'}>{name}</label>
