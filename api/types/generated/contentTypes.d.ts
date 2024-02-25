@@ -1114,7 +1114,8 @@ export interface ApiFormForm extends Schema.CollectionType {
         'form-inputs.textarea-field',
         'form-inputs.email-field',
         'form-inputs.select-field',
-        'form-inputs.date-field'
+        'form-inputs.date-field',
+        'form-inputs.checkbox-field'
       ]
     >;
     title: Attribute.String;

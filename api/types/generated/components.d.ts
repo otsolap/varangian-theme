@@ -203,6 +203,18 @@ export interface BlocksVideoEmbed extends Schema.Component {
   };
 }
 
+export interface FormInputsCheckboxField extends Schema.Component {
+  collectionName: 'components_form_inputs_checkbox_fields';
+  info: {
+    displayName: 'checkbox-field';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    options: Attribute.Component<'util.option', true>;
+  };
+}
+
 export interface FormInputsDateField extends Schema.Component {
   collectionName: 'components_form_inputs_date_fields';
   info: {
@@ -506,6 +518,7 @@ declare module '@strapi/types' {
       'blocks.services': BlocksServices;
       'blocks.text-area': BlocksTextArea;
       'blocks.video-embed': BlocksVideoEmbed;
+      'form-inputs.checkbox-field': FormInputsCheckboxField;
       'form-inputs.date-field': FormInputsDateField;
       'form-inputs.email-field': FormInputsEmailField;
       'form-inputs.select-field': FormInputsSelectField;

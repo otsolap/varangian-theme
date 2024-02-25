@@ -13,7 +13,6 @@ const EmailField = ({  placeholder, showLabels, required, formRef }) => {
     ref={formRef}
     />
     </>
-
   )
 }
 

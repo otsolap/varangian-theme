@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_form_inputs_checkbox_fields",
+  "info": {
+    "displayName": "checkbox-field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "util.option"
+    }
+  }
+}
