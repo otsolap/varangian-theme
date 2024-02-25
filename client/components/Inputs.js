@@ -2,6 +2,7 @@ import TextField from '@/partials/form/TextField';
 import EmailField from 'partials/form/EmailField';
 import TextAreaField from '@/partials/form/TextAreaField';
 import SelectField from '@/partials/form/SelectField';
+import DateField from '@/partials/form/DateField';
 
 const getInputField = ({ __component, ...rest  }, index, formRef, showLabels ) => {
   let Input;
@@ -18,6 +19,9 @@ const getInputField = ({ __component, ...rest  }, index, formRef, showLabels ) =
     break;
     case 'form-inputs.select-field':
       Input = SelectField;
+    break;
+    case 'form-inputs.date-field':
+      Input = DateField;
     break;
     default:
       console.error(`No component found for: ${__component}`)

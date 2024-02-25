@@ -16,6 +16,10 @@
       "type": "component",
       "repeatable": true,
       "component": "util.option"
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

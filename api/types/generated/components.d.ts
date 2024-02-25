@@ -203,6 +203,18 @@ export interface BlocksVideoEmbed extends Schema.Component {
   };
 }
 
+export interface FormInputsDateField extends Schema.Component {
+  collectionName: 'components_form_inputs_date_fields';
+  info: {
+    displayName: 'date-field';
+    description: '';
+  };
+  attributes: {
+    required: Attribute.Boolean & Attribute.DefaultTo<false>;
+    title: Attribute.String;
+  };
+}
+
 export interface FormInputsEmailField extends Schema.Component {
   collectionName: 'components_form_inputs_email_fields';
   info: {
@@ -226,6 +238,7 @@ export interface FormInputsSelectField extends Schema.Component {
     placeholder: Attribute.String;
     title: Attribute.String;
     options: Attribute.Component<'util.option', true>;
+    required: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -493,6 +506,7 @@ declare module '@strapi/types' {
       'blocks.services': BlocksServices;
       'blocks.text-area': BlocksTextArea;
       'blocks.video-embed': BlocksVideoEmbed;
+      'form-inputs.date-field': FormInputsDateField;
       'form-inputs.email-field': FormInputsEmailField;
       'form-inputs.select-field': FormInputsSelectField;
       'form-inputs.text-field': FormInputsTextField;

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_form_inputs_date_fields",
+  "info": {
+    "displayName": "date-field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

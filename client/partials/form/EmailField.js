@@ -7,7 +7,7 @@ const EmailField = ({  placeholder, showLabels, required, formRef }) => {
     <label htmlFor={'email'} className={showLabels ? '' : 'sr-only'}>{'Email'}</label>
     <input
     type='email'
-    id={'email'}
+    id='email'
     placeholder={placeholder ? placeholder : 'email'}
     required={required ? true : null}
     ref={formRef}
