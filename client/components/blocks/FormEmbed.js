@@ -13,7 +13,7 @@ const FormEmbed = ({ form }) => {
     return null;
 }
 
-  const { formID, title, description, inputs, image, button } = form.data.attributes;
+  const { formID, title, description, showLabels, inputs, image, button } = form.data.attributes;
   const token = process.env.NEXT_PUBLIC_API_TOKEN
 
   const handleSubmit = async (e) => {
@@ -62,7 +62,6 @@ const FormEmbed = ({ form }) => {
         // Any final cleanup or logic after the request
       })
   }
-  
 
   return (
     <section className={styles.section}>
@@ -79,7 +78,11 @@ const FormEmbed = ({ form }) => {
           >
           <div className={styles.inputWrapper}>
             <input type="hidden" value="" name="honeypot" />
-            <Inputs inputs={inputs} formRef={formRef} />
+            <Inputs 
+              inputs={inputs} 
+              showLabels={showLabels}
+              formRef={formRef} 
+            />
           </div>
           {button && (
             <button type="submit" value="submit" className={`button button--${button.selectTheme}`} >

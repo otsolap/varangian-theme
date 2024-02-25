@@ -3,7 +3,7 @@ import EmailField from 'partials/form/EmailField';
 import TextAreaField from '@/partials/form/TextAreaField';
 import SelectField from '@/partials/form/SelectField';
 
-const getInputField = ({ __component, ...rest  }, index, formRef) => {
+const getInputField = ({ __component, ...rest  }, index, formRef, showLabels ) => {
   let Input;
 
   switch (__component) {
@@ -28,14 +28,15 @@ const getInputField = ({ __component, ...rest  }, index, formRef) => {
     <Input 
         key={`index-${index}`} 
         formRef={formRef}
+        showLabels={showLabels}
         {...rest} 
     />
    ) : null;
 };
 
-const Inputs = ({ inputs, formRef }) => {
+const Inputs = ({ inputs, formRef, showLabels }) => {
     return inputs.map((input, index) =>
-      getInputField(input, index, formRef)
+      getInputField(input, index, formRef, showLabels)
     )
   }
 
