@@ -11,6 +11,7 @@ const EmailField = ({  placeholder, showLabels, required, formRef }) => {
     placeholder={placeholder ? placeholder : 'email'}
     required={required ? true : null}
     ref={formRef}
+    pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
     />
     </>
   )
