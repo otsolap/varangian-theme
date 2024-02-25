@@ -1,8 +1,7 @@
 {
   "collectionName": "components_form_inputs_email_fields",
   "info": {
-    "displayName": "email-field",
-    "description": ""
+    "displayName": "email-field"
   },
   "options": {},
   "attributes": {

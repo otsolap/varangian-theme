@@ -12,14 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "form": {
-      "type": "dynamiczone",
-      "components": [
-        "form-inputs.text-field"
-      ]
-    },
     "formID": {
       "type": "uid"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "form-inputs.email-field"
     }
   }
 }

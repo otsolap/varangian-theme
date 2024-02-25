@@ -1109,7 +1109,11 @@ export interface ApiFormForm extends Schema.CollectionType {
   };
   attributes: {
     inputs: Attribute.DynamicZone<
-      ['form-inputs.text-field', 'form-inputs.textarea-field']
+      [
+        'form-inputs.text-field',
+        'form-inputs.textarea-field',
+        'form-inputs.email-field'
+      ]
     >;
     title: Attribute.String;
     description: Attribute.Text;
@@ -1424,8 +1428,8 @@ export interface ApiSubscribeFormSubscribeForm extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    form: Attribute.DynamicZone<['form-inputs.text-field']>;
     formID: Attribute.UID;
+    email: Attribute.Component<'form-inputs.email-field'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

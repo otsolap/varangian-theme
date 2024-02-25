@@ -16,7 +16,8 @@
       "type": "dynamiczone",
       "components": [
         "form-inputs.text-field",
-        "form-inputs.textarea-field"
+        "form-inputs.textarea-field",
+        "form-inputs.email-field"
       ]
     },
     "title": {

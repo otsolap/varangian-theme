@@ -207,7 +207,6 @@ export interface FormInputsEmailField extends Schema.Component {
   collectionName: 'components_form_inputs_email_fields';
   info: {
     displayName: 'email-field';
-    description: '';
   };
   attributes: {
     email: Attribute.Email;
