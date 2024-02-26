@@ -4,7 +4,7 @@ import { createID } from '@/utils/index'
 
 const CheckboxField = ({ title, options, showLabels, formRef }) => {
 
-    const uid = createID(title)
+  const uid = createID(title)
 
   return (
     <>

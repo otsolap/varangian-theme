@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "email": {
-      "type": "email"
-    },
     "placeholder": {
       "type": "string"
     },

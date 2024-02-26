@@ -39,16 +39,19 @@ const FormEmbed = ({ form }) => {
     const headers = {
       Authorization: `Bearer ${token}`
      }
-    
 
     const data = {
       data: {
-        form: data.form.data.id,
+        form: form.data.id,
         details: formattedDataString
       }
     }
 
-    axios.post(getStrapiURL() + `/${config.forms.COLLECTIONS_PATH}`, data, { headers })
+    console.log(data)
+    console.log(headers)
+    console.log(getStrapiURL(`/${config.forms.COLLECTIONS_PATH}`))
+
+    axios.post(getStrapiURL(`/${config.forms.COLLECTIONS_PATH}`), data, { headers })
       .then((response) => {
        // Handle successful response
        console.log(response.data)
@@ -69,7 +72,7 @@ const FormEmbed = ({ form }) => {
         {title && <h2>{title}</h2>}
         {description && <p>{description}</p>}
       </header>
-      {inputs.length ? (
+      {inputs.length && button ? (
         <form 
           id={formID ? formID : null}
           className={styles.form} 
@@ -84,11 +87,9 @@ const FormEmbed = ({ form }) => {
               formRef={formRef} 
             />
           </div>
-          {button && (
             <button type="submit" value="submit" className={`button button--${button.selectTheme}`} >
               {button.title}
             </button>
-          )}
         </form>
       ) : null}
     </section>
