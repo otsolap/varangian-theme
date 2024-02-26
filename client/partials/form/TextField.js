@@ -18,7 +18,6 @@ const TextField = ({ name, placeholder, showLabels, required, formRef }) => {
     ref={formRef}
     />
     </>
-
   )
 }
 

@@ -273,7 +273,6 @@ export interface FormInputsTextareaField extends Schema.Component {
     description: '';
   };
   attributes: {
-    textarea: Attribute.Text;
     name: Attribute.String;
   };
 }

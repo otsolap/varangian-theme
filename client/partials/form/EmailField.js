@@ -8,6 +8,7 @@ const EmailField = ({  placeholder, showLabels, required, formRef }) => {
     <input
     type='email'
     id='email'
+    name='email'
     placeholder={placeholder ? placeholder : 'email'}
     required={required ? true : null}
     ref={formRef}

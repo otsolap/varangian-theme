@@ -27,6 +27,8 @@ const FormEmbed = ({ form }) => {
     }
 
     inputs.forEach((input) => {
+      console.log(formRef.current[input.name])
+
       if (formRef.current[input.name]) {
         formData[input.name] = formRef.current[input.name].value
       }
@@ -46,10 +48,6 @@ const FormEmbed = ({ form }) => {
         details: formattedDataString
       }
     }
-
-    console.log(data)
-    console.log(headers)
-    console.log(getStrapiURL(`/${config.forms.COLLECTIONS_PATH}`))
 
     axios.post(getStrapiURL(`/${config.forms.COLLECTIONS_PATH}`), data, { headers })
       .then((response) => {

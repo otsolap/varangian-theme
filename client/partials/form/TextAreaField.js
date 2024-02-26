@@ -10,7 +10,8 @@ const TextAreaField = ({ name, placeholder, showLabels, formRef }) => {
       id={name} 
       name={name} 
       placeholder={placeholder ? placeholder : name} 
-      ref={formRef}>
+      ref={formRef}
+      >
     </textarea>
     </>
 
