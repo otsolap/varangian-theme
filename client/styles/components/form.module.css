@@ -1,4 +1,4 @@
-.form {
+.section {
   margin: 0 auto;
   width: 100%;
   padding: var(--single);
@@ -13,7 +13,8 @@
 }
 
 /* Wrapper */
-.wrapper {
+.wrapper,
+.inputWrapper {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -37,10 +38,54 @@
   justify-content: flex-start;
 }
 
+.fieldset {
+  padding: var(--single);
+}
+
+.label,
+.legend {
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--half); 
+}
+
+.label,
+.fieldset,
+.select,
+.option,
+.input {
+  font-size: var(--single);
+  width: 100%;
+  max-width: 100%;
+}
+
+.input,
+.select,
+.option {
+  display: flex;
+  height: var(--triple);
+  padding: var(--half) var(--single);
+  align-items: center;
+  align-self: stretch;
+}
+
+.input,
+.select,
+.option {
+    border-radius: var(--quarter);
+    border: 1px solid rgba(4, 43, 96, 0.25);
+}
+
+
+.input {
+  border-radius: var(--quarter);
+  border: 1px solid rgba(4, 43, 96, 0.25);
+}
 
 /* Desktop Styles */
 @media (width >= 1440px) {
-  .form {
+  
+  .section {
     padding-top: var(--double);
     margin-bottom: var(--double);
     max-width: var(--container-desktop);

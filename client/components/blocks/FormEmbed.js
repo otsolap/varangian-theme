@@ -78,11 +78,6 @@ const FormEmbed = ({ form }) => {
         {description && <p>{description}</p>}
       </header>
       <div className={styles.wrapper}>
-        {image && (
-          <figure className={styles.imageWrapper}>
-              <NextImage className={styles.image} image={image} />
-          </figure>
-        )}
         {inputs.length && button ? (
           <div className={styles.content}>
             <form 
@@ -105,6 +100,11 @@ const FormEmbed = ({ form }) => {
             </form>
           </div>
         ) : null}
+        {image && (
+          <figure className={styles.imageContainer}>
+              <NextImage className={styles.image} image={image} />
+          </figure>
+        )}
       </div>
     </section>
   )

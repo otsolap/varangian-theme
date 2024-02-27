@@ -15,6 +15,7 @@ const DateField = ({ title, showLabels, required, formRef }) => {
     name={uid}
     required={required ? true : null}
     ref={formRef}
+    className={styles.input}
     />
     </>
 

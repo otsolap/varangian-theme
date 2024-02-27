@@ -9,11 +9,11 @@ const SelectField = ({ title, placeholder, options, required, showLabels, formRe
   return (
     <>
     <label htmlFor={uid} className={`${styles.label} ${showLabels ? '' : 'sr-only'}`}>{title}</label>
-    <select id={uid} name={uid} ref={formRef} required={required ? true : null} >
+    <select className={styles.select} id={uid} name={uid} ref={formRef} required={required ? true : null} >
         {placeholder ? <option value="">{placeholder}</option> : null}
         {options 
         ? options.map((option, index) => (
-            <option key={index} value={option.value} >
+            <option className={styles.option} key={index} value={option.value} >
                 {option.value}
             </option>
         )) : null}
