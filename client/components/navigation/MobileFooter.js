@@ -42,12 +42,16 @@ const MobileFooter = ({ navigation }) => {
         <footer className={`mobile-only ${styles.mobile}`} style={{ opacity: footerOpacity }}>
             <div className={styles.menuWrapper}>
                 <MobileNavLinks blocks={global.blocks.slice(0, PRIMARY_PAGES)} currentPath={router.asPath} closeModal={() => setShowModal(false)} />
-                <MenuButton isMenuOpen={showModal} toggleMenu={() => setShowModal(value => !value)} />
-                <Offcanvas
+                {global.blocks.length > PRIMARY_PAGES ? (
+                    <>
+                     <MenuButton isMenuOpen={showModal} toggleMenu={() => setShowModal(value => !value)} />
+                    <Offcanvas
                     navigation={navigation}
                     show={showModal}
                     closeModal={() => setShowModal(false)}
-                />
+                    />
+                    </>
+                ) : null}
             </div>
         </footer>
     );

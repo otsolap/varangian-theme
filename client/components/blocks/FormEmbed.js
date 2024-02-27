@@ -30,7 +30,7 @@ const FormEmbed = ({ form }) => {
 
     formRef.current.querySelectorAll('input').forEach(input => {
       const name = input.name
-      const value = input.value
+      const value = input.value 
 
       if(name !== 'honeypot')  { 
           formData[name] = value

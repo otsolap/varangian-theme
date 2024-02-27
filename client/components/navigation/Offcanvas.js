@@ -24,7 +24,7 @@ const Offcanvas = ({ navigation, show, closeModal }) => {
 
     if (global && Array.isArray(global.blocks)) {
       OffcanvasLinks = global.blocks
-        .slice(0, AFTER_PRIMARY_PAGES)
+        .slice(AFTER_PRIMARY_PAGES)
         .map((block, i) => {
           const { href, title } = block;
     
