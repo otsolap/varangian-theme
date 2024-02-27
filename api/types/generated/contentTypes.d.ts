@@ -1014,6 +1014,7 @@ export interface ApiContactContact extends Schema.CollectionType {
       'oneToOne',
       'api::form.form'
     >;
+    detailsJSON: Attribute.JSON;
     details: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1115,7 +1116,8 @@ export interface ApiFormForm extends Schema.CollectionType {
         'form-inputs.email-field',
         'form-inputs.select-field',
         'form-inputs.date-field',
-        'form-inputs.checkbox-field'
+        'form-inputs.checkbox-field',
+        'form-inputs.file-field'
       ]
     >;
     title: Attribute.String;

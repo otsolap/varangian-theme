@@ -20,7 +20,8 @@
         "form-inputs.email-field",
         "form-inputs.select-field",
         "form-inputs.date-field",
-        "form-inputs.checkbox-field"
+        "form-inputs.checkbox-field",
+        "form-inputs.file-field"
       ]
     },
     "title": {

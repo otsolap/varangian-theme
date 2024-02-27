@@ -1,9 +1,10 @@
-import TextField from '@/partials/form/TextField';
-import EmailField from 'partials/form/EmailField';
-import TextAreaField from '@/partials/form/TextAreaField';
-import SelectField from '@/partials/form/SelectField';
-import DateField from '@/partials/form/DateField';
 import CheckboxField from '@/partials/form/CheckboxField';
+import DateField from '@/partials/form/DateField';
+import EmailField from 'partials/form/EmailField';
+import FileField from '@/partials/form/FileField';
+import SelectField from '@/partials/form/SelectField';
+import TextField from '@/partials/form/TextField';
+import TextAreaField from '@/partials/form/TextAreaField';
 
 const getInputField = ({ __component, ...rest  }, index, formRef, showLabels ) => {
   let Input;
@@ -17,6 +18,9 @@ const getInputField = ({ __component, ...rest  }, index, formRef, showLabels ) =
     break;
     case 'form-inputs.email-field':
       Input = EmailField;
+    break;
+    case 'form-inputs.file-field':
+      Input = FileField;
     break;
     case 'form-inputs.select-field':
       Input = SelectField;

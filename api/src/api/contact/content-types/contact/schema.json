@@ -18,6 +18,9 @@
       "target": "api::form.form",
       "inversedBy": "contact"
     },
+    "detailsJSON": {
+      "type": "json"
+    },
     "details": {
       "type": "richtext"
     }

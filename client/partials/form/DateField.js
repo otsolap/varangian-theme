@@ -4,7 +4,7 @@ import { createID } from '@/utils/index'
 
 const DateField = ({ title, showLabels, required, formRef }) => {
 
-    const uid = createID(title)
+  const uid = createID(title)
 
   return (
     <>

@@ -239,6 +239,19 @@ export interface FormInputsEmailField extends Schema.Component {
   };
 }
 
+export interface FormInputsFileField extends Schema.Component {
+  collectionName: 'components_form_inputs_file_fields';
+  info: {
+    displayName: 'file-field';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.String;
+    required: Attribute.Boolean;
+  };
+}
+
 export interface FormInputsSelectField extends Schema.Component {
   collectionName: 'components_form_inputs_select_fields';
   info: {
@@ -519,6 +532,7 @@ declare module '@strapi/types' {
       'form-inputs.checkbox-field': FormInputsCheckboxField;
       'form-inputs.date-field': FormInputsDateField;
       'form-inputs.email-field': FormInputsEmailField;
+      'form-inputs.file-field': FormInputsFileField;
       'form-inputs.select-field': FormInputsSelectField;
       'form-inputs.text-field': FormInputsTextField;
       'form-inputs.textarea-field': FormInputsTextareaField;

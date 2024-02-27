@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { useRouter } from 'next/router';
 import axios from 'axios'
 import Inputs from '@/components/Inputs'
 import styles from '@/styles/components/form.module.css'
@@ -8,12 +9,13 @@ import { getStrapiURL } from "utils"
 
 const FormEmbed = ({ form }) => {
   const formRef = useRef(null)
+  const router = useRouter()
 
   if (!form || !form.data) {
-    return null;
-}
+    return null
+  }
 
-  const { formID, title, description, showLabels, inputs, image, button } = form.data.attributes;
+  const { formID, title, description, showLabels, inputs, image, button } = form.data.attributes
   const token = process.env.NEXT_PUBLIC_API_TOKEN
 
   const handleSubmit = async (e) => {
@@ -27,17 +29,17 @@ const FormEmbed = ({ form }) => {
     }
 
     formRef.current.querySelectorAll('input').forEach(input => {
-      const name = input.name;
-      const value = input.value;
+      const name = input.name
+      const value = input.value
 
       if(name !== 'honeypot')  { 
-          formData[name] = value;
+          formData[name] = value
         }
-    });
+    })
       
     const formattedDataString = Object.entries(formData)
     .map(([key, value]) => `<br><strong>label:</strong> ${key}<br>value: ${value}<br>`)
-    .join('');
+    .join('')
 
       
     const headers = {
@@ -47,7 +49,8 @@ const FormEmbed = ({ form }) => {
     const data = {
       data: {
         form: form.data.id,
-        details: formattedDataString
+        detailsJSON: formData,
+        details: formattedDataString,
       }
     }
 
@@ -55,6 +58,7 @@ const FormEmbed = ({ form }) => {
       .then((response) => {
        // Handle successful response
        console.log(response.data)
+       router.push(button.href)
       })
       .catch((error) => {
         const errorMessage =

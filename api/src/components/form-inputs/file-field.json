@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_form_inputs_file_fields",
+  "info": {
+    "displayName": "file-field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean"
+    }
+  }
+}
