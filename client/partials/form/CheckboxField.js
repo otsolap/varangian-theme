@@ -13,7 +13,13 @@ const CheckboxField = ({ title, options, showLabels, formRef }) => {
         {options 
         ? options.map((option, index) => (
             <label className={styles.label} key={index} htmlFor={uid + index}>
-                <input type="checkbox" id={uid + index} name={title} value={option.value} ref={formRef} />
+                <input 
+                className={styles.checkbox} 
+                type="checkbox" 
+                id={uid + index} 
+                name={title} 
+                value={option.value} 
+                ref={formRef} />
                 {option.value}
             </label>
         )) : null}

@@ -73,10 +73,7 @@ const FormEmbed = ({ form }) => {
 
   return (
     <section className={styles.section}>
-      <header className={styles.header}>
-        {title && <h2>{title}</h2>}
-        {description && <p>{description}</p>}
-      </header>
+
       <div className={styles.wrapper}>
         {inputs.length && button ? (
           <div className={styles.content}>
@@ -86,6 +83,10 @@ const FormEmbed = ({ form }) => {
               ref={formRef} 
               onSubmit={handleSubmit}
               >
+            <header className={styles.header}>
+                {title && <h2>{title}</h2>}
+                {description && <p>{description}</p>}
+             </header>
               <div className={styles.inputWrapper}>
                 <input type="hidden" value="" name="honeypot" />
                 <Inputs 
@@ -94,9 +95,11 @@ const FormEmbed = ({ form }) => {
                   formRef={formRef} 
                 />
               </div>
+              <footer className={styles.footer}>
                 <button type="submit" value="submit" className={`button button--${button.selectTheme}`} >
                   {button.title}
                 </button>
+              </footer>
             </form>
           </div>
         ) : null}

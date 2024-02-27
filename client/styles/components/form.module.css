@@ -12,14 +12,22 @@
   padding-bottom: var(--double);
 }
 
-/* Wrapper */
+/* Wrappers */
 .wrapper,
+.form,
 .inputWrapper {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--single);
+}
+
+.form {
+  padding: var(--single);
+  background: var(--background-300);
+  border-radius: var(--quarter);
+  border: 1px solid transparent;
 }
 
 /* Image Container */
@@ -42,15 +50,19 @@
   padding: var(--single);
 }
 
+.checkbox {
+  margin: var(--single);
+  width: var(--single);
+  max-width: var(--single);
+}
+
 .label,
 .legend {
   display: block;
   font-weight: 700;
-  margin-bottom: var(--half); 
 }
 
 .label,
-.fieldset,
 .select,
 .option,
 .input {
