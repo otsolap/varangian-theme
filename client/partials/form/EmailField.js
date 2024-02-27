@@ -6,13 +6,13 @@ const EmailField = ({  placeholder, showLabels, required, formRef }) => {
     <>
     <label htmlFor={'email'} className={showLabels ? '' : 'sr-only'}>{'Email'}</label>
     <input
-    type='email'
+    type='text'
     id='email'
     name='email'
     placeholder={placeholder ? placeholder : 'email'}
     required={required ? true : null}
     ref={formRef}
-    pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+    pattern='[^@\s]+@[^@\s]+\.[^@\s]+'
     />
     </>
   )

@@ -26,17 +26,19 @@ const FormEmbed = ({ form }) => {
       return
     }
 
-    inputs.forEach((input) => {
-      console.log(formRef.current[input.name])
+    formRef.current.querySelectorAll('input').forEach(input => {
+      const name = input.name;
+      const value = input.value;
 
-      if (formRef.current[input.name]) {
-        formData[input.name] = formRef.current[input.name].value
-      }
-    })
-  
+      if(name !== 'honeypot')  { 
+          formData[name] = value;
+        }
+    });
+      
     const formattedDataString = Object.entries(formData)
-      .map(([key, value]) => `label: ${key}\nvalue: ${value}\n`)
-      .join('')
+    .map(([key, value]) => `<br><strong>label:</strong> ${key}<br>value: ${value}<br>`)
+    .join('');
+
       
     const headers = {
       Authorization: `Bearer ${token}`

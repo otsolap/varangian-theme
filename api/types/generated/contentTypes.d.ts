@@ -1009,12 +1009,12 @@ export interface ApiContactContact extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    details: Attribute.Text;
     form: Attribute.Relation<
       'api::contact.contact',
       'oneToOne',
       'api::form.form'
     >;
+    details: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

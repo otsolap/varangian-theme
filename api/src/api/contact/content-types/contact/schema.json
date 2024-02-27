@@ -12,14 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "details": {
-      "type": "text"
-    },
     "form": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::form.form",
       "inversedBy": "contact"
+    },
+    "details": {
+      "type": "richtext"
     }
   }
 }
