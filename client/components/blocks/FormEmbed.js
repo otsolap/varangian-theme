@@ -84,7 +84,7 @@ const FormEmbed = ({ form }) => {
               onSubmit={handleSubmit}
               >
             <header className={styles.header}>
-                {title && <h2>{title}</h2>}
+                {title && <h2 className={styles.title}>{title}</h2>}
                 {description && <p>{description}</p>}
              </header>
               <div className={styles.inputWrapper}>

@@ -9,7 +9,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--single);
-  padding-bottom: var(--double);
+  padding-bottom: var(--single);
+}
+
+.title {
+  margin-bottom: 0;
 }
 
 /* Wrappers */
@@ -21,6 +25,10 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--single);
+}
+
+.footer {
+  padding: var(--single) 0;
 }
 
 .form {
@@ -39,7 +47,7 @@
 .content {
   max-width: 100%;
   width: 100%;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: var(--quarter);
   display: flex;
   flex-direction: column;
@@ -98,7 +106,6 @@
 @media (width >= 1440px) {
   
   .section {
-    padding-top: var(--double);
     margin-bottom: var(--double);
     max-width: var(--container-desktop);
   }
