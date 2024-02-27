@@ -5,6 +5,7 @@ import Inputs from '@/components/Inputs'
 import styles from '@/styles/components/form.module.css'
 import config from '@/utils/config'
 import { getStrapiURL } from "utils"
+import NextImage from "@/partials/util/NextImage";
 
 
 const FormEmbed = ({ form }) => {
@@ -76,26 +77,35 @@ const FormEmbed = ({ form }) => {
         {title && <h2>{title}</h2>}
         {description && <p>{description}</p>}
       </header>
-      {inputs.length && button ? (
-        <form 
-          id={formID ? formID : null}
-          className={styles.form} 
-          ref={formRef} 
-          onSubmit={handleSubmit}
-          >
-          <div className={styles.inputWrapper}>
-            <input type="hidden" value="" name="honeypot" />
-            <Inputs 
-              inputs={inputs} 
-              showLabels={showLabels}
-              formRef={formRef} 
-            />
+      <div className={styles.wrapper}>
+        {image && (
+          <figure className={styles.imageWrapper}>
+              <NextImage className={styles.image} image={image} />
+          </figure>
+        )}
+        {inputs.length && button ? (
+          <div className={styles.content}>
+            <form 
+              id={formID ? formID : null}
+              className={styles.form} 
+              ref={formRef} 
+              onSubmit={handleSubmit}
+              >
+              <div className={styles.inputWrapper}>
+                <input type="hidden" value="" name="honeypot" />
+                <Inputs 
+                  inputs={inputs} 
+                  showLabels={showLabels}
+                  formRef={formRef} 
+                />
+              </div>
+                <button type="submit" value="submit" className={`button button--${button.selectTheme}`} >
+                  {button.title}
+                </button>
+            </form>
           </div>
-            <button type="submit" value="submit" className={`button button--${button.selectTheme}`} >
-              {button.title}
-            </button>
-        </form>
-      ) : null}
+        ) : null}
+      </div>
     </section>
   )
 }

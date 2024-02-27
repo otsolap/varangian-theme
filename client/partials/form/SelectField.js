@@ -8,7 +8,7 @@ const SelectField = ({ title, placeholder, options, required, showLabels, formRe
 
   return (
     <>
-    <label htmlFor={uid} className={showLabels ? '' : 'sr-only'}>{title}</label>
+    <label htmlFor={uid} className={`${styles.label} ${showLabels ? '' : 'sr-only'}`}>{title}</label>
     <select id={uid} name={uid} ref={formRef} required={required ? true : null} >
         {placeholder ? <option value="">{placeholder}</option> : null}
         {options 

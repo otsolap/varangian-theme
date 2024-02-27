@@ -36,7 +36,8 @@ const MobileFooter = ({ navigation }) => {
     }, [handleScroll, showModal]); 
 
     const global = navigation && navigation.data ? navigation.data.attributes : {};
-    const PRIMARY_PAGES = 4;
+    const PRIMARY_PAGES = 3;
+    console.log(global.blocks.length)
 
     return (
         <footer className={`mobile-only ${styles.mobile}`} style={{ opacity: footerOpacity }}>

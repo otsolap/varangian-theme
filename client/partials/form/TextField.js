@@ -8,7 +8,7 @@ const TextField = ({ name, placeholder, showLabels, required, formRef }) => {
 
   return (
     <>
-    <label htmlFor={uid} className={showLabels ? '' : 'sr-only'}>{name}</label>
+    <label htmlFor={uid} className={`${styles.label} ${showLabels ? '' : 'sr-only'}`}>{name}</label>
     <input
     type='text'
     name={uid}
@@ -16,6 +16,7 @@ const TextField = ({ name, placeholder, showLabels, required, formRef }) => {
     placeholder={placeholder ? placeholder : name}
     required={required ? true : null}
     ref={formRef}
+    className={styles.input}
     />
     </>
   )

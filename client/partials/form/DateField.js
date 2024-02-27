@@ -8,7 +8,7 @@ const DateField = ({ title, showLabels, required, formRef }) => {
 
   return (
     <>
-    <label htmlFor={uid} className={showLabels ? '' : 'sr-only'}>{title}</label>
+    <label htmlFor={uid} className={`${styles.label} ${showLabels ? '' : 'sr-only'}`}>{title}</label>
     <input
     type='date'
     id={uid}

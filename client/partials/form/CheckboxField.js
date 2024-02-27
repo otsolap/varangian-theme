@@ -9,7 +9,7 @@ const CheckboxField = ({ title, options, showLabels, formRef }) => {
   return (
     <>
     <fieldset>
-        <legend className={showLabels ? '' : 'sr-only'}>{title}</legend>
+        <legend className={`${styles.legend} ${showLabels ? '' : 'sr-only'}`}>{title}</legend>
         {options 
         ? options.map((option, index) => (
             <label key={index} htmlFor={uid + index}>

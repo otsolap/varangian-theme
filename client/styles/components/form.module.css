@@ -1,14 +1,74 @@
 .form {
-  /* Add styles for .form here if needed */
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--single);
 }
 
-.inputWrapper {
+/* Header */
+.header {
   display: flex;
   flex-direction: column;
   gap: var(--single);
+  padding-bottom: var(--double);
 }
+
+/* Wrapper */
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--single);
+}
+
+/* Image Container */
+.imageContainer {
+  display: none;
+}
+
+/* Content */
+.content {
+  max-width: 100%;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: var(--quarter);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 
 /* Desktop Styles */
 @media (width >= 1440px) {
-  /* Add desktop-specific styles for .form or other elements here if needed */
+  .form {
+    padding-top: var(--double);
+    margin-bottom: var(--double);
+    max-width: var(--container-desktop);
+  }
+
+  .header {
+    max-width: var(--container-ipad-landscape);
+    flex: 0 0 50%;
+  }
+
+  .wrapper {
+    flex-direction: row;
+    gap: var(--double);
+  }
+
+  .imageContainer,
+  .content {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+
+  .imageContainer {
+    display: block;
+  }
+
+  .image {
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+
 }

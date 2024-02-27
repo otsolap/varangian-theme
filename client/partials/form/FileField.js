@@ -8,7 +8,7 @@ const FileField = ({ name, description, showLabels, required, formRef }) => {
 
   return (
     <>
-    <label htmlFor={uid} className={showLabels ? '' : 'sr-only'}>{description}</label>
+    <label htmlFor={uid} className={`${styles.label} ${showLabels ? '' : 'sr-only'}`}>{description}</label>
     <input
     type='file'
     id={uid}
@@ -16,6 +16,7 @@ const FileField = ({ name, description, showLabels, required, formRef }) => {
     required={required ? true : null}
     ref={formRef}
     accept=".jpg, .jpeg, .png, .webp, .pdf"
+    className={styles.input}
     />
     </>
   )

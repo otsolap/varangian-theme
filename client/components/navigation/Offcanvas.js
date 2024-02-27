@@ -9,7 +9,7 @@ const Offcanvas = ({ navigation, show, closeModal }) => {
     const [isBrowser, setIsBrowswer] = useToggle(false);
     const router = useRouter();
     const global = navigation && navigation.data ? navigation.data.attributes : {};
-    const AFTER_PRIMARY_PAGES = 4;
+    const AFTER_PRIMARY_PAGES = 3;
     let OffcanvasLinks = null;
 
     useEffect(() => {
