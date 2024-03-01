@@ -17,7 +17,9 @@ import { fetchGlobalData } from "@/utils/index"
 export const GlobalContext = createContext({
   globalData: {}, 
   blogNavigation: null,
-  setBlogNavigation: () => {}
+  setBlogNavigation: () => {},
+  servicesNavigation: null,
+  setServicesNavigation: () => {}
 })
 
 // Analytics Tag Manager
@@ -25,6 +27,7 @@ import AnalyticsTagManager from "@/components/util/AnalyticsTagManager"
 
 function MyApp({ Component, pageProps }) {
   const [blogNavigation, setBlogNavigation] = useState(null);
+  const [servicesNavigation, setServicesNavigation] = useState(null);
   const [metaData, setMetaData] = useState(null);
   
   // extracting necessary data
@@ -38,7 +41,9 @@ function MyApp({ Component, pageProps }) {
     setMetaData,
     globalData: global,
     blogNavigation,
-    setBlogNavigation
+    setBlogNavigation,
+    servicesNavigation,
+    setServicesNavigation
   };
 
   return (

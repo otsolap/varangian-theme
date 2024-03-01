@@ -5,18 +5,23 @@ import { getStrapiURL } from "utils"
 import Blocks from "@/components/Blocks";
 import config from '@/utils/config'
 
-const Service = ({ service  }) => {
-  const { setMetaData,  } = useContext(GlobalContext);
+const Service = ({ service, servicesNavigation  }) => {
+  const { setMetaData, setServicesNavigation  } = useContext(GlobalContext);
 
   useEffect(() => {
     setMetaData({
       metaData: service.seo,
     });
+
+    setServicesNavigation({
+      title: service.title,
+    });
   
     return () => {
       setMetaData(null); 
+      setServicesNavigation(null);
     };
-  }, [service, setMetaData]);
+  }, [service, setMetaData, servicesNavigation, setServicesNavigation]);
 
   return (
      <Blocks blocks={service.blocks} />

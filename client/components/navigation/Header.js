@@ -3,11 +3,12 @@ import { GlobalContext } from '@/pages/_app';
 import styles from "@/styles/components/header.module.css";
 import Blocks from "@/components/Blocks";
 import ArticleNavigation from 'partials/article/ArticleNavigation';
+import ServicesNavigation from 'partials/services/ServicesNavigation';
 import CustomLink from "@/partials/util/CustomLink";
 
 
 const Header = ({ navigation }) => {
-  const {  blogNavigation } = useContext(GlobalContext);
+  const {  blogNavigation, servicesNavigation } = useContext(GlobalContext);
   const global = navigation && navigation.data ? navigation.data.attributes : {};
   const brand = { href: '/', title: global ? global.title : {} };
 
@@ -48,7 +49,13 @@ const Header = ({ navigation }) => {
               />
               ) : null}
             </>
-          ) : global.blocks && (
+          ) : servicesNavigation ? (
+            <>
+              <div className={styles.menu}>
+                <ServicesNavigation {...servicesNavigation} />
+              </div>
+            </>
+           ) : global.blocks && (
             <>
               <div className={styles.menu}>
                 <Blocks blocks={global.blocks} />
