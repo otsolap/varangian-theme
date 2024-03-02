@@ -14,13 +14,11 @@
       "type": "string"
     },
     "icon": {
-      "type": "enumeration",
-      "enum": [
-        "bullseye",
-        "node",
-        "cube",
-        "pen"
-      ]
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

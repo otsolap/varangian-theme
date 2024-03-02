@@ -9,6 +9,9 @@
     cursor: pointer;
     flex: 0 0 calc(100% / 4);
     max-width: calc(100% / 4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .link:hover,
@@ -20,10 +23,16 @@
     color: var(--brand-700);
 }
 
-.icon {
-  margin-top: var(--spacing-three-quarters);
+.iconContainer {
+  position: relative;
   height: 1.875rem;
   width: 1.875rem;
+}
+
+.icon {
+  margin-top: var(--spacing-three-quarters);
+  height: 100%;
+  width: 100%;
 }
 
 .text {

@@ -437,7 +437,7 @@ export interface UtilMenuItem extends Schema.Component {
   attributes: {
     href: Attribute.Text & Attribute.Required;
     title: Attribute.String;
-    icon: Attribute.Enumeration<['bullseye', 'node', 'cube', 'pen']>;
+    icon: Attribute.Media;
   };
 }
 
