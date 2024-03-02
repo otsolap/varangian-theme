@@ -13,12 +13,19 @@
   "pluginOptions": {},
   "attributes": {
     "formID": {
-      "type": "uid"
+      "type": "uid",
+      "required": true
     },
     "email": {
       "type": "component",
       "repeatable": false,
       "component": "form-inputs.email-field"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

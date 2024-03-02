@@ -1433,8 +1433,10 @@ export interface ApiSubscribeFormSubscribeForm extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    formID: Attribute.UID;
+    formID: Attribute.UID & Attribute.Required;
     email: Attribute.Component<'form-inputs.email-field'>;
+    title: Attribute.String;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

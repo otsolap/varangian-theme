@@ -102,6 +102,17 @@
   border: 1px solid rgba(4, 43, 96, 0.25);
 }
 
+/* Subscribe Form Util classes */
+.inputWrapper.row{
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer.paddingZero {
+  padding: 0;
+}
+
+
 /* Desktop Styles */
 @media (width >= 1440px) {
   

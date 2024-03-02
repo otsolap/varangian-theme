@@ -5,7 +5,7 @@ import { useRouter } from "next/router"
 import { getPageData, getAllPageSlugs, fetchServicesBannerData, fetchSubscribeFormData } from "@/utils/index"
 import Blocks from "@/components/Blocks"
 import Banner from "@/components/blocks/Banner"
-import FormEmbed from "components/blocks/FormEmbed";
+import SubscribeForm from "components/blocks/SubscribeForm";
 import axios from 'axios'
 import ErrorPage from "next/error"
 import config from '@/utils/config';
@@ -39,7 +39,7 @@ const DynamicPage = ({ metaData, pageData, showServicesBanner, servicesBannerDat
     <>
       <Blocks blocks={blocks} />
       {showServicesBanner && <Banner {...servicesBanner} />}
-      {showSubscribeForm && <FormEmbed {...subscribeForm} />}
+      {showSubscribeForm && <SubscribeForm {...subscribeForm} />}
     </>
   )
 }
