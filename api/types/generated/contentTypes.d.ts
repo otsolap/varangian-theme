@@ -1210,6 +1210,38 @@ export interface ApiNewsletterBannerNewsletterBanner extends Schema.SingleType {
   };
 }
 
+export interface ApiNotFoundNotFound extends Schema.SingleType {
+  collectionName: 'not_founds';
+  info: {
+    singularName: 'not-found';
+    pluralName: 'not-founds';
+    displayName: 'NotFound';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    buttons: Attribute.Component<'partials.button', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::not-found.not-found',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::not-found.not-found',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -1517,6 +1549,7 @@ declare module '@strapi/types' {
       'api::form.form': ApiFormForm;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::newsletter-banner.newsletter-banner': ApiNewsletterBannerNewsletterBanner;
+      'api::not-found.not-found': ApiNotFoundNotFound;
       'api::page.page': ApiPagePage;
       'api::service.service': ApiServiceService;
       'api::service-archive-page.service-archive-page': ApiServiceArchivePageServiceArchivePage;

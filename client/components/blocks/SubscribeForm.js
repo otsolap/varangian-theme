@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import axios from 'axios'
 import styles from '@/styles/components/form.module.css'
 import config from '@/utils/config'
@@ -7,6 +7,8 @@ import EmailField from 'partials/form/EmailField';
 
 
 const FormEmbed = ({ title, description, email, formID }) => {
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const formRef = useRef(null)
 
   if (!formID) {
@@ -40,16 +42,13 @@ const FormEmbed = ({ title, description, email, formID }) => {
 
     axios.post(getStrapiURL(`/${config.forms.SUBSCRIPTION_PATH}`), data, { headers })
       .then((response) => {
-       // Handle successful response
        console.log(response.data)
+       setSuccessMessage("Subscription successful! Please check your email to confirm your subscription.")
       })
       .catch((error) => {
-        const errorMessage =
-          error.response?.data?.error?.message || 'Unknown error. Blame your internet.'
+        const errorMessage = error.response?.data?.error?.message || 'Unknown error. Blame your internet.'
         console.log(errorMessage)
-      })
-      .finally(() => {
-        // Any final cleanup or logic after the request
+        setErrorMessage('Email failed to submit. Please try again in a few moments.')
       })
   }
 
@@ -69,18 +68,25 @@ const FormEmbed = ({ title, description, email, formID }) => {
                 {description && <p>{description}</p>}
              </header>
               <div className={`${styles.inputWrapper} ${styles.row}`}>
+                  {successMessage ? (
+                    <p>{successMessage}</p>
+                  ) : (
+                    <>
                     <input type="hidden" value="" name="honeypot" />
                     <EmailField 
                         formRef={formRef} 
                         placeholder={email.placeholder}
                         required={email.required}
                     />
-                <footer className={`${styles.footer} ${styles.paddingZero}`}>
-                    <button type="submit" value="submit" className={`button button--primary`} >
-                    Subscribe
-                    </button>
-                </footer>
+                    <footer className={`${styles.footer} ${styles.paddingZero}`}>
+                        <button type="submit" value="submit" className={`button button--primary`} >
+                           Subscribe
+                        </button>
+                    </footer>
+                    </>
+                  )}
               </div>
+              {errorMessage &&  <p><strong>{errorMessage}</strong></p>}
             </form>
           </div>
         ) : null}

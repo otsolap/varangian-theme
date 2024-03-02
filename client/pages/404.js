@@ -1,19 +1,54 @@
 import styles from '@/styles/pages/error.module.css'
-import Link from "next/link";
+import MarkdownBlock from "@/partials/util/MarkdownBlock";
+import CustomLink from "partials/util/CustomLink";
+import { getStrapiURL } from "@/utils/index"
+import axios from "axios"
+import config from '@/utils/config'
 
-export default function Custom404() {
+const Custom404 = ({ title, description, buttons}) => {
     return (
         <section>
-            <header className={styles.padding}>
-                <h1>404 - Page Not Found</h1>
+            <header>
+               {title && <h1>{title}</h1>}
             </header>
-            <article className={styles.padding}>
-                <p>Unfortunately, the page you were looking for cannot be found &ndash; it might have been moved or deleted. If you typed the address directly into the browser&apos;s address bar, you might want to double-check to make sure that no typing errors have slipped in.</p>
-                <p>Links that could help you track down the content you&apos;re looking for:</p>
-                <div className={styles.buttonWrapper}>
-                    <Link className={'button button--primary'} href="/">Home</Link>
-                </div>
-            </article>
+            {description && <MarkdownBlock markdown={description} />}
+            {buttons && (
+              <div className={styles.buttonWrapper}>
+                {buttons.map((button, i) => (
+                  <CustomLink link={button} key={i} className={`button button--${button.selectTheme}`} />
+                ))}
+              </div>
+            )}
         </section>
     )
   }
+
+export async function getStaticProps() {
+    try {
+      const response = await axios.get(getStrapiURL(`/${config.global.API_NOT_FOUND_QUERY}`));
+  
+      if (!response.data) {
+        throw new Error('Failed to fetch API data')
+      }
+
+      return {
+        props: {
+            title: response.data.data.attributes.title ?? {},
+            description: response.data.data.attributes.description ?? {},
+            buttons: response.data.data.attributes.buttons ?? {},
+        },
+      }
+    } catch (error) {
+      console.error('Error fetching not-found data:', error);
+  
+      return {
+        props: {
+            title: "404 - Page Not Found",
+            description:"Unfortunately, the page you were looking for cannot be found it might have been moved or deleted. If you typed the address directly into the browsers address bar, you might want to double-check to make sure that no typing errors have slipped in.\n\nLinks that could help you track down the content you're looking for",
+            buttons: [{"id":20,"href":"/","title":"Home","isExternal":false,"target":null,"selectTheme":"primary"}],
+        },
+      }
+    }
+  }
+  
+  export default Custom404

@@ -1,7 +1,6 @@
-.padding {
-    padding: var(--single);
-}
 
 .buttonWrapper {
     display: flex;
+    flex-wrap: wrap;
+    gap: var(--single);
 }

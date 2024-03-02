@@ -6,7 +6,8 @@
         "API_SUBSCRIBE_FORM_QUERY": "api/subscribe-form?=&populate=formID,email",
         "API_NEWSLETTER_BANNER_QUERY":"api/newsletter-banner?=&populate=button,image,",
         "API_FOOTER_QUERY":"api/footer?=&populate=blocks,blocks.image,image,blocks.links,blocks.socialMedia,blocks.blogAnchors,blocks.blogAnchors.blogs,subFooter,subFooter.link",
-        "API_BASE_SEO_QUERY":"api/base-seo?populate=seo,seo.imageBlock.image"
+        "API_BASE_SEO_QUERY":"api/base-seo?populate=seo,seo.imageBlock.image",
+        "API_NOT_FOUND_QUERY": "api/not-found?populate=title,description,buttons"
     },
     "blocks": {
         "CONTENT_BLOG_SECTION_LATEST_QUERY":"api/articles?sort=createdAt%3Adesc&pagination[start]=0&pagination[limit]=3&populate=image,category",
