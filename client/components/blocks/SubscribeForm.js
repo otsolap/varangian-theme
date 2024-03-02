@@ -18,21 +18,12 @@ const FormEmbed = ({ title, description, email, formID }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const formData = {}
-
     if(e.target.honeypot.value !== "") {
       // Form submission was likely by a bot
       return
     }
 
-    formRef.current.querySelectorAll('input').forEach(input => {
-      const name = input.name
-      const value = input.value 
-
-      if(name !== 'honeypot')  { 
-          formData[name] = value
-        }
-    })
+    const subscriptionEmail = formRef.current.querySelector('input[name="email"]').value;
 
     const headers = {
       Authorization: `Bearer ${token}`
@@ -41,7 +32,7 @@ const FormEmbed = ({ title, description, email, formID }) => {
     const data = {
       data: {
         subscribeFormId: formID,
-        email: formData['email'],
+        email: subscriptionEmail,
       }
     }
 
@@ -51,7 +42,6 @@ const FormEmbed = ({ title, description, email, formID }) => {
       .then((response) => {
        // Handle successful response
        console.log(response.data)
-       console.log('we did it reddit!')
       })
       .catch((error) => {
         const errorMessage =
