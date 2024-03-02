@@ -31,15 +31,15 @@
     --error-100: #FF867C;
 
     /* Spacing */
-    --quarter: .25rem;
-    --half: .5rem;
-    --three-quarters: .75rem;
-    --single: 1rem;
-    --single-half: 1.5rem;
-    --single-quarter: 1.25rem;
-    --double: 2rem;
-    --double-half: 2.5rem;
-    --triple: 3rem;
-    --quadruple: 4rem;
-    --quintuple: 5rem;
+    --spacing-quarter: .25rem;
+    --spacing-half: .5rem;
+    --spacing-three-quarters: .75rem;
+    --spacing-single: 1rem;
+    --spacing-single-half: 1.5rem;
+    --spacing-single-quarter: 1.25rem;
+    --spacing-double: 2rem;
+    --spacing-double-half: 2.5rem;
+    --spacing-triple: 3rem;
+    --spacing-quadruple: 4rem;
+    --spacing-quintuple: 5rem;
 }

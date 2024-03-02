@@ -6,7 +6,7 @@
 .imageBlock {
     width: 320px;
     position: relative;
-    padding: var(--single);
+    padding: var(--spacing-single);
 }
 
 .image {
@@ -18,7 +18,7 @@
 
 .caption {
     font-style: italic;
-    font-size: var(--three-quarters);
+    font-size: var(--spacing-three-quarters);
     text-align: center;
 }
 

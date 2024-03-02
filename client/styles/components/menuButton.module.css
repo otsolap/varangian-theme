@@ -1,8 +1,8 @@
 .toggle {
     color: var(--text-900);
     position: relative;
-    width: var(--quintuple);
-    height: var(--quadruple);
+    width: var(--spacing-quintuple);
+    height: var(--spacing-quadruple);
     text-align: center;
     z-index: 10;
     cursor: pointer;
@@ -18,7 +18,7 @@
 }
 
 .icon {
-  margin-top: var(--three-quarters);
+  margin-top: var(--spacing-three-quarters);
   height: 1.875rem;
   width: 1.875rem;
 }
@@ -27,6 +27,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  font-size: var(--three-quarters);
+  font-size: var(--spacing-three-quarters);
   line-height: 1.625;
 }

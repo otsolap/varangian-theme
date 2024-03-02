@@ -46,7 +46,7 @@
 }
 
 .content {
-  padding: var(--single);
+  padding: var(--spacing-single);
 
   *:not(a):not(.button) {
     text-shadow: 1px 1px 2px var(--background-900);
@@ -55,21 +55,19 @@
 }
 
 .content h1 {
-  font-size: var(--triple);
+  font-size: var(--spacing-triple);
 }
 
 .content h3 {
-  font-size: var(--single);
+  font-size: var(--spacing-single);
   font-weight: 500;
 }
-
-
 
 .buttonWrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: var(--single);
+  gap: var(--spacing-single);
 }
 
 /* Tablet Styles */
@@ -87,7 +85,7 @@
   }
 
   .content {
-    padding: var(--double);
+    padding: var(--spacing-double);
   }
 
   .mediaContainer {
@@ -140,12 +138,12 @@
 
   .content h1 {
     font-size: 3.5rem;
-    padding-bottom: var(--single);
+    padding-bottom: var(--spacing-single);
   }
 
   .content h3 {
-    font-size: var(--single-half);
-    padding-bottom: var(--single);
+    font-size: var(--spacing-single-half);
+    padding-bottom: var(--spacing-single);
 
   }
 

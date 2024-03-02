@@ -4,11 +4,11 @@
     max-width: var(--container-ipad);
     display: flex;
     flex-direction: column;
-    padding: var(--single);
+    padding: var(--spacing-single);
 }
 
 .quote {
-    margin: var(--single);
+    margin: var(--spacing-single);
     font-style: italic;
 }
 
@@ -29,11 +29,11 @@
 @media (width >= 768px) {
 
     .quote {
-        font-size: var(--single)
+        font-size: var(--spacing-single)
     }
 
     .quotationMark {
-        max-width: var(--single-half); 
+        max-width: var(--spacing-single-half); 
     }
     
 

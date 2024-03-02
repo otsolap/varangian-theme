@@ -1,18 +1,18 @@
 .shareButtons {
-    padding: var(--single);
+    padding: var(--spacing-single);
     color: var(text-900);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--single);
+    gap: var(--spacing-single);
 }
 
 .wrapper {
     display: flex;
     flex-direction: row;
-    gap: var(--single-half);
+    gap: var(--spacing-single-half);
 }
 
 .title {
@@ -22,8 +22,8 @@
 .icon {
     width: 100%;
     height: auto;
-    max-width: var(--double);
-    max-height: var(--double);
+    max-width: var(--spacing-double);
+    max-height: var(--spacing-double);
     color: inherit;
 }
 

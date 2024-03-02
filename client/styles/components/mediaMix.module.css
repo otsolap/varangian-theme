@@ -10,11 +10,11 @@
 }
 
 .mediaMixColumn {
-  padding: var(--single);
+  padding: var(--spacing-single);
 }
 
 .wrapper {
-  gap: var(--single);
+  gap: var(--spacing-single);
 }
 
 .imageContainer,
@@ -25,10 +25,10 @@
 }
 
 .image {
-  border-radius: var(--quarter);
+  border-radius: var(--spacing-quarter);
   width: inherit;
   height: inherit;
-  box-shadow: var(--half) var(--half) 0px 0px var(--brand-500);
+  box-shadow: var(--spacing-half) var(--spacing-half) 0px 0px var(--brand-500);
   aspect-ratio: 16/9;
   object-fit: cover;
 }
@@ -36,7 +36,7 @@
 .videoContainer {
   z-index: 30;
   width: 320px;
-  padding: var(--single);
+  padding: var(--spacing-single);
 }
 
 /* Tablet Styles */
@@ -52,7 +52,7 @@
   }
 
   .image {
-    box-shadow: var(--single) var(--single) 0px 0px var(--brand-500);
+    box-shadow: var(--spacing-single) var(--spacing-single) 0px 0px var(--brand-500);
   }
 }
 

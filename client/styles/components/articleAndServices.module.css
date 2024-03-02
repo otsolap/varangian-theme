@@ -8,23 +8,23 @@
 
 .header {
     color: var(--text-900);
-    padding-bottom: var(--double);
+    padding-bottom: var(--spacing-double);
     display: flex;
     flex-direction: column;
-    gap: var(--single);
-    padding: var(--single);
+    gap: var(--spacing-single);
+    padding: var(--spacing-single);
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--single);
-    padding: var(--single);
+    gap: var(--spacing-single);
+    padding: var(--spacing-single);
     flex-wrap: wrap;
 }
 
 .linkWrapper {
-    padding: var(--single);
+    padding: var(--spacing-single);
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -46,7 +46,7 @@
 .item {
     display: flex;
     flex-direction: column;
-    border-radius: var(--quarter);
+    border-radius: var(--spacing-quarter);
     align-items: flex-start;
     border: 1px solid var(--text-900);
     color: var(--text-900);
@@ -100,7 +100,7 @@
 .title,
 .description,
 .footer {
-    padding: var(--half) var(--single);
+    padding: var(--half) var(--spacing-single);
 }
 
 .title {
@@ -136,7 +136,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: var(--single);
+    padding: var(--spacing-single);
 
     .category {
         margin-bottom: initial;
@@ -146,15 +146,15 @@
 .price {
     display: flex;
     flex-direction: row;
-    gap: var(--quarter);
+    gap: var(--spacing-quarter);
     align-items: center;
 }
 
 .currency {
     background-size: cover; 
     display: inline-block;
-    height: var(--single);
-    width: var(--single);
+    height: var(--spacing-single);
+    width: var(--spacing-single);
 }
 
 /* Tablet Styles */
@@ -165,7 +165,7 @@
 
     .item {
         max-width: calc(100% / 3);
-        flex: 0 0 calc(33.333% - var(--single));
+        flex: 0 0 calc(33.333% - var(--spacing-single));
     }
 
     .linkWrapper,
@@ -187,6 +187,6 @@
 
     .item {
         max-width: calc(100% / 3);
-        flex: 0 0 calc(33.333% - var(--double));
+        flex: 0 0 calc(33.333% - var(--spacing-double));
     }
 }

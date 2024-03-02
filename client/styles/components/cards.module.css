@@ -1,7 +1,7 @@
 .cards {
   margin: 0 auto;
   width: 100%;
-  padding: var(--single);
+  padding: var(--spacing-single);
 }
 
 .header,
@@ -11,12 +11,12 @@
 }
 
 .header {
-  gap: var(--single);
-  padding-bottom: var(--double);
+  gap: var(--spacing-single);
+  padding-bottom: var(--spacing-double);
 }
 
 .wrapper {
-  gap: var(--single);
+  gap: var(--spacing-single);
   flex-wrap: wrap;
 }
 
@@ -25,7 +25,7 @@
   flex-direction: column;
   border-radius: var(--quarter);
   border: 1px solid var(--text-900);
-  padding: var(--single);
+  padding: var(--spacing-single);
   width: 100%;
   align-items: center;
   color: var(--text-900);
@@ -47,8 +47,8 @@
 
 .imageContainer {
   position: relative;
-  margin-top: var(--single);
-  margin-bottom: var(--double);
+  margin-top: var(--spacing-single);
+  margin-bottom: var(--spacing-double);
 }
 
 .image {
@@ -58,7 +58,7 @@
 .title {
   color: var(--text-900);
   font-weight: 600;
-  padding-bottom: var(--single);
+  padding-bottom: var(--spacing-single);
   text-align: center;
 }
 
@@ -71,7 +71,7 @@
 
   .card {
       max-width: 50%;
-      flex: 0 0 calc(50% - var(--single));
+      flex: 0 0 calc(50% - var(--spacing-single));
   }
 }
 
@@ -84,17 +84,17 @@
   }
 
   .cards {
-    padding-top: var(--double);
-    padding-bottom: var(--double);
+    padding-top: var(--spacing-double);
+    padding-bottom: var(--spacing-double);
     max-width: var(--container-desktop);
   }
 
   .wrapper {
-    gap: var(--double);
+    gap: var(--spacing-double);
   }
 
   .card {
     max-width: calc(100% / 4);
-    flex: 0 0 calc(25% - var(--double));
+    flex: 0 0 calc(25% - var(--spacing-double));
   }
 }

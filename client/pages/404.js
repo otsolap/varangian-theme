@@ -45,7 +45,7 @@ export async function getStaticProps() {
         props: {
             title: "404 - Page Not Found",
             description:"Unfortunately, the page you were looking for cannot be found it might have been moved or deleted. If you typed the address directly into the browsers address bar, you might want to double-check to make sure that no typing errors have slipped in.\n\nLinks that could help you track down the content you're looking for",
-            buttons: [{"id":20,"href":"/","title":"Home","isExternal":false,"target":null,"selectTheme":"primary"}],
+            buttons: [{"href":"/","title":"Home","isExternal":false,"target":null,"selectTheme":"primary"}],
         },
       }
     }

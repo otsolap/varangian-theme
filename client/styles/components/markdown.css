@@ -5,7 +5,7 @@
 .markdown article h5,
 .markdown article h6,
 .markdown article p {
-  margin-bottom: var(--single);
+  margin-bottom: var(--spacing-single);
 }
 
 .markdown article p strong {
@@ -13,12 +13,12 @@
 }
 
 .markdown article p {
-  padding-bottom: var(--half);
+  padding-bottom: var(--spacing-half);
 }
 
 .markdown article ul,
 .markdown article ol {
-  padding-left: var(--single);
+  padding-left: var(--spacing-single);
 }
 
 .markdown article ul li,
@@ -29,7 +29,7 @@
 
 .markdown article li:has(strong) {
   list-style-image: url("/images/circle-check.svg");
-  padding-left: var(--half);
+  padding-left: var(--spacing-half);
 }
 
 .markdown article li:has(strong) path {
@@ -43,7 +43,7 @@
   width: 100%;
   max-width: 350px;
   max-height: 350px;
-  border-radius: var(--single);
+  border-radius: var(--spacing-single);
 }
 
 .markdown article a {
@@ -56,7 +56,7 @@
 .markdown article a:hover,
 .markdown article a:focus {
   text-decoration: underline;
-  text-underline-offset: var(--half);
+  text-underline-offset: var(--spacing-half);
 }
 
 /* Tablet Styles */
@@ -64,7 +64,7 @@
 
   .markdown article ul,
   .markdown article ol {
-    padding-left: var(--double);
+    padding-left: var(--spacing-double);
   }
 
   .markdown article img {

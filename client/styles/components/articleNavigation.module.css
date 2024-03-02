@@ -3,7 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--double);
+    gap: var(--spacing-double);
 }
 
 .title {

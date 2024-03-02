@@ -1,7 +1,7 @@
 .videoContainer {
     height: 250px;
     width: 100%;
-    margin: var(--half) 0;
+    margin: var(--spacing-half) 0;
 }
 
 /* Tablet Styles */

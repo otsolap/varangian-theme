@@ -1,16 +1,16 @@
 .socialWrapper {
-  padding: var(--half) 0;
+  padding: var(--spacing-half) 0;
 }
 
 .socialIcon {
-  width: var(--single);
+  width: var(--spacing-single);
 }
 
 .someLink {
   display: flex;
   flex-direction: row;
-  gap: var(--single);
-  font-size: var(--single);
+  gap: var(--spacing-single);
+  font-size: var(--spacing-single);
   transition: all .6s cubic-bezier(.4,0,.2,1);
 }
 
@@ -25,7 +25,7 @@
   border: 0px solid;
   cursor: pointer;
   margin-left: auto;
-  margin-right: var(--single);
+  margin-right: var(--spacing-single);
   width: 0.875rem;
   line-height: 2.25rem;
 }
@@ -34,7 +34,7 @@
 @media (width >= 1440px) {
 
   .socialIcon {
-    width: var(--double);
+    width: var(--spacing-double);
   }
 
   .someLink {

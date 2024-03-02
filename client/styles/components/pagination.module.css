@@ -1,8 +1,8 @@
 .pagination {
     width: 100%;
-    padding-top: var(--single);
-    padding-bottom: var(--single);
-    gap: var(--single);
+    padding-top: var(--spacing-single);
+    padding-bottom: var(--spacing-single);
+    gap: var(--spacing-single);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,9 +11,9 @@
 
 .item {
     text-align: center;
-    width: var(--double-half);
-    height: var(--double-half);
-    font-size: var(--single-quarter);
+    width: var(--spacing-double-half);
+    height: var(--spacing-double-half);
+    font-size: var(--spacing-single-quarter);
     line-height: 1.75;
     color: var(--text-900);
     background-color: var(--brand-700);

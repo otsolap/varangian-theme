@@ -1,22 +1,22 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-hind-guntur);
-  margin-bottom: var(--single);
+  margin-bottom: var(--spacing-single);
 }
 
 h1, .h1 {
-  font-size: var(--double-half);
+  font-size: var(--spacing-double-half);
 }
 h2, .h2 {
-  font-size: var(--double);
+  font-size: var(--spacing-double);
 }
 h3, .h3 {
-  font-size: var(--single-half);
+  font-size: var(--spacing-single-half);
 }
 h4, .h4 {
-  font-size: var(--single-quarter);
+  font-size: var(--spacing-single-quarter);
 }
 h5, .h5 {
-  font-size: var(--single);
+  font-size: var(--spacing-single);
 }
 
 /* Text Elements */

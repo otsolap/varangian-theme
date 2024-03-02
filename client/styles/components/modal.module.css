@@ -7,14 +7,14 @@
 
 .header {
     display: flex;
-    padding: var(--single); 
+    padding: var(--spacing-single); 
     justify-content: flex-end; 
 }
 
 .content {
     display: flex;
     position: relative; 
-    padding: var(--single);  
+    padding: var(--spacing-single);  
     justify-content: center; 
     align-content: center; 
     width: 100%; 
@@ -33,7 +33,7 @@
     padding: 0.375rem var(--three-quarters);
     display: flex;
     justify-content: center;
-    border-radius: var(--single);
+    border-radius: var(--spacing-single);
   }
   
   .button:hover,

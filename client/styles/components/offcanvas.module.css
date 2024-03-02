@@ -8,7 +8,7 @@
     justify-content: flex-start;
     height: 100%;
     width: 100%;
-    padding-top: var(--quintuple);
+    padding-top: var(--spacing-quintuple);
 }
 
 .content {
@@ -18,9 +18,9 @@
 }
 
 .linkWrapper {
-    padding-top: var(--single);
-    padding-bottom: var(--single);
-    padding-left: var(--triple);
+    padding-top: var(--spacing-single);
+    padding-bottom: var(--spacing-single);
+    padding-left: var(--spacing-triple);
     list-style: none;
     border-bottom: 2px solid var(--text-900);
 }

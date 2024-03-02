@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: var(--double) var(--single);
+    padding: var(--spacing-double) var(--spacing-single);
     background-color: var(--background-300);
 }
 
@@ -35,7 +35,7 @@
 
 .category,
 .description {
-    font-size: var(--single);
+    font-size: var(--spacing-single);
 }
 
 .description {
@@ -43,7 +43,7 @@
 }
 
 .author {
-    gap: var(--single);
+    gap: var(--spacing-single);
     flex-direction: row;
 }
 
@@ -52,12 +52,12 @@
 }
 
 .authorTitle {
-    font-size: var(--single-quarter);
+    font-size: var(--spacing-single-quarter);
     margin-bottom: initial;
 }
 
 .authorSubtitle {
-    font-size: var(--three-quarters);
+    font-size: var(--spacing-three-quarters);
 }
 
 .authorImageContainer,
@@ -66,8 +66,8 @@
 }
 
 .authorImage {
-    height: var(--quintuple);
-    width: var(--quintuple);
+    height: var(--spacing-quintuple);
+    width: var(--spacing-quintuple);
     border-radius: 100%;
 }
 
@@ -77,11 +77,11 @@
 }
 
 .image {
-    border-radius: var(--quarter);
+    border-radius: var(--spacing-quarter);
     height: inherit;
     width: inherit;
     object-fit: cover;
-    box-shadow: var(--three-quarters) var(--three-quarters) 0px 0px var(--brand-500);
+    box-shadow: var(--spacing-three-quarters) var(--spacing-three-quarters) 0px 0px var(--brand-500);
     aspect-ratio: 16/9;
 }
 
@@ -100,17 +100,17 @@
     }
 
     .title {
-        font-size: var(--double-half);
+        font-size: var(--spacing-double-half);
     }
 
     .category,
     .authorSubtitle {
-        font-size: var(--single-quarter);
+        font-size: var(--spacing-single-quarter);
     }
 
     .description,
     .authorTitle {
-        font-size: var(--single-half);
+        font-size: var(--spacing-single-half);
     }
 
     .imageContainer {
@@ -118,18 +118,18 @@
     }
 
     .image {
-        box-shadow: var(--single) var(--single) 0px 0px var(--brand-500);
+        box-shadow: var(--spacing-single) var(--spacing-single) 0px 0px var(--brand-500);
     }
 }
 
 /* Desktop Styles */
 @media (width >= 1440px) {
     .header {
-        padding: var(--triple) var(--single);
+        padding: var(--spacing-triple) var(--spacing-single);
     }
 
     .lead {
-        padding-left: var(--double);
+        padding-left: var(--spacing-double);
     }
 
     .imageContainer {

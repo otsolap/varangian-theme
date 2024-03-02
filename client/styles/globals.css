@@ -29,15 +29,15 @@ main {
 }
 
 section {
-  padding-top: var(--double);
-  margin-bottom: var(--double);
+  padding-top: var(--spacing-double);
+  margin-bottom: var(--spacing-double);
 }
 
 .youtube {
-    border: var(--quarter);
+    border: var(--spacing-quarter);
     width: 100%;
     height: 100%;
-    padding: var(--single);
+    padding: var(--spacing-single);
 }
 
 .mobile-only {
@@ -59,14 +59,14 @@ section {
     }
 
     section {
-      padding-top: var(--triple);
-      padding-bottom: var(--triple);
-      margin-bottom: var(--triple);
+      padding-top: var(--spacing-triple);
+      padding-bottom: var(--spacing-triple);
+      margin-bottom: var(--spacing-triple);
     }
 
     #post section {
-      padding-top: var(--single);
-      padding-bottom: var(--single);
-      margin-bottom: var(--single);
+      padding-top: var(--spacing-single);
+      padding-bottom: var(--spacing-single);
+      margin-bottom: var(--spacing-single);
     }
 }

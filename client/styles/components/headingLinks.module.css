@@ -2,17 +2,17 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--single);
+    gap: var(--spacing-single);
 }
 
 .nav {
     background-color: var(--text-900);
-    border-radius: var(--quarter);
+    border-radius: var(--spacing-quarter);
 }
 
 .wrapper {
     color: var(--background-900);
-    padding: var(--single);
+    padding: var(--spacing-single);
 }
 
 .list {
@@ -37,7 +37,7 @@
     }
 
     .wrapper {
-        padding-left: var(--double);
-        padding-right: var(--double);
+        padding-left: var(--spacing-double);
+        padding-right: var(--spacing-double);
     }
 }

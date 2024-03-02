@@ -2,8 +2,8 @@
   margin: 0 auto;
   width: 100%;
   word-wrap: break-word;
-  padding-left: var(--single);
-  padding-right: var(--single);
+  padding-left: var(--spacing-single);
+  padding-right: var(--spacing-single);
 }
 
 /* Desktop Styles */

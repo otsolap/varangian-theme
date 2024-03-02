@@ -2,5 +2,5 @@
 .buttonWrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--single);
+    gap: var(--spacing-single);
 }

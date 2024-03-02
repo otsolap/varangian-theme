@@ -1,11 +1,11 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--single);
+    gap: var(--spacing-single);
 }
 
 .link {
-    font-size: var(--single);
+    font-size: var(--spacing-single);
     transition: all .3s cubic-bezier(.4,0,.2,1);
 }
 
