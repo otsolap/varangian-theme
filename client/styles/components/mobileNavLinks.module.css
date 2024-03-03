@@ -25,14 +25,12 @@
 
 .iconContainer {
   position: relative;
-  height: 1.875rem;
-  width: 1.875rem;
 }
 
 .icon {
   margin-top: var(--spacing-three-quarters);
-  height: 100%;
-  width: 100%;
+  height: 1.875rem;
+  width: 1.875rem;
 }
 
 .text {

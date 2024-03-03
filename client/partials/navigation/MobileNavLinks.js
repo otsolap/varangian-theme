@@ -29,7 +29,7 @@ const MobileNavLinks = ({ blocks, currentPath, closeModal }) => {
                 key={i}
             >
                 {icon ? (
-                <figure className={styles.imageContainer}>
+                <figure className={styles.iconContainer}>
                     <NextImage
                     image={icon}
                     className={styles.icon}
