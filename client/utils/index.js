@@ -91,20 +91,24 @@ import config from '@/utils/config'
       const navigationPromise = axios.get(getStrapiURL(`/${config.global.API_NAVIGATION_QUERY}`));
       const footerPromise = axios.get(getStrapiURL(`/${config.global.API_FOOTER_QUERY}`));
       const baseSEOPromise = axios.get(getStrapiURL(`/${config.global.API_BASE_SEO_QUERY}`));
+      const analyticsPromise = axios.get(getStrapiURL(`/${config.global.API_ANALYTICS_QUERY}`));
 
-      let navigationResponse, footerResponse, baseSEOResponse;
+      let navigationResponse, footerResponse, baseSEOResponse, analyticsResponse;
       try {
-        [navigationResponse, footerResponse, baseSEOResponse] = await Promise.all([navigationPromise, footerPromise, baseSEOPromise]);
+        [navigationResponse, footerResponse, baseSEOResponse, analyticsResponse] = await Promise.all([navigationPromise, footerPromise, baseSEOPromise, analyticsPromise]);
       } catch (error) {
         console.error('Failed to fetch API data:', error);
       }
 
+      const baseSEOData = baseSEOResponse?.data || null;
+      const analyticsData = analyticsResponse?.data || null;
       const navigationData = navigationResponse?.data || null;
       const footerData = footerResponse?.data || null;
-      const baseSEOData = baseSEOResponse?.data || null;
+
 
       const globalData = {
         baseSEO: baseSEOData,
+        analytics: analyticsData,
         navigation: navigationData,
         footer: footerData
       };
@@ -117,7 +121,7 @@ import config from '@/utils/config'
   }
 
   export async function getAllPageSlugs() {
-    const url = getStrapiURL('/api/pages'); // Your API endpoint
+    const url = getStrapiURL(`/${config.global.API_PAGES_QUERY}`);
     try {
       const response = await axios.get(url);
       // Extract and split slugs into segments
@@ -146,7 +150,7 @@ import config from '@/utils/config'
     }
     
     return {
-      data: getStrapiURL(`/api/pages?${config.global.API_CONTENT_QUERY}&filters[slug][$eq]=${slugToReturn}`),
+      data: getStrapiURL(`/${config.global.API_PAGES_QUERY}?${config.global.API_CONTENT_QUERY}&filters[slug][$eq]=${slugToReturn}`),
       slug: slugToReturn,
     }
   }

@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
       `}</style>
       <GlobalContext.Provider value={globalContextValue}>
         <AnalyticsTagManager />
-        <Layout global={global} metadata={metaData}>
+        <Layout metadata={metaData}>
           <Component {...pageProps} />
         </Layout>
       </GlobalContext.Provider>

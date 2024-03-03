@@ -768,6 +768,37 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAnalyticAnalytic extends Schema.SingleType {
+  collectionName: 'analytics';
+  info: {
+    singularName: 'analytic';
+    pluralName: 'analytics';
+    displayName: 'Analytics';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    analyticsTagManagerURL: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::analytic.analytic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::analytic.analytic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Schema.CollectionType {
   collectionName: 'articles';
   info: {
@@ -1537,6 +1568,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::analytic.analytic': ApiAnalyticAnalytic;
       'api::article.article': ApiArticleArticle;
       'api::article-archive-page.article-archive-page': ApiArticleArchivePageArticleArchivePage;
       'api::author.author': ApiAuthorAuthor;
