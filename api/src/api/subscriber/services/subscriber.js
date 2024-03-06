@@ -1,19 +1,9 @@
 'use strict';
 
 /**
- * subscriber router
+ * subscriber service
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
+const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::subscriber.subscriber', [
-  {
-    method: 'POST',
-    path: '/subscribers/webhook/activate',
-    handler: 'subscriber.webhookActivate',
-    config: {
-      policies: [],
-      middlewares: [],
-    },
-  },
-]);
+module.exports = createCoreService('api::subscriber.subscriber');

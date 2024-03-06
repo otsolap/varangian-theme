@@ -1,9 +1,9 @@
 const convertKitCron = require('./cron/convertKit');
 
 module.exports = ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
-  url: 'http://localhost:1337/',
+  host: env('HOST'),
+  port: env.int('PORT'),
+  url: env('PUBLIC_API_URL'),
   app: {
     keys: env.array('APP_KEYS'),
   },
