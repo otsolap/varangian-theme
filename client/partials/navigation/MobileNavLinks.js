@@ -1,7 +1,8 @@
-import { useRouter } from 'next/router';
-import NextImage from "@/partials/util/NextImage";
-import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBullseye, faCircleNodes, faCube, faPenNib } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/styles/components/mobileNavLinks.module.css";
+import { useRouter } from 'next/router';
+import Link from "next/link";
 
 
 const MobileNavLinks = ({ blocks, currentPath, closeModal }) => {
@@ -16,8 +17,17 @@ const MobileNavLinks = ({ blocks, currentPath, closeModal }) => {
         await router.push(href);
     };
 
+    const icons = {
+        bullseye: faBullseye,
+        node: faCircleNodes,
+        cube: faCube,
+        pen: faPenNib,
+    };
+    
+
     return blocks.map((block, i) => {
-        const { href, title, icon } = block;
+        const { href, title } = block;
+        const icon = icons[block.icon];
 
         return (
             <Link
@@ -29,12 +39,11 @@ const MobileNavLinks = ({ blocks, currentPath, closeModal }) => {
                 key={i}
             >
                 {icon ? (
-                <figure className={styles.iconContainer}>
-                    <NextImage
-                    image={icon}
-                    className={styles.icon}
+                    <FontAwesomeIcon
+                        className={styles.icon}
+                        aria-label={title}
+                        icon={icon}
                     />
-                </figure>
                 ) : null}
                 <span className={styles.text}>{title}</span>
             </Link>
