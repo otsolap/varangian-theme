@@ -28,4 +28,10 @@ import Hero from 'varangian-theme/components/blocks/Hero.astro';
 
 `ContactForm` posts to `/api/contact`. `SubscribeForm` posts to `/api/subscribe`. The site provides those routes. Pass `action` to use another path.
 
-The package is private. A site can depend on it with `file:../varangian-theme`.
+The GitHub repo stays private. A site installs it over SSH:
+
+```json
+"varangian-theme": "git+ssh://git@github.com/otsolap/varangian-theme.git#semver:~0.0.1"
+```
+
+`~0.0.1` accepts `0.0.2` and later `0.0.x` tags. Raise the version, commit, and tag `v0.0.2` for the next release. Then run `npm update varangian-theme` in the site.
