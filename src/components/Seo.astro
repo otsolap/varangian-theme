@@ -1,0 +1,58 @@
+---
+interface Props {
+	pageTitle: string;
+	description?: string;
+	robots: string;
+	canonical?: string;
+	siteName: string;
+	locale?: string;
+	imageUrl?: string;
+	imageAlt?: string;
+	imageWidth?: number;
+	imageHeight?: number;
+	twitterSite?: string;
+	jsonLd?: string;
+	sitemapHref?: string;
+}
+
+const {
+	pageTitle,
+	description,
+	robots,
+	canonical,
+	siteName,
+	locale = 'en',
+	imageUrl,
+	imageAlt,
+	imageWidth,
+	imageHeight,
+	twitterSite,
+	jsonLd,
+	sitemapHref = '/sitemap-index.xml',
+} = Astro.props;
+---
+
+<link rel="sitemap" href={sitemapHref} />
+{canonical && <link rel="canonical" href={canonical} />}
+<meta name="robots" content={robots} />
+{description && <meta name="description" content={description} />}
+<title>{pageTitle}</title>
+<meta property="og:title" content={pageTitle} />
+{description && <meta property="og:description" content={description} />}
+{canonical && <meta property="og:url" content={canonical} />}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={locale} />
+{
+	imageUrl && (
+		<>
+			<meta property="og:image" content={imageUrl} />
+			{imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+			{imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+			{imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
+		</>
+	)
+}
+<meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
+{twitterSite && <meta name="twitter:site" content={twitterSite} />}
+{jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}

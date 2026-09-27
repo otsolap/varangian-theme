@@ -1,0 +1,13 @@
+---
+import { icons } from 'virtual:varangian-theme/icons';
+
+interface Props {
+	name?: string;
+	class?: string;
+}
+
+const { name, class: className } = Astro.props;
+const Icon = name ? icons[`/src/assets/images/icons/${name}.svg`]?.default : undefined;
+---
+
+{Icon && <Icon class={className} width="24" height="24" aria-hidden="true" />}
