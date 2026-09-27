@@ -1,6 +1,6 @@
 {
   "name": "varangian-theme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "type": "module",
   "description": "Shared Astro layout, blocks, and styles for Varangian sites.",
@@ -12,7 +12,8 @@
   },
   "files": [
     "integration.mjs",
-    "src"
+    "src",
+    ".grok"
   ],
   "keywords": [
     "astro-component",
