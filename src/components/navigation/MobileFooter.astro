@@ -97,8 +97,8 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 									<svg
 										class="mobile-nav__icon-open"
 										viewBox="0 0 24 24"
-										width="30"
-										height="30"
+										width="1.875rem"
+										height="1.875rem"
 										fill="none"
 										stroke="currentColor"
 										stroke-width="2"
@@ -108,8 +108,8 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 									<svg
 										class="mobile-nav__icon-close"
 										viewBox="0 0 24 24"
-										width="30"
-										height="30"
+										width="1.875rem"
+										height="1.875rem"
 										fill="none"
 										stroke="currentColor"
 										stroke-width="2"
@@ -179,7 +179,7 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 
 <style is:global>
 	.mobile-nav {
-		border-top: 2px solid var(--color-white);
+		border-top: .125rem solid var(--color-white);
 		background-color: var(--color-primary-dark);
 		position: fixed;
 		bottom: 0;
@@ -199,17 +199,17 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 	.mobile-nav__link,
 	.mobile-nav__toggle {
 		background-color: inherit;
-		border: 1px solid transparent;
+		border: .0625rem solid transparent;
 		color: var(--color-white);
 		position: relative;
-		width: var(--spacing-quintuple);
-		height: var(--spacing-quadruple);
+		width: 5rem;
+		height: 4rem;
 		text-align: center;
-		transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: color 150ms cubic-bezier(.4, 0, .2, 1);
 		z-index: 10;
 		cursor: pointer;
-		flex: 0 0 calc(100% / var(--mobile-nav-count, 3));
-		max-width: calc(100% / var(--mobile-nav-count, 3));
+		flex: 0 0 calc(100% / var(--mobile-nav-count));
+		max-width: calc(100% / var(--mobile-nav-count));
 		text-decoration-line: none;
 		font-weight: 700;
 	}
@@ -244,7 +244,7 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 		display: flex;
 		justify-content: center;
 		width: 100%;
-		font-size: 0.75rem;
+		font-size: .75rem;
 		line-height: 1.625;
 	}
 
@@ -259,7 +259,7 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 		height: 100%;
 		width: 100%;
 		padding-top: var(--spacing-quintuple);
-		transition: transform 0.5s ease-in-out;
+		transition: transform .5s ease-in-out;
 		z-index: 5;
 		transform: translateX(100%);
 	}
@@ -282,17 +282,18 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 		padding-bottom: var(--spacing-single);
 		padding-left: var(--spacing-triple);
 		list-style: none;
-		border-bottom: 2px solid var(--color-white);
+		border-bottom: .125rem solid var(--color-white);
 	}
 
 	.mobile-nav__sidebar-link {
 		display: block;
 		color: var(--color-white);
-		font-size: 22px;
+		font-size: 1.375rem;
 		width: inherit;
 		height: inherit;
 	}
 
+	/* Tablet styles */
 	@media (width >= 768px) {
 		.mobile-nav,
 		.mobile-nav__sidebar {

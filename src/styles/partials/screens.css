@@ -1,0 +1,8 @@
+:root {
+	/* Media query widths. Copy the px value into @media. A query cannot read these variables. */
+	--screen-xs: 520px;
+	--screen-sm: 640px;
+	--screen-md: 768px;
+	--screen-lg: 1024px;
+	--screen-xl: 1280px;
+}

@@ -201,27 +201,26 @@ const {
 		display: block;
 		width: 100%;
 		max-width: 100%;
-		height: var(--spacing-triple);
+		height: 3rem;
 		font-size: 1rem;
-		font-family: inherit;
 		color: var(--color-white);
 		background-color: var(--color-primary-dark);
 		border-radius: var(--spacing-quarter);
-		border: 1px solid var(--color-primary-light);
+		border: .0625rem solid var(--color-primary-light);
 		padding: var(--spacing-half) var(--spacing-single);
 	}
 
 	.subscribe-form__input:focus {
-		outline: 2px solid var(--color-secondary);
-		outline-offset: 2px;
+		outline: .125rem solid var(--color-secondary);
+		outline-offset: .125rem;
 	}
 
 	.subscribe-form__honeypot {
 		position: absolute;
-		left: -10000px;
+		left: -625rem;
 		top: auto;
-		width: 1px;
-		height: 1px;
+		width: .0625rem;
+		height: .0625rem;
 		overflow: hidden;
 	}
 
@@ -239,6 +238,7 @@ const {
 		background-color: var(--color-error-dark);
 	}
 
+	/* Tablet styles */
 	@media (width >= 768px) {
 		.subscribe-form__fields {
 			flex-direction: row;
@@ -256,7 +256,8 @@ const {
 		}
 	}
 
-	@media (width >= 1440px) {
+	/* Desktop styles */
+	@media (width >= 1280px) {
 		.subscribe-form__inner {
 			max-width: var(--container-desktop);
 			border-radius: var(--spacing-single-quarter);

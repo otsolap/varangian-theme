@@ -6,6 +6,7 @@
 @import '@fontsource/poppins/latin-700.css';
 @import '@fontsource/poppins/latin-900.css';
 @import './partials/variables.css';
+@import './partials/screens.css';
 @import './partials/breakpoints.css';
 @import './partials/typography.css';
 @import './partials/util.css';
@@ -43,7 +44,7 @@ section {
 	max-width: var(--container-desktop);
 }
 
-/* Tablet Styles */
+/* Tablet styles */
 @media (width >= 768px) {
 	section {
 		padding-top: var(--spacing-quadruple);
@@ -51,8 +52,8 @@ section {
 	}
 }
 
-/* Desktop Styles */
-@media (width >= 1440px) {
+/* Desktop styles */
+@media (width >= 1280px) {
 	section {
 		padding-top: var(--spacing-quintuple);
 		padding-bottom: var(--spacing-quintuple);

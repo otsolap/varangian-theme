@@ -1,11 +1,11 @@
 :root {
 	/* Layout widths */
 	--width-max-layout: 100vw;
-	--width-max-article: 900px;
+	--width-max-article: 56.25rem;
 
-	/* Breakpoints for containers */
-	--container-desktop: 1440px;
-	--container-ipad: 768px;
-	--container-ipad-landscape: 1024px;
-	--container-mobile: 480px;
+	/* Container widths */
+	--container-desktop: 90rem;
+	--container-ipad: 48rem;
+	--container-ipad-landscape: 64rem;
+	--container-mobile: 30rem;
 }

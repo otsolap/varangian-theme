@@ -45,8 +45,8 @@ const show = Boolean(title || description || accordions.length);
 										item.open ? 'accordion__icon--open' : null,
 									]}
 									viewBox="0 0 24 24"
-									width="30"
-									height="30"
+									width="1.875rem"
+									height="1.875rem"
 									fill="none"
 									stroke="currentColor"
 									stroke-width="2"
@@ -120,7 +120,7 @@ const show = Boolean(title || description || accordions.length);
 	.accordion__list {
 		max-width: 100%;
 		width: 100%;
-		border: 2px solid transparent;
+		border: .125rem solid transparent;
 		border-radius: var(--spacing-single-quarter);
 		display: flex;
 		flex-direction: column;
@@ -128,8 +128,8 @@ const show = Boolean(title || description || accordions.length);
 	}
 
 	.accordion__item {
-		border: 1px solid var(--color-white);
-		transition: background-color 0.2s ease;
+		border: .0625rem solid var(--color-white);
+		transition: background-color .2s ease;
 		width: 100%;
 		background-color: var(--color-primary-dark);
 	}
@@ -176,7 +176,7 @@ const show = Boolean(title || description || accordions.length);
 		background-color: inherit;
 		color: inherit;
 		flex-shrink: 0;
-		transition: transform 0.6s ease-in-out;
+		transition: transform .6s ease-in-out;
 	}
 
 	.accordion__icon--open {
@@ -184,7 +184,7 @@ const show = Boolean(title || description || accordions.length);
 	}
 
 	.accordion__panel {
-		transition: max-height 0.6s ease;
+		transition: max-height .6s ease;
 		max-height: 0;
 		overflow: hidden;
 		background-color: var(--color-primary);
@@ -194,7 +194,7 @@ const show = Boolean(title || description || accordions.length);
 
 	.accordion__panel--open {
 		border-color: var(--color-white);
-		border-top-width: 2px;
+		border-top-width: .125rem;
 		border-top-style: solid;
 	}
 
@@ -202,7 +202,8 @@ const show = Boolean(title || description || accordions.length);
 		padding: var(--spacing-single) var(--spacing-half);
 	}
 
-	@media (width >= 1440px) {
+	/* Desktop styles */
+	@media (width >= 1280px) {
 		.accordion__header {
 			max-width: var(--container-ipad-landscape);
 			flex: 0 0 50%;

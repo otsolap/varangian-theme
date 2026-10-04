@@ -92,7 +92,7 @@ const ctaCurrent = callToAction ? isCurrentPath(path, callToAction.href) : false
 	.header__bar {
 		display: flex;
 		flex-direction: row;
-		min-height: 80px;
+		min-height: 5rem;
 		width: 100%;
 		padding-left: var(--spacing-half);
 		padding-right: var(--spacing-half);
@@ -100,7 +100,7 @@ const ctaCurrent = callToAction ? isCurrentPath(path, callToAction.href) : false
 		justify-content: space-between;
 		gap: var(--spacing-half);
 		background-color: var(--color-primary-dark);
-		border-bottom: 1px solid var(--color-white);
+		border-bottom: .0625rem solid var(--color-white);
 	}
 
 	.header__cta {
@@ -120,15 +120,15 @@ const ctaCurrent = callToAction ? isCurrentPath(path, callToAction.href) : false
 		font-size: 1.25rem;
 		margin-bottom: 0;
 		font-weight: 900;
-		text-shadow: 1px 1px 2px #001f2a;
+		text-shadow: .0625rem .0625rem .125rem var(--color-primary-dark);
 	}
 
+	/* Tablet styles */
 	@media (width >= 768px) {
 		.header__bar {
 			flex-direction: column;
 			align-items: stretch;
 			padding: initial;
-			border-bottom: 1px solid var(--color-white);
 		}
 
 		.header__cta--bar {
@@ -150,7 +150,7 @@ const ctaCurrent = callToAction ? isCurrentPath(path, callToAction.href) : false
 			font-weight: 600;
 			display: block;
 			margin-bottom: 0;
-			text-shadow: 1px 1px 2px #001f2a;
+			text-shadow: .0625rem .0625rem .125rem var(--color-primary-dark);
 		}
 
 		.header__nav {
@@ -160,7 +160,7 @@ const ctaCurrent = callToAction ? isCurrentPath(path, callToAction.href) : false
 			align-items: center;
 			padding: var(--spacing-half);
 			background-color: var(--color-primary-dark);
-			border-bottom: 1px solid var(--color-white);
+			border-bottom: .0625rem solid var(--color-white);
 		}
 
 		.header__nav-inner {
@@ -184,8 +184,8 @@ const ctaCurrent = callToAction ? isCurrentPath(path, callToAction.href) : false
 		}
 
 		.header__link {
-			transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-			text-shadow: 1px 1px 2px #001f2a;
+			transition: color 150ms cubic-bezier(.4, 0, .2, 1);
+			text-shadow: .0625rem .0625rem .125rem var(--color-primary-dark);
 		}
 
 		.header__link:hover,
@@ -196,14 +196,15 @@ const ctaCurrent = callToAction ? isCurrentPath(path, callToAction.href) : false
 		}
 	}
 
-	@media (width >= 1440px) {
+	/* Desktop styles */
+	@media (width >= 1280px) {
 		.header__title {
 			font-size: 2.5rem;
 			margin-bottom: var(--spacing-single);
 		}
 
 		.header__link {
-			font-size: var(--spacing-double);
+			font-size: 2rem;
 		}
 	}
 </style>

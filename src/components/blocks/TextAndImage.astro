@@ -94,8 +94,8 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 
 	.text-and-image__figure {
 		position: relative;
-		height: 300px;
-		width: 300px;
+		height: 18.75rem;
+		width: 18.75rem;
 		max-width: 100%;
 	}
 
@@ -110,6 +110,7 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 		object-position: center;
 	}
 
+	/* Tablet styles */
 	@media (width >= 768px) {
 		.text-and-image__layout {
 			flex-direction: row;
@@ -126,8 +127,8 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 		}
 
 		.text-and-image__figure {
-			height: 400px;
-			width: 400px;
+			height: 25rem;
+			width: 25rem;
 		}
 
 		.text-and-image__figure :global(.text-and-image__image) {
@@ -135,10 +136,11 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 		}
 	}
 
+	/* Laptop styles */
 	@media (width >= 1024px) {
 		.text-and-image__figure {
 			width: 100%;
-			max-width: calc(100% - var(--spacing-single));
+			max-width: calc(100% - 1rem);
 			height: auto;
 			aspect-ratio: 16 / 9;
 		}
@@ -149,13 +151,14 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 		}
 	}
 
+	/* Desktop styles */
 	@media (width >= 1280px) {
 		.text-and-image__figure {
-			max-width: calc(100% - 24px);
+			max-width: calc(100% - 1.5rem);
 		}
 
 		.text-and-image__figure :global(.text-and-image__image) {
-			box-shadow: 24px 24px 0 0 var(--color-secondary);
+			box-shadow: var(--spacing-single-half) var(--spacing-single-half) 0 0 var(--color-secondary);
 		}
 	}
 </style>

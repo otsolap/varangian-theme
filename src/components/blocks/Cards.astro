@@ -99,7 +99,7 @@ const items = cards.map((item) => ({
 		display: flex;
 		flex-direction: column;
 		border-radius: var(--spacing-single-quarter);
-		border: 1px solid var(--color-white);
+		border: .0625rem solid var(--color-white);
 		padding: var(--spacing-single);
 		width: 100%;
 		min-width: 0;
@@ -135,8 +135,8 @@ const items = cards.map((item) => ({
 
 	.card__figure :global(.card__image) {
 		display: block;
-		width: 150px;
-		height: 150px;
+		width: 9.375rem;
+		height: 9.375rem;
 		max-width: 100%;
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
@@ -150,6 +150,7 @@ const items = cards.map((item) => ({
 		text-align: center;
 	}
 
+	/* Tablet styles */
 	@media (width >= 768px) {
 		.cards__list {
 			flex-direction: row;
@@ -157,11 +158,12 @@ const items = cards.map((item) => ({
 
 		.card {
 			max-width: 50%;
-			flex: 0 0 calc(50% - var(--spacing-single));
+			flex: 0 0 calc(50% - 1rem);
 		}
 	}
 
-	@media (width >= 1440px) {
+	/* Desktop styles */
+	@media (width >= 1280px) {
 		.cards__header {
 			max-width: var(--container-ipad-landscape);
 			flex: 0 0 50%;
@@ -173,7 +175,7 @@ const items = cards.map((item) => ({
 
 		.card {
 			max-width: calc(100% / 4);
-			flex: 0 0 calc(25% - var(--spacing-double));
+			flex: 0 0 calc(25% - 2rem);
 		}
 	}
 </style>

@@ -157,16 +157,15 @@ const errorText =
 		width: 100%;
 		max-width: 100%;
 		font-size: 1rem;
-		font-family: inherit;
 		color: var(--color-white);
 		background-color: var(--color-primary-dark);
 		border-radius: var(--spacing-quarter);
-		border: 1px solid var(--color-primary-light);
+		border: .0625rem solid var(--color-primary-light);
 		padding: var(--spacing-half) var(--spacing-single);
 	}
 
 	.contact-form__input {
-		height: var(--spacing-triple);
+		height: 3rem;
 	}
 
 	.contact-form__textarea {
@@ -176,16 +175,16 @@ const errorText =
 
 	.contact-form__input:focus,
 	.contact-form__textarea:focus {
-		outline: 2px solid var(--color-secondary);
-		outline-offset: 2px;
+		outline: .125rem solid var(--color-secondary);
+		outline-offset: .125rem;
 	}
 
 	.contact-form__honeypot {
 		position: absolute;
-		left: -10000px;
+		left: -625rem;
 		top: auto;
-		width: 1px;
-		height: 1px;
+		width: .0625rem;
+		height: .0625rem;
 		overflow: hidden;
 	}
 
@@ -203,7 +202,8 @@ const errorText =
 		background-color: var(--color-error-dark);
 	}
 
-	@media (width >= 1440px) {
+	/* Desktop styles */
+	@media (width >= 1280px) {
 		.contact-form__inner {
 			max-width: var(--container-desktop);
 			border-radius: var(--spacing-single-quarter);

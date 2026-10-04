@@ -49,9 +49,9 @@
 	--color-alert: var(--color-error-light);
 
 	/* Spacing */
-	--spacing-quarter: 0.25rem;
-	--spacing-half: 0.5rem;
-	--spacing-three-quarters: 0.75rem;
+	--spacing-quarter: .25rem;
+	--spacing-half: .5rem;
+	--spacing-three-quarters: .75rem;
 	--spacing-single: 1rem;
 	--spacing-single-quarter: 1.25rem;
 	--spacing-single-half: 1.5rem;

@@ -46,21 +46,17 @@ h5,
 	font-size: 1rem;
 }
 
-/* Text Elements */
-a,
-p,
-input,
-span,
-button,
-strong,
-small,
+/* Text elements */
 body {
 	font-family: var(--font-body);
 	line-height: var(--line-height-body);
 }
 
-p {
-	font-weight: 400;
+button,
+input,
+textarea {
+	font-family: inherit;
+	line-height: inherit;
 }
 
 a {

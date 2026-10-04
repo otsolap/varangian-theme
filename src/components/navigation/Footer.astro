@@ -91,7 +91,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		flex-direction: column;
 		background-color: var(--color-primary-dark);
 		padding-bottom: var(--spacing-quintuple);
-		border-top: 1px solid var(--color-white);
+		border-top: .0625rem solid var(--color-white);
 	}
 
 	.footer__column {
@@ -134,13 +134,13 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 	.footer__link,
 	.footer__legal {
 		font-size: 1rem;
-		transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		transition: color .3s cubic-bezier(.4, 0, .2, 1);
 	}
 
 	.footer__link {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.75rem;
+		gap: var(--spacing-three-quarters);
 		line-height: 1;
 	}
 
@@ -178,7 +178,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 	.footer__sub {
 		padding: var(--spacing-single);
 		margin-top: var(--spacing-single);
-		border-top: 2px solid var(--color-white);
+		border-top: .125rem solid var(--color-white);
 	}
 
 	.footer__sub-inner {
@@ -187,6 +187,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		gap: var(--spacing-half);
 	}
 
+	/* Tablet styles */
 	@media (width >= 768px) {
 		.footer {
 			padding-bottom: var(--spacing-triple);
@@ -205,7 +206,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 
 		.footer__columns--2 .footer__column {
 			max-width: calc(100% / 2);
-			flex: 0 0 calc(50% - var(--spacing-single));
+			flex: 0 0 calc(50% - 1rem);
 		}
 
 		.footer__sub {
@@ -214,7 +215,8 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		}
 	}
 
-	@media (width >= 1440px) {
+	/* Desktop styles */
+	@media (width >= 1280px) {
 		.footer {
 			padding-bottom: 0;
 			justify-content: center;
@@ -230,8 +232,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		}
 
 		.footer__columns--2 .footer__column {
-			max-width: calc(100% / 2);
-			flex: 0 0 calc(50% - var(--spacing-double));
+			flex: 0 0 calc(50% - 2rem);
 		}
 
 		.footer__sub {
