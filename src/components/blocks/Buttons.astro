@@ -1,0 +1,110 @@
+---
+interface ButtonLink {
+	href?: string;
+	title?: string;
+	selectTheme?: 'primary' | 'secondary' | 'tertiary' | 'link';
+	isExternal?: boolean;
+	target?: string;
+}
+
+interface Props {
+	id?: string;
+	title?: string;
+	description?: string;
+	buttons?: ButtonLink[];
+}
+
+const { id, title, description, buttons = [] } = Astro.props;
+const visible = buttons.filter((button) => button.href && button.title);
+const showHeader = Boolean(title || description);
+const show = showHeader || visible.length > 0;
+---
+
+{
+	show && (
+		<section class="buttons" id={id}>
+			{showHeader && (
+				<header class="buttons__header">
+					{title && <h2 class="buttons__title">{title}</h2>}
+					{description && <p class="buttons__subtitle">{description}</p>}
+				</header>
+			)}
+			{visible.length > 0 && (
+				<div class="buttons__list">
+					{visible.map((button) => {
+						const external = button.isExternal || button.target === '_blank';
+						return (
+							<a
+								class:list={[
+									'button',
+									`button--${button.selectTheme ?? 'primary'}`,
+									'buttons__link',
+								]}
+								href={button.href}
+								target={external ? '_blank' : undefined}
+								rel={external ? 'noreferrer' : undefined}
+							>
+								{button.title}
+							</a>
+						);
+					})}
+				</div>
+			)}
+		</section>
+	)
+}
+
+<style>
+	.buttons {
+		background-color: var(--color-primary-dark);
+	}
+
+	.buttons__header,
+	.buttons__list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.buttons__header {
+		gap: var(--spacing-single);
+		padding-bottom: var(--spacing-double);
+	}
+
+	.buttons__list {
+		flex-wrap: wrap;
+		gap: var(--spacing-single);
+	}
+
+	.buttons__link {
+		width: fit-content;
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.buttons__list {
+			flex-direction: row;
+		}
+
+		.buttons__link {
+			max-width: 50%;
+			flex: 0 0 calc(50% - 1rem);
+		}
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		.buttons__header {
+			max-width: var(--container-ipad-landscape);
+			flex: 0 0 50%;
+		}
+
+		.buttons__list {
+			gap: var(--spacing-double);
+		}
+
+		.buttons__link {
+			max-width: calc(100% / 4);
+			flex: 0 0 calc(25% - 2rem);
+		}
+	}
+</style>

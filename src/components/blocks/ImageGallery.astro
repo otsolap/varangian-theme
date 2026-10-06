@@ -1,0 +1,109 @@
+---
+import AssetImage from '../AssetImage.astro';
+import { resolveLocalImage } from '../../lib/images';
+
+interface BlockImage {
+	src: string;
+	alt: string;
+	width?: number;
+	height?: number;
+}
+
+interface Props {
+	id?: string;
+	title?: string;
+	images?: BlockImage[];
+}
+
+const { id, title, images = [] } = Astro.props;
+
+const items = images.flatMap((image) => {
+	if (!image.src) return [];
+	const localImage = resolveLocalImage(image.src);
+	if (!localImage) return [];
+	return [
+		{
+			alt: image.alt ?? '',
+			localImage,
+			width: image.width ?? localImage.width,
+			height: image.height ?? localImage.height,
+		},
+	];
+});
+
+const show = Boolean(title || items.length);
+---
+
+{
+	show && (
+		<section class="image-gallery" id={id}>
+			{title && <h2 class="image-gallery__title">{title}</h2>}
+			{items.length > 0 && (
+				<div class="image-gallery__list">
+					{items.map((item) => (
+						<figure class="image-gallery__item">
+							<AssetImage
+								class="image-gallery__image"
+								src={item.localImage}
+								alt={item.alt}
+								width={item.width}
+								height={item.height}
+								fit="contain"
+							/>
+						</figure>
+					))}
+				</div>
+			)}
+		</section>
+	)
+}
+
+<style>
+	.image-gallery {
+		position: relative;
+	}
+
+	.image-gallery__title {
+		width: 100%;
+		text-align: center;
+	}
+
+	.image-gallery__list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: var(--spacing-single);
+	}
+
+	.image-gallery__item {
+		position: relative;
+		width: 20rem;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.image-gallery__item :global(.image-gallery__image) {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		object-position: center;
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.image-gallery__item {
+			width: auto;
+			max-width: none;
+			flex: 0 0 calc(50% - (var(--spacing-single) / 2));
+		}
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		.image-gallery__item {
+			flex-basis: calc(25% - (var(--spacing-single) * 3 / 4));
+		}
+	}
+</style>

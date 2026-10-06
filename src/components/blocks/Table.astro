@@ -1,0 +1,106 @@
+---
+interface TableHeader {
+	title?: string;
+}
+
+interface TableCell {
+	cell?: string;
+}
+
+interface TableRow {
+	tableCell?: TableCell[];
+}
+
+interface Props {
+	id?: string;
+	caption?: string;
+	tableHeader?: TableHeader[];
+	tableRow?: TableRow[];
+}
+
+const { id, caption, tableHeader = [], tableRow = [] } = Astro.props;
+const headers = tableHeader.map((header) => header.title ?? '');
+const rows = tableRow.map((row) => {
+	const cells = (row.tableCell ?? []).map((cell) => cell.cell ?? '');
+	const width = headers.length || cells.length;
+	while (cells.length < width) cells.push('');
+	return cells.slice(0, width);
+});
+const show = headers.length > 0 && rows.length > 0;
+---
+
+{
+	show && (
+		<section class="table-block" id={id}>
+			<div class="table-block__scroll">
+				<table class="table-block__table">
+					{caption && <caption class="table-block__caption">{caption}</caption>}
+					<thead>
+						<tr>
+							{headers.map((header) => (
+								<th class="table-block__header" scope="col">
+									{header}
+								</th>
+							))}
+						</tr>
+					</thead>
+					<tbody>
+						{rows.map((row) => (
+							<tr class="table-block__row">
+								{row.map((cell) => (
+									<td class="table-block__cell">{cell}</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</section>
+	)
+}
+
+<style>
+	.table-block__scroll {
+		width: 100%;
+		overflow-x: auto;
+	}
+
+	.table-block__table {
+		width: 100%;
+		min-width: 40rem;
+		border-collapse: collapse;
+	}
+
+	.table-block__caption {
+		caption-side: bottom;
+		padding-top: var(--spacing-single);
+		text-align: center;
+	}
+
+	.table-block__header,
+	.table-block__cell {
+		padding: var(--spacing-half) var(--spacing-three-quarters);
+		border: .0625rem solid var(--color-white);
+	}
+
+	.table-block__header {
+		text-align: center;
+		background-color: var(--color-tertiary-dark);
+		font-weight: 700;
+	}
+
+	.table-block__cell {
+		text-align: left;
+	}
+
+	.table-block__row:nth-child(even) {
+		background-color: var(--color-tertiary);
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		.table-block__table {
+			min-width: 0;
+		}
+	}
+</style>

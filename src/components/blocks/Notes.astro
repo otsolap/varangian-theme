@@ -1,0 +1,59 @@
+---
+interface NoteItem {
+	content?: string;
+}
+
+interface Props {
+	id?: string;
+	title?: string;
+	listItem?: NoteItem[];
+}
+
+const { id, title, listItem = [] } = Astro.props;
+const items = listItem.map((item) => item.content?.trim() ?? '').filter(Boolean);
+const show = Boolean(title || items.length);
+---
+
+{
+	show && (
+		<section class="notes" id={id}>
+			<div class="notes__panel">
+				{title && <h2 class="notes__title">{title}</h2>}
+				{items.length > 0 && (
+					<ul class="notes__list">
+						{items.map((item) => (
+							<li class="notes__item">{item}</li>
+						))}
+					</ul>
+				)}
+			</div>
+		</section>
+	)
+}
+
+<style>
+	.notes__panel {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-three-quarters);
+		padding: var(--spacing-double);
+		background-color: var(--color-primary);
+		box-shadow: var(--spacing-half) var(--spacing-half) 0 0 var(--color-secondary);
+	}
+
+	.notes__title {
+		margin-bottom: 0;
+	}
+
+	.notes__list {
+		padding-left: var(--spacing-single-half);
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.notes__panel {
+			margin: 0;
+			max-width: 50%;
+		}
+	}
+</style>

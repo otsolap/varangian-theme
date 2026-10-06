@@ -1,0 +1,69 @@
+---
+interface Props {
+	id?: string;
+	url?: string;
+}
+
+const { id, url } = Astro.props;
+
+function youtubeId(value: string) {
+	const parts = value.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/|\/shorts\/)/);
+	const videoId = parts[2] !== undefined ? parts[2].split(/[^0-9a-z_\-]/i)[0] : parts[0];
+	if (!videoId || /[^0-9a-z_\-]/i.test(videoId)) return undefined;
+	return videoId;
+}
+
+const videoId = url ? youtubeId(url) : undefined;
+const src = videoId
+	? `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`
+	: undefined;
+---
+
+{
+	src && (
+		<section class="video-embed" id={id}>
+			<div class="video-embed__frame">
+				<iframe
+					class="video-embed__player"
+					title="YouTube video"
+					src={src}
+					allow="autoplay; encrypted-media; picture-in-picture"
+					allowfullscreen
+					loading="lazy"
+				/>
+			</div>
+		</section>
+	)
+}
+
+<style>
+	.video-embed {
+		display: flex;
+		justify-content: center;
+	}
+
+	.video-embed__frame {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+	}
+
+	.video-embed__player {
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.video-embed__frame {
+			max-width: var(--container-ipad);
+		}
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		.video-embed__frame {
+			max-width: var(--width-max-article);
+		}
+	}
+</style>
