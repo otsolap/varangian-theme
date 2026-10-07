@@ -1,0 +1,88 @@
+---
+interface Heading {
+	id: string;
+	title: string;
+}
+
+interface Props {
+	headings?: Heading[];
+}
+
+const { headings = [] } = Astro.props;
+const items = headings.filter((heading) => heading.id && heading.title);
+---
+
+{
+	items.length > 0 && (
+		<aside class="table-of-contents">
+			<div class="table-of-contents__panel">
+				<h4 class="table-of-contents__title">Table of Contents</h4>
+				<ul class="table-of-contents__list">
+					{items.map((heading) => (
+						<li class="table-of-contents__item">
+							<a class="table-of-contents__link" href={`#${heading.id}`}>
+								{heading.title}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		</aside>
+	)
+}
+
+<style>
+	.table-of-contents,
+	.table-of-contents__panel,
+	.table-of-contents__list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-single-half);
+	}
+
+	.table-of-contents {
+		height: min-content;
+		background-color: var(--color-primary);
+		border: .125rem solid var(--color-secondary);
+		border-radius: var(--spacing-quarter);
+		margin-left: var(--spacing-double);
+		margin-right: var(--spacing-double);
+	}
+
+	.table-of-contents__panel {
+		color: var(--color-white);
+		padding: var(--spacing-double);
+	}
+
+	.table-of-contents__title {
+		margin-bottom: 0;
+	}
+
+	.table-of-contents__item {
+		list-style-type: none;
+	}
+
+	.table-of-contents__link:hover,
+	.table-of-contents__link:focus {
+		color: var(--color-secondary);
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.table-of-contents {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.table-of-contents__panel {
+			width: 100%;
+		}
+	}
+
+	/* Laptop styles */
+	@media (width >= 1024px) {
+		.table-of-contents {
+			max-width: var(--container-mobile);
+		}
+	}
+</style>

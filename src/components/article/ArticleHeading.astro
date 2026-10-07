@@ -1,0 +1,255 @@
+---
+import AssetImage from '../AssetImage.astro';
+import { resolveLocalImage } from '../../lib/images';
+
+interface ArticleImage {
+	src: string;
+	alt: string;
+	width?: number;
+	height?: number;
+}
+
+interface ArticleCategory {
+	href: string;
+	title: string;
+}
+
+interface ArticleAuthor {
+	title?: string;
+	subtitle?: string;
+	image?: ArticleImage;
+}
+
+interface Props {
+	category?: ArticleCategory;
+	title?: string;
+	description?: string;
+	author?: ArticleAuthor;
+	image?: ArticleImage;
+}
+
+const { category, title, description, author, image } = Astro.props;
+const authorImage = author?.image?.src ? resolveLocalImage(author.image.src) : undefined;
+const coverImage = image?.src ? resolveLocalImage(image.src) : undefined;
+const showAuthor = Boolean(author?.title || author?.subtitle || authorImage);
+const showCategory = Boolean(category?.href && category?.title);
+const show = Boolean(showCategory || title || description || showAuthor || coverImage);
+---
+
+{
+	show && (
+		<header class="article-heading">
+			<div class="article-heading__lead">
+				{showCategory && category && (
+					<a class="article-heading__category" href={category.href}>
+						<h4>{category.title}</h4>
+					</a>
+				)}
+				{title && <h1 class="article-heading__title">{title}</h1>}
+				{description && <h3 class="article-heading__description">{description}</h3>}
+				{showAuthor && (
+					<article class="article-heading__author">
+						{authorImage && (
+							<figure class="article-heading__avatar">
+								<AssetImage
+									class="article-heading__avatar-image"
+									src={authorImage}
+									alt={author?.image?.alt ?? ''}
+									width={author?.image?.width ?? 80}
+									height={author?.image?.height ?? 80}
+									layout="fixed"
+									fit="cover"
+								/>
+							</figure>
+						)}
+						{(author?.title || author?.subtitle) && (
+							<div class="article-heading__byline">
+								{author?.title && <h3 class="article-heading__name">{author.title}</h3>}
+								{author?.subtitle && <h4 class="article-heading__role">{author.subtitle}</h4>}
+							</div>
+						)}
+					</article>
+				)}
+			</div>
+			{coverImage && (
+				<figure class="article-heading__cover">
+					<AssetImage
+						class="article-heading__image"
+						src={coverImage}
+						alt={image?.alt ?? ''}
+						width={image?.width ?? 668}
+						height={image?.height ?? 500}
+						fit="cover"
+						priority
+					/>
+				</figure>
+			)}
+		</header>
+	)
+}
+
+<style>
+	.article-heading {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		padding: var(--spacing-double);
+		background-color: var(--color-primary);
+		max-width: var(--container-desktop);
+		margin: 0 auto;
+	}
+
+	.article-heading__lead,
+	.article-heading__author,
+	.article-heading__byline {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.article-heading__lead {
+		justify-content: center;
+		gap: var(--spacing-half);
+	}
+
+	.article-heading__category {
+		transition: color 150ms cubic-bezier(.4, 0, .2, 1);
+	}
+
+	.article-heading__category h4 {
+		margin-bottom: 0;
+		font-size: 1rem;
+	}
+
+	.article-heading__category:hover,
+	.article-heading__category:focus {
+		color: var(--color-secondary-semidark);
+	}
+
+	.article-heading__category:hover h4,
+	.article-heading__category:focus h4 {
+		font-weight: 900;
+	}
+
+	.article-heading__title {
+		margin-bottom: 0;
+		font-size: 1.75rem;
+	}
+
+	.article-heading__description {
+		margin-bottom: 0;
+		font-size: 1rem;
+		font-weight: 400;
+	}
+
+	.article-heading__author {
+		flex-direction: row;
+		gap: var(--spacing-single);
+	}
+
+	.article-heading__byline {
+		gap: var(--spacing-half);
+	}
+
+	.article-heading__name {
+		margin-bottom: 0;
+		font-size: 1.25rem;
+	}
+
+	.article-heading__role {
+		margin-bottom: 0;
+		font-size: .75rem;
+	}
+
+	.article-heading__avatar {
+		position: relative;
+		flex: 0 0 auto;
+	}
+
+	.article-heading__avatar :global(.article-heading__avatar-image) {
+		display: block;
+		width: 5rem;
+		height: 5rem;
+		border-radius: 100%;
+		object-fit: cover;
+	}
+
+	.article-heading__cover {
+		position: relative;
+		width: 100%;
+	}
+
+	.article-heading__cover :global(.article-heading__image) {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: var(--spacing-quarter);
+		object-fit: cover;
+		aspect-ratio: 16 / 9;
+		box-shadow: .75rem .75rem 0 0 var(--color-secondary);
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.article-heading {
+			flex-direction: row;
+		}
+
+		.article-heading__lead,
+		.article-heading__cover {
+			max-width: 50%;
+			flex: 0 0 50%;
+			align-items: flex-start;
+			justify-content: center;
+		}
+
+		.article-heading__title {
+			font-size: 2.5rem;
+		}
+
+		.article-heading__category h4,
+		.article-heading__role {
+			font-size: 1.25rem;
+		}
+
+		.article-heading__description,
+		.article-heading__name {
+			font-size: 1.5rem;
+		}
+
+		.article-heading__cover {
+			align-self: center;
+		}
+
+		.article-heading__cover :global(.article-heading__image) {
+			box-shadow: 1rem 1rem 0 0 var(--color-secondary);
+		}
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		.article-heading {
+			padding: var(--spacing-triple) var(--spacing-single);
+			border-bottom-right-radius: var(--spacing-single-quarter);
+			border-bottom-left-radius: var(--spacing-single-quarter);
+		}
+
+		.article-heading__lead {
+			padding-left: var(--spacing-double);
+		}
+
+		.article-heading__cover {
+			width: 41.75rem;
+			height: 31.25rem;
+			max-width: none;
+			flex: 0 0 auto;
+			align-self: auto;
+		}
+
+		.article-heading__cover :global(.article-heading__image) {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: auto;
+			box-shadow: 1.5rem 1.5rem 0 0 var(--color-secondary);
+		}
+	}
+</style>
