@@ -1,0 +1,189 @@
+---
+import AssetImage from '../AssetImage.astro';
+import { resolveLocalImage } from '../../lib/images';
+
+interface CardImage {
+	src: string;
+	alt: string;
+	width?: number;
+	height?: number;
+}
+
+interface CardCategory {
+	href: string;
+	title: string;
+}
+
+interface Props {
+	href: string;
+	title?: string;
+	description?: string;
+	date?: string;
+	image?: CardImage;
+	category?: CardCategory;
+	hidden?: boolean;
+}
+
+function formatDate(value?: string) {
+	if (!value) return '';
+	const parsed = new Date(value);
+	if (Number.isNaN(parsed.getTime())) return value;
+	return parsed.toLocaleDateString('en-US', {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric',
+	});
+}
+
+const { href, title, description, date, image, category, hidden = false } = Astro.props;
+const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
+const showCategory = Boolean(category?.href && category?.title);
+const formattedDate = formatDate(date);
+const showFooter = Boolean(showCategory || formattedDate);
+---
+
+<article class="article-card" data-archive-item hidden={hidden}>
+	{
+		localImage && (
+			<figure class="article-card__figure">
+				<a class="article-card__image-link" href={href} aria-label={`Read more about ${title ?? 'this post'}`}>
+					<AssetImage
+						class="article-card__image"
+						src={localImage}
+						alt={image?.alt ?? ''}
+						width={image?.width ?? 400}
+						height={image?.height ?? 216}
+						fit="cover"
+					/>
+				</a>
+			</figure>
+		)
+	}
+	{
+		(title || description) && (
+			<div class="article-card__body">
+				{title && (
+					<a href={href}>
+						<h3 class="article-card__title">{title}</h3>
+					</a>
+				)}
+				{description && <p class="article-card__text">{description}</p>}
+			</div>
+		)
+	}
+	{
+		showFooter && (
+			<footer class="article-card__footer">
+				{showCategory && category && (
+					<a href={category.href}>
+						<h4 class="article-card__category">{category.title}</h4>
+					</a>
+				)}
+				{formattedDate && <p class="article-card__date">{formattedDate}</p>}
+			</footer>
+		)
+	}
+</article>
+
+<style>
+	.article-card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		min-width: 0;
+		overflow: hidden;
+		color: var(--color-white);
+		background-color: var(--color-primary-dark);
+		border: .0625rem solid var(--color-white);
+		border-radius: var(--spacing-single-quarter);
+		cursor: pointer;
+		transition: border-color 250ms, background-color 250ms;
+	}
+
+	.article-card:hover,
+	.article-card:focus-within,
+	.article-card:hover .article-card__footer,
+	.article-card:focus-within .article-card__footer {
+		border-color: var(--color-secondary-light);
+		background-color: var(--color-primary-semidark);
+	}
+
+	.article-card__figure,
+	.article-card__image-link {
+		display: block;
+		width: 100%;
+	}
+
+	.article-card__figure {
+		position: relative;
+	}
+
+	.article-card__figure :global(.article-card__image) {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		object-position: 50% 50%;
+		aspect-ratio: 16 / 9;
+		border-bottom: .0625rem solid var(--color-white);
+	}
+
+	.article-card:hover :global(.article-card__image),
+	.article-card:focus-within :global(.article-card__image) {
+		border-bottom-color: var(--color-secondary-light);
+	}
+
+	.article-card__body {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		width: 100%;
+		padding: var(--spacing-double);
+	}
+
+	.article-card__title,
+	.article-card__text,
+	.article-card__category,
+	.article-card__date {
+		width: 100%;
+	}
+
+	.article-card__title,
+	.article-card__category {
+		margin-bottom: 0;
+	}
+
+	.article-card__footer {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-half);
+		width: 100%;
+		padding: var(--spacing-half) var(--spacing-double);
+		border-top: .0625rem solid var(--color-white);
+	}
+
+	.article-card__category {
+		margin-top: var(--spacing-single);
+	}
+
+	.article-card__date {
+		margin-bottom: var(--spacing-single);
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.article-card {
+			max-width: calc(100% / 3);
+			flex: 0 0 calc(33.333% - 1rem);
+		}
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		.article-card {
+			max-width: calc(100% / 3);
+			flex: 0 0 calc(33.333% - 2rem);
+		}
+	}
+</style>

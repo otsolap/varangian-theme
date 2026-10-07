@@ -1,0 +1,63 @@
+---
+import Hero from '../components/blocks/Hero.astro';
+import ArchiveSection from '../components/article/ArchiveSection.astro';
+
+interface HeroImage {
+	src: string;
+	alt: string;
+	width?: number;
+	height?: number;
+}
+
+interface HeroButton {
+	href: string;
+	title: string;
+	selectTheme?: 'primary' | 'secondary' | 'tertiary' | 'link';
+	isExternal?: boolean;
+	target?: string;
+}
+
+interface ArchiveImage {
+	src: string;
+	alt: string;
+	width?: number;
+	height?: number;
+}
+
+interface ArchiveItem {
+	href: string;
+	title?: string;
+	description?: string;
+	date?: string;
+	image?: ArchiveImage;
+	category?: {
+		href: string;
+		title: string;
+	};
+}
+
+interface Props {
+	hero?: {
+		title?: string;
+		description?: string;
+		image?: HeroImage;
+		buttons?: HeroButton[];
+		mediaWidth?: boolean;
+		alignImage?: 'left' | 'right';
+	};
+	items?: ArchiveItem[];
+	categories?: {
+		href: string;
+		title: string;
+	}[];
+	pageSize?: number;
+}
+
+const { hero, items = [], categories = [], pageSize = 12 } = Astro.props;
+const showHero = Boolean(
+	hero && (hero.title || hero.description || hero.image?.src || hero.buttons?.length),
+);
+---
+
+{showHero && hero && <Hero {...hero} />}
+<ArchiveSection items={items} categories={categories} pageSize={pageSize} />

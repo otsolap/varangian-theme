@@ -1,0 +1,255 @@
+---
+import ArticleCard from './ArticleCard.astro';
+
+interface ArchiveImage {
+	src: string;
+	alt: string;
+	width?: number;
+	height?: number;
+}
+
+interface ArchiveItem {
+	href: string;
+	title?: string;
+	description?: string;
+	date?: string;
+	image?: ArchiveImage;
+	category?: {
+		href: string;
+		title: string;
+	};
+}
+
+interface ArchiveCategory {
+	href: string;
+	title: string;
+}
+
+interface Props {
+	items?: ArchiveItem[];
+	categories?: ArchiveCategory[];
+	pageSize?: number;
+}
+
+const { items = [], categories = [], pageSize = 12 } = Astro.props;
+const size = pageSize > 0 ? pageSize : 12;
+const posts = (Array.isArray(items) ? items : []).filter((item) => item.href);
+const links = (Array.isArray(categories) ? categories : []).filter((item) => item.href && item.title);
+const pageCount = Math.ceil(posts.length / size);
+const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
+---
+
+<section class="archive" data-archive data-page-size={size}>
+	{
+		links.length > 0 && (
+			<header class="archive__header" id="blog-archive-header">
+				<label class="archive__select-label">
+					<span class="sr-only">Categories</span>
+					<select class="archive__select" data-archive-taxonomies>
+						{links.map((link) => (
+							<option value={link.href}>{link.title}</option>
+						))}
+					</select>
+				</label>
+				<ul class="archive__taxonomies">
+					{links.map((link) => (
+						<li class="archive__taxonomy">
+							<a class="button archive__taxonomy-link" href={link.href}>
+								{link.title}
+							</a>
+						</li>
+					))}
+				</ul>
+			</header>
+		)
+	}
+	<div class="archive__list" data-archive-list>
+		{
+			posts.length > 0 ? (
+				posts.map((item, index) => (
+					<ArticleCard
+						href={item.href}
+						title={item.title}
+						description={item.description}
+						date={item.date}
+						image={item.image}
+						category={item.category}
+						hidden={index >= size}
+					/>
+				))
+			) : (
+				<p>No items found</p>
+			)
+		}
+	</div>
+	{
+		pageCount > 1 && (
+			<nav class="archive__pages" aria-label="Pagination">
+				{pages.map((page) => (
+					<button
+						class="archive__page"
+						type="button"
+						data-archive-page={page}
+						aria-current={page === 1 ? 'page' : undefined}
+					>
+						{page}
+					</button>
+				))}
+			</nav>
+		)
+	}
+</section>
+
+<script>
+	function showArchivePage(root: HTMLElement, page: number, scroll: boolean) {
+		const size = Number(root.dataset.pageSize || '12');
+		const list = root.querySelector('[data-archive-list]');
+		if (!list) return;
+
+		const cards = [...list.querySelectorAll<HTMLElement>('[data-archive-item]')];
+		const start = (page - 1) * size;
+		cards.forEach((card, index) => {
+			card.hidden = index < start || index >= start + size;
+		});
+
+		root.querySelectorAll<HTMLButtonElement>('[data-archive-page]').forEach((button) => {
+			const current = Number(button.dataset.archivePage) === page;
+			if (current) button.setAttribute('aria-current', 'page');
+			else button.removeAttribute('aria-current');
+		});
+
+		if (!scroll) return;
+		const header = root.querySelector('#blog-archive-header');
+		const target = header instanceof HTMLElement ? header : root;
+		target.scrollIntoView({ behavior: 'smooth' });
+	}
+
+	document.querySelectorAll<HTMLElement>('[data-archive]').forEach((root) => {
+		root.addEventListener('click', (event) => {
+			const target = event.target;
+			if (!(target instanceof Element)) return;
+			const button = target.closest('[data-archive-page]');
+			if (!(button instanceof HTMLButtonElement) || !root.contains(button)) return;
+			showArchivePage(root, Number(button.dataset.archivePage), true);
+		});
+	});
+
+	document.addEventListener('change', (event) => {
+		const select = event.target;
+		if (!(select instanceof HTMLSelectElement)) return;
+		if (!select.matches('[data-archive-taxonomies]')) return;
+		if (select.value) window.location.assign(select.value);
+	});
+</script>
+
+<style>
+	.archive__header {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-single);
+		padding: var(--spacing-single);
+		color: var(--color-white);
+	}
+
+	.archive__select-label {
+		display: block;
+		width: 100%;
+	}
+
+	.archive__select {
+		width: 100%;
+		text-align: center;
+		padding: var(--spacing-half) var(--spacing-single);
+		color: var(--color-primary-dark);
+		background-color: var(--color-secondary);
+		border: 0;
+		border-radius: var(--spacing-single);
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.archive__taxonomies {
+		display: none;
+		gap: var(--spacing-single);
+	}
+
+	.archive__taxonomy {
+		list-style-type: none;
+	}
+
+	.archive__taxonomy-link {
+		background-color: var(--color-secondary);
+		color: var(--color-primary-dark);
+		transition: background-color .6s ease-in-out, color .6s ease-in-out;
+	}
+
+	.archive__taxonomy-link:hover,
+	.archive__taxonomy-link:focus {
+		background-color: var(--color-secondary);
+		color: var(--color-primary-dark);
+	}
+
+	.archive__list {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: var(--spacing-single);
+		padding: var(--spacing-single);
+	}
+
+	.archive__pages {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--spacing-single);
+		width: 100%;
+		padding: var(--spacing-single);
+	}
+
+	.archive__page {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		padding: 0;
+		font-size: 1.25rem;
+		color: var(--color-white);
+		background-color: var(--color-secondary-semidark);
+		border: .0625rem solid var(--color-secondary-semidark);
+		border-radius: 100%;
+		cursor: pointer;
+	}
+
+	.archive__page[aria-current='page'] {
+		color: var(--color-primary-dark);
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		.archive__list {
+			flex-direction: row;
+		}
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		.archive__header {
+			max-width: var(--container-ipad-landscape);
+		}
+
+		.archive__select-label {
+			display: none;
+		}
+
+		.archive__taxonomies {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.archive__list {
+			gap: var(--spacing-triple);
+		}
+	}
+</style>
