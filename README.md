@@ -38,12 +38,12 @@ The GitHub repo stays private. A site installs it over SSH:
 
 ## Site rules
 
-Shared Grok rules live in `.grok/rules/grok.md`. Grok loads that file when you work in this repo.
+Rules for this repo live in `.grok/rules/`. Grok loads that folder. Cursor loads `AGENTS.md`, which points at the same folder.
 
-A site that installs the package should point its `AGENTS.md` at the installed copy:
+A site should point its `AGENTS.md` at the installed consumer rules. Grok and Cursor both read that file.
 
 ```md
-Read and follow `node_modules/varangian-theme/.grok/rules/grok.md` before you plan or edit this site.
+Read and follow `node_modules/varangian-theme/.grok/rules/shared-rules.md` before you plan or edit this site.
 ```
 
 `npm update varangian-theme` brings a new copy of those rules into the site.

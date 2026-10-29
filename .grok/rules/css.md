@@ -1,14 +1,4 @@
-# Planning
-
-Create multi-phase plans when the work spans multiple distinct topics. Each phase must be independently committable. Phase 1 must not depend on phase 2 changes.
-
-After completing each phase, stop and wait for the user to review, adjust, and commit before proceeding to the next phase.
-
-# Git
-
-NEVER commit directly. Instead, suggest an appropriate commit message to the developer.
-
-## CSS/SCSS Coding Standards
+# CSS
 
 This project uses custom CSS. Follow these standards:
 
@@ -29,7 +19,7 @@ This project uses custom CSS. Follow these standards:
 - Secondary: `--color-secondary`, `--color-secondary-dark`, `--color-secondary-semidark`, `--color-secondary-light`
 - Tertiary: `--color-tertiary`, `--color-tertiary-dark`, `--color-tertiary-light`
 
-### Media Query Organization
+## Media Query Organization
 
 Screen widths live in `src/styles/partials/screens.css`.
 
