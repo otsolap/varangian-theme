@@ -1,6 +1,6 @@
 {
   "name": "varangian-theme",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "type": "module",
   "description": "Shared Astro layout, blocks, and styles for Varangian sites.",
