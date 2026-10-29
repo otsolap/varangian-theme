@@ -110,7 +110,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		padding: var(--spacing-double) var(--spacing-single);
+		padding: var(--spacing-double) var(--spacing-half);
 	}
 
 	.footer__heading {
@@ -176,7 +176,8 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 	}
 
 	.footer__sub {
-		padding: var(--spacing-single);
+		width: 100%;
+		padding: var(--spacing-single) var(--spacing-half);
 		margin-top: var(--spacing-single);
 		border-top: .125rem solid var(--color-white);
 	}
@@ -195,6 +196,10 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 
 		.footer__columns {
 			flex-direction: row;
+			width: 100%;
+			max-width: var(--container-desktop);
+			margin-left: auto;
+			margin-right: auto;
 			padding-left: var(--spacing-double);
 			padding-right: var(--spacing-double);
 		}
@@ -210,6 +215,10 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		}
 
 		.footer__sub {
+			width: 100%;
+			max-width: var(--container-desktop);
+			margin-left: auto;
+			margin-right: auto;
 			padding-left: var(--spacing-double);
 			padding-right: var(--spacing-double);
 		}
@@ -220,19 +229,18 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		.footer {
 			padding-bottom: 0;
 			justify-content: center;
-			max-width: var(--container-desktop);
 		}
 
 		.footer__columns {
 			gap: var(--spacing-double);
-			max-width: var(--container-desktop);
-			margin-left: auto;
-			margin-right: auto;
-			padding: initial;
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 
 		.footer__columns--2 .footer__column {
-			flex: 0 0 calc(50% - 2rem);
+			flex: 1 1 0;
+			max-width: none;
+			min-width: 0;
 		}
 
 		.footer__sub {
