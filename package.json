@@ -2,8 +2,13 @@
   "name": "varangian-theme",
   "version": "0.0.9",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "description": "Shared Astro layout, blocks, and styles for Varangian sites.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otsolap/varangian-theme.git"
+  },
   "exports": {
     ".": "./integration.mjs",
     "./integration": "./integration.mjs",

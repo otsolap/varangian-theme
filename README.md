@@ -4,9 +4,17 @@ Shared Astro layout, blocks, and styles. Each site keeps its own pages, JSON, im
 
 ## Use it
 
-Run `npm install` in this folder first. That installs the font files the styles use.
+Install the package from GitHub:
 
-Then install the package in a site, and add the integration in `astro.config.mjs`:
+```json
+"varangian-theme": "git+https://github.com/otsolap/varangian-theme.git#semver:~0.0.1"
+```
+
+`~0.0.1` accepts later `0.0.x` tags. It stops before `0.1.0`.
+
+Set the version in `package.json`. Commit that change. Tag that commit `vX.Y.Z`. Then run `npm update varangian-theme` in the site.
+
+Add the integration in `astro.config.mjs`:
 
 ```js
 import varangianTheme from 'varangian-theme';
@@ -28,13 +36,17 @@ import Hero from 'varangian-theme/components/blocks/Hero.astro';
 
 `ContactForm` posts to `/api/contact`. `SubscribeForm` posts to `/api/subscribe`. The site provides those routes. Pass `action` to use another path.
 
-The GitHub repo stays private. A site installs it over SSH:
+## Work on this repo
 
-```json
-"varangian-theme": "git+ssh://git@github.com/otsolap/varangian-theme.git#semver:~0.0.1"
-```
+Clone the repo. Run `npm install`. That installs the font files the styles use.
 
-`~0.0.1` accepts `0.0.2` and later `0.0.x` tags. Raise the version, commit, and tag `v0.0.2` for the next release. Then run `npm update varangian-theme` in the site.
+This repo has no pages and no dev server. A site renders the theme.
+
+## Rights
+
+Copyright © 2026 Otso. All rights reserved.
+
+This code is for the author's own sites. No permission is given to copy, change, or share it.
 
 ## Site rules
 

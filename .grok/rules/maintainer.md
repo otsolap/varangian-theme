@@ -11,9 +11,11 @@ NEVER commit directly. Instead, suggest an appropriate commit message to the dev
 # Release Process
 
 - The version in `package.json` is the release version. Match it with the git tag `vX.Y.Z`.
-- Sites install `git+ssh://git@github.com/otsolap/varangian-theme.git#semver:~0.0.1`.
+- Sites install `git+https://github.com/otsolap/varangian-theme.git#semver:~0.0.1`.
 - That range accepts later `0.0.x` tags. A `0.1.0` tag stays out until the site range changes.
 - Suggest the commit and the tag commands. Do not run them.
+- Keep `"private": true`. Do not publish the package to npm.
+- Keep `license` set to `UNLICENSED`. All rights reserved. Do not add a license that grants use, copy, or share rights.
 
 # Package contents
 
