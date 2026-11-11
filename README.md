@@ -4,15 +4,13 @@ Shared Astro layout, blocks, and styles. Each site keeps its own pages, JSON, im
 
 ## Use it
 
-Install the package from GitHub:
+Install the package from npm:
 
 ```json
-"varangian-theme": "git+https://github.com/otsolap/varangian-theme.git#semver:~0.0.1"
+"varangian-theme": "latest"
 ```
 
-`~0.0.1` accepts later `0.0.x` tags. It stops before `0.1.0`.
-
-Set the version in `package.json`. Commit that change. Tag that commit `vX.Y.Z`. Then run `npm update varangian-theme` in the site.
+`latest` is the newest published version. Run `npm update varangian-theme` in the site to get it.
 
 Add the integration in `astro.config.mjs`:
 

@@ -11,9 +11,10 @@ NEVER commit directly. Instead, suggest an appropriate commit message to the dev
 # Release Process
 
 - The version in `package.json` is the release version. Match it with the git tag `vX.Y.Z`.
-- Sites install `git+https://github.com/otsolap/varangian-theme.git#semver:~0.0.1`.
-- That range accepts later `0.0.x` tags. A `0.1.0` tag stays out until the site range changes.
+- Sites install `varangian-theme` at `latest` from the npm registry.
+- `latest` is the newest published version. A site runs `npm update varangian-theme` to get it.
 - Suggest the commit and the tag commands. Do not run them.
+- After the tag is on the remote, run `npm publish`. The npm version matches the git tag.
 - Keep `"private": false`.
 - Keep `license` set to `MIT`. The copyright notice is `MIT © Otso Lappalainen`, and the name links to `https://varangianventure.com`. The `LICENSE` file is the MIT license.
 
