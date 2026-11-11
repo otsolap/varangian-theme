@@ -2,7 +2,7 @@
   "name": "varangian-theme",
   "version": "0.0.11",
   "private": false,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "description": "Shared Astro layout, blocks, and styles for Varangian sites.",
   "repository": {

@@ -15,7 +15,7 @@ NEVER commit directly. Instead, suggest an appropriate commit message to the dev
 - That range accepts later `0.0.x` tags. A `0.1.0` tag stays out until the site range changes.
 - Suggest the commit and the tag commands. Do not run them.
 - Keep `"private": false`.
-- Keep `license` set to `UNLICENSED`. All rights reserved. Do not add a license that grants use, copy, or share rights.
+- Keep `license` set to `MIT`. The copyright notice is `MIT © Otso Lappalainen`, and the name links to `https://varangianventure.com`. The `LICENSE` file is the MIT license.
 
 # Package contents
 

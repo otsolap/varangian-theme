@@ -44,9 +44,7 @@ This repo has no pages and no dev server. A site renders the theme.
 
 ## Rights
 
-Copyright © 2026 Otso. All rights reserved.
-
-This code is for the author's own sites. No permission is given to copy, change, or share it.
+MIT © [Otso Lappalainen](https://varangianventure.com)
 
 ## Site rules
 
