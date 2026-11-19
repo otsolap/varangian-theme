@@ -34,6 +34,24 @@ import Hero from 'varangian-theme/components/blocks/Hero.astro';
 
 `ContactForm` posts to `/api/contact`. `SubscribeForm` posts to `/api/subscribe`. The site provides those routes. Pass `action` to use another path.
 
+The layout renders the theme header, footer, and mobile footer. Pass a slot to replace one. Omit a slot to keep the theme component.
+
+```astro
+---
+import ThemeLayout from 'varangian-theme/layouts/Layout.astro';
+import Header from '../components/navigation/Header.astro';
+import Footer from '../components/navigation/Footer.astro';
+import MobileFooter from '../components/navigation/MobileFooter.astro';
+---
+
+<ThemeLayout navigation={navigation} pageTitle={pageTitle}>
+	<Header slot="header" {...navigation.header} />
+	<Footer slot="footer" {...navigation.footer} />
+	<MobileFooter slot="mobile-footer" links={navigation.header.links} />
+	<slot />
+</ThemeLayout>
+```
+
 ## Work on this repo
 
 Clone the repo. Run `npm install`. That installs the font files the styles use.

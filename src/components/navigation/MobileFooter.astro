@@ -177,7 +177,7 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 	initMobileFooter();
 </script>
 
-<style is:global>
+<style>
 	.mobile-nav {
 		border-top: .125rem solid var(--color-white);
 		background-color: var(--color-primary-dark);
@@ -231,12 +231,12 @@ const itemCount = primary.length + (extra.length > 0 ? 1 : 0);
 		width: 100%;
 	}
 
-	.mobile-nav__glyph {
+	.mobile-nav__icon :global(.mobile-nav__glyph) {
 		width: 1.875rem;
 		height: 1.875rem;
 	}
 
-	.mobile-nav__glyph path {
+	.mobile-nav__icon :global(.mobile-nav__glyph path) {
 		fill: currentColor;
 	}
 

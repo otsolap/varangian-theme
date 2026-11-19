@@ -83,7 +83,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 	}
 </footer>
 
-<style is:global>
+<style>
 	.footer {
 		margin: 0 auto;
 		width: 100%;
@@ -153,18 +153,18 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		flex-shrink: 0;
 	}
 
-	.footer__icon {
+	.footer__icon-wrap :global(.footer__icon) {
 		display: block;
 		width: 1.75rem;
 		height: 1.75rem;
 	}
 
-	.footer__icon--x-logo {
+	.footer__icon-wrap :global(.footer__icon--x-logo) {
 		width: 1.15rem;
 		height: 1.15rem;
 	}
 
-	.footer__icon path {
+	.footer__icon-wrap :global(.footer__icon path) {
 		fill: currentColor;
 	}
 

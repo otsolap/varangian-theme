@@ -68,9 +68,15 @@ const { lang = 'en', favicon = '/favicon.png', navigation, ...seo } = Astro.prop
 		<Seo {...seo} />
 	</head>
 	<body>
-		<Header {...navigation.header} />
+		<slot name="header">
+			<Header {...navigation.header} />
+		</slot>
 		<slot />
-		<Footer {...navigation.footer} />
-		<MobileFooter links={navigation.header.links} />
+		<slot name="footer">
+			<Footer {...navigation.footer} />
+		</slot>
+		<slot name="mobile-footer">
+			<MobileFooter links={navigation.header.links} />
+		</slot>
 	</body>
 </html>
