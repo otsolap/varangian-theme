@@ -19,6 +19,12 @@ This project uses custom CSS. Follow these standards:
 - Secondary: `--color-secondary`, `--color-secondary-dark`, `--color-secondary-semidark`, `--color-secondary-light`
 - Tertiary: `--color-tertiary`, `--color-tertiary-dark`, `--color-tertiary-light`
 
+## Cascade layer
+
+Theme rules live in `@layer varangian`. Put new theme rules inside that layer. A site override stays outside the layer, in `<style is:global>`. A rule outside the layer wins over a theme rule.
+
+A site rule with no media query applies at every width. For one width, use the same query as the theme.
+
 ## Media Query Organization
 
 Screen widths live in `src/styles/partials/screens.css`.
@@ -26,6 +32,7 @@ Screen widths live in `src/styles/partials/screens.css`.
 **Structure media queries at the end of the file**, not nested inside selectors:
 
 ```scss
+@layer varangian {
 // Mobile-first base styles
 .component {
     display: flex;
@@ -55,6 +62,7 @@ Screen widths live in `src/styles/partials/screens.css`.
             font-size: var(--font-size-2xl);
         }
     }
+}
 }
 ```
 

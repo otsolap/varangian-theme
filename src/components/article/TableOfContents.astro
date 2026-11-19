@@ -32,57 +32,59 @@ const items = headings.filter((heading) => heading.id && heading.title);
 }
 
 <style>
-	.table-of-contents,
-	.table-of-contents__panel,
-	.table-of-contents__list {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-single-half);
-	}
+	@layer varangian {
+		.table-of-contents,
+		.table-of-contents__panel,
+		.table-of-contents__list {
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-single-half);
+		}
 
-	.table-of-contents {
-		height: min-content;
-		background-color: var(--color-primary);
-		border: .125rem solid var(--color-secondary);
-		border-radius: var(--spacing-quarter);
-		margin-left: var(--spacing-double);
-		margin-right: var(--spacing-double);
-	}
-
-	.table-of-contents__panel {
-		color: var(--color-white);
-		padding: var(--spacing-double);
-	}
-
-	.table-of-contents__title {
-		margin-bottom: 0;
-	}
-
-	.table-of-contents__item {
-		list-style-type: none;
-	}
-
-	.table-of-contents__link:hover,
-	.table-of-contents__link:focus {
-		color: var(--color-secondary);
-	}
-
-	/* Tablet styles */
-	@media (width >= 768px) {
 		.table-of-contents {
-			margin-left: 0;
-			margin-right: 0;
+			height: min-content;
+			background-color: var(--color-primary);
+			border: .125rem solid var(--color-secondary);
+			border-radius: var(--spacing-quarter);
+			margin-left: var(--spacing-double);
+			margin-right: var(--spacing-double);
 		}
 
 		.table-of-contents__panel {
-			width: 100%;
+			color: var(--color-white);
+			padding: var(--spacing-double);
 		}
-	}
 
-	/* Laptop styles */
-	@media (width >= 1024px) {
-		.table-of-contents {
-			max-width: var(--container-mobile);
+		.table-of-contents__title {
+			margin-bottom: 0;
+		}
+
+		.table-of-contents__item {
+			list-style-type: none;
+		}
+
+		.table-of-contents__link:hover,
+		.table-of-contents__link:focus {
+			color: var(--color-secondary);
+		}
+
+		/* Tablet styles */
+		@media (width >= 768px) {
+			.table-of-contents {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			.table-of-contents__panel {
+				width: 100%;
+			}
+		}
+
+		/* Laptop styles */
+		@media (width >= 1024px) {
+			.table-of-contents {
+				max-width: var(--container-mobile);
+			}
 		}
 	}
 </style>

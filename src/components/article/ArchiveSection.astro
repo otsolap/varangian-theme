@@ -143,113 +143,115 @@ const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
 </script>
 
 <style>
-	.archive__header {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-single);
-		padding: var(--spacing-single);
-		color: var(--color-white);
-	}
-
-	.archive__select-label {
-		display: block;
-		width: 100%;
-	}
-
-	.archive__select {
-		width: 100%;
-		text-align: center;
-		padding: var(--spacing-half) var(--spacing-single);
-		color: var(--color-primary-dark);
-		background-color: var(--color-secondary);
-		border: 0;
-		border-radius: var(--spacing-single);
-		font-weight: 700;
-		cursor: pointer;
-	}
-
-	.archive__taxonomies {
-		display: none;
-		gap: var(--spacing-single);
-	}
-
-	.archive__taxonomy {
-		list-style-type: none;
-	}
-
-	.archive__taxonomy-link {
-		background-color: var(--color-secondary);
-		color: var(--color-primary-dark);
-		transition: background-color .6s ease-in-out, color .6s ease-in-out;
-	}
-
-	.archive__taxonomy-link:hover,
-	.archive__taxonomy-link:focus {
-		background-color: var(--color-secondary);
-		color: var(--color-primary-dark);
-	}
-
-	.archive__list {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		gap: var(--spacing-single);
-		padding: var(--spacing-single);
-	}
-
-	.archive__pages {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: var(--spacing-single);
-		width: 100%;
-		padding: var(--spacing-single);
-	}
-
-	.archive__page {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.5rem;
-		height: 2.5rem;
-		padding: 0;
-		font-size: 1.25rem;
-		color: var(--color-white);
-		background-color: var(--color-secondary-semidark);
-		border: .0625rem solid var(--color-secondary-semidark);
-		border-radius: 100%;
-		cursor: pointer;
-	}
-
-	.archive__page[aria-current='page'] {
-		color: var(--color-primary-dark);
-	}
-
-	/* Tablet styles */
-	@media (width >= 768px) {
-		.archive__list {
-			flex-direction: row;
-		}
-	}
-
-	/* Desktop styles */
-	@media (width >= 1280px) {
+	@layer varangian {
 		.archive__header {
-			max-width: var(--container-ipad-landscape);
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-single);
+			padding: var(--spacing-single);
+			color: var(--color-white);
 		}
 
 		.archive__select-label {
-			display: none;
+			display: block;
+			width: 100%;
+		}
+
+		.archive__select {
+			width: 100%;
+			text-align: center;
+			padding: var(--spacing-half) var(--spacing-single);
+			color: var(--color-primary-dark);
+			background-color: var(--color-secondary);
+			border: 0;
+			border-radius: var(--spacing-single);
+			font-weight: 700;
+			cursor: pointer;
 		}
 
 		.archive__taxonomies {
-			display: flex;
-			flex-direction: row;
+			display: none;
+			gap: var(--spacing-single);
+		}
+
+		.archive__taxonomy {
+			list-style-type: none;
+		}
+
+		.archive__taxonomy-link {
+			background-color: var(--color-secondary);
+			color: var(--color-primary-dark);
+			transition: background-color .6s ease-in-out, color .6s ease-in-out;
+		}
+
+		.archive__taxonomy-link:hover,
+		.archive__taxonomy-link:focus {
+			background-color: var(--color-secondary);
+			color: var(--color-primary-dark);
 		}
 
 		.archive__list {
-			gap: var(--spacing-triple);
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			gap: var(--spacing-single);
+			padding: var(--spacing-single);
+		}
+
+		.archive__pages {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: var(--spacing-single);
+			width: 100%;
+			padding: var(--spacing-single);
+		}
+
+		.archive__page {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2.5rem;
+			height: 2.5rem;
+			padding: 0;
+			font-size: 1.25rem;
+			color: var(--color-white);
+			background-color: var(--color-secondary-semidark);
+			border: .0625rem solid var(--color-secondary-semidark);
+			border-radius: 100%;
+			cursor: pointer;
+		}
+
+		.archive__page[aria-current='page'] {
+			color: var(--color-primary-dark);
+		}
+
+		/* Tablet styles */
+		@media (width >= 768px) {
+			.archive__list {
+				flex-direction: row;
+			}
+		}
+
+		/* Desktop styles */
+		@media (width >= 1280px) {
+			.archive__header {
+				max-width: var(--container-ipad-landscape);
+			}
+
+			.archive__select-label {
+				display: none;
+			}
+
+			.archive__taxonomies {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.archive__list {
+				gap: var(--spacing-triple);
+			}
 		}
 	}
 </style>

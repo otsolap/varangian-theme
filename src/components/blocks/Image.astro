@@ -113,118 +113,120 @@ const displayHeight =
 </script>
 
 <style>
-	.image-block {
-		display: flex;
-		justify-content: center;
-	}
+	@layer varangian {
+		.image-block {
+			display: flex;
+			justify-content: center;
+		}
 
-	.image-block__figure {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		width: 20rem;
-		max-width: 100%;
-		height: auto;
-		padding: var(--spacing-single);
-	}
-
-	.image-block__trigger {
-		display: block;
-		width: 100%;
-		padding: 0;
-		border: 0;
-		background-color: transparent;
-		color: inherit;
-		cursor: pointer;
-		transition-duration: .2s;
-		transition-property: transform, opacity;
-		transition-timing-function: ease;
-	}
-
-	.image-block__trigger:hover,
-	.image-block__trigger:focus-visible {
-		transform: scale(1.05);
-		opacity: .9;
-	}
-
-	.image-block__figure :global(.image-block__image),
-	.image-block__dialog-figure :global(.image-block__dialog-image) {
-		display: block;
-		width: 100%;
-		height: auto;
-		object-fit: contain;
-		object-position: center;
-	}
-
-	.image-block__caption,
-	.image-block__dialog-caption {
-		font-style: italic;
-		font-size: .75rem;
-		text-align: center;
-	}
-
-	.image-block__dialog {
-		padding: var(--spacing-single);
-		border: 0;
-		color: var(--color-white);
-		background-color: var(--color-black);
-	}
-
-	.image-block__dialog[open] {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		width: 100%;
-		max-width: 95vw;
-		height: 95vh;
-		margin: auto;
-	}
-
-	.image-block__dialog::backdrop {
-		background-color: rgb(0 31 42 / .72);
-	}
-
-	.image-block__dialog-figure {
-		display: flex;
-		flex-direction: column;
-		width: 85vw;
-		max-width: 100%;
-	}
-
-	.image-block__dialog-figure :global(.image-block__dialog-image) {
-		max-height: 75vh;
-	}
-
-	.image-block__dialog-caption {
-		margin-top: var(--spacing-single);
-		font-size: 1rem;
-	}
-
-	.image-block__close {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		top: var(--spacing-single-quarter);
-		right: var(--spacing-single-quarter);
-		width: 2.5rem;
-		height: 2.5rem;
-		padding: 0;
-		border: .0625rem solid var(--color-white);
-		border-radius: 50%;
-		background-color: var(--color-black);
-		color: var(--color-white);
-		font-size: 1.5rem;
-		line-height: 1;
-		cursor: pointer;
-	}
-
-	/* Tablet styles */
-	@media (width >= 768px) {
 		.image-block__figure {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			width: 20rem;
+			max-width: 100%;
+			height: auto;
+			padding: var(--spacing-single);
+		}
+
+		.image-block__trigger {
+			display: block;
 			width: 100%;
+			padding: 0;
+			border: 0;
+			background-color: transparent;
+			color: inherit;
+			cursor: pointer;
+			transition-duration: .2s;
+			transition-property: transform, opacity;
+			transition-timing-function: ease;
+		}
+
+		.image-block__trigger:hover,
+		.image-block__trigger:focus-visible {
+			transform: scale(1.05);
+			opacity: .9;
+		}
+
+		.image-block__figure :global(.image-block__image),
+		.image-block__dialog-figure :global(.image-block__dialog-image) {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+			object-position: center;
+		}
+
+		.image-block__caption,
+		.image-block__dialog-caption {
+			font-style: italic;
+			font-size: .75rem;
+			text-align: center;
+		}
+
+		.image-block__dialog {
+			padding: var(--spacing-single);
+			border: 0;
+			color: var(--color-white);
+			background-color: var(--color-black);
+		}
+
+		.image-block__dialog[open] {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			width: 100%;
+			max-width: 95vw;
+			height: 95vh;
+			margin: auto;
+		}
+
+		.image-block__dialog::backdrop {
+			background-color: rgb(0 31 42 / .72);
+		}
+
+		.image-block__dialog-figure {
+			display: flex;
+			flex-direction: column;
+			width: 85vw;
+			max-width: 100%;
+		}
+
+		.image-block__dialog-figure :global(.image-block__dialog-image) {
+			max-height: 75vh;
+		}
+
+		.image-block__dialog-caption {
+			margin-top: var(--spacing-single);
+			font-size: 1rem;
+		}
+
+		.image-block__close {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: var(--spacing-single-quarter);
+			right: var(--spacing-single-quarter);
+			width: 2.5rem;
+			height: 2.5rem;
+			padding: 0;
+			border: .0625rem solid var(--color-white);
+			border-radius: 50%;
+			background-color: var(--color-black);
+			color: var(--color-white);
+			font-size: 1.5rem;
+			line-height: 1;
+			cursor: pointer;
+		}
+
+		/* Tablet styles */
+		@media (width >= 768px) {
+			.image-block__figure {
+				width: 100%;
+			}
 		}
 	}
 </style>

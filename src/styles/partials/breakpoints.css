@@ -1,11 +1,13 @@
-:root {
-	/* Layout widths */
-	--width-max-layout: 100vw;
-	--width-max-article: 56.25rem;
+@layer varangian {
+	:root {
+		/* Layout widths */
+		--width-max-layout: 100vw;
+		--width-max-article: 56.25rem;
 
-	/* Container widths */
-	--container-desktop: 90rem;
-	--container-ipad: 48rem;
-	--container-ipad-landscape: 64rem;
-	--container-mobile: 30rem;
+		/* Container widths */
+		--container-desktop: 90rem;
+		--container-ipad: 48rem;
+		--container-ipad-landscape: 64rem;
+		--container-mobile: 30rem;
+	}
 }

@@ -34,23 +34,25 @@ const show = Boolean(title || paragraphs.length);
 }
 
 <style>
-	.textarea {
-		margin-right: auto;
-		margin-left: auto;
-		width: 100%;
-		word-wrap: break-word;
-		padding-left: var(--spacing-double);
-		padding-right: var(--spacing-double);
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-single);
-	}
-
-	/* Desktop styles */
-	@media (width >= 1280px) {
+	@layer varangian {
 		.textarea {
-			max-width: var(--container-desktop);
-			border-radius: var(--spacing-single-quarter);
+			margin-right: auto;
+			margin-left: auto;
+			width: 100%;
+			word-wrap: break-word;
+			padding-left: var(--spacing-double);
+			padding-right: var(--spacing-double);
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-single);
+		}
+
+		/* Desktop styles */
+		@media (width >= 1280px) {
+			.textarea {
+				max-width: var(--container-desktop);
+				border-radius: var(--spacing-single-quarter);
+			}
 		}
 	}
 </style>

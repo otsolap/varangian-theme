@@ -1,3 +1,5 @@
+@layer varangian;
+
 @import '@fontsource/hind-guntur/latin-400.css';
 @import '@fontsource/hind-guntur/latin-600.css';
 @import '@fontsource/hind-guntur/latin-700.css';
@@ -11,6 +13,7 @@
 @import './partials/typography.css';
 @import './partials/util.css';
 
+@layer varangian {
 /* Global Styles */
 * {
 	margin: 0;
@@ -58,4 +61,5 @@ section {
 		padding-top: var(--spacing-quintuple);
 		padding-bottom: var(--spacing-quintuple);
 	}
+}
 }

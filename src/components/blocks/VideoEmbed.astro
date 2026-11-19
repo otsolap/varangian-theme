@@ -37,33 +37,35 @@ const src = videoId
 }
 
 <style>
-	.video-embed {
-		display: flex;
-		justify-content: center;
-	}
-
-	.video-embed__frame {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-	}
-
-	.video-embed__player {
-		width: 100%;
-		height: 100%;
-		border: 0;
-	}
-
-	/* Tablet styles */
-	@media (width >= 768px) {
-		.video-embed__frame {
-			max-width: var(--container-ipad);
+	@layer varangian {
+		.video-embed {
+			display: flex;
+			justify-content: center;
 		}
-	}
 
-	/* Desktop styles */
-	@media (width >= 1280px) {
 		.video-embed__frame {
-			max-width: var(--width-max-article);
+			width: 100%;
+			aspect-ratio: 16 / 9;
+		}
+
+		.video-embed__player {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+
+		/* Tablet styles */
+		@media (width >= 768px) {
+			.video-embed__frame {
+				max-width: var(--container-ipad);
+			}
+		}
+
+		/* Desktop styles */
+		@media (width >= 1280px) {
+			.video-embed__frame {
+				max-width: var(--width-max-article);
+			}
 		}
 	}
 </style>
