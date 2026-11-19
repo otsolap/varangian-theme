@@ -38,9 +38,9 @@ Theme CSS is in `@layer varangian`. A site rule outside that layer overrides the
 
 A site rule with no media query applies at every width. It also covers the theme's tablet and desktop values for that property. A rule inside one media query applies only at that width. The theme widths are `520px`, `640px`, `768px`, `1024px`, and `1280px`.
 
-## Repository
+## Fonts
 
-This repo has no pages and no dev server. A site renders the theme. `npm install` in this repo installs the font files the styles import.
+`--font-heading` and `--font-body` use the system font. A site sets those two variables and imports its own font files.
 
 ## Rights
 
