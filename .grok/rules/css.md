@@ -21,9 +21,17 @@ This project uses custom CSS. Follow these standards:
 
 ## Cascade layer
 
-Theme rules live in `@layer varangian`. Put new theme rules inside that layer. A site override stays outside the layer, in `<style is:global>`. A rule outside the layer wins over a theme rule.
+Theme component CSS stays in the component `<style>` block, inside `@layer varangian`. Put new theme rules there. The theme does not have per-component override files. Do not add `src/styles/hero.css` to this repo.
+
+A site that wants the theme look adds no override file. A site that wants a different look adds the override in that site. `src/styles/hero.css` in the site overrides `Hero`. One plain `.css` file per component. `src/styles/components.css` in the site imports those files. The site layout imports `src/styles/components.css`.
+
+Keep each site override file outside `@layer varangian`. A rule outside the layer wins over a theme rule. A `*.module.css` file renames the classes, so the selector misses the theme element.
+
+Do not put a large override in `<style is:global>` on the site layout. That block and a stylesheet are the same kind of CSS. The site stylesheet is the place for it.
 
 A site rule with no media query applies at every width. For one width, use the same query as the theme.
+
+Keep `@layer varangian`. A site stylesheet does not replace it. Astro scopes each theme selector with a `data-astro-cid` attribute. That selector beats a plain class in a site file. The layer is what lets the unlayered site file win.
 
 ## Media Query Organization
 
