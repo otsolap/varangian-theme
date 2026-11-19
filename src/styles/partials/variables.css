@@ -20,8 +20,8 @@
 		/* Text */
 		--color-black: #001f2a;
 		--color-white: #e1e2e1;
-		--font-heading: 'Hind Guntur', sans-serif;
-		--font-body: 'Poppins', sans-serif;
+		--font-heading: system-ui, sans-serif;
+		--font-body: system-ui, sans-serif;
 		--line-height-heading: 1.2;
 		--line-height-subheading: 1.4;
 		--line-height-body: 1.6;
