@@ -32,55 +32,55 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 	<div class="footer__columns footer__columns--2">
 		<div class="footer__column">
 			{social?.title && <h3 class="footer__heading">{social.title}</h3>}
-			{
-				socialLinks.length > 0 && (
-					<div class="footer__links">
-						{socialLinks.map((link) => (
-							<a
-								class="footer__link"
-								href={link.href}
-								target={link.isExternal ? '_blank' : undefined}
-								rel={link.isExternal ? 'noreferrer' : undefined}
-							>
-								<span class="footer__icon-wrap">
-									<NavIcon
-										name={link.icon}
-										class={link.icon ? `footer__icon footer__icon--${link.icon}` : 'footer__icon'}
-									/>
-								</span>
-								{link.title}
-							</a>
-						))}
-					</div>
-				)
-			}
+			{socialLinks.length > 0 && (
+				<div class="footer__links">
+					{socialLinks.map((link) => (
+						<a
+							class="footer__link"
+							href={link.href}
+							target={link.isExternal ? '_blank' : undefined}
+							rel={link.isExternal ? 'noreferrer' : undefined}
+						>
+							<span class="footer__icon-wrap">
+								<NavIcon
+									name={link.icon}
+									class={
+										link.icon
+											? `footer__icon footer__icon--${link.icon}`
+											: 'footer__icon'
+									}
+								/>
+							</span>
+							{link.title}
+						</a>
+					))}
+				</div>
+			)}
 		</div>
 		<div class="footer__column">
 			{brand?.title && <h3 class="footer__heading">{brand.title}</h3>}
 			{brand?.description && <p class="footer__text">{brand.description}</p>}
 		</div>
 	</div>
-	{
-		subFooter && (
-			<div class="footer__sub">
-				<div class="footer__sub-inner">
-					{subFooter.title && (
-						<span class="footer__brand">
-							{subFooter.title} &#169; {year}
-						</span>
-					)}
-					{subFooter.link?.href && (
-						<>
-							<span class="desktop-only"> &#124;</span>
-							<a class="footer__legal" href={subFooter.link.href}>
-								{subFooter.link.title}
-							</a>
-						</>
-					)}
-				</div>
+	{subFooter && (
+		<div class="footer__sub">
+			<div class="footer__sub-inner">
+				{subFooter.title && (
+					<span class="footer__brand">
+						{subFooter.title} &#169; {year}
+					</span>
+				)}
+				{subFooter.link?.href && (
+					<>
+						<span class="desktop-only"> &#124;</span>
+						<a class="footer__legal" href={subFooter.link.href}>
+							{subFooter.link.title}
+						</a>
+					</>
+				)}
 			</div>
-		)
-	}
+		</div>
+	)}
 </footer>
 
 <style>
@@ -92,7 +92,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 			flex-direction: column;
 			background-color: var(--color-primary-dark);
 			padding-bottom: var(--spacing-quintuple);
-			border-top: .0625rem solid var(--color-white);
+			border-top: 0.0625rem solid var(--color-white);
 		}
 
 		.footer__column {
@@ -135,7 +135,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 		.footer__link,
 		.footer__legal {
 			font-size: 1rem;
-			transition: color .3s cubic-bezier(.4, 0, .2, 1);
+			transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
 		.footer__link {
@@ -181,7 +181,7 @@ const socialLinks = social?.links?.filter((link) => link.href) ?? [];
 			padding-top: var(--spacing-single);
 			padding-bottom: var(--spacing-single);
 			margin-top: var(--spacing-single);
-			border-top: .125rem solid var(--color-white);
+			border-top: 0.125rem solid var(--color-white);
 		}
 
 		.footer__sub-inner {

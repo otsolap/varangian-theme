@@ -51,13 +51,11 @@ const {
 />
 <div class="blog-post">
 	<article class="blog-post__body" id="post">
-		{
-			revisionNotice && (
-				<aside class="blog-post__revision">
-					<p>This post was last updated in {revisionNotice}.</p>
-				</aside>
-			)
-		}
+		{revisionNotice && (
+			<aside class="blog-post__revision">
+				<p>This post was last updated in {revisionNotice}.</p>
+			</aside>
+		)}
 		<div class="blog-post__content">
 			<slot />
 		</div>

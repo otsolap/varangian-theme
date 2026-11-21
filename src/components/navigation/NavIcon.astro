@@ -7,7 +7,11 @@ interface Props {
 }
 
 const { name, class: className } = Astro.props;
-const Icon = name ? icons[`/src/assets/images/icons/${name}.svg`]?.default : undefined;
+const Icon = name
+	? icons[`/src/assets/images/icons/${name}.svg`]?.default
+	: undefined;
 ---
 
-{Icon && <Icon class={className} width="1.5rem" height="1.5rem" aria-hidden="true" />}
+{Icon && (
+	<Icon class={className} width="1.5rem" height="1.5rem" aria-hidden="true" />
+)}

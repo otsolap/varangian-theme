@@ -12,24 +12,22 @@ const { headings = [] } = Astro.props;
 const items = headings.filter((heading) => heading.id && heading.title);
 ---
 
-{
-	items.length > 0 && (
-		<aside class="table-of-contents">
-			<div class="table-of-contents__panel">
-				<h4 class="table-of-contents__title">Table of Contents</h4>
-				<ul class="table-of-contents__list">
-					{items.map((heading) => (
-						<li class="table-of-contents__item">
-							<a class="table-of-contents__link" href={`#${heading.id}`}>
-								{heading.title}
-							</a>
-						</li>
-					))}
-				</ul>
-			</div>
-		</aside>
-	)
-}
+{items.length > 0 && (
+	<aside class="table-of-contents">
+		<div class="table-of-contents__panel">
+			<h4 class="table-of-contents__title">Table of Contents</h4>
+			<ul class="table-of-contents__list">
+				{items.map((heading) => (
+					<li class="table-of-contents__item">
+						<a class="table-of-contents__link" href={`#${heading.id}`}>
+							{heading.title}
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</aside>
+)}
 
 <style>
 	@layer varangian {
@@ -44,7 +42,7 @@ const items = headings.filter((heading) => heading.id && heading.title);
 		.table-of-contents {
 			height: min-content;
 			background-color: var(--color-primary);
-			border: .125rem solid var(--color-secondary);
+			border: 0.125rem solid var(--color-secondary);
 			border-radius: var(--spacing-quarter);
 			margin-left: var(--spacing-double);
 			margin-right: var(--spacing-double);

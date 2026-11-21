@@ -32,42 +32,38 @@ const items = cards.map((item) => ({
 ---
 
 <section class="cards" id={id}>
-	{
-		title && (
-			<header class="cards__header">
-				{title && <h2 class="cards__title">{title}</h2>}
-				{description && <p class="cards__subtitle">{description}</p>}
-			</header>
-		)
-	}
-	{
-		items.length > 0 && (
-			<div class="cards__list">
-				{items.map((item) => (
-					<article class="card">
-						{item.localImage && (
-							<figure class="card__figure">
-								<AssetImage
-									class="card__image"
-									src={item.localImage}
-									alt={item.image?.alt ?? ''}
-									width={item.image?.width ?? 150}
-									height={item.image?.height ?? 150}
-									layout="fixed"
-								/>
-							</figure>
-						)}
-						{(item.title || item.description) && (
-							<div class="card__body">
-								{item.title && <h3 class="card__title">{item.title}</h3>}
-								{item.description && <p class="card__text">{item.description}</p>}
-							</div>
-						)}
-					</article>
-				))}
-			</div>
-		)
-	}
+	{title && (
+		<header class="cards__header">
+			{title && <h2 class="cards__title">{title}</h2>}
+			{description && <p class="cards__subtitle">{description}</p>}
+		</header>
+	)}
+	{items.length > 0 && (
+		<div class="cards__list">
+			{items.map((item) => (
+				<article class="card">
+					{item.localImage && (
+						<figure class="card__figure">
+							<AssetImage
+								class="card__image"
+								src={item.localImage}
+								alt={item.image?.alt ?? ''}
+								width={item.image?.width ?? 150}
+								height={item.image?.height ?? 150}
+								layout="fixed"
+							/>
+						</figure>
+					)}
+					{(item.title || item.description) && (
+						<div class="card__body">
+							{item.title && <h3 class="card__title">{item.title}</h3>}
+							{item.description && <p class="card__text">{item.description}</p>}
+						</div>
+					)}
+				</article>
+			))}
+		</div>
+	)}
 </section>
 
 <style>
@@ -100,7 +96,7 @@ const items = cards.map((item) => ({
 			display: flex;
 			flex-direction: column;
 			border-radius: var(--spacing-single-quarter);
-			border: .0625rem solid var(--color-white);
+			border: 0.0625rem solid var(--color-white);
 			padding: var(--spacing-single);
 			width: 100%;
 			min-width: 0;

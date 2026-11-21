@@ -11,9 +11,9 @@
 		font-weight: 700;
 		border: 0;
 		cursor: pointer;
-		transition-duration: .3s;
+		transition-duration: 0.3s;
 		transition-property: all;
-		transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	.button--primary {
@@ -94,10 +94,10 @@
 	/* Screen Reader Only Class */
 	.sr-only {
 		position: absolute;
-		width: .0625rem;
-		height: .0625rem;
+		width: 0.0625rem;
+		height: 0.0625rem;
 		padding: 0;
-		margin: -.0625rem;
+		margin: -0.0625rem;
 		overflow: hidden;
 		clip: rect(0, 0, 0, 0);
 		white-space: nowrap;

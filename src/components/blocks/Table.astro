@@ -29,35 +29,33 @@ const rows = tableRow.map((row) => {
 const show = headers.length > 0 && rows.length > 0;
 ---
 
-{
-	show && (
-		<section class="table-block" id={id}>
-			<div class="table-block__scroll">
-				<table class="table-block__table">
-					{caption && <caption class="table-block__caption">{caption}</caption>}
-					<thead>
-						<tr>
-							{headers.map((header) => (
-								<th class="table-block__header" scope="col">
-									{header}
-								</th>
+{show && (
+	<section class="table-block" id={id}>
+		<div class="table-block__scroll">
+			<table class="table-block__table">
+				{caption && <caption class="table-block__caption">{caption}</caption>}
+				<thead>
+					<tr>
+						{headers.map((header) => (
+							<th class="table-block__header" scope="col">
+								{header}
+							</th>
+						))}
+					</tr>
+				</thead>
+				<tbody>
+					{rows.map((row) => (
+						<tr class="table-block__row">
+							{row.map((cell) => (
+								<td class="table-block__cell">{cell}</td>
 							))}
 						</tr>
-					</thead>
-					<tbody>
-						{rows.map((row) => (
-							<tr class="table-block__row">
-								{row.map((cell) => (
-									<td class="table-block__cell">{cell}</td>
-								))}
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
-		</section>
-	)
-}
+					))}
+				</tbody>
+			</table>
+		</div>
+	</section>
+)}
 
 <style>
 	@layer varangian {
@@ -81,7 +79,7 @@ const show = headers.length > 0 && rows.length > 0;
 		.table-block__header,
 		.table-block__cell {
 			padding: var(--spacing-half) var(--spacing-three-quarters);
-			border: .0625rem solid var(--color-white);
+			border: 0.0625rem solid var(--color-white);
 		}
 
 		.table-block__header {

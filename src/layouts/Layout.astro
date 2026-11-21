@@ -55,7 +55,12 @@ interface Props {
 	};
 }
 
-const { lang = 'en', favicon = '/favicon.png', navigation, ...seo } = Astro.props;
+const {
+	lang = 'en',
+	favicon = '/favicon.png',
+	navigation,
+	...seo
+} = Astro.props;
 ---
 
 <!doctype html>

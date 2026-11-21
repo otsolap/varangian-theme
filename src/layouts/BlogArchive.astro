@@ -55,7 +55,8 @@ interface Props {
 
 const { hero, items = [], categories = [], pageSize = 12 } = Astro.props;
 const showHero = Boolean(
-	hero && (hero.title || hero.description || hero.image?.src || hero.buttons?.length),
+	hero &&
+	(hero.title || hero.description || hero.image?.src || hero.buttons?.length),
 );
 ---
 

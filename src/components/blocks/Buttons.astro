@@ -20,39 +20,37 @@ const showHeader = Boolean(title || description);
 const show = showHeader || visible.length > 0;
 ---
 
-{
-	show && (
-		<section class="buttons" id={id}>
-			{showHeader && (
-				<header class="buttons__header">
-					{title && <h2 class="buttons__title">{title}</h2>}
-					{description && <p class="buttons__subtitle">{description}</p>}
-				</header>
-			)}
-			{visible.length > 0 && (
-				<div class="buttons__list">
-					{visible.map((button) => {
-						const external = button.isExternal || button.target === '_blank';
-						return (
-							<a
-								class:list={[
-									'button',
-									`button--${button.selectTheme ?? 'primary'}`,
-									'buttons__link',
-								]}
-								href={button.href}
-								target={external ? '_blank' : undefined}
-								rel={external ? 'noreferrer' : undefined}
-							>
-								{button.title}
-							</a>
-						);
-					})}
-				</div>
-			)}
-		</section>
-	)
-}
+{show && (
+	<section class="buttons" id={id}>
+		{showHeader && (
+			<header class="buttons__header">
+				{title && <h2 class="buttons__title">{title}</h2>}
+				{description && <p class="buttons__subtitle">{description}</p>}
+			</header>
+		)}
+		{visible.length > 0 && (
+			<div class="buttons__list">
+				{visible.map((button) => {
+					const external = button.isExternal || button.target === '_blank';
+					return (
+						<a
+							class:list={[
+								'button',
+								`button--${button.selectTheme ?? 'primary'}`,
+								'buttons__link',
+							]}
+							href={button.href}
+							target={external ? '_blank' : undefined}
+							rel={external ? 'noreferrer' : undefined}
+						>
+							{button.title}
+						</a>
+					);
+				})}
+			</div>
+		)}
+	</section>
+)}
 
 <style>
 	@layer varangian {

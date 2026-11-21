@@ -16,59 +16,63 @@ const { id, title, description, accordions = [] } = Astro.props;
 const show = Boolean(title || description || accordions.length);
 ---
 
-{
-	show && (
-		<section class="accordion" id={id}>
-			{(title || description) && (
-				<header class="accordion__header">
-					{title && <h2 class="accordion__title">{title}</h2>}
-					{description && <p class="accordion__subtitle">{description}</p>}
-				</header>
-			)}
-			<div class="accordion__layout">
-				<div class="accordion__list">
-					{accordions.map((item) => (
-						<div
-							class:list={['accordion__item', { 'accordion__item--open': item.open }]}
-							data-accordion-item
+{show && (
+	<section class="accordion" id={id}>
+		{(title || description) && (
+			<header class="accordion__header">
+				{title && <h2 class="accordion__title">{title}</h2>}
+				{description && <p class="accordion__subtitle">{description}</p>}
+			</header>
+		)}
+		<div class="accordion__layout">
+			<div class="accordion__list">
+				{accordions.map((item) => (
+					<div
+						class:list={[
+							'accordion__item',
+							{ 'accordion__item--open': item.open },
+						]}
+						data-accordion-item
+					>
+						<button
+							class="accordion__trigger"
+							type="button"
+							aria-expanded={item.open ? 'true' : 'false'}
+							data-accordion-toggle
 						>
-							<button
-								class="accordion__trigger"
-								type="button"
-								aria-expanded={item.open ? 'true' : 'false'}
-								data-accordion-toggle
+							<h4 class="accordion__heading">{item.title}</h4>
+							<svg
+								class:list={[
+									'accordion__icon',
+									item.open ? 'accordion__icon--open' : null,
+								]}
+								viewBox="0 0 24 24"
+								width="1.875rem"
+								height="1.875rem"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								aria-hidden="true"
+								data-accordion-icon
 							>
-								<h4 class="accordion__heading">{item.title}</h4>
-								<svg
-									class:list={[
-										'accordion__icon',
-										item.open ? 'accordion__icon--open' : null,
-									]}
-									viewBox="0 0 24 24"
-									width="1.875rem"
-									height="1.875rem"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									aria-hidden="true"
-									data-accordion-icon
-								>
-									<path d="M6 9l6 6 6-6"></path>
-								</svg>
-							</button>
-							<div
-								class:list={['accordion__panel', { 'accordion__panel--open': item.open }]}
-								data-accordion-answer
-							>
-								<p class="accordion__text">{item.description}</p>
-							</div>
+								<path d="M6 9l6 6 6-6"></path>
+							</svg>
+						</button>
+						<div
+							class:list={[
+								'accordion__panel',
+								{ 'accordion__panel--open': item.open },
+							]}
+							data-accordion-answer
+						>
+							<p class="accordion__text">{item.description}</p>
 						</div>
-					))}
-				</div>
+					</div>
+				))}
 			</div>
-		</section>
-	)
-}
+		</div>
+	</section>
+)}
 
 <script>
 	function initAccordion() {
@@ -121,7 +125,7 @@ const show = Boolean(title || description || accordions.length);
 		.accordion__list {
 			max-width: 100%;
 			width: 100%;
-			border: .125rem solid transparent;
+			border: 0.125rem solid transparent;
 			border-radius: var(--spacing-single-quarter);
 			display: flex;
 			flex-direction: column;
@@ -129,8 +133,8 @@ const show = Boolean(title || description || accordions.length);
 		}
 
 		.accordion__item {
-			border: .0625rem solid var(--color-white);
-			transition: background-color .2s ease;
+			border: 0.0625rem solid var(--color-white);
+			transition: background-color 0.2s ease;
 			width: 100%;
 			background-color: var(--color-primary-dark);
 		}
@@ -177,7 +181,7 @@ const show = Boolean(title || description || accordions.length);
 			background-color: inherit;
 			color: inherit;
 			flex-shrink: 0;
-			transition: transform .6s ease-in-out;
+			transition: transform 0.6s ease-in-out;
 		}
 
 		.accordion__icon--open {
@@ -185,7 +189,7 @@ const show = Boolean(title || description || accordions.length);
 		}
 
 		.accordion__panel {
-			transition: max-height .6s ease;
+			transition: max-height 0.6s ease;
 			max-height: 0;
 			overflow: hidden;
 			background-color: var(--color-primary);
@@ -195,7 +199,7 @@ const show = Boolean(title || description || accordions.length);
 
 		.accordion__panel--open {
 			border-color: var(--color-white);
-			border-top-width: .125rem;
+			border-top-width: 0.125rem;
 			border-top-style: solid;
 		}
 

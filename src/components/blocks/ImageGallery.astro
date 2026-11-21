@@ -34,29 +34,27 @@ const items = images.flatMap((image) => {
 const show = Boolean(title || items.length);
 ---
 
-{
-	show && (
-		<section class="image-gallery" id={id}>
-			{title && <h2 class="image-gallery__title">{title}</h2>}
-			{items.length > 0 && (
-				<div class="image-gallery__list">
-					{items.map((item) => (
-						<figure class="image-gallery__item">
-							<AssetImage
-								class="image-gallery__image"
-								src={item.localImage}
-								alt={item.alt}
-								width={item.width}
-								height={item.height}
-								fit="contain"
-							/>
-						</figure>
-					))}
-				</div>
-			)}
-		</section>
-	)
-}
+{show && (
+	<section class="image-gallery" id={id}>
+		{title && <h2 class="image-gallery__title">{title}</h2>}
+		{items.length > 0 && (
+			<div class="image-gallery__list">
+				{items.map((item) => (
+					<figure class="image-gallery__item">
+						<AssetImage
+							class="image-gallery__image"
+							src={item.localImage}
+							alt={item.alt}
+							width={item.width}
+							height={item.height}
+							fit="contain"
+						/>
+					</figure>
+				))}
+			</div>
+		)}
+	</section>
+)}
 
 <style>
 	@layer varangian {

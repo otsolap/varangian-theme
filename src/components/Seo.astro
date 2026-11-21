@@ -43,16 +43,21 @@ const {
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content={locale} />
-{
-	imageUrl && (
-		<>
-			<meta property="og:image" content={imageUrl} />
-			{imageAlt && <meta property="og:image:alt" content={imageAlt} />}
-			{imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
-			{imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
-		</>
-	)
-}
-<meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
+{imageUrl && (
+	<>
+		<meta property="og:image" content={imageUrl} />
+		{imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+		{imageWidth && (
+			<meta property="og:image:width" content={String(imageWidth)} />
+		)}
+		{imageHeight && (
+			<meta property="og:image:height" content={String(imageHeight)} />
+		)}
+	</>
+)}
+<meta
+	name="twitter:card"
+	content={imageUrl ? 'summary_large_image' : 'summary'}
+/>
 {twitterSite && <meta name="twitter:site" content={twitterSite} />}
 {jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}

@@ -29,64 +29,72 @@ interface Props {
 }
 
 const { category, title, description, author, image } = Astro.props;
-const authorImage = author?.image?.src ? resolveLocalImage(author.image.src) : undefined;
+const authorImage = author?.image?.src
+	? resolveLocalImage(author.image.src)
+	: undefined;
 const coverImage = image?.src ? resolveLocalImage(image.src) : undefined;
 const showAuthor = Boolean(author?.title || author?.subtitle || authorImage);
 const showCategory = Boolean(category?.href && category?.title);
-const show = Boolean(showCategory || title || description || showAuthor || coverImage);
+const show = Boolean(
+	showCategory || title || description || showAuthor || coverImage,
+);
 ---
 
-{
-	show && (
-		<header class="article-heading">
-			<div class="article-heading__lead">
-				{showCategory && category && (
-					<a class="article-heading__category" href={category.href}>
-						<h4>{category.title}</h4>
-					</a>
-				)}
-				{title && <h1 class="article-heading__title">{title}</h1>}
-				{description && <h3 class="article-heading__description">{description}</h3>}
-				{showAuthor && (
-					<article class="article-heading__author">
-						{authorImage && (
-							<figure class="article-heading__avatar">
-								<AssetImage
-									class="article-heading__avatar-image"
-									src={authorImage}
-									alt={author?.image?.alt ?? ''}
-									width={author?.image?.width ?? 80}
-									height={author?.image?.height ?? 80}
-									layout="fixed"
-									fit="cover"
-								/>
-							</figure>
-						)}
-						{(author?.title || author?.subtitle) && (
-							<div class="article-heading__byline">
-								{author?.title && <h3 class="article-heading__name">{author.title}</h3>}
-								{author?.subtitle && <h4 class="article-heading__role">{author.subtitle}</h4>}
-							</div>
-						)}
-					</article>
-				)}
-			</div>
-			{coverImage && (
-				<figure class="article-heading__cover">
-					<AssetImage
-						class="article-heading__image"
-						src={coverImage}
-						alt={image?.alt ?? ''}
-						width={image?.width ?? 668}
-						height={image?.height ?? 500}
-						fit="cover"
-						priority
-					/>
-				</figure>
+{show && (
+	<header class="article-heading">
+		<div class="article-heading__lead">
+			{showCategory && category && (
+				<a class="article-heading__category" href={category.href}>
+					<h4>{category.title}</h4>
+				</a>
 			)}
-		</header>
-	)
-}
+			{title && <h1 class="article-heading__title">{title}</h1>}
+			{description && (
+				<h3 class="article-heading__description">{description}</h3>
+			)}
+			{showAuthor && (
+				<article class="article-heading__author">
+					{authorImage && (
+						<figure class="article-heading__avatar">
+							<AssetImage
+								class="article-heading__avatar-image"
+								src={authorImage}
+								alt={author?.image?.alt ?? ''}
+								width={author?.image?.width ?? 80}
+								height={author?.image?.height ?? 80}
+								layout="fixed"
+								fit="cover"
+							/>
+						</figure>
+					)}
+					{(author?.title || author?.subtitle) && (
+						<div class="article-heading__byline">
+							{author?.title && (
+								<h3 class="article-heading__name">{author.title}</h3>
+							)}
+							{author?.subtitle && (
+								<h4 class="article-heading__role">{author.subtitle}</h4>
+							)}
+						</div>
+					)}
+				</article>
+			)}
+		</div>
+		{coverImage && (
+			<figure class="article-heading__cover">
+				<AssetImage
+					class="article-heading__image"
+					src={coverImage}
+					alt={image?.alt ?? ''}
+					width={image?.width ?? 668}
+					height={image?.height ?? 500}
+					fit="cover"
+					priority
+				/>
+			</figure>
+		)}
+	</header>
+)}
 
 <style>
 	@layer varangian {
@@ -113,7 +121,7 @@ const show = Boolean(showCategory || title || description || showAuthor || cover
 		}
 
 		.article-heading__category {
-			transition: color 150ms cubic-bezier(.4, 0, .2, 1);
+			transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
 		.article-heading__category h4 {
@@ -158,7 +166,7 @@ const show = Boolean(showCategory || title || description || showAuthor || cover
 
 		.article-heading__role {
 			margin-bottom: 0;
-			font-size: .75rem;
+			font-size: 0.75rem;
 		}
 
 		.article-heading__avatar {
@@ -186,7 +194,7 @@ const show = Boolean(showCategory || title || description || showAuthor || cover
 			border-radius: var(--spacing-quarter);
 			object-fit: cover;
 			aspect-ratio: 16 / 9;
-			box-shadow: .75rem .75rem 0 0 var(--color-secondary);
+			box-shadow: 0.75rem 0.75rem 0 0 var(--color-secondary);
 		}
 
 		/* Tablet styles */

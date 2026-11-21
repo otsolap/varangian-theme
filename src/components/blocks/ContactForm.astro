@@ -32,69 +32,75 @@ const errorText =
 <section class="contact-form" id="contact">
 	<div class="contact-form__inner">
 		<article class="contact-form__body">
-			{
-				sent ? (
-					<div class="contact-form__status contact-form__status--success" role="status">
-						<p>{successMessage}</p>
-					</div>
-				) : (
-					<form class="contact-form__form" method="POST" action={action}>
-						<header class="contact-form__header">
-							{title && <h1 class="contact-form__title">{title}</h1>}
-							{description && <p class="contact-form__subtitle">{description}</p>}
-						</header>
-						{errorText && (
-							<div class="contact-form__status contact-form__status--error" role="alert">
-								<p>{errorText}</p>
-							</div>
-						)}
-						<div class="contact-form__fields">
-							<label class="contact-form__honeypot" aria-hidden="true">
-								Company
-								<input
-									type="text"
-									name="company"
-									tabindex="-1"
-									autocomplete="off"
-								/>
-							</label>
-							<label class="contact-form__field">
-								<span class="contact-form__label">Full name</span>
-								<input
-									class="contact-form__input"
-									type="text"
-									name="name"
-									required
-									maxlength="200"
-								/>
-							</label>
-							<label class="contact-form__field">
-								<span class="contact-form__label">Email</span>
-								<input
-									class="contact-form__input"
-									type="email"
-									name="email"
-									required
-									maxlength="200"
-								/>
-							</label>
-							<label class="contact-form__field">
-								<span class="contact-form__label">Reason for contacting</span>
-								<textarea
-									class="contact-form__textarea"
-									name="message"
-									rows="6"
-									required
-									maxlength="5000"
-								/>
-							</label>
+			{sent ? (
+				<div
+					class="contact-form__status contact-form__status--success"
+					role="status"
+				>
+					<p>{successMessage}</p>
+				</div>
+			) : (
+				<form class="contact-form__form" method="POST" action={action}>
+					<header class="contact-form__header">
+						{title && <h1 class="contact-form__title">{title}</h1>}
+						{description && <p class="contact-form__subtitle">{description}</p>}
+					</header>
+					{errorText && (
+						<div
+							class="contact-form__status contact-form__status--error"
+							role="alert"
+						>
+							<p>{errorText}</p>
 						</div>
-						<footer class="contact-form__footer">
-							<button class="button button--primary" type="submit">Send</button>
-						</footer>
-					</form>
-				)
-			}
+					)}
+					<div class="contact-form__fields">
+						<label class="contact-form__honeypot" aria-hidden="true">
+							Company
+							<input
+								type="text"
+								name="company"
+								tabindex="-1"
+								autocomplete="off"
+							/>
+						</label>
+						<label class="contact-form__field">
+							<span class="contact-form__label">Full name</span>
+							<input
+								class="contact-form__input"
+								type="text"
+								name="name"
+								required
+								maxlength="200"
+							/>
+						</label>
+						<label class="contact-form__field">
+							<span class="contact-form__label">Email</span>
+							<input
+								class="contact-form__input"
+								type="email"
+								name="email"
+								required
+								maxlength="200"
+							/>
+						</label>
+						<label class="contact-form__field">
+							<span class="contact-form__label">Reason for contacting</span>
+							<textarea
+								class="contact-form__textarea"
+								name="message"
+								rows="6"
+								required
+								maxlength="5000"
+							/>
+						</label>
+					</div>
+					<footer class="contact-form__footer">
+						<button class="button button--primary" type="submit">
+							Send
+						</button>
+					</footer>
+				</form>
+			)}
 		</article>
 	</div>
 </section>
@@ -161,7 +167,7 @@ const errorText =
 			color: var(--color-white);
 			background-color: var(--color-primary-dark);
 			border-radius: var(--spacing-quarter);
-			border: .0625rem solid var(--color-primary-light);
+			border: 0.0625rem solid var(--color-primary-light);
 			padding: var(--spacing-half) var(--spacing-single);
 		}
 
@@ -176,16 +182,16 @@ const errorText =
 
 		.contact-form__input:focus,
 		.contact-form__textarea:focus {
-			outline: .125rem solid var(--color-secondary);
-			outline-offset: .125rem;
+			outline: 0.125rem solid var(--color-secondary);
+			outline-offset: 0.125rem;
 		}
 
 		.contact-form__honeypot {
 			position: absolute;
 			left: -625rem;
 			top: auto;
-			width: .0625rem;
-			height: .0625rem;
+			width: 0.0625rem;
+			height: 0.0625rem;
 			overflow: hidden;
 		}
 

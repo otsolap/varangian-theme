@@ -15,23 +15,21 @@ const paragraphs = Array.isArray(description)
 const show = Boolean(title || paragraphs.length);
 ---
 
-{
-	show && (
-		<section
-			class:list={[
-				'textarea',
-				`bg-${selectTheme}`,
-				{ 'color-black': selectTheme === 'primary' },
-			]}
-			id={id}
-		>
-			{title && <h2 class="textarea__title">{title}</h2>}
-			{paragraphs.map((paragraph) => (
-				<p class="textarea__text">{paragraph}</p>
-			))}
-		</section>
-	)
-}
+{show && (
+	<section
+		class:list={[
+			'textarea',
+			`bg-${selectTheme}`,
+			{ 'color-black': selectTheme === 'primary' },
+		]}
+		id={id}
+	>
+		{title && <h2 class="textarea__title">{title}</h2>}
+		{paragraphs.map((paragraph) => (
+			<p class="textarea__text">{paragraph}</p>
+		))}
+	</section>
+)}
 
 <style>
 	@layer varangian {

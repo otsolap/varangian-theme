@@ -35,7 +35,15 @@ function formatDate(value?: string) {
 	});
 }
 
-const { href, title, description, date, image, category, hidden = false } = Astro.props;
+const {
+	href,
+	title,
+	description,
+	date,
+	image,
+	category,
+	hidden = false,
+} = Astro.props;
 const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 const showCategory = Boolean(category?.href && category?.title);
 const formattedDate = formatDate(date);
@@ -43,46 +51,44 @@ const showFooter = Boolean(showCategory || formattedDate);
 ---
 
 <article class="article-card" data-archive-item hidden={hidden}>
-	{
-		localImage && (
-			<figure class="article-card__figure">
-				<a class="article-card__image-link" href={href} aria-label={`Read more about ${title ?? 'this post'}`}>
-					<AssetImage
-						class="article-card__image"
-						src={localImage}
-						alt={image?.alt ?? ''}
-						width={image?.width ?? 400}
-						height={image?.height ?? 216}
-						fit="cover"
-					/>
+	{localImage && (
+		<figure class="article-card__figure">
+			<a
+				class="article-card__image-link"
+				href={href}
+				aria-label={`Read more about ${title ?? 'this post'}`}
+			>
+				<AssetImage
+					class="article-card__image"
+					src={localImage}
+					alt={image?.alt ?? ''}
+					width={image?.width ?? 400}
+					height={image?.height ?? 216}
+					fit="cover"
+				/>
+			</a>
+		</figure>
+	)}
+	{(title || description) && (
+		<div class="article-card__body">
+			{title && (
+				<a href={href}>
+					<h3 class="article-card__title">{title}</h3>
 				</a>
-			</figure>
-		)
-	}
-	{
-		(title || description) && (
-			<div class="article-card__body">
-				{title && (
-					<a href={href}>
-						<h3 class="article-card__title">{title}</h3>
-					</a>
-				)}
-				{description && <p class="article-card__text">{description}</p>}
-			</div>
-		)
-	}
-	{
-		showFooter && (
-			<footer class="article-card__footer">
-				{showCategory && category && (
-					<a href={category.href}>
-						<h4 class="article-card__category">{category.title}</h4>
-					</a>
-				)}
-				{formattedDate && <p class="article-card__date">{formattedDate}</p>}
-			</footer>
-		)
-	}
+			)}
+			{description && <p class="article-card__text">{description}</p>}
+		</div>
+	)}
+	{showFooter && (
+		<footer class="article-card__footer">
+			{showCategory && category && (
+				<a href={category.href}>
+					<h4 class="article-card__category">{category.title}</h4>
+				</a>
+			)}
+			{formattedDate && <p class="article-card__date">{formattedDate}</p>}
+		</footer>
+	)}
 </article>
 
 <style>
@@ -96,10 +102,12 @@ const showFooter = Boolean(showCategory || formattedDate);
 			overflow: hidden;
 			color: var(--color-white);
 			background-color: var(--color-primary-dark);
-			border: .0625rem solid var(--color-white);
+			border: 0.0625rem solid var(--color-white);
 			border-radius: var(--spacing-single-quarter);
 			cursor: pointer;
-			transition: border-color 250ms, background-color 250ms;
+			transition:
+				border-color 250ms,
+				background-color 250ms;
 		}
 
 		.article-card:hover,
@@ -127,7 +135,7 @@ const showFooter = Boolean(showCategory || formattedDate);
 			object-fit: cover;
 			object-position: 50% 50%;
 			aspect-ratio: 16 / 9;
-			border-bottom: .0625rem solid var(--color-white);
+			border-bottom: 0.0625rem solid var(--color-white);
 		}
 
 		.article-card:hover :global(.article-card__image),
@@ -161,7 +169,7 @@ const showFooter = Boolean(showCategory || formattedDate);
 			gap: var(--spacing-half);
 			width: 100%;
 			padding: var(--spacing-half) var(--spacing-double);
-			border-top: .0625rem solid var(--color-white);
+			border-top: 0.0625rem solid var(--color-white);
 		}
 
 		.article-card__category {

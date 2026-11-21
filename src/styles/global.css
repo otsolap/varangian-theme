@@ -7,52 +7,52 @@
 @import './partials/util.css';
 
 @layer varangian {
-/* Global Styles */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html,
-body {
-	height: auto;
-	width: 100%;
-	color: var(--color-white);
-	background-color: var(--color-primary-dark);
-	scroll-behavior: smooth;
-	line-height: 1.5;
-}
-
-main {
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	max-width: 100%;
-	position: relative;
-	background-color: var(--color-primary-dark);
-}
-
-section {
-	margin: 0 auto;
-	width: 100%;
-	padding: var(--spacing-double);
-	max-width: var(--container-desktop);
-}
-
-/* Tablet styles */
-@media (width >= 768px) {
-	section {
-		padding-top: var(--spacing-quadruple);
-		padding-bottom: var(--spacing-quadruple);
+	/* Global Styles */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
 	}
-}
 
-/* Desktop styles */
-@media (width >= 1280px) {
-	section {
-		padding-top: var(--spacing-quintuple);
-		padding-bottom: var(--spacing-quintuple);
+	html,
+	body {
+		height: auto;
+		width: 100%;
+		color: var(--color-white);
+		background-color: var(--color-primary-dark);
+		scroll-behavior: smooth;
+		line-height: 1.5;
 	}
-}
+
+	main {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		max-width: 100%;
+		position: relative;
+		background-color: var(--color-primary-dark);
+	}
+
+	section {
+		margin: 0 auto;
+		width: 100%;
+		padding: var(--spacing-double);
+		max-width: var(--container-desktop);
+	}
+
+	/* Tablet styles */
+	@media (width >= 768px) {
+		section {
+			padding-top: var(--spacing-quadruple);
+			padding-bottom: var(--spacing-quadruple);
+		}
+	}
+
+	/* Desktop styles */
+	@media (width >= 1280px) {
+		section {
+			padding-top: var(--spacing-quintuple);
+			padding-bottom: var(--spacing-quintuple);
+		}
+	}
 }

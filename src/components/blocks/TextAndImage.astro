@@ -17,13 +17,7 @@ interface Props {
 	alignImage?: 'left' | 'right';
 }
 
-const {
-	id,
-	title,
-	description,
-	image,
-	alignImage = 'right',
-} = Astro.props;
+const { id, title, description, image, alignImage = 'right' } = Astro.props;
 
 const paragraphs = Array.isArray(description)
 	? description.filter(Boolean)
@@ -38,34 +32,32 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 	<div
 		class:list={[
 			'text-and-image__layout',
-			{ 'text-and-image__layout--reverse': alignImage !== 'left' && localImage },
+			{
+				'text-and-image__layout--reverse': alignImage !== 'left' && localImage,
+			},
 		]}
 	>
-		{
-			localImage && (
-				<div class="text-and-image__column">
-					<figure class="text-and-image__figure">
-						<AssetImage
-							class="text-and-image__image"
-							src={localImage}
-							alt={image?.alt ?? ''}
-							width={image?.width ?? 668}
-							height={image?.height ?? 500}
-						/>
-					</figure>
-				</div>
-			)
-		}
-		{
-			showText && (
-				<div class="text-and-image__column">
-					{title && <h2 class="text-and-image__title">{title}</h2>}
-					{paragraphs.map((paragraph) => (
-						<p class="text-and-image__text">{paragraph}</p>
-					))}
-				</div>
-			)
-		}
+		{localImage && (
+			<div class="text-and-image__column">
+				<figure class="text-and-image__figure">
+					<AssetImage
+						class="text-and-image__image"
+						src={localImage}
+						alt={image?.alt ?? ''}
+						width={image?.width ?? 668}
+						height={image?.height ?? 500}
+					/>
+				</figure>
+			</div>
+		)}
+		{showText && (
+			<div class="text-and-image__column">
+				{title && <h2 class="text-and-image__title">{title}</h2>}
+				{paragraphs.map((paragraph) => (
+					<p class="text-and-image__text">{paragraph}</p>
+				))}
+			</div>
+		)}
 	</div>
 </section>
 
@@ -105,7 +97,8 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 			width: inherit;
 			height: inherit;
 			max-width: 100%;
-			box-shadow: var(--spacing-half) var(--spacing-half) 0 0 var(--color-secondary);
+			box-shadow: var(--spacing-half) var(--spacing-half) 0 0
+				var(--color-secondary);
 			aspect-ratio: 16 / 9;
 			object-fit: cover;
 			object-position: center;
@@ -133,7 +126,8 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 			}
 
 			.text-and-image__figure :global(.text-and-image__image) {
-				box-shadow: var(--spacing-single) var(--spacing-single) 0 0 var(--color-secondary);
+				box-shadow: var(--spacing-single) var(--spacing-single) 0 0
+					var(--color-secondary);
 			}
 		}
 
@@ -159,7 +153,8 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 			}
 
 			.text-and-image__figure :global(.text-and-image__image) {
-				box-shadow: var(--spacing-single-half) var(--spacing-single-half) 0 0 var(--color-secondary);
+				box-shadow: var(--spacing-single-half) var(--spacing-single-half) 0 0
+					var(--color-secondary);
 			}
 		}
 	}

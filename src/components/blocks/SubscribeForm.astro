@@ -54,7 +54,12 @@ const {
 				<div class="subscribe-form__fields">
 					<label class="subscribe-form__honeypot" aria-hidden="true">
 						Company
-						<input type="text" name="company" tabindex="-1" autocomplete="off" />
+						<input
+							type="text"
+							name="company"
+							tabindex="-1"
+							autocomplete="off"
+						/>
 					</label>
 					<label class="subscribe-form__field">
 						<span class="subscribe-form__label">Email</span>
@@ -90,7 +95,8 @@ const {
 		const errorText = document.querySelector('[data-subscribe-error-text]');
 		const submit = document.querySelector('[data-subscribe-submit]');
 
-		if (!(root instanceof HTMLElement) || !(form instanceof HTMLFormElement)) return;
+		if (!(root instanceof HTMLElement) || !(form instanceof HTMLFormElement))
+			return;
 		if (form.dataset.ready === 'true') return;
 		form.dataset.ready = 'true';
 
@@ -207,21 +213,21 @@ const {
 			color: var(--color-white);
 			background-color: var(--color-primary-dark);
 			border-radius: var(--spacing-quarter);
-			border: .0625rem solid var(--color-primary-light);
+			border: 0.0625rem solid var(--color-primary-light);
 			padding: var(--spacing-half) var(--spacing-single);
 		}
 
 		.subscribe-form__input:focus {
-			outline: .125rem solid var(--color-secondary);
-			outline-offset: .125rem;
+			outline: 0.125rem solid var(--color-secondary);
+			outline-offset: 0.125rem;
 		}
 
 		.subscribe-form__honeypot {
 			position: absolute;
 			left: -625rem;
 			top: auto;
-			width: .0625rem;
-			height: .0625rem;
+			width: 0.0625rem;
+			height: 0.0625rem;
 			overflow: hidden;
 		}
 

@@ -48,40 +48,36 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 			{ 'color-black': selectTheme === 'primary' },
 		]}
 	>
-		{
-			localImage && (
-				<figure class="banner__figure">
-					<AssetImage
-						class="banner__image"
-						src={localImage}
-						alt={image?.alt ?? ''}
-						width={image?.width ?? 150}
-						height={image?.height ?? 150}
-						layout="fixed"
-					/>
-				</figure>
-			)
-		}
-		{
-			showContent && (
-				<div class="banner__content">
-					{title && <h2 class="banner__title">{title}</h2>}
-					{description && <p class="banner__subtitle">{description}</p>}
-					{button?.href && (
-						<footer class="banner__actions">
-							<a
-								class={`button button--${button.selectTheme ?? 'primary'}`}
-								href={button.href}
-								target={external ? '_blank' : undefined}
-								rel={external ? 'noreferrer' : undefined}
-							>
-								{button.title}
-							</a>
-						</footer>
-					)}
-				</div>
-			)
-		}
+		{localImage && (
+			<figure class="banner__figure">
+				<AssetImage
+					class="banner__image"
+					src={localImage}
+					alt={image?.alt ?? ''}
+					width={image?.width ?? 150}
+					height={image?.height ?? 150}
+					layout="fixed"
+				/>
+			</figure>
+		)}
+		{showContent && (
+			<div class="banner__content">
+				{title && <h2 class="banner__title">{title}</h2>}
+				{description && <p class="banner__subtitle">{description}</p>}
+				{button?.href && (
+					<footer class="banner__actions">
+						<a
+							class={`button button--${button.selectTheme ?? 'primary'}`}
+							href={button.href}
+							target={external ? '_blank' : undefined}
+							rel={external ? 'noreferrer' : undefined}
+						>
+							{button.title}
+						</a>
+					</footer>
+				)}
+			</div>
+		)}
 	</div>
 </section>
 
@@ -97,7 +93,7 @@ const localImage = image?.src ? resolveLocalImage(image.src) : undefined;
 			flex-direction: column;
 			padding: var(--spacing-double);
 			border-radius: 0;
-			border: .0625rem solid transparent;
+			border: 0.0625rem solid transparent;
 		}
 
 		.banner__figure {

@@ -10,39 +10,37 @@ const { id, title, author, source } = Astro.props;
 const show = Boolean(title);
 ---
 
-{
-	show && (
-		<section class="quote" id={id}>
-			<figure class="quote__figure">
-				<blockquote class="quote__block">
-					<svg
-						class="quote__mark"
-						viewBox="0 0 40.9 26.6"
-						fill="currentColor"
-						aria-hidden="true"
-					>
-						<path d="M40.9 0H26.6L20 26.6h9.8L40.9 0zM20.8 0H6.6L0 26.6h9.8L20.8 0z" />
-					</svg>
-					<p class="quote__text">{title}</p>
-					<svg
-						class="quote__mark quote__mark--end"
-						viewBox="0 0 40.9 26.6"
-						fill="currentColor"
-						aria-hidden="true"
-					>
-						<path d="M40.9 0H26.6L20 26.6h9.8L40.9 0zM20.8 0H6.6L0 26.6h9.8L20.8 0z" />
-					</svg>
-				</blockquote>
-				{(author || source) && (
-					<figcaption class="quote__source">
-						{author && <span>{author}</span>}
-						{source && <cite class="quote__cite">- {source}</cite>}
-					</figcaption>
-				)}
-			</figure>
-		</section>
-	)
-}
+{show && (
+	<section class="quote" id={id}>
+		<figure class="quote__figure">
+			<blockquote class="quote__block">
+				<svg
+					class="quote__mark"
+					viewBox="0 0 40.9 26.6"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path d="M40.9 0H26.6L20 26.6h9.8L40.9 0zM20.8 0H6.6L0 26.6h9.8L20.8 0z" />
+				</svg>
+				<p class="quote__text">{title}</p>
+				<svg
+					class="quote__mark quote__mark--end"
+					viewBox="0 0 40.9 26.6"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path d="M40.9 0H26.6L20 26.6h9.8L40.9 0zM20.8 0H6.6L0 26.6h9.8L20.8 0z" />
+				</svg>
+			</blockquote>
+			{(author || source) && (
+				<figcaption class="quote__source">
+					{author && <span>{author}</span>}
+					{source && <cite class="quote__cite">- {source}</cite>}
+				</figcaption>
+			)}
+		</figure>
+	</section>
+)}
 
 <style>
 	@layer varangian {

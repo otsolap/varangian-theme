@@ -34,70 +34,66 @@ interface Props {
 const { items = [], categories = [], pageSize = 12 } = Astro.props;
 const size = pageSize > 0 ? pageSize : 12;
 const posts = (Array.isArray(items) ? items : []).filter((item) => item.href);
-const links = (Array.isArray(categories) ? categories : []).filter((item) => item.href && item.title);
+const links = (Array.isArray(categories) ? categories : []).filter(
+	(item) => item.href && item.title,
+);
 const pageCount = Math.ceil(posts.length / size);
 const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
 ---
 
 <section class="archive" data-archive data-page-size={size}>
-	{
-		links.length > 0 && (
-			<header class="archive__header" id="blog-archive-header">
-				<label class="archive__select-label">
-					<span class="sr-only">Categories</span>
-					<select class="archive__select" data-archive-taxonomies>
-						{links.map((link) => (
-							<option value={link.href}>{link.title}</option>
-						))}
-					</select>
-				</label>
-				<ul class="archive__taxonomies">
+	{links.length > 0 && (
+		<header class="archive__header" id="blog-archive-header">
+			<label class="archive__select-label">
+				<span class="sr-only">Categories</span>
+				<select class="archive__select" data-archive-taxonomies>
 					{links.map((link) => (
-						<li class="archive__taxonomy">
-							<a class="button archive__taxonomy-link" href={link.href}>
-								{link.title}
-							</a>
-						</li>
+						<option value={link.href}>{link.title}</option>
 					))}
-				</ul>
-			</header>
-		)
-	}
-	<div class="archive__list" data-archive-list>
-		{
-			posts.length > 0 ? (
-				posts.map((item, index) => (
-					<ArticleCard
-						href={item.href}
-						title={item.title}
-						description={item.description}
-						date={item.date}
-						image={item.image}
-						category={item.category}
-						hidden={index >= size}
-					/>
-				))
-			) : (
-				<p>No items found</p>
-			)
-		}
-	</div>
-	{
-		pageCount > 1 && (
-			<nav class="archive__pages" aria-label="Pagination">
-				{pages.map((page) => (
-					<button
-						class="archive__page"
-						type="button"
-						data-archive-page={page}
-						aria-current={page === 1 ? 'page' : undefined}
-					>
-						{page}
-					</button>
+				</select>
+			</label>
+			<ul class="archive__taxonomies">
+				{links.map((link) => (
+					<li class="archive__taxonomy">
+						<a class="button archive__taxonomy-link" href={link.href}>
+							{link.title}
+						</a>
+					</li>
 				))}
-			</nav>
-		)
-	}
+			</ul>
+		</header>
+	)}
+	<div class="archive__list" data-archive-list>
+		{posts.length > 0 ? (
+			posts.map((item, index) => (
+				<ArticleCard
+					href={item.href}
+					title={item.title}
+					description={item.description}
+					date={item.date}
+					image={item.image}
+					category={item.category}
+					hidden={index >= size}
+				/>
+			))
+		) : (
+			<p>No items found</p>
+		)}
+	</div>
+	{pageCount > 1 && (
+		<nav class="archive__pages" aria-label="Pagination">
+			{pages.map((page) => (
+				<button
+					class="archive__page"
+					type="button"
+					data-archive-page={page}
+					aria-current={page === 1 ? 'page' : undefined}
+				>
+					{page}
+				</button>
+			))}
+		</nav>
+	)}
 </section>
 
 <script>
@@ -106,17 +102,21 @@ const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
 		const list = root.querySelector('[data-archive-list]');
 		if (!list) return;
 
-		const cards = [...list.querySelectorAll<HTMLElement>('[data-archive-item]')];
+		const cards = [
+			...list.querySelectorAll<HTMLElement>('[data-archive-item]'),
+		];
 		const start = (page - 1) * size;
 		cards.forEach((card, index) => {
 			card.hidden = index < start || index >= start + size;
 		});
 
-		root.querySelectorAll<HTMLButtonElement>('[data-archive-page]').forEach((button) => {
-			const current = Number(button.dataset.archivePage) === page;
-			if (current) button.setAttribute('aria-current', 'page');
-			else button.removeAttribute('aria-current');
-		});
+		root
+			.querySelectorAll<HTMLButtonElement>('[data-archive-page]')
+			.forEach((button) => {
+				const current = Number(button.dataset.archivePage) === page;
+				if (current) button.setAttribute('aria-current', 'page');
+				else button.removeAttribute('aria-current');
+			});
 
 		if (!scroll) return;
 		const header = root.querySelector('#blog-archive-header');
@@ -129,7 +129,8 @@ const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
 			const target = event.target;
 			if (!(target instanceof Element)) return;
 			const button = target.closest('[data-archive-page]');
-			if (!(button instanceof HTMLButtonElement) || !root.contains(button)) return;
+			if (!(button instanceof HTMLButtonElement) || !root.contains(button))
+				return;
 			showArchivePage(root, Number(button.dataset.archivePage), true);
 		});
 	});
@@ -181,7 +182,9 @@ const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
 		.archive__taxonomy-link {
 			background-color: var(--color-secondary);
 			color: var(--color-primary-dark);
-			transition: background-color .6s ease-in-out, color .6s ease-in-out;
+			transition:
+				background-color 0.6s ease-in-out,
+				color 0.6s ease-in-out;
 		}
 
 		.archive__taxonomy-link:hover,
@@ -218,7 +221,7 @@ const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
 			font-size: 1.25rem;
 			color: var(--color-white);
 			background-color: var(--color-secondary-semidark);
-			border: .0625rem solid var(--color-secondary-semidark);
+			border: 0.0625rem solid var(--color-secondary-semidark);
 			border-radius: 100%;
 			cursor: pointer;
 		}

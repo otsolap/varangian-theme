@@ -26,22 +26,11 @@ const displayHeight =
 		: 600);
 ---
 
-{
-	localImage && (
-		<section class="image-block" id={id} data-image-block>
-			<figure class="image-block__figure">
-				{openLarge ? (
-					<button class="image-block__trigger" type="button" data-image-open>
-						<AssetImage
-							class="image-block__image"
-							src={localImage}
-							alt={image?.alt ?? ''}
-							width={displayWidth}
-							height={displayHeight}
-							fit="contain"
-						/>
-					</button>
-				) : (
+{localImage && (
+	<section class="image-block" id={id} data-image-block>
+		<figure class="image-block__figure">
+			{openLarge ? (
+				<button class="image-block__trigger" type="button" data-image-open>
 					<AssetImage
 						class="image-block__image"
 						src={localImage}
@@ -50,37 +39,50 @@ const displayHeight =
 						height={displayHeight}
 						fit="contain"
 					/>
-				)}
-				{caption && <figcaption class="image-block__caption">{caption}</figcaption>}
-			</figure>
-			{openLarge && (
-				<dialog class="image-block__dialog" data-image-dialog>
-					<figure class="image-block__dialog-figure">
-						<AssetImage
-							class="image-block__dialog-image"
-							src={localImage}
-							alt={image?.alt ?? ''}
-							width={localImage.width}
-							height={localImage.height}
-							fit="contain"
-						/>
-						{caption && (
-							<figcaption class="image-block__dialog-caption">{caption}</figcaption>
-						)}
-					</figure>
-					<button
-						class="image-block__close"
-						type="button"
-						data-image-close
-						aria-label="Close"
-					>
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</dialog>
+				</button>
+			) : (
+				<AssetImage
+					class="image-block__image"
+					src={localImage}
+					alt={image?.alt ?? ''}
+					width={displayWidth}
+					height={displayHeight}
+					fit="contain"
+				/>
 			)}
-		</section>
-	)
-}
+			{caption && (
+				<figcaption class="image-block__caption">{caption}</figcaption>
+			)}
+		</figure>
+		{openLarge && (
+			<dialog class="image-block__dialog" data-image-dialog>
+				<figure class="image-block__dialog-figure">
+					<AssetImage
+						class="image-block__dialog-image"
+						src={localImage}
+						alt={image?.alt ?? ''}
+						width={localImage.width}
+						height={localImage.height}
+						fit="contain"
+					/>
+					{caption && (
+						<figcaption class="image-block__dialog-caption">
+							{caption}
+						</figcaption>
+					)}
+				</figure>
+				<button
+					class="image-block__close"
+					type="button"
+					data-image-close
+					aria-label="Close"
+				>
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</dialog>
+		)}
+	</section>
+)}
 
 <script>
 	function initImageDialogs() {
@@ -137,7 +139,7 @@ const displayHeight =
 			background-color: transparent;
 			color: inherit;
 			cursor: pointer;
-			transition-duration: .2s;
+			transition-duration: 0.2s;
 			transition-property: transform, opacity;
 			transition-timing-function: ease;
 		}
@@ -145,7 +147,7 @@ const displayHeight =
 		.image-block__trigger:hover,
 		.image-block__trigger:focus-visible {
 			transform: scale(1.05);
-			opacity: .9;
+			opacity: 0.9;
 		}
 
 		.image-block__figure :global(.image-block__image),
@@ -160,7 +162,7 @@ const displayHeight =
 		.image-block__caption,
 		.image-block__dialog-caption {
 			font-style: italic;
-			font-size: .75rem;
+			font-size: 0.75rem;
 			text-align: center;
 		}
 
@@ -184,7 +186,7 @@ const displayHeight =
 		}
 
 		.image-block__dialog::backdrop {
-			background-color: rgb(0 31 42 / .72);
+			background-color: rgb(0 31 42 / 0.72);
 		}
 
 		.image-block__dialog-figure {
@@ -213,7 +215,7 @@ const displayHeight =
 			width: 2.5rem;
 			height: 2.5rem;
 			padding: 0;
-			border: .0625rem solid var(--color-white);
+			border: 0.0625rem solid var(--color-white);
 			border-radius: 50%;
 			background-color: var(--color-black);
 			color: var(--color-white);
