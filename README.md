@@ -24,11 +24,11 @@ Blocks are Astro components at `varangian-theme/components/blocks/`. A page impo
 
 Three named slots stand in for those three components.
 
-| Slot | Theme component when the slot is empty |
-| --- | --- |
-| `header` | `Header` |
-| `footer` | `Footer` |
-| `mobile-footer` | `MobileFooter` |
+| Slot            | Theme component when the slot is empty |
+| --------------- | -------------------------------------- |
+| `header`        | `Header`                               |
+| `footer`        | `Footer`                               |
+| `mobile-footer` | `MobileFooter`                         |
 
 An empty slot keeps the theme component. A passed slot is the site's component for that region. The site layout is the place that passes the slots. `navigation` stays a required prop. The theme components read it when their slot is empty.
 
@@ -41,6 +41,30 @@ A site rule with no media query applies at every width. It also covers the theme
 ## Fonts
 
 `--font-heading` and `--font-body` use the system font. A site sets those two variables and imports its own font files.
+
+## Lint
+
+The package publishes the ESLint and Prettier setup. A site adds two files. It does not copy the rule list.
+
+`eslint.config.js`:
+
+```js
+import { eslintConfig } from 'varangian-theme/tools/eslint-config';
+
+export default [...eslintConfig];
+```
+
+`prettier.config.mjs`:
+
+```js
+import { prettierConfig } from 'varangian-theme/tools/prettier-config';
+
+export default {
+	...prettierConfig,
+};
+```
+
+`npm install varangian-theme` installs ESLint, Prettier, and the Astro plugins. The site then runs `npx eslint .` and `npx prettier --write .`.
 
 ## Rights
 

@@ -5,6 +5,11 @@
   "license": "MIT",
   "type": "module",
   "description": "Shared Astro layout, blocks, and styles for Varangian sites.",
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/otsolap/varangian-theme.git"
@@ -13,6 +18,14 @@
     ".": "./integration.mjs",
     "./integration": "./integration.mjs",
     "./virtual": "./src/virtual.d.ts",
+    "./tools/eslint-config": {
+      "types": "./src/tools/eslint-config.d.ts",
+      "import": "./src/tools/eslint-config.js"
+    },
+    "./tools/prettier-config": {
+      "types": "./src/tools/prettier-config.d.ts",
+      "import": "./src/tools/prettier-config.js"
+    },
     "./*": "./src/*"
   },
   "files": [
@@ -26,5 +39,15 @@
   ],
   "peerDependencies": {
     "astro": "^7.3.0"
+  },
+  "dependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.15.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-astro": "3.2.1",
+    "prettier": "3.10.1",
+    "prettier-plugin-astro": "1.1.2",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.73.0"
   }
 }

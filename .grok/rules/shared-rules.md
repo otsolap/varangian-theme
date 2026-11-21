@@ -19,3 +19,27 @@ These rules apply when a site installs varangian-theme.
 ## CSS
 
 Read `css.md` in this folder before you edit styles.
+
+## Lint
+
+Use the published ESLint and Prettier configs. Do not copy the rule list into the site.
+
+`eslint.config.js`:
+
+```js
+import { eslintConfig } from 'varangian-theme/tools/eslint-config';
+
+export default [...eslintConfig];
+```
+
+`prettier.config.mjs`:
+
+```js
+import { prettierConfig } from 'varangian-theme/tools/prettier-config';
+
+export default {
+	...prettierConfig,
+};
+```
+
+`npm update varangian-theme` updates these tools.
